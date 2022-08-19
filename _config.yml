@@ -6,7 +6,7 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: fastpages
+title: Lily
 description: An easy to use blogging platform with support for Jupyter Notebooks.
 github_username: lwu1822
 # you can comment the below line out if your repo name is not different than your baseurl
@@ -40,7 +40,7 @@ baseurl: "/fastpages" # the subpath of your site, e.g. "/blog".
 minima:
   social_links:
     twitter: fastdotai
-    github: fastai
+    github: lwu1822
 
 # Set this to true to get LaTeX math equation support
 use_math: 
