@@ -6,7 +6,6 @@
 
 https://lwu1822.github.io/fastpages/
 
-# This is a test
 
 # My Blog
 
@@ -30,3 +29,6 @@ Note: you may want to remove example blog posts from the `_posts`,  `_notebooks`
 
 Please use the [nbdev & blogging channel](https://forums.fast.ai/c/fastai-users/nbdev/48) in the fastai forums for any questions or feature requests.
 
+
+A little addition to the README page :)
+<span style="color:blue"> oh look this is some blue text</span>
