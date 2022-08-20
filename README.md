@@ -31,4 +31,4 @@ Please use the [nbdev & blogging channel](https://forums.fast.ai/c/fastai-users/
 
 
 A little addition to the README page :)
-<span style="color:blue"> oh look this is some blue text</span>
+oh look a emoji :smile:
