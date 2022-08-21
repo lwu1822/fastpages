@@ -24,10 +24,10 @@
   
     
         ,"post2": {
-            "title": "Post 1",
-            "content": "Post #1 . This is a test for my first post. . hi and welcome :) . this is also a test. .",
-            "url": "https://lwu1822.github.io/fastpages/2022/08/19/post-1.html",
-            "relUrl": "/2022/08/19/post-1.html",
+            "title": "First post",
+            "content": "Post #1 . This is a test for my first post. . hi and welcome :) . this is also a test in blue font. . Why does Comic Sans get so much hate :( .",
+            "url": "https://lwu1822.github.io/fastpages/markdown/2022/08/19/post-1.html",
+            "relUrl": "/markdown/2022/08/19/post-1.html",
             "date": " • Aug 19, 2022"
         }
         
