@@ -5,12 +5,15 @@ permalink: /about/
 ---
 
 Hi, and welcome to my blog!
-My name is Lily Wu. I'm a junior at Del Norte High School.
-My interests are in STEM, which include programming, cybersecurity, and math.
-In my free time, I also love to read. Feel free to give me book suggestions! :)
 
+My name is Lily Wu. I'm a junior at Del Norte High School.
+
+My interests are in STEM, which include programming, cybersecurity, and math.
 
 I'm passionate about learning, and I love to play around with code.
+
+In my free time, I also love to read. Feel free to give me book suggestions! :)
+
 
 
 ###### Contacts:
