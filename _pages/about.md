@@ -18,6 +18,7 @@ In my free time, I also love to read. Feel free to give me book suggestions! :)
 
 ###### Contacts:
 Email: lwu1822@gmail.com
+
 [Github](lwu1822)
 
 This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
