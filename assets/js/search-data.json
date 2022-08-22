@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "First post",
-            "content": "Post #1 f . This is a test for my first post. . hi and welcome :) . Check out my About Me to learn more about me. . this is also a test in blue font. . Why does Comic Sans get so much hate :( .",
+            "content": "Post #1 . This is a test for my first post. . hi and welcome :) . Check out my About Me to learn more about me. . this is also a test in blue font. . Why does Comic Sans get so much hate :( .",
             "url": "https://lwu1822.github.io/fastpages/markdown/2022/08/19/post-1.html",
             "relUrl": "/markdown/2022/08/19/post-1.html",
             "date": " • Aug 19, 2022"
@@ -62,7 +62,7 @@
   
       ,"page1": {
           "title": "About Me",
-          "content": "Hi, and welcome to my blog! My name is Lily Wu. I’m a junior at Del Norte High School. . My interests are in STEM, which include programming, cybersecurity, and math. . I’m passionate about learning, and I love to play around with code. . In my free time, I also love to read. Feel free to give me some book suggestions! :) . Contacts: . Email: lwu1822@gmail.com . Github . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "content": "Hi, and welcome to my blog! My name is Lily Wu. I’m a junior at Del Norte High School. My interests are in STEM, which include programming, cybersecurity, and math. In my free time, I also love to read. Feel free to give me book suggestions! :) . I’m passionate about learning, and I love to play around with code. . Contacts: . Email: lwu1822@gmail.com Github . This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "https://lwu1822.github.io/fastpages/about/",
           "relUrl": "/about/",
           "date": ""
