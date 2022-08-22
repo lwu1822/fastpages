@@ -9,7 +9,7 @@ My name is Lily Wu. I'm a junior at Del Norte High School.
 
 My interests are in STEM, which include programming, cybersecurity, and math.
 
-I'm pretty new to programming, but I'm passionate about learning, and I love to play around with code.
+I'm passionate about learning, and I love to play around with code.
 
 In my free time, I also love to read. Feel free to give me some book suggestions! :)
 
