@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Math",
+            "title": "First post",
             "content": "Math . Wanted to experiment with some MathJax . Here is a beautiful equation: $e^{i pi} + 1 = 0$ .",
-            "url": "https://lwu1822.github.io/fastpages/2022/08/21/math.html",
-            "relUrl": "/2022/08/21/math.html",
+            "url": "https://lwu1822.github.io/fastpages/markdown/2022/08/21/math.html",
+            "relUrl": "/markdown/2022/08/21/math.html",
             "date": " • Aug 21, 2022"
         }
         
