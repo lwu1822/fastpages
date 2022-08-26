@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "Testing",
-            "content": ". toc: true layout: post description: testing. categories: [markdown] title: testing — . $e$ .",
-            "url": "https://lwu1822.github.io/fastpages/2022/08/25/testing.html",
-            "relUrl": "/2022/08/25/testing.html",
+            "title": "testing",
+            "content": "test title . $e$ .",
+            "url": "https://lwu1822.github.io/fastpages/markdown/2022/08/25/testing.html",
+            "relUrl": "/markdown/2022/08/25/testing.html",
             "date": " • Aug 25, 2022"
         }
         
