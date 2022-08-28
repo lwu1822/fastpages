@@ -2,17 +2,6 @@
   
     
         "post0": {
-            "title": "testing",
-            "content": "Test . Collapsible Note: do not tab in HTML unless you want whitespace Also very important: Make sure to put an extra line after ``, otherwise, Markdown will not show. &lt;/details&gt;",
-            "url": "https://lwu1822.github.io/fastpages/misc/2022/08/28/test.html",
-            "relUrl": "/misc/2022/08/28/test.html",
-            "date": " • Aug 28, 2022"
-        }
-        
-    
-  
-    
-        ,"post1": {
             "title": "Code snippets",
             "content": "Collapsible Note: do not tab in HTML unless you want whitespace Also very important: Make sure to put an extra line after ``, otherwise, Markdown will not show. [Reference](https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab) &lt;/details&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;",
             "url": "https://lwu1822.github.io/fastpages/misc/2022/08/28/good-code-snippets.html",
@@ -23,12 +12,23 @@
     
   
     
-        ,"post2": {
+        ,"post1": {
             "title": "code.org Notes",
-            "content": "code.org Notes . Lesson 2 . Answers to questions . 2.1 . EXCEPTION error. No .java files are provided. Probably due to wrong file name. | No, wrong file name. | Yes, Java files must have the .java extension. | There is an error. The p in myPainter.move(); must be capitalized. | Yes, code is case-sensitive. | 2.2 .",
+            "content": "Lesson 2 . Class header: . public class ClassName { } . Main method: public static void main(String[] args) { . } . Lesson 3 .",
             "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html",
             "relUrl": "/code.org/2022/08/28/code-org.html",
             "date": " • Aug 28, 2022"
+        }
+        
+    
+  
+    
+        ,"post2": {
+            "title": "code.org Answers",
+            "content": "Lesson 2 . 2.1 . EXCEPTION error. No .java files are provided. Probably due to wrong file name. | No, wrong file name. | Yes, Java files must have the .java extension. | There is an error. The p in myPainter.move(); must be capitalized. | Yes, code is case-sensitive. | 2.2 . error: reached end of file while parsing | Need another } to finish code. . Yes, each opening curly brace needs a closing curly brace. | error: not a statement and error: &#39;;&#39; expected, meaning the command syntax is wrong. | Correct syntax: mypainter.move(); . See #3 | Yes, the error is fixed. | 3.1 . Painter starts at top left grid and faces east. | Stops at row 2 column 3, faces south. | Painter moves forward but does not paint because he has ran out. | |",
+            "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/27/code-org-answer.html",
+            "relUrl": "/code.org/2022/08/27/code-org-answer.html",
+            "date": " • Aug 27, 2022"
         }
         
     
