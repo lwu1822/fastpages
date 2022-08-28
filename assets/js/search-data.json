@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Code snippets",
-            "content": "Collapsible Note: do not tab in HTML unless you want whitespace Also very important: Make sure to put an extra line after ``, otherwise, Markdown will not show. [Reference](https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab) &lt;/details&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; To move cells in VSCode: Alt + Up/Down Arrow . &lt;/div&gt;",
+            "content": "Collapsible Note: do not tab in HTML unless you want whitespace Also very important: Make sure to put an extra line after ``, otherwise, Markdown will not show. [Reference](https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab) &lt;/details&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;",
             "url": "https://lwu1822.github.io/fastpages/misc/2022/08/28/good-code-snippets.html",
             "relUrl": "/misc/2022/08/28/good-code-snippets.html",
             "date": " • Aug 28, 2022"
