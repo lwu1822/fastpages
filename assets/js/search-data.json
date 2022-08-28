@@ -2,10 +2,10 @@
   
     
         "post0": {
-            "title": "code.org Notes",
-            "content": "code.org Notes . Lesson 2 . Answers to questions . 2.1 . EXCEPTION error. No .java files are provided. Probably due to wrong file name. | No, wrong file name. | Yes, Java files must have the .java extension. | There is an error. The p in myPainter.move(); must be capitalized. | Yes, code is case-sensitive. | 2.2 .",
-            "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html",
-            "relUrl": "/code.org/2022/08/28/code-org.html",
+            "title": "Code snippets",
+            "content": "Collapsible ### Note: do not tab in HTML unless you want whitespace",
+            "url": "https://lwu1822.github.io/fastpages/misc/2022/08/28/good-code-snippets.html",
+            "relUrl": "/misc/2022/08/28/good-code-snippets.html",
             "date": " • Aug 28, 2022"
         }
         
@@ -13,11 +13,11 @@
   
     
         ,"post1": {
-            "title": "Code snippets",
-            "content": "Collapsible # Foo ## bar",
-            "url": "https://lwu1822.github.io/fastpages/misc/2022/08/27/good-code-snippets.html",
-            "relUrl": "/misc/2022/08/27/good-code-snippets.html",
-            "date": " • Aug 27, 2022"
+            "title": "code.org Notes",
+            "content": "code.org Notes . Lesson 2 . Answers to questions . 2.1 . EXCEPTION error. No .java files are provided. Probably due to wrong file name. | No, wrong file name. | Yes, Java files must have the .java extension. | There is an error. The p in myPainter.move(); must be capitalized. | Yes, code is case-sensitive. | 2.2 .",
+            "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html",
+            "relUrl": "/code.org/2022/08/28/code-org.html",
+            "date": " • Aug 28, 2022"
         }
         
     
