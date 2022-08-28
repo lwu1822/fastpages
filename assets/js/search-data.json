@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "code.org Notes",
-            "content": "Lesson 2 . Class header: . public class ClassName { } . Main method: public static void main(String[] args) { . } . Lesson 3 .",
+            "content": "Lesson 2 . Class header: . public class ClassName { } . Main method: public static void main(String[] args) { . } . Lesson 3 . Create an object with: ClassName objectName = new ClassName(); .",
             "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html",
             "relUrl": "/code.org/2022/08/28/code-org.html",
             "date": " • Aug 28, 2022"
@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "code.org Answers",
-            "content": "Lesson 2 . 2.1 . EXCEPTION error. No .java files are provided. Probably due to wrong file name. | No, wrong file name. | Yes, Java files must have the .java extension. | There is an error. The p in myPainter.move(); must be capitalized. | Yes, code is case-sensitive. | 2.2 . error: reached end of file while parsing | Need another } to finish code. . Yes, each opening curly brace needs a closing curly brace. | error: not a statement and error: &#39;;&#39; expected, meaning the command syntax is wrong. | Correct syntax: mypainter.move(); . See #3 | Yes, the error is fixed. | 3.1 . Painter starts at top left grid and faces east. | Stops at row 2 column 3, faces south. | Painter moves forward but does not paint because he has ran out. | |",
+            "content": "Lesson 2 . 2.1 . EXCEPTION error. No .java files are provided. Probably due to wrong file name. | No, wrong file name. | Yes, Java files must have the .java extension. | There is an error. The p in myPainter.move(); must be capitalized. | Yes, code is case-sensitive. | 2.2 . error: reached end of file while parsing | Need another } to finish code. . Yes, each opening curly brace needs a closing curly brace. | error: not a statement and error: &#39;;&#39; expected, meaning the command syntax is wrong. | Correct syntax: mypainter.move(); . See #3 | Yes, the error is fixed. | 3.1 . Painter starts at top left grid and faces east. | Stops at row 2 column 3, faces south. | Painter moves forward but does not paint because he has ran out. | Error because did not add () at Painter; | Added () |",
             "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org-answer.html",
             "relUrl": "/code.org/2022/08/28/code-org-answer.html",
             "date": " • Aug 28, 2022"
