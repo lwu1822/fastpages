@@ -10,7 +10,7 @@ permalink: /cb/
 
 Exam Weighting: 2.5%-5%
 
-[Primitives](https://lwu1822.github.io/fastpages/java/2022/08/28/primitives.html)
+* [Primitives](https://lwu1822.github.io/fastpages/java/2022/08/28/primitives.html)
 
 ## Unit 2: Using Objects
 
