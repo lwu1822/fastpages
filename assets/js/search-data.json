@@ -147,6 +147,17 @@
 
   
       ,"page1": {
+          "title": "Notes",
+          "content": "Notes . Primitives . Primitives: Includes the data types of int, double, and boolean. . Note: String is not a primitive . Basic code: . Data types: . int [var], double [var], boolean [var], and String [var] . Input: . Scanner [var] = new Scanner(System.in); : Create a scanner object with a name of [var], set it equal to System.in, which is what the user inputs on the keyboard. .",
+          "url": "https://lwu1822.github.io/fastpages/notes/",
+          "relUrl": "/notes/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page2": {
           "title": "PBL",
           "content": "PBL . Week 0 . First post . Java . Python . Jupyter Notebook . Week 1 . Bash: Check if tools are installed . Learnings from code.org . Java Primitives .",
           "url": "https://lwu1822.github.io/fastpages/PBL/",
@@ -157,7 +168,7 @@
   
 
   
-      ,"page2": {
+      ,"page3": {
           "title": "College Board",
           "content": "College Board . Unit 1: Primitive Types . Exam Weighting: 2.5%-5% . Primitives . Unit 2: Using Objects . Exam Weighting: 5%-7.5% . Unit 3: Boolean Expressions and if Statements . Exam Weighting: 15%-17.55% . Unit 4: Iteration . Exam Weighting: 17.5%-22.5% . Unit 5: Writing Classes . Exam Weighting: 5%-7.5% . Unit 6: Array . Exam Weighting: 10%-15% . Unit 7: ArrayList . Exam Weighting: 2.5%-7.5% . Unit 8: 2D Array . Exam Weighting: 7.5%-10% . Unit 9: Inheritance . Exam Weighting: 5%-10% . Unit 10: Recursion . Exam Weighting: 5%-7.5% .",
           "url": "https://lwu1822.github.io/fastpages/cb/",
@@ -191,7 +202,7 @@
   
 
   
-      ,"page12": {
+      ,"page13": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://lwu1822.github.io/fastpages/robots.txt",
