@@ -142,6 +142,7 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#Python-versions">Python versions </a></li>
 <li class="toc-entry toc-h1"><a href="#Java-versions">Java versions </a></li>
+<li class="toc-entry toc-h1"><a href="#Playing-with-some-Regex">Playing with some Regex </a></li>
 <li class="toc-entry toc-h1"><a href="#Jupyter-Check">Jupyter Check </a></li>
 <li class="toc-entry toc-h1"><a href="#Conda-check-for-Jupyter">Conda check for Jupyter </a>
 <ul>
@@ -235,6 +236,66 @@ javac --version
 OpenJDK Runtime Environment (build 11.0.16+8-post-Ubuntu-0ubuntu120.04)
 OpenJDK 64-Bit Server VM (build 11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode, sharing)
 javac 11.0.16
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Playing-with-some-Regex">
+<a class="anchor" href="#Playing-with-some-Regex" aria-hidden="true"><span class="octicon octicon-link"></span></a>Playing with some Regex<a class="anchor-link" href="#Playing-with-some-Regex"> </a>
+</h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Check for packages starting with 'j' and ends with the letter 's'"</span>
+<span class="c1"># What this bash script does:</span>
+<span class="c1"># Checks if there is output after grep (searching) for packages starting</span>
+<span class="c1"># with 'j' and ending with 's'</span>
+
+<span class="c1"># First lists all conda packages, then filters to only show the package</span>
+<span class="c1"># names (excludes Version and Build Channel) with the cut command</span>
+
+<span class="c1"># The grep command uses some fun Regex</span>
+<span class="c1"># ^ means that the character following it (in parenthesis) must start at the</span>
+<span class="c1"># beginning</span>
+<span class="c1"># .*: "."" means any character, "*" means match the character before it</span>
+<span class="c1"># any number of times -&gt; ".*" means match any character any number of times</span>
+<span class="c1"># $: Character before it (s) must be at the end</span>
+<span class="k">if</span> conda list <span class="p">|</span> cut -d <span class="s2">" "</span> -f <span class="m">1</span> <span class="p">|</span> grep <span class="s2">"^j.*s</span>$<span class="s2">"</span> <span class="p">;</span> <span class="k">then</span>
+    :
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">"No packages starting with 'j' and ending with 's'"</span>
+<span class="k">fi</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Check for packages starting with 'j' and ends with the letter 's'
+<span class="ansi-red-intense-fg ansi-bold">jupyterlab_pygments</span>
+<span class="ansi-red-intense-fg ansi-bold">jupyterlab_widgets</span>
 </pre>
 </div>
 </div>
