@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "code.org Notes",
-            "content": "Lesson 2 . Class header: . public class ClassName { } . Main method: . public static void main(String[] args) { . } . Lesson 3 . Create an object with: ClassName objectName = new ClassName(); .",
+            "content": "Lesson 2 . Class header: . public class ClassName { } . Main method: . public static void main(String[] args) { } . Lesson 3 . Create an object with: ClassName objectName = new ClassName(); .",
             "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html",
             "relUrl": "/code.org/2022/08/28/code-org.html",
             "date": " • Aug 28, 2022"
@@ -148,7 +148,7 @@
   
       ,"page1": {
           "title": "PBL",
-          "content": "PBL . Week [#] .",
+          "content": "PBL . Week 0 . First post . Java . Python . Jupyter Notebook . Week 1 . Bash: Check if tools are installed . Learnings from code.org . Java Primitives .",
           "url": "https://lwu1822.github.io/fastpages/PBL/",
           "relUrl": "/PBL/",
           "date": ""
