@@ -2,6 +2,17 @@
   
     
         "post0": {
+            "title": "Java Primitives",
+            "content": "public class test{ public static void main(String[] args) { double numDouble = 0; double sum = 0; double count = 0; double mean = 0; Scanner sc = new Scanner(System.in); System.out.println(&quot;Enter numbers, type &#39;end&#39; to finish&quot;); while (true) { String numStr = sc.next(); System.out.println(numStr); if (&quot;end&quot;.equals(numStr)) { break; } numDouble = Double.parseDouble(numStr); sum += numDouble; count++; } mean = sum/count; System.out.println(sum); System.out.println(count); System.out.println(mean); } } test.main(null) . Enter numbers, type &#39;end&#39; to finish 1 2 3 4 end 10.0 4.0 2.5 .",
+            "url": "https://lwu1822.github.io/fastpages/java/2022/08/28/primitives.html",
+            "relUrl": "/java/2022/08/28/primitives.html",
+            "date": " • Aug 28, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
             "title": "Code snippets",
             "content": "Collapsible Note: do not tab in HTML unless you want whitespace Also very important: Make sure to put an extra line after ``, otherwise, Markdown will not show. [Reference](https://gist.github.com/pierrejoubert73/902cc94d79424356a8d20be2b382e1ab) &lt;/details&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;",
             "url": "https://lwu1822.github.io/fastpages/misc/2022/08/28/good-code-snippets.html",
@@ -12,7 +23,7 @@
     
   
     
-        ,"post1": {
+        ,"post2": {
             "title": "code.org Notes",
             "content": "Lesson 2 . Class header: . public class ClassName { } . Main method: . public static void main(String[] args) { . } . Lesson 3 . Create an object with: ClassName objectName = new ClassName(); .",
             "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html",
@@ -23,7 +34,7 @@
     
   
     
-        ,"post2": {
+        ,"post3": {
             "title": "code.org Answers",
             "content": "Lesson 2 . 2.1 . EXCEPTION error. No .java files are provided. Probably due to wrong file name. | No, wrong file name. | Yes, Java files must have the .java extension. | There is an error. The p in myPainter.move(); must be capitalized. | Yes, code is case-sensitive. | 2.2 . error: reached end of file while parsing | Need another } to finish code. . Yes, each opening curly brace needs a closing curly brace. | error: not a statement and error: &#39;;&#39; expected, meaning the command syntax is wrong. | Correct syntax: mypainter.move(); . See #3 | Yes, the error is fixed. | 3.1 . Painter starts at top left grid and faces east. | Stops at row 2 column 3, faces south. | Painter moves forward but does not paint because he has ran out. | Error because did not add () at Painter; | Added () |",
             "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org-answer.html",
@@ -34,22 +45,11 @@
     
   
     
-        ,"post3": {
+        ,"post4": {
             "title": "Tools",
             "content": "python --version python2 --version python3 --version conda --version . java --version . jupyter kernelspec list . conda list | grep jupyter . jupyter 1.0.0 py39h06a4308_7 jupyter_client 6.1.12 pyhd3eb1b0_0 jupyter_console 6.4.0 pyhd3eb1b0_0 jupyter_core 4.9.2 py39h06a4308_0 jupyter_server 1.13.5 pyhd3eb1b0_0 jupyterlab 3.3.2 pyhd3eb1b0_0 jupyterlab_pygments 0.1.2 py_0 jupyterlab_server 2.10.3 pyhd3eb1b0_1 jupyterlab_widgets 1.0.0 pyhd3eb1b0_1 .",
             "url": "https://lwu1822.github.io/fastpages/bash/2022/08/26/tools.html",
             "relUrl": "/bash/2022/08/26/tools.html",
-            "date": " • Aug 26, 2022"
-        }
-        
-    
-  
-    
-        ,"post4": {
-            "title": "Primitives",
-            "content": "",
-            "url": "https://lwu1822.github.io/fastpages/jupyter/2022/08/26/primitives.html",
-            "relUrl": "/jupyter/2022/08/26/primitives.html",
             "date": " • Aug 26, 2022"
         }
         
