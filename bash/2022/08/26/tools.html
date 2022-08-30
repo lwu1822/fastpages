@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -140,6 +140,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Basic-commands">Basic commands </a></li>
 <li class="toc-entry toc-h1"><a href="#Python-versions">Python versions </a></li>
 <li class="toc-entry toc-h1"><a href="#Java-versions">Java versions </a></li>
 <li class="toc-entry toc-h1"><a href="#Playing-with-some-Regex">Playing with some Regex </a></li>
@@ -159,6 +160,66 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Basic-commands">
+<a class="anchor" href="#Basic-commands" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic commands<a class="anchor-link" href="#Basic-commands"> </a>
+</h1>
+<p><code>ls</code>: Lists the contents in the current directory</p>
+<p><code>cd [file path]</code>: Move to a directory</p>
+<p><code>pwd</code>: List your current directory</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre><span></span><span class="nb">echo</span> <span class="s2">"Moving to home directory with the cd command"</span>
+<span class="nb">cd</span> 
+<span class="nb">echo</span> <span class="s2">"What directory am I in?"</span>
+<span class="nb">pwd</span> 
+<span class="nb">echo</span> <span class="s2">"Moving to my vscode directory"</span>
+<span class="nb">cd</span> /home/lwu1822/vscode
+<span class="nb">echo</span> <span class="s2">"What directory am I in?"</span>
+<span class="nb">pwd</span>
+<span class="nb">echo</span> <span class="s2">"What files are within this directory?"</span>
+ls
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Moving to home directory with the cd command
+What directory am I in?
+/home/lwu1822
+Moving to my vscode directory
+What directory am I in?
+/home/lwu1822/vscode
+What files are within this directory?
+<span class="ansi-blue-intense-fg ansi-bold">APCSA</span>  <span class="ansi-blue-intense-fg ansi-bold">APCSP</span>  <span class="ansi-blue-intense-fg ansi-bold">fastpages</span>  <span class="ansi-blue-intense-fg ansi-bold">spring_portfolio</span>  <span class="ansi-blue-intense-fg ansi-bold">test</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
