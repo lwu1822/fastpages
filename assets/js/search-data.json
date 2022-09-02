@@ -36,7 +36,7 @@
     
         ,"post3": {
             "title": "code.org Notes",
-            "content": "Lesson 2 . Class header: . public class ClassName { } . Main method: . public static void main(String[] args) { } . Lesson 3 . Create an object with: ClassName objectName = new ClassName(); .",
+            "content": "Lesson 2 . Class header: . public class ClassName { } . Main method: . public static void main(String[] args) { } . Lesson 3 . Create an object with: ClassName objectName = new ClassName(); . Lesson 6 . Subclass: Inherits the behaviors and attributes of a superclass . Inheritance: The subclass inherits the behaviors and attributes of the superclass .",
             "url": "https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html",
             "relUrl": "/code.org/2022/08/28/code-org.html",
             "date": " • Aug 28, 2022"
