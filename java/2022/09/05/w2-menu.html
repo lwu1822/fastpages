@@ -562,13 +562,13 @@ Force calculator
     <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">action</span><span class="p">(</span><span class="kt">int</span> <span class="n">selection</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">boolean</span> <span class="n">quit</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
 
-        <span class="k">switch</span> <span class="p">(</span><span class="n">selection</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// Switch or Switch/Case is Control Flow statement and is used to evaluate the user selection</span>
-            <span class="k">case</span> <span class="mi">0</span><span class="p">:</span>  
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Goodbye, World!"</span><span class="p">);</span>
-                <span class="n">quit</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-                <span class="k">break</span><span class="p">;</span>
-            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="c1">// numDouble: User's input is a string, will be changed into a double</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">selection</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Goodbye, World!"</span><span class="p">);</span>
+            <span class="n">quit</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">selection</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// numDouble: User's input is a string, will be changed into a double</span>
                 <span class="c1">// Double is used to allow user to input decimal numbers</span>
                 <span class="kt">double</span> <span class="n">numDouble</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
                 <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
@@ -628,9 +628,9 @@ Force calculator
                     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Max: "</span> <span class="o">+</span> <span class="n">maxNum</span><span class="p">);</span>
                 <span class="p">}</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Mean: "</span> <span class="o">+</span> <span class="n">mean</span><span class="p">);</span>   
-                <span class="k">break</span><span class="p">;</span>
-
-            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span>
+                
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">selection</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
                 <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
                 <span class="kt">double</span> <span class="n">avg</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
@@ -655,10 +655,8 @@ Force calculator
 
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Your z score is: "</span> <span class="o">+</span> <span class="n">z</span><span class="p">);</span>
 
-                <span class="k">break</span><span class="p">;</span>
-
-<span class="nl">              </span>
-<span class="nl">        default:</span>
+                
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
             <span class="c1">//Prints error message from console</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"Unexpected choice, try again."</span><span class="p">);</span>
         <span class="p">}</span>
