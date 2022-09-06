@@ -1,10 +1,8 @@
 ---
 layout: page
-title: PBL
-permalink: /PBL/
+title: Weekly Work
+permalink: /weekly-work/
 ---
-
-# PBL
 
 ## Week 0
 
@@ -23,3 +21,16 @@ permalink: /PBL/
 * [Learnings from code.org](https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html)
 
 * [Java Primitives](https://lwu1822.github.io/fastpages/java/2022/08/28/primitives.html)
+
+<table>
+    <tr>
+        <th>Week</th>
+        <th>Assignments</th>
+    </tr>
+    
+   <tr>
+        <th>0</th>
+        <th>[First Post](https://lwu1822.github.io/fastpages/markdown/2022/08/19/post-1.html)</th>
+   </tr>
+   
+</table>
