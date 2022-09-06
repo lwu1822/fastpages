@@ -30,7 +30,7 @@ permalink: /weekly-work/
     
    <tr>
         <th>0</th>
-        <th>[First Post](https://lwu1822.github.io/fastpages/markdown/2022/08/19/post-1.html)</th>
+        <th>[First Post](https://lwu1822.github.io/fastpages/markdown/2022/08/19/post-1.html)<br>[Java](https://lwu1822.github.io/fastpages/2022/08/20/java.html)</th>
    </tr>
    
 </table>
