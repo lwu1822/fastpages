@@ -10,7 +10,7 @@ title: Jekyll and Liquid
 
 While I was setting up my fastpages blog, I noticed this interesting line of code in `index.html`. 
 
-![]({{site.baseurl}}/images/index_html_code.png "code in index.html to insert image")
+![](https://lwu1822.github.io/images/index_html_code.png "code in index.html to insert image")
 
 And I thought, *hey, this is interesting, what does {% raw %} {{site.baseurl}} {% endraw %} do?*
 
