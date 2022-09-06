@@ -22,6 +22,8 @@ permalink: /weekly-work/
 
 * [Java Primitives](https://lwu1822.github.io/fastpages/java/2022/08/28/primitives.html)
 
+
+
 <table>
     <tr>
         <th>Week</th>
@@ -33,4 +35,17 @@ permalink: /weekly-work/
         <th><a href="https://lwu1822.github.io/fastpages/2022/08/20/java.html">First post</a></th>
    </tr>
    
+</table>
+
+<table>
+    <tr>
+        <th>Week</th>
+        <th>Assignments</th>
+    </tr>
+    
+    {% for i in assignments %}
+    <tr>
+    <td>{{i}}</td>
+    </tr>
+    {% endfor %}
 </table>
