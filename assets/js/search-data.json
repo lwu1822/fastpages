@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "If-Else Lesson",
-            "content": "if is a conditional statement. It tests &quot;if the condition is true, then run the code within the if statement&quot; . public class IfElseLesson{ public static void main(String[] args) { } } IfElseLesson.main(null) . hi .",
+            "content": "if is a conditional statement. It tests &quot;if the condition is true, then run the code within the if statement&quot; . The if statement syntax is like this: . if (condition) { // code } . Types of conditions: . a &lt; b | a &lt;= b | a &gt; b | a &gt;= b | a == b | a != b | true | false | . public class IfElseLesson{ public static void main(String[] args) { } } IfElseLesson.main(null) . hi .",
             "url": "https://lwu1822.github.io/fastpages/java/2022/09/07/w3-if-else.html",
             "relUrl": "/java/2022/09/07/w3-if-else.html",
             "date": " • Sep 7, 2022"
