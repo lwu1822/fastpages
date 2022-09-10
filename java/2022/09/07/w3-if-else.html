@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -931,6 +931,114 @@ Set B: {5, 6, 8}</p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Bring an umbrella!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br></p>
+<p>A more complicated example...</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DeMorgansLaw</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">boolean</span> <span class="n">pineappOnPizza</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="kt">boolean</span> <span class="n">nopineappOnPizza</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> 
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Is pineapple on pizza bad?"</span><span class="p">);</span>
+
+        <span class="c1">// huh???</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="o">!</span><span class="n">nopineappOnPizza</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">pineappOnPizza</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">DeMorgansLaw</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Is pineapple on pizza bad?
+No!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Is this better?</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DeMorgansLaw</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">boolean</span> <span class="n">pineappOnPizza</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="kt">boolean</span> <span class="n">nopineappOnPizza</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span> 
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Is pineapple on pizza bad?"</span><span class="p">);</span>
+
+        <span class="c1">// if no pineapple on pizza or yes pineapple on pizza...</span>
+        <span class="c1">// since there is a pineapple on pizza, then pineapple on pizza is good</span>
+        <span class="k">if</span> <span class="p">((</span><span class="o">!</span><span class="n">pineappOnPizza</span> <span class="o">||</span> <span class="o">!</span><span class="n">nopineappOnPizza</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"No!"</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">DeMorgansLaw</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Is pineapple on pizza bad?
+No!
 </pre>
 </div>
 </div>
