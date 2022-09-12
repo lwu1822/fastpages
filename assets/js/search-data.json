@@ -225,7 +225,7 @@
   
       ,"page2": {
           "title": "Weekly Work",
-          "content": "Week 0 . First post . | Java . | Python . | Jupyter Notebook . | . Week 1 . Bash: Check if tools are installed . | Learnings from code.org . | Java Primitives . | . Week Assignments . 0 First post Java Python Jupyter Notebook . Week Assignments .",
+          "content": "Week 0 . First post . | Java . | Python . | Jupyter Notebook . | . Week 1 . Bash: Check if tools are installed . | Learnings from code.org . | Java Primitives . | . Week Assignments . 0 | First post Java PythonJupyter Notebook | . 1 | Python quiz Bash: Check if tools are installed Notes | . 2 | Dictionary HTML and CSS | .",
           "url": "https://lwu1822.github.io/fastpages/weekly-work/",
           "relUrl": "/weekly-work/",
           "date": ""
