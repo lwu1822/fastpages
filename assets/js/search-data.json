@@ -3,10 +3,10 @@
     
         "post0": {
             "title": "AP FRQ",
-            "content": "#1 . public int getScore() { Level goal = new Level(); Level points = new Level(); int pointTotal = 0; if (goal.goalReached()) { pointTotal = points.getPoints(); } } . public int getScore() { int pointTotal = 0; if (levelOne.goalReached()) { pointTotal += levelOne.getPoints(); if (levelTwo.goalReached()) { pointTotal += levelTwo.getPoints(); if (levelThree.goalReached()) { pointTotal += levelThree.getPoints(); } } } if (isBonus()) { pointTotal *= 3; } return pointTotal; } . Questions: . Why are objects not defined to call goalReached and getPoints? | .",
-            "url": "https://lwu1822.github.io/fastpages/ap_test_prep/2022/09/13/FRQ.html",
-            "relUrl": "/ap_test_prep/2022/09/13/FRQ.html",
-            "date": " • Sep 13, 2022"
+            "content": "#1a . First attempt: . public int getScore() { Level goal = new Level(); Level points = new Level(); int pointTotal = 0; if (goal.goalReached()) { pointTotal = points.getPoints(); } } . I got stuck at the point above, so I looked at part of the answers. Here is my attempt afterwards: . public int getScore() { int pointTotal = 0; if (levelOne.goalReached()) { pointTotal += levelOne.getPoints(); if (levelTwo.goalReached()) { pointTotal += levelTwo.getPoints(); if (levelThree.goalReached()) { pointTotal += levelThree.getPoints(); } } } if (isBonus()) { pointTotal *= 3; } return pointTotal; } . Questions: . Why are objects not defined to call goalReached and getPoints? | . #1b . public int playManyTimes(int num) { int scores[]; int maxScore = 0; for (int i = 0; i &lt; num; i++) { play(); scores[i] = getScore(); } for (int i = 0; i &lt; num; i++) { if (scores[i] &gt; maxScore) { maxScore = scores[i]; } } return maxScore; } . An array wasn&#39;t needed. All you had to do was compare the scores within the for loop like this: . public int playManyTimes(int num) { int maxScore = 0; int score = 0; for (int i = 0; i &lt; num; i++) { play(); score = getScore(); if (score &gt; maxScore) { maxScore = score; } } return maxScore; } .",
+            "url": "https://lwu1822.github.io/fastpages/ap_test_prep/2022/09/14/w4_FRQ.html",
+            "relUrl": "/ap_test_prep/2022/09/14/w4_FRQ.html",
+            "date": " • Sep 14, 2022"
         }
         
     
