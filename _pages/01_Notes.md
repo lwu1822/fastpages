@@ -4,7 +4,27 @@ title: Notes
 permalink: /notes/
 ---
 
-# Notes
+# Vocab
+
+## Agile 
+
+Agile helps teams work on a project through working towards a plan (<mark>usually 2 week sprints</mark>), and various methods to work together, such as <mark>stand up meetings</mark> and <mark>pair programming</mark>.
+
+Typical roles in a team might include: scrum master, DevOps, frontend and backend developer. 
+
+Ways to help a team plan:
+* Issues
+* Scrum board
+
+What are some things necessary of a successful team?
+* Creativity
+* Critical thinking
+* Communication
+* Collaboration through leadership
+* Collaboration (teamwork)
+* Research
+* Technical 
+
 
 ## Primitives
 
