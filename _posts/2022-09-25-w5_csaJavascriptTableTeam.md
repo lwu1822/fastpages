@@ -6,7 +6,6 @@ categories: [js]
 title: Creating a table using JavaScript for the CSA Team Project
 comments: true
 ---
-<!DOCTYPE html>
 <html>
 
 <head>

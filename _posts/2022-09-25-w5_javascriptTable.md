@@ -6,12 +6,10 @@ categories: [js]
 title: Creating a table using JavaScript
 comments: true
 ---
-<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    <title>For Loop Animals</title>
     <style></style>
 </head>
 
