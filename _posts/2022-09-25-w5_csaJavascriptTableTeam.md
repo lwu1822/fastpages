@@ -41,7 +41,7 @@ comments: true
     var outputHTML = "";
     outputHTML += "<table>";
     outputHTML += "<tr>";
-    outputHTML += "<td>" + "Fruit Type" + "</td>";
+    outputHTML += "<td>" + "Name" + "</td>";
     outputHTML += "<td>" + "Age" + "</td>";
     outputHTML += "<td>" + "Role" + "</td>";
     outputHTML += "</tr>";
