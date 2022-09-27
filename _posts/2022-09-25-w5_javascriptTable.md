@@ -6,6 +6,9 @@ categories: [js]
 title: Creating a table using JavaScript
 comments: true
 ---
+
+{% include nav_frontend.html %}
+
 <html>
 
 <head>
