@@ -253,6 +253,10 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
 
+    <span class="cm">/*</span>
+<span class="cm">    Tester class method.  If this becomes abstract you will not be able to test it directly ...</span>
+<span class="cm">    Change this method to  call "main" class of each of the extended classes</span>
+<span class="cm">     */</span>
     <span class="kd">static</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
         <span class="n">FiboExtended</span> <span class="n">fib</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FiboExtended</span><span class="p">();</span>
@@ -262,10 +266,7 @@ window.onload = wrap_img;
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time to run code: "</span> <span class="o">+</span> <span class="n">duration</span><span class="o">/</span><span class="mi">1000000</span> <span class="o">+</span> <span class="s">" milliseconds"</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="cm">/*</span>
-<span class="cm">    Tester class method.  If this becomes abstract you will not be able to test it directly ...</span>
-<span class="cm">    Change this method to  call "main" class of each of the extended classes</span>
-<span class="cm">     */</span>
+    
     
     <span class="p">}</span>
 
@@ -325,7 +326,7 @@ fibonacci Sequence 17 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
 fibonacci Sequence 18 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]
 fibonacci Sequence 19 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584]
 fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
-Time to run code: 64 milliseconds
+Time to run code: 34 milliseconds
 </pre>
 </div>
 </div>
@@ -443,6 +444,10 @@ Time to run code: 64 milliseconds
         <span class="p">}</span>
     <span class="p">}</span>
 
+    <span class="cm">/*</span>
+<span class="cm">    Tester class method.  If this becomes abstract you will not be able to test it directly ...</span>
+<span class="cm">    Change this method to  call "main" class of each of the extended classes</span>
+<span class="cm">     */</span>
     <span class="kd">static</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">long</span> <span class="n">startTime</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
         <span class="n">FiboExtended</span> <span class="n">fib</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FiboExtended</span><span class="p">();</span>
@@ -452,10 +457,6 @@ Time to run code: 64 milliseconds
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time to run code: "</span> <span class="o">+</span> <span class="n">duration</span><span class="o">/</span><span class="mi">1000000</span> <span class="o">+</span> <span class="s">" milliseconds"</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="cm">/*</span>
-<span class="cm">    Tester class method.  If this becomes abstract you will not be able to test it directly ...</span>
-<span class="cm">    Change this method to  call "main" class of each of the extended classes</span>
-<span class="cm">     */</span>
     
     <span class="p">}</span>
 
@@ -518,7 +519,7 @@ fibonacci Sequence 17 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
 fibonacci Sequence 18 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]
 fibonacci Sequence 19 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584]
 fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
-Time to run code: 36 milliseconds
+Time to run code: 53 milliseconds
 </pre>
 </div>
 </div>
@@ -645,10 +646,6 @@ Time to run code: 36 milliseconds
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Time to run code: "</span> <span class="o">+</span> <span class="n">duration</span><span class="o">/</span><span class="mi">1000000</span> <span class="o">+</span> <span class="s">" milliseconds"</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="cm">/*</span>
-<span class="cm">    Tester class method.  If this becomes abstract you will not be able to test it directly ...</span>
-<span class="cm">    Change this method to  call "main" class of each of the extended classes</span>
-<span class="cm">     */</span>
     
     <span class="p">}</span>
 
@@ -717,7 +714,7 @@ fibonacci Sequence 17 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
 fibonacci Sequence 18 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597]
 fibonacci Sequence 19 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584]
 fibonacci Sequence 20 = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181]
-Time to run code: 6 milliseconds
+Time to run code: 14 milliseconds
 </pre>
 </div>
 </div>
