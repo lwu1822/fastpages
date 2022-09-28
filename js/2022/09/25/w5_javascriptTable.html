@@ -147,7 +147,7 @@ window.onload = wrap_img;
         this.fruits.forEach(fruit => {this.combine.push(fruit);});
     }
     <!-- space -->
-    printFruits = new Combine(fruits);
+    var printFruits = new Combine(fruits);
     <!-- space -->
     var outputHTML = "";
     outputHTML += "<table>";
@@ -171,6 +171,63 @@ window.onload = wrap_img;
 
 
 
+
+<p>Below is the code that I used to create the table above in JavaScript:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script&gt; 
+    function Fruits(name, taste) {
+    this.name = name;
+    this.taste = taste;
+    }
+    &lt;!-- space --&gt;
+    var fruits = [
+        new Fruits("apple", "sweet, sour"),
+        new Fruits("mango", "sweet")
+    ];
+    &lt;!-- space --&gt;
+    function Combine(fruits) {
+        this.fruits = fruits;
+        this.combine = [];
+        this.fruits.forEach(fruit =&gt; {this.combine.push(fruit);});
+    }
+    &lt;!-- space --&gt;
+    var printFruits = new Combine(fruits);
+    &lt;!-- space --&gt;
+    var outputHTML = "";
+    outputHTML += "&lt;table&gt;";
+    outputHTML += "&lt;tr&gt;";
+    outputHTML += "&lt;td&gt;" + "Fruit Type" + "&lt;/td&gt;";
+    outputHTML += "&lt;td&gt;" + "Taste" + "&lt;/td&gt;";
+    outputHTML += "&lt;/tr&gt;";
+    &lt;!-- space --&gt;
+    var week = 0;
+    for (var row of printFruits.combine) {
+        outputHTML += "&lt;tr&gt;";
+        outputHTML += "&lt;td&gt;" + row.name + "&lt;/td&gt;";
+        outputHTML += "&lt;td&gt;" + row.taste + "&lt;/td&gt;";
+        outputHTML += "&lt;/tr&gt;";
+    }
+    outputHTML += "&lt;/table&gt;";
+    &lt;!-- space --&gt;
+    document.getElementById("output_div").innerHTML = outputHTML;
+&lt;/script&gt;
+</code></pre></div></div>
+
+<p><br></p>
+
+<p>Explanation of code:</p>
+
+<p>An object called <code class="language-plaintext highlighter-rouge">printFruits</code> is created. This calls the <code class="language-plaintext highlighter-rouge">Combine</code> constructor, which uses information from the <code class="language-plaintext highlighter-rouge">fruits</code> array, which calls the <code class="language-plaintext highlighter-rouge">Fruits</code> constructor. This creates a key of <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">taste</code> and a value as set by the code.</p>
+
+<p>Now, what does <code class="language-plaintext highlighter-rouge">this.fruits.forEach(fruit =&gt; {this.combine.push(fruit);});</code> do? Understanding the arrow function (<code class="language-plaintext highlighter-rouge">=&gt;</code>) took me awhile, but this is basically a shorthand way to write:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>this.fruits.forEach(function(fruit) {
+    this.combine.push(fruit);
+});
+</code></pre></div></div>
+<p>which basically adds the elements in the fruit array into a new array called <code class="language-plaintext highlighter-rouge">combine</code>.</p>
+
+<p>Afterwards, a table is created using HTML within JavaScript. The for loop loops over the <code class="language-plaintext highlighter-rouge">combine</code> array and outputs it as HTML in the table.</p>
+
+<p>And that’s it! A table made in JavaScript.</p>
 </body>
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
