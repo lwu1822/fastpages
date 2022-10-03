@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Fetch API" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="I probably did this wrong" />
-<meta property="og:description" content="I probably did this wrong" />
+<meta name="description" content="IATA Code Name ICAO Code" />
+<meta property="og:description" content="IATA Code Name ICAO Code" />
 <link rel="canonical" href="https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html" />
 <meta property="og:url" content="https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html" />
 <meta property="og:site_name" content="Lily" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Fetch API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-01T00:00:00-05:00","datePublished":"2022-10-01T00:00:00-05:00","description":"I probably did this wrong","headline":"Fetch API","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html"},"url":"https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-01T00:00:00-05:00","datePublished":"2022-10-01T00:00:00-05:00","description":"IATA Code Name ICAO Code","headline":"Fetch API","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html"},"url":"https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://lwu1822.github.io/fastpages/feed.xml" title="Lily" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -89,7 +89,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Fetch API</h1><p class="page-description">I probably did this wrong</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-01T00:00:00-05:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Fetch API</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-01T00:00:00-05:00" itemprop="datePublished">
         Oct 1, 2022
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -112,11 +112,34 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-</ul><script>
-    const options = {
+</ul><table>
+  <thead>
+  <tr>
+    <th>IATA Code</th>
+    <th>Name</th>
+    <th>ICAO Code</th>
+  </tr>
+  </thead>
+  <tbody id="result">
+    <!-- generated rows -->
+  </tbody>
+</table>
+
+<!--Script is layed out in a sequence (no function) and will execute when page is loaded-->
+<script>
+
+
+  // prepare HTML result container for new output
+  const resultContainer = document.getElementById("result");
+
+  // prepare fetch options
+  const url = "https://iata-and-icao-codes.p.rapidapi.com/airlines";
+
+
+const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '46ce5097dfmshc49496ada008810p1cb05bjsn495645d9a506',
+		'X-RapidAPI-Key': '1abd982f9amsh6394d596d805c2ap1d2c57jsn195d72734711',
 		'X-RapidAPI-Host': 'iata-and-icao-codes.p.rapidapi.com'
 	}
 };
@@ -125,6 +148,64 @@ fetch('https://iata-and-icao-codes.p.rapidapi.com/airlines', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
+
+  // fetch the API
+  fetch(url, options)
+    // response is a RESTful "promise" on any successful fetch
+    .then(response => {
+      // check for response errors
+      if (response.status !== 200) {
+          const errorMsg = 'Database response error: ' + response.status;
+          console.log(errorMsg);
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.innerHTML = errorMsg;
+          tr.appendChild(td);
+          resultContainer.appendChild(tr);
+          return;
+      }
+      // valid response will have json data
+      response.json().then(data => {
+          console.log(data);
+
+          
+
+          // Country data
+          for (const row of data) {
+            console.log(row);
+
+            // tr for each row
+            const tr = document.createElement("tr");
+            // td for each column
+            const name = document.createElement("td");
+            const cases = document.createElement("td");
+            const deaths = document.createElement("td");
+            const active = document.createElement("td");
+
+            // data is specific to the API
+            name.innerHTML = row.iata_code;
+            cases.innerHTML = row.name; 
+            deaths.innerHTML = row.icao_code; 
+
+            // this build td's into tr
+            tr.appendChild(name);
+            tr.appendChild(cases);
+            tr.appendChild(deaths);
+
+            // add HTML to container
+            resultContainer.appendChild(tr);
+          }
+      })
+  })
+  // catch fetch errors (ie ACCESS to server blocked)
+  .catch(err => {
+    console.error(err);
+    const tr = document.createElement("tr");
+    const td = document.createElement("td");
+    td.innerHTML = err;
+    tr.appendChild(td);
+    resultContainer.appendChild(tr);
+  });
 
 </script>
 
