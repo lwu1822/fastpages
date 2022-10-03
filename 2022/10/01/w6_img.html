@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      11 min read
     
 </span></p>
 
@@ -133,7 +133,11 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h1"><a href="#ASCII">ASCII </a></li>
+<li class="toc-entry toc-h1"><a href="#ASCII">ASCII </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Explanation-of-code">Explanation of code </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#Grayscale">Grayscale </a></li>
 <li class="toc-entry toc-h1"><a href="#Red">Red </a></li>
 <li class="toc-entry toc-h1"><a href="#Blue">Blue </a></li>
@@ -390,6 +394,20 @@ Scaled: 55625 128x136  images/tmp/MonaLisa.png
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/fastpages/images/copied_from_nb/my_icons/w6_img-monaLisa.jpg" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Explanation-of-code">
+<a class="anchor" href="#Explanation-of-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Explanation of code<a class="anchor-link" href="#Explanation-of-code"> </a>
+</h2>
+<p>First, the <code>monaLisa</code> object is created, which calls the <code>Pics</code> constructor and passes in a <code>name</code> of <code>MonaLisa</code> and an <code>ext</code> (extension) of <code>.png</code>. These are assigned to the attributes, creating an input file (<code>images/MonaLisa.png</code>), an output (resized) file (<code>images/MonaLisa.png</code>), and an output (ASCII) file (<code>images/MonaLisa.txt</code>).</p>
+<p>Next, the <code>setStats()</code> method is called. The path of the input file is assigned to the <code>path</code> object. The number of <code>bytes</code> is also assigned, and then ImageIO reads the input file and obtains its width and height, assigning them to their respective variables.</p>
+<p>Now going back to the main method, the <code>monaLisa</code> object calls the <code>printStats()</code> method and passes in the argument of <code>"Original"</code>. This basically outputs some information of the input file, such as its size, width, and height. As you can see in the output above, the <code>printStats()</code> method outputs, <code>Original: 499298 389x413  images/MonaLisa.png</code>.</p>
+<p>Afterwards, the <code>monaLisa</code> object calls the <code>resize()</code> method with an argument of <code>33</code> (resize the image to 33%). An <code>Image</code> object is created. <mark>Note:</mark> <strong>this is really important</strong>, the <code>Image</code> object needs to be created out of the <code>try catch</code> block, because if it is created within, the scope of the <code>Image</code> object is within the <code>try catch</code> block and can not be accessed outside. See <a href="https://youtu.be/TO2WMzUCAEw?t=157">this</a> for more info. Moving on, the <code>width</code> and <code>height</code> are defined based on the resized <code>scale</code>, and the input file is once again read into <code>img</code>. The <code>resizedImg</code> is obtained by using the <code>getScaledInstance</code> method and assigning it the resized <code>width</code> and <code>height</code>. Next, <code>resizedImg</code> is converted into a buffered image with the name of the <code>resizedFile</code> (images/tmp/MonaLisa.png). The <code>resizedFile</code> is then set as the path of the input file. Once again, the <code>setStats()</code> method is called.</p>
 
 </div>
 </div>
