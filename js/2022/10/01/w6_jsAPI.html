@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -113,13 +113,27 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#what-is-an-api">What is an API?</a></li>
+<li class="toc-entry toc-h2"><a href="#types-of-apis">Types of APIs</a></li>
 <li class="toc-entry toc-h2"><a href="#what-is-fetch-api">What is Fetch API?</a></li>
 <li class="toc-entry toc-h1"><a href="#misc">Misc</a></li>
 </ul><p>Below is a documentation of me learning about APIs.</p>
 
 <h2 id="what-is-an-api">
 <a class="anchor" href="#what-is-an-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is an API?</h2>
-<p>An API allows a developer to obtain data from web services.</p>
+<p>An API allows a developer to obtain data from web services. It performs abstraction to make tasks simpler for the user. Usually, an API acts between the application (what the user interacts with) and the server (contains the data). The process begins with the user creating an API call, which then proceeds with the application using the API to communicate with the server. The API then brings back the requested data to the user.</p>
+
+<h2 id="types-of-apis">
+<a class="anchor" href="#types-of-apis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Types of APIs</h2>
+<p>The most common type of API is <mark>REST API</mark>. REST APIs are typically associated with JSON, although the payload (data that the API delivers), can be in the form of HTML or XML. REST is used because of its speed and reliability.</p>
+
+<p>Parts of a REST API include:</p>
+<ul>
+  <li>URI: The url</li>
+  <li>HTTP method: Includes <code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">POST</code>
+</li>
+  <li>Headers: Contains things required for authentication</li>
+  <li>Body: The part of the request</li>
+</ul>
 
 <h2 id="what-is-fetch-api">
 <a class="anchor" href="#what-is-fetch-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Fetch API?</h2>
