@@ -11,6 +11,9 @@ comments: true
 
 ![]({{ site.baseurl }}/images/w6_javaBackendAPI-crimeTable.jpg "World Crime News from RapidAPI")
 
+# Map API
+![]({{ site.baseurl }}/images/w6_javaBackendAPI-map.jpg "World Map")
+
 
 # How I created a table in Java backend using an API 
 
