@@ -7,6 +7,11 @@ title: Java Backend Deployment
 comments: true
 ---
 
+# Crime News API
+
+![]({{ site.baseurl }}/images/w6_javaBackendAPI-crimeTable.jpg "World Crime News from RapidAPI")
+
+
 # How I created a table in Java backend using an API 
 
 This took me a whole day to figure out. 
