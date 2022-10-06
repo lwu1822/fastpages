@@ -8,8 +8,8 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Fetch API" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="IATA Code Name ICAO Code" />
-<meta property="og:description" content="IATA Code Name ICAO Code" />
+<meta name="description" content="Below is a documentation of me learning about APIs." />
+<meta property="og:description" content="Below is a documentation of me learning about APIs." />
 <link rel="canonical" href="https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html" />
 <meta property="og:url" content="https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html" />
 <meta property="og:site_name" content="Lily" />
@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Fetch API" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-01T00:00:00-05:00","datePublished":"2022-10-01T00:00:00-05:00","description":"IATA Code Name ICAO Code","headline":"Fetch API","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html"},"url":"https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-01T00:00:00-05:00","datePublished":"2022-10-01T00:00:00-05:00","description":"Below is a documentation of me learning about APIs.","headline":"Fetch API","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html"},"url":"https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsAPI.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://lwu1822.github.io/fastpages/feed.xml" title="Lily" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -112,7 +112,70 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-</ul><table>
+<li class="toc-entry toc-h2"><a href="#what-is-an-api">What is an API?</a></li>
+<li class="toc-entry toc-h2"><a href="#what-is-fetch-api">What is Fetch API?</a></li>
+<li class="toc-entry toc-h1"><a href="#misc">Misc</a></li>
+</ul><p>Below is a documentation of me learning about APIs.</p>
+
+<h2 id="what-is-an-api">
+<a class="anchor" href="#what-is-an-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is an API?</h2>
+<p>An API allows a developer to obtain data from web services.</p>
+
+<h2 id="what-is-fetch-api">
+<a class="anchor" href="#what-is-fetch-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Fetch API?</h2>
+<p>Fetch enables the user to make HTTP requests to servers. The Fetch API includes the <code class="language-plaintext highlighter-rouge">fetch()</code> method, which can take in two parameters, the URL and options.</p>
+
+<p><code class="language-plaintext highlighter-rouge">fetch()</code> returns a <code class="language-plaintext highlighter-rouge">promise</code> that can be used with the <code class="language-plaintext highlighter-rouge">then()</code> and <code class="language-plaintext highlighter-rouge">catch()</code> methods.</p>
+
+<p>Once the request finishes, <code class="language-plaintext highlighter-rouge">promise</code> will resolve into a <code class="language-plaintext highlighter-rouge">Response</code> object.</p>
+
+<p><code class="language-plaintext highlighter-rouge">Response</code> is an <mark>API wrapper</mark> for what was fetched.</p>
+
+<p>Now, what is an API wrapper?</p>
+
+<p>To understand this, a helpful website first explained what a wrapper is. Basically, a wrapper helps make an item simpler by “wrapping” over the item. For instance, it can use abstraction to help simplify code. It can also convert data to make it more compatible.</p>
+
+<p>Thus, an API wrapper allows you to combine many API calls into one to make things simpler.</p>
+
+<p><br></p>
+
+<p>Alright, where was I? Right, <code class="language-plaintext highlighter-rouge">Response</code>.</p>
+
+<p>Feel like showing the response? Below is an example of reading the response if it is in raw text. (Don’t really understand it at the moment, will research more about it later)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fetch('/readme.txt')
+    .then(response =&gt; response.text())
+    .then(data =&gt; console.log(data));
+</code></pre></div></div>
+
+<p>Question: Is <code class="language-plaintext highlighter-rouge">/readme.txt</code> the URL? It looks like a file… Can a file be a URL?</p>
+
+<p>I’m guessing <code class="language-plaintext highlighter-rouge">/readme.txt</code> is the URL to the README file.</p>
+
+<p><br></p>
+
+<p>You can also see the status code using the <code class="language-plaintext highlighter-rouge">Response</code> object. This can be accessed with the <code class="language-plaintext highlighter-rouge">status</code> property (<code class="language-plaintext highlighter-rouge">response.status</code>).</p>
+
+<p>Quick lesson on status codes:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">200</code> is the status code you want, it means that the request was successful.</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">404</code> means that what was requested does not exist</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">500</code> means that there is a server error</li>
+  <li>
+</ul>
+
+<h1 id="misc">
+<a class="anchor" href="#misc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Misc</h1>
+
+<p>Quick definition about entity: In programming, an entity is an object, which means it can include attributes and methods.</p>
+
+<p>allows access to the API through a specific programming language.</p>
+
+<table>
   <thead>
   <tr>
     <th>IATA Code</th>
