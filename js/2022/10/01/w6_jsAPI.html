@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -113,33 +113,42 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#what-is-an-api">What is an API?</a></li>
-<li class="toc-entry toc-h2"><a href="#types-of-apis">Types of APIs</a></li>
+<li class="toc-entry toc-h2"><a href="#types-of-apis">Types of APIs</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#rest-api">REST API</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#what-is-fetch-api">What is Fetch API?</a></li>
 <li class="toc-entry toc-h1"><a href="#misc">Misc</a></li>
 </ul><p>Below is a documentation of me learning about APIs.</p>
 
 <h2 id="what-is-an-api">
 <a class="anchor" href="#what-is-an-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is an API?</h2>
-<p>An API allows a developer to obtain data from web services. It performs abstraction to make tasks simpler for the user. Usually, an API acts between the application (what the user interacts with) and the server (contains the data). The process begins with the user creating an API call, which then proceeds with the application using the API to communicate with the server. The API then brings back the requested data to the user.</p>
+<p>An API allows a developer to obtain data from web services. It performs abstraction to make tasks simpler for the user. Usually, an API acts between the application (what the user interacts with) and the server (contains the data, or <strong>resource</strong>). The process begins with the user creating an API call, which then proceeds with the application using the API to communicate with the server. The API then brings back the requested data to the user.</p>
 
 <h2 id="types-of-apis">
 <a class="anchor" href="#types-of-apis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Types of APIs</h2>
-<p>The most common type of API is <mark>REST API</mark>. REST APIs are typically associated with JSON, although the payload (data that the API delivers), can be in the form of HTML or XML. REST is used because of its speed and reliability.</p>
+
+<h3 id="rest-api">
+<a class="anchor" href="#rest-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>REST API</h3>
+<p>The most common type of API is <mark>REST API</mark>. REST stands for Representational State Transfer. REST APIs are typically associated with JSON, although the payload (data that the API delivers), can be in the form of HTML or XML. REST is used because of its speed and reliability. It also allows services to be used through HTTP.</p>
 
 <p>Parts of a REST API include:</p>
 <ul>
-  <li>URI: The url</li>
-  <li>HTTP method: Includes <code class="language-plaintext highlighter-rouge">GET</code>, <code class="language-plaintext highlighter-rouge">POST</code>
-</li>
-  <li>Headers: Contains things required for authentication</li>
-  <li>Body: The part of the request</li>
+  <li>Endpoint: Includes URI: The url</li>
+  <li>HTTP method: What the client wants to do with a resource
+Includes <code class="language-plaintext highlighter-rouge">GET</code> (get), <code class="language-plaintext highlighter-rouge">POST</code> (make), <code class="language-plaintext highlighter-rouge">PUT</code> (update), <code class="language-plaintext highlighter-rouge">DELETE</code> (remove)</li>
+  <li>Headers: Contains things required for authentication and information about the client and server</li>
+  <li>Body: Other info included in the request</li>
 </ul>
+
+<p>When the client wants to access a resource, it sends a <strong>HTTP Request</strong> to the server. The server responds with a <strong>HTTP Response</strong> that contains data, or the <strong>representation</strong> about the resource, not the actual resource itself. The format of the representation cna be in XML or JSON.</p>
 
 <h2 id="what-is-fetch-api">
 <a class="anchor" href="#what-is-fetch-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Fetch API?</h2>
 <p>Fetch enables the user to make HTTP requests to servers. The Fetch API includes the <code class="language-plaintext highlighter-rouge">fetch()</code> method, which can take in two parameters, the URL and options.</p>
 
-<p><code class="language-plaintext highlighter-rouge">fetch()</code> returns a <code class="language-plaintext highlighter-rouge">promise</code> that can be used with the <code class="language-plaintext highlighter-rouge">then()</code> and <code class="language-plaintext highlighter-rouge">catch()</code> methods.</p>
+<p><code class="language-plaintext highlighter-rouge">fetch()</code> returns a <code class="language-plaintext highlighter-rouge">promise</code> that can be used with the <code class="language-plaintext highlighter-rouge">.then()</code> and <code class="language-plaintext highlighter-rouge">.catch()</code> methods as well as being able to use async/await.</p>
 
 <p>Once the request finishes, <code class="language-plaintext highlighter-rouge">promise</code> will resolve into a <code class="language-plaintext highlighter-rouge">Response</code> object.</p>
 
@@ -166,6 +175,19 @@ window.onload = wrap_img;
 
 <p>I’m guessing <code class="language-plaintext highlighter-rouge">/readme.txt</code> is the URL to the README file.</p>
 
+<p>Below is an explanation of a typical piece of code that you many find in a Fetch API:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.then(response =&gt; response.json())
+.then(data =&gt; console.log(data))
+</code></pre></div></div>
+
+<p>Question to self: What is the difference between <code class="language-plaintext highlighter-rouge">.then(data =&gt; console.log(data))</code> and <code class="language-plaintext highlighter-rouge">.then(response =&gt; console.log(response))</code>?</p>
+
+<p><code class="language-plaintext highlighter-rouge">response</code>: The response object that is returned by fetch.</p>
+
+<p><code class="language-plaintext highlighter-rouge">response.json()</code>: The response object does not return directly accessible data. Instead, the response needs to parsed into JSON using the <code class="language-plaintext highlighter-rouge">json()</code> method.</p>
+
+<p><code class="language-plaintext highlighter-rouge">data</code>: The JSON data</p>
+
 <p><br></p>
 
 <p>You can also see the status code using the <code class="language-plaintext highlighter-rouge">Response</code> object. This can be accessed with the <code class="language-plaintext highlighter-rouge">status</code> property (<code class="language-plaintext highlighter-rouge">response.status</code>).</p>
@@ -179,8 +201,9 @@ window.onload = wrap_img;
 <code class="language-plaintext highlighter-rouge">404</code> means that what was requested does not exist</li>
   <li>
 <code class="language-plaintext highlighter-rouge">500</code> means that there is a server error</li>
-  <li>
 </ul>
+
+<p><mark>Note:</mark> <code class="language-plaintext highlighter-rouge">fetch</code> always succeeds, which means that even if the server responds with a 404, an error message would not show even if a <code class="language-plaintext highlighter-rouge">catch</code> statement was implemented.</p>
 
 <h1 id="misc">
 <a class="anchor" href="#misc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Misc</h1>

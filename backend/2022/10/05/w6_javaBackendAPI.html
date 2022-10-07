@@ -120,6 +120,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#thymeleaf">Thymeleaf</a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h1"><a href="#misc">Misc</a></li>
 </ul><h1 id="crime-news-api">
 <a class="anchor" href="#crime-news-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Crime News API</h1>
 
@@ -153,6 +154,14 @@ window.onload = wrap_img;
 <a class="anchor" href="#thymeleaf" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thymeleaf</h2>
 
 <p>After receiving the JSON data, an issue that I ran into was to output the data into a table format on the frontend of Spring boot. I took a look at some of the programs already present in the spring portfolio, such as <code class="language-plaintext highlighter-rouge">greet.html</code>, knowing that it would have to convert backend data to frontend. Within the program, I noticed an interesting snippet of code which was <code class="language-plaintext highlighter-rouge">${name}</code>. Googling the syntax lead me to learn about Thymeleaf, which is a Java template engine. This was really cool, because Thymeleaf changes Java data into HTML (which can actually be shown on a webpage). I’ll probably bore you with the details later when I update this blog further, but for now, you are spared :) Anyways, a simple Youtube search of “what is Thymeleaf” gave me an introduction of how to use this template language. The thing that was super useful that I learned from the video was that Thymeleaf uses <code class="language-plaintext highlighter-rouge">th:each</code> to iterate over arrays and lists. This allowed me to print the JSON data, which consisted of objects, into a table format.</p>
+
+<p><br></p>
+
+<h1 id="misc">
+<a class="anchor" href="#misc" aria-hidden="true"><span class="octicon octicon-link"></span></a>Misc</h1>
+<p>Benefits of using API include that it helps simplify the process between how the user interacts with the application and what data the application an receive from the server.</p>
+
+<p>The benefits of backend implementation is that it allows for more control. For instance, the API access can be limited</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
