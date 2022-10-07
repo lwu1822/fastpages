@@ -34,3 +34,10 @@ First, an HTTP client needs to be created with `HttpClient`. Next, a request usi
 ## Thymeleaf
 
 After receiving the JSON data, an issue that I ran into was to output the data into a table format on the frontend of Spring boot. I took a look at some of the programs already present in the spring portfolio, such as `greet.html`, knowing that it would have to convert backend data to frontend. Within the program, I noticed an interesting snippet of code which was `${name}`. Googling the syntax lead me to learn about Thymeleaf, which is a Java template engine. This was really cool, because Thymeleaf changes Java data into HTML (which can actually be shown on a webpage). I'll probably bore you with the details later when I update this blog further, but for now, you are spared :) Anyways, a simple Youtube search of "what is Thymeleaf" gave me an introduction of how to use this template language. The thing that was super useful that I learned from the video was that Thymeleaf uses `th:each` to iterate over arrays and lists. This allowed me to print the JSON data, which consisted of objects, into a table format. 
+
+<br>
+
+# Misc
+Benefits of using API include that it helps simplify the process between how the user interacts with the application and what data the application an receive from the server. 
+
+The benefits of backend implementation is that it allows for more control. For instance, the API access can be limited 
