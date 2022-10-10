@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -114,7 +114,20 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#our-aim">Our Aim</a></li>
 <li class="toc-entry toc-h1"><a href="#about-the-project">About the Project</a></li>
-<li class="toc-entry toc-h1"><a href="#how-is-this-done">How is This Done</a></li>
+<li class="toc-entry toc-h1"><a href="#how-is-this-done">How is This Done</a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#create-performance-task-categories">Create Performance Task Categories</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#1-program-purpose-and-function">1 Program Purpose and Function</a></li>
+<li class="toc-entry toc-h3"><a href="#2--abstraction">2  Abstraction</a></li>
+<li class="toc-entry toc-h3"><a href="#managing-complexity">Managing Complexity</a></li>
+<li class="toc-entry toc-h3"><a href="#4-procedural-abstraction">4 Procedural Abstraction</a></li>
+<li class="toc-entry toc-h3"><a href="#5-algorithm-implementation">5 Algorithm Implementation</a></li>
+<li class="toc-entry toc-h3"><a href="#6-testing">6 Testing</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#team-scrum-board">Team Scrum Board</a></li>
 <li class="toc-entry toc-h1"><a href="#agile-methodology-diagram">Agile Methodology Diagram</a></li>
 </ul><h1 id="our-aim">
@@ -137,6 +150,33 @@ window.onload = wrap_img;
 <a class="anchor" href="#how-is-this-done" aria-hidden="true"><span class="octicon octicon-link"></span></a>How is This Done</h1>
 
 <p>In order to achieve this, we first need to get a basic understanding of how reverse dictionaries work and how to code them. After searching on Google, we came across many fascinating sites, some even explaining the basics of a reverse dictionary. Essentially it is looking for an output similar to the combination of the inputs. One of our ideas was to make the user input either the definition of the word or other words related to the word they need. For example, if you’re searching for the word “apple,” you can input “fruit,” “red,” and “grows on trees” to get your result. And currently, we are planning to code most of this with Python, use HTML to display everything, and use JavaScript to allow the user to interact with the results.</p>
+
+<h2 id="create-performance-task-categories">
+<a class="anchor" href="#create-performance-task-categories" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create Performance Task Categories</h2>
+
+<h3 id="1-program-purpose-and-function">
+<a class="anchor" href="#1-program-purpose-and-function" aria-hidden="true"><span class="octicon octicon-link"></span></a>1 Program Purpose and Function</h3>
+<p>See above</p>
+
+<h3 id="2--abstraction">
+<a class="anchor" href="#2--abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>2  Abstraction</h3>
+<p>Each synonym could be stored in a list, which would either be manually created by us (less likely), or given in the API (more likely). The hard part would be to find a reverse dictionary API.</p>
+
+<h3 id="managing-complexity">
+<a class="anchor" href="#managing-complexity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Managing Complexity</h3>
+<p>By using a list to store the synonyms of words, the code would be simplified so that multiple variables, each storing only one word, would not be needed.</p>
+
+<h3 id="4-procedural-abstraction">
+<a class="anchor" href="#4-procedural-abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>4 Procedural Abstraction</h3>
+<p>We could make functions that include that collect the user’s inputs of various word definitions. These inputs would then need to be processed by comparing with the information in the API and then being able to output the ideal words to frontend.</p>
+
+<h3 id="5-algorithm-implementation">
+<a class="anchor" href="#5-algorithm-implementation" aria-hidden="true"><span class="octicon octicon-link"></span></a>5 Algorithm Implementation</h3>
+<p>Recursion can be used to repeatedly find definitions that contain certain keywords that the user implemented. <code class="language-plaintext highlighter-rouge">if</code> statements could be used to select the words with the closest definition and display them under a category, then select the words with a moderate level of closeness and put them in another category.</p>
+
+<h3 id="6-testing">
+<a class="anchor" href="#6-testing" aria-hidden="true"><span class="octicon octicon-link"></span></a>6 Testing</h3>
+<p>Many parts of the program would include the need for testing. First of all, we need to implement an API and connect the frontend with the backend so that the frontend can display information about the API. This would require testing by inputting many definitions and seeing if the outcome word is what is desired.</p>
 
 <h1 id="team-scrum-board">
 <a class="anchor" href="#team-scrum-board" aria-hidden="true"><span class="octicon octicon-link"></span></a>Team Scrum Board</h1>
