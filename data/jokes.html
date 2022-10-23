@@ -8,19 +8,19 @@
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Fetch of Backend Jokes" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="An example of Frontend talking to Backend Python application serving jokes. This example provides the ability to react to the Joke (haha or boohoo)." />
-<meta property="og:description" content="An example of Frontend talking to Backend Python application serving jokes. This example provides the ability to react to the Joke (haha or boohoo)." />
+<meta name="description" content="An introductory example of Frontend talking to Backend Java application serving jokes." />
+<meta property="og:description" content="An introductory example of Frontend talking to Backend Java application serving jokes." />
 <link rel="canonical" href="https://lwu1822.github.io/fastpages/data/jokes" />
 <meta property="og:url" content="https://lwu1822.github.io/fastpages/data/jokes" />
 <meta property="og:site_name" content="Lily" />
 <meta property="og:image" content="https://lwu1822.github.io/fastpages/images/jokes.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2022-10-20T00:00:00-05:00" />
+<meta property="article:published_time" content="2022-10-22T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://lwu1822.github.io/fastpages/images/jokes.png" />
 <meta property="twitter:title" content="Fetch of Backend Jokes" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-20T00:00:00-05:00","datePublished":"2022-10-20T00:00:00-05:00","description":"An example of Frontend talking to Backend Python application serving jokes. This example provides the ability to react to the Joke (haha or boohoo).","headline":"Fetch of Backend Jokes","image":"https://lwu1822.github.io/fastpages/images/jokes.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/data/jokes"},"url":"https://lwu1822.github.io/fastpages/data/jokes"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-22T00:00:00-05:00","datePublished":"2022-10-22T00:00:00-05:00","description":"An introductory example of Frontend talking to Backend Java application serving jokes.","headline":"Fetch of Backend Jokes","image":"https://lwu1822.github.io/fastpages/images/jokes.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/data/jokes"},"url":"https://lwu1822.github.io/fastpages/data/jokes"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://lwu1822.github.io/fastpages/feed.xml" title="Lily" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -93,8 +93,8 @@ window.onload = wrap_img;
   <thead>
   <tr>
     <th>Joke</th>
-    <th>HaHa</th>
-    <th>Boohoo</th>
+    <th>Answer Choice: A</th>
+    <th>B</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -113,7 +113,9 @@ window.onload = wrap_img;
   const BOOHOO = "boohoo";
 
   // prepare fetch urls
-  const url = "https://teamberries.tk/api/jokes/";
+  // const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
+  const url = "https://crimebusters.nighthawkcoding.ml/api/jokes";
+  const get_url = url +"/";
   const like_url = url + "/like/";  // haha reaction
   const jeer_url = url + "/jeer/";  // boohoo reaction
 
@@ -122,7 +124,7 @@ window.onload = wrap_img;
     method: 'GET', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, *cors, same-origin
     cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-    credentials: 'omit', // include, *same-origin, omit
+    credentials: 'same-origin', // include, same-origin, omit
     headers: {
       'Content-Type': 'application/json'
       // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -132,7 +134,7 @@ window.onload = wrap_img;
   const put_options = {...options, method: 'PUT'}; // clones and replaces method
 
   // fetch the API
-  fetch(url, options)
+  fetch(get_url, options)
     // response is a RESTful "promise" on any successful fetch
     .then(response => {
       // check for response errors
@@ -185,7 +187,7 @@ window.onload = wrap_img;
   })
   // catch fetch errors (ie Nginx ACCESS to server blocked)
   .catch(err => {
-    error(err + " " + url);
+    error(err + " " + get_url);
   });
 
   // Reaction function to likes or jeers user actions
