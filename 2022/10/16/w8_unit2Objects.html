@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -143,6 +143,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#1b">1b </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Initial-attempt:">Initial attempt: </a></li>
+<li class="toc-entry toc-h2"><a href="#Correction">Correction </a></li>
 </ul>
 </li>
 </ul><!--
@@ -335,6 +336,45 @@ window.onload = wrap_img;
             <span class="p">}</span>
 
         <span class="p">}</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Correction">
+<a class="anchor" href="#Correction" aria-hidden="true"><span class="octicon octicon-link"></span></a>Correction<a class="anchor-link" href="#Correction"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="n">String</span> <span class="nf">findBetterGuess</span><span class="p">(</span><span class="n">String</span> <span class="n">guess1</span><span class="p">,</span> <span class="n">String</span> <span class="n">guess2</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">scoreGuess</span><span class="p">(</span><span class="n">guess1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">scoreGuess</span><span class="p">(</span><span class="n">guess2</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">guess1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">scoreGuess</span><span class="p">(</span><span class="n">guess2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">scoreGuess</span><span class="p">(</span><span class="n">guess1</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">guess2</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">guess1</span><span class="p">.</span><span class="na">compareTo</span><span class="p">(</span><span class="n">guess2</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">guess1</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">guess2</span><span class="p">;</span> 
     <span class="p">}</span>
 
 <span class="p">}</span>
