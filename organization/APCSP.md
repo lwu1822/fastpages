@@ -34,11 +34,20 @@ Working with a Python API using Jupyter Notebook.
 [JavaScript](https://lwu1822.github.io/fastpages/2022/09/25/w5_javascript.html)
 
 
+#### Python
+[Dictionary](https://lwu1822.github.io/fastpages/python/2022/09/05/w2-dictionary.html)
+
+[Input and Output](https://lwu1822.github.io/fastpages/python/2022/09/05/w1-python-quiz.html)
+
+
 
 ## AP Curriculum
 
 ### Create Performance
 [Planning](https://lwu1822.github.io/fastpages/create-performance-task/2022/09/11/createTaskLog.html)
+
+### AppLab
+[Planning and project description](https://lwu1822.github.io/fastpages/code.org/2022/09/08/w3-app-lab-plan.html)
 
 ### Big Idea 1: Creative Development
 [1.1 Notes](https://lwu1822.github.io/fastpages/cb/2022/09/17/w4_CB_1-1.html)

@@ -40,6 +40,9 @@ Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and g
 
 ## AP Curriculum
 
+### Test Prep
+[2022 and 2016 FRQ](https://lwu1822.github.io/fastpages/ap_test_prep/2022/09/14/w4_2016_2022CSAFRQ.html)
+
 ### Unit 1: Primitive Types
 [Homework and Notes](https://lwu1822.github.io/fastpages/2022/10/17/w8_unit1Primitives.html)
 
@@ -47,7 +50,7 @@ Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and g
 [Homework (2021 FRQ)](https://lwu1822.github.io/fastpages/2022/10/16/w8_unit2Objects.html)
 
 ### Unit 3: Boolean Expressions and if Statements
-
+[Notes](https://lwu1822.github.io/fastpages/java/2022/09/07/w3-if-else.html)
 
 ### Unit 4: Iteration
 [Notes](https://lwu1822.github.io/fastpages/2022/09/24/w5_fibonacci.html)
