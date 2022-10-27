@@ -6,6 +6,9 @@ categories: [js]
 title: Creating a table using JavaScript for the CSA Team Project
 comments: true
 ---
+
+This is a table created with JavaScript (not HTML) that displays the age and roles of the team members on the [Crimebusters](https://crimebusters.nighthawkcoding.ml/) project. 
+
 <html>
 
 <head>

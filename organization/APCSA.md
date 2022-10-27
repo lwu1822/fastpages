@@ -26,6 +26,8 @@ Using an API on backend with Spring Boot, and displaying it in a frontend HTML f
 
 Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and greenscale Mona Lisa art.
 
+[Creating a table with JavaScript](https://lwu1822.github.io/fastpages/js/2022/09/25/w5_csaJavascriptTableTeam.html)
+
 
 ## AP Curriculum
 
