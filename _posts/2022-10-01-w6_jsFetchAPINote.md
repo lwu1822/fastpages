@@ -1,9 +1,9 @@
 ---
 toc: true
 layout: post
-description: 
+description: Notes about Fetch API and an example 
 categories: [js]
-title: Fetch API
+title: Fetch API Notes
 comments: true
 ---
 
@@ -90,9 +90,12 @@ Quick lesson on status codes:
 
 Quick definition about entity: In programming, an entity is an object, which means it can include attributes and methods. 
 
-allows access to the API through a specific programming language.
+Allows access to the API through a specific programming language.
 
 
+<br>
+
+Below is an example that uses the Fetch API to display airplane flight codes in a table:
 
 <table>
   <thead>
