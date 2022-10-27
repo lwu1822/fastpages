@@ -44,6 +44,8 @@ Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and g
 [2022 and 2016 FRQ](https://lwu1822.github.io/fastpages/ap_test_prep/2022/09/14/w4_2016_2022CSAFRQ.html)
 
 ### Unit 1: Primitive Types
+[Calculator](https://lwu1822.github.io/fastpages/java/2022/08/28/primitives.html)
+
 [Homework and Notes](https://lwu1822.github.io/fastpages/2022/10/17/w8_unit1Primitives.html)
 
 ### Unit 2: Using Objects 
@@ -71,3 +73,6 @@ Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and g
 [2D Arrays with Monkey Song](https://lwu1822.github.io/fastpages/java/2022/09/14/w4_2D_Array.html)
 
 Using 2D Arrays to print out the monkey song
+
+### code.org Notes
+[Notes](https://lwu1822.github.io/fastpages/code.org/2022/08/28/code-org.html)
