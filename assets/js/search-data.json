@@ -190,7 +190,7 @@
     
         ,"post17": {
             "title": "1.3 Collaboration",
-            "content": "Program . A program is developed with an idea that aims to follow a purpose. . Developers need to investigate the issue and be aware of constraints (such as time), pay attention to user concerns. Methods of investigation include surveys or testing. . Afterwards, developers design the program through brainstorming, creating the user interface, and organizing. . Prototypes are created, and small parts are created to test each individual parts. . Last process is to refine. . Each contributor to the program should be properly credited in the documentation. . Documentation: An overview of the program that may include functions, events, and other specific aspects of the code. . I also completed the 1.3 MCQ. Below is a picture showing my completion. . .",
+            "content": "Program . A program is developed with an idea that aims to follow a purpose. . Developers need to investigate the issue and be aware of constraints (such as time), pay attention to user concerns. Methods of investigation include surveys or testing. . Afterwards, developers design the program through brainstorming, creating the user interface, and organizing. . Prototypes are created, and small parts are created to test each individual parts. . Last process is to refine. . Each contributor to the program should be properly credited in the documentation. . Documentation: An overview of the program that may include functions, events, and other specific aspects of the code. .",
             "url": "https://lwu1822.github.io/fastpages/cb/2022/10/02/w6_CB_1-3.html",
             "relUrl": "/cb/2022/10/02/w6_CB_1-3.html",
             "date": " • Oct 2, 2022"
@@ -640,7 +640,7 @@
   
       ,"page9": {
           "title": "",
-          "content": "AP CSP . Project Based Learning (PBL) . Final Project: Dictionary . Feedback Page . Frontend code using HTML and JavaScript to fetch a feedback API from Spring backend. For people who use our dictionary project to leave some feedback. . APIs . JavaScript Fetch API . Using JavaScript Fetch API to take a definition of a word from a dictionary API. . Python API using Jupyter Notebook . Working with a Python API using Jupyter Notebook. . AP Curriculum . Big Idea 1: Creative Development . Debugging Code . Learning how to debug code. . Big Idea 4: Computer Systems and Networks . 4.1 Notes .",
+          "content": "AP CSP . Project Based Learning (PBL) . Final Project: Dictionary . Feedback Page . Frontend code using HTML and JavaScript to fetch a feedback API from Spring backend. For people who use our dictionary project to leave some feedback. . APIs . JavaScript Fetch API . Using JavaScript Fetch API to take a definition of a word from a dictionary API. . Python API using Jupyter Notebook . Working with a Python API using Jupyter Notebook. . AP Curriculum . Big Idea 1: Creative Development . 1.3 Notes . Debugging Code . Learning how to debug code. . Big Idea 4: Computer Systems and Networks . 4.1 Notes .",
           "url": "https://lwu1822.github.io/fastpages/organization/APCSP",
           "relUrl": "/organization/APCSP",
           "date": ""
