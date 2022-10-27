@@ -629,7 +629,7 @@
   
       ,"page8": {
           "title": "",
-          "content": "AP CSA . Project Based Learning (PBL) . Final Project: Crimebusters . Crime safety quiz . Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. . PBL Notes . Using an API on Backend . Using an API on backend with Spring Boot, and displaying it in a frontend HTML file. Notes on Thymeleaf template engine syntax. . How Spring Boot works . AP Curriculum . Unit 1: Primitive Types . Homework and Notes . Unit 2: Using Objects . Homework (2021 FRQ) . Unit 3: Boolean Expressions and if Statements . Unit 4: Iteration . Homework . Unit 5: Writing Classes . Homework . Unit 6: Array . Notes . Homework (Work In Progress) .",
+          "content": "AP CSA . Project Based Learning (PBL) . Final Project: Crimebusters . Crime safety quiz . Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. . PBL Notes . Using an API on Backend . Using an API on backend with Spring Boot, and displaying it in a frontend HTML file. Notes on Thymeleaf template engine syntax. . How Spring Boot works . Misc . Applying arrays to change images . Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and greenscale Mona Lisa art. . AP Curriculum . Unit 1: Primitive Types . Homework and Notes . Unit 2: Using Objects . Homework (2021 FRQ) . Unit 3: Boolean Expressions and if Statements . Unit 4: Iteration . Homework . Unit 5: Writing Classes . Homework . Unit 6: Array . Notes . Homework (Work In Progress) .",
           "url": "https://lwu1822.github.io/fastpages/organization/APCSA",
           "relUrl": "/organization/APCSA",
           "date": ""
