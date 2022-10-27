@@ -46,10 +46,10 @@
   
     
         ,"post4": {
-            "title": "CSP Frontend API Table",
-            "content": "Word Definition .",
-            "url": "https://lwu1822.github.io/fastpages/api/2022/10/21/w9_frontendAPITable.html",
-            "relUrl": "/api/2022/10/21/w9_frontendAPITable.html",
+            "title": "JavaScript Fetch API",
+            "content": "Below is a table created using HTML. The table displays the word bright, and its definition, which was taken from an API. The API was called using JavaScript Fetch. . Word Definition .",
+            "url": "https://lwu1822.github.io/fastpages/api/2022/10/21/w9_dictionaryFEJSFetchAPITable.html",
+            "relUrl": "/api/2022/10/21/w9_dictionaryFEJSFetchAPITable.html",
             "date": " • Oct 21, 2022"
         }
         
