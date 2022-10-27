@@ -2,7 +2,7 @@
   
     
         "post0": {
-            "title": "Unit 4 Classes",
+            "title": "Unit 4 Writing Classes",
             "content": "2019 FRQ #2 . Initial attempt . public class StepTracker { private int numDay; private int activeSteps; private int totalSteps; private int numActiveDays; public StepTracker(int steps) { activeSteps = steps; } public int activeDays() { return numActiveDays; } public double averageSteps() { return totalSteps/numDay; } public void addDailySteps(int steps) { totalSteps += steps; numDay++; if (steps &gt;= activeSteps) { numActiveDays++; } } } . Comments: . In the method averageSteps(), I did not do a type conversion to double in my return statement. A type conversion is needed because totalSteps and numDay are integers. . I also did not account for when numDay = 0, because the return statement can not be divided by 0. Therefore, an if statement is needed to return an average step of 0. . Corrections: . public class StepTracker { private int numDay; private int activeSteps; private int totalSteps; private int numActiveDays; public StepTracker(int steps) { activeSteps = steps; } public int activeDays() { return numActiveDays; } public double averageSteps() { if (numDay == 0) { // corrections return 0.0; } else { return (double) totalSteps/numDay; } } public void addDailySteps(int steps) { totalSteps += steps; numDay++; if (steps &gt;= activeSteps) { numActiveDays++; } } } .",
             "url": "https://lwu1822.github.io/fastpages/2022/10/25/w9_unit5Class.html",
             "relUrl": "/2022/10/25/w9_unit5Class.html",
@@ -639,6 +639,17 @@
 
   
       ,"page8": {
+          "title": "",
+          "content": "AP CSA . Unit 1: Primitive Types . Unit 2: Using Objects . Unit 3: Boolean Expressions and if Statements . Unit 4: Iteration . Homework . Unit 5: Writing Classes . Homework .",
+          "url": "https://lwu1822.github.io/fastpages/organization/APCSA",
+          "relUrl": "/organization/APCSA",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page9": {
           "title": "CSA",
           "content": "Sep 14, 2022 AP FRQ . | Sep 14, 2022 Iteration with 2D array . | Sep 7, 2022 If-Else Lesson . | Sep 5, 2022 Console Menu . | Aug 28, 2022 Java Primitives . | Aug 28, 2022 Code snippets . | Aug 28, 2022 code.org Notes . | Aug 28, 2022 code.org Answers . | Aug 26, 2022 Tools . | Aug 21, 2022 Jupyter notebook post . | .",
           "url": "https://lwu1822.github.io/fastpages/t/CSA",
@@ -649,7 +660,7 @@
   
 
   
-      ,"page9": {
+      ,"page10": {
           "title": "CSP",
           "content": "Submenu | JavaScript | JavaScript Table | API | .",
           "url": "https://lwu1822.github.io/fastpages/CSP/",
@@ -683,7 +694,7 @@
   
 
   
-      ,"page19": {
+      ,"page20": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://lwu1822.github.io/fastpages/robots.txt",
