@@ -1,10 +1,15 @@
 ---
-title: Fetch of Backend Jokes
+title: Dictionary Feedback (Work In Progress)
 layout: default
-description: An example of Frontend talking to Backend Python application serving jokes.  This example provides the ability to react to the Joke (haha or boohoo).
-permalink: /data/jokescsp
-image: /images/jokes.png
+description: For those who try out our dictionary project to leave some feedback
+permalink: /teamberries/feedback
 ---
+
+# Dictionary Feedback (Work In Progress)
+
+Feedback page for our APCSP dictionary project!
+
+Please answer yes or no to the following questions on how satisfied you were with our project. Thank you! :)
 
 <!-- HTML table fragment for page -->
 <table>

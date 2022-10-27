@@ -20,7 +20,7 @@ Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend.
 
 ### Unit 2: Using Objects 
 
-## #Unit 3: Boolean Expressions and if Statements
+### Unit 3: Boolean Expressions and if Statements
 
 
 ### Unit 4: Iteration
