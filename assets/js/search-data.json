@@ -68,10 +68,10 @@
   
     
         ,"post6": {
-            "title": "Fetch of Backend Jokes",
-            "content": "Question Yes No .",
-            "url": "https://lwu1822.github.io/fastpages/data/jokescsp",
-            "relUrl": "/data/jokescsp",
+            "title": "Dictionary Feedback (Work In Progress)",
+            "content": "Dictionary Feedback (Work In Progress) . Feedback page for our APCSP dictionary project! . Please answer yes or no to the following questions on how satisfied you were with our project. Thank you! :) . Question Yes No .",
+            "url": "https://lwu1822.github.io/fastpages/teamberries/feedback",
+            "relUrl": "/teamberries/feedback",
             "date": " • Oct 20, 2022"
         }
         
@@ -640,7 +640,7 @@
   
       ,"page8": {
           "title": "",
-          "content": "AP CSA . Project Based Learning (PBL) . Final Project: Crimebusters . Crime safety quiz . Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. . AP Curriculum . Unit 1: Primitive Types . Unit 2: Using Objects . #Unit 3: Boolean Expressions and if Statements . Unit 4: Iteration . Homework . Unit 5: Writing Classes . Homework . Unit 6: Array . Homework (Work In Progress) .",
+          "content": "AP CSA . Project Based Learning (PBL) . Final Project: Crimebusters . Crime safety quiz . Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. . AP Curriculum . Unit 1: Primitive Types . Unit 2: Using Objects . Unit 3: Boolean Expressions and if Statements . Unit 4: Iteration . Homework . Unit 5: Writing Classes . Homework . Unit 6: Array . Homework (Work In Progress) .",
           "url": "https://lwu1822.github.io/fastpages/organization/APCSA",
           "relUrl": "/organization/APCSA",
           "date": ""
