@@ -22,6 +22,9 @@ Using JavaScript Fetch API to take a definition of a word from a dictionary API.
 
 Working with a Python API using Jupyter Notebook.
 
+### PBL Notes
+[Fetch API](https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsFetchAPINote.html)
+
 
 
 ## AP Curriculum
