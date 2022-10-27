@@ -15,6 +15,8 @@ Quiz yourself on crime safety!
 * We are going to add two more answer choices to the table (C and D), and connect them to the backend using Spring Framework. The number of times users selected C and D will also be saved in a MYSQL database. 
 * After the user selects one of the answer choices, there will also be feedback given on whether the user selected the right or wrong answer choice. If the user selected the wrong answer, the correct answer will be displayed. 
 
+<br>
+
 
 <!-- HTML table fragment for page -->
 <table>
