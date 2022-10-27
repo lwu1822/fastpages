@@ -15,6 +15,10 @@ Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend.
 
 ### PBL Notes
 
+[Using an API on Backend](https://lwu1822.github.io/fastpages/backend/2022/10/05/w6_javaBackendAPI.html)
+
+Using an API on backend with Spring Boot, and displaying it in a frontend HTML file. Notes on Thymeleaf template engine syntax. 
+
 [How Spring Boot works](https://lwu1822.github.io/fastpages/backend/2022/10/10/w7_springBoot.html)
 
 
