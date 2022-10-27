@@ -24,10 +24,10 @@
   
     
         ,"post2": {
-            "title": "Fetch of Backend Jokes",
-            "content": "Joke Answer Choice: A B .",
-            "url": "https://lwu1822.github.io/fastpages/data/jokes",
-            "relUrl": "/data/jokes",
+            "title": "Crimebusters Quiz (Work In Progress)",
+            "content": "Question Answer Choice: A B .",
+            "url": "https://lwu1822.github.io/fastpages/crimebusters/quiz",
+            "relUrl": "/crimebusters/quiz",
             "date": " • Oct 22, 2022"
         }
         
@@ -640,7 +640,7 @@
   
       ,"page8": {
           "title": "",
-          "content": "AP CSA . Unit 1: Primitive Types . Unit 2: Using Objects . Unit 3: Boolean Expressions and if Statements . Unit 4: Iteration . Homework . Unit 5: Writing Classes . Homework .",
+          "content": "AP CSA . Unit 1: Primitive Types . Unit 2: Using Objects . Unit 3: Boolean Expressions and if Statements . Unit 4: Iteration . Homework . Unit 5: Writing Classes . Homework (Work In Progress) .",
           "url": "https://lwu1822.github.io/fastpages/organization/APCSA",
           "relUrl": "/organization/APCSA",
           "date": ""
