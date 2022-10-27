@@ -1,11 +1,8 @@
 ---
-title: Fetch of Backend Jokes
+title: Crimebusters Quiz (Work In Progress)
 layout: default
-description: An introductory example of Frontend talking to Backend Java application serving jokes.  
-permalink: /data/jokes
-image: /images/jokes.png
-categories: [1.C, C4.7]
-tags: [javascript]
+description: Quiz yourself on facts about crime! A frontend display of quiz questions that connects to backend using Spring and Java. 
+permalink: /crimebusters/quiz
 ---
 
 
@@ -14,7 +11,7 @@ tags: [javascript]
 <table>
   <thead>
   <tr>
-    <th>Joke</th>
+    <th>Question</th>
     <th>Answer Choice: A</th>
     <th>B</th>
   </tr>
