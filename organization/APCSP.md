@@ -13,6 +13,9 @@ permalink: /organization/APCSP
 
 Frontend code using HTML and JavaScript to fetch a feedback API from Spring backend. For people who use our dictionary project to leave some feedback.
 
+### Final Project Planning
+[Plan](https://lwu1822.github.io/fastpages/csp/2022/09/17/w5_CSPProjectPlanning.html)
+
 ### APIs
 [JavaScript Fetch API](https://lwu1822.github.io/fastpages/api/2022/10/21/w9_dictionaryFEJSFetchAPITable.html)
 
@@ -23,7 +26,12 @@ Using JavaScript Fetch API to take a definition of a word from a dictionary API.
 Working with a Python API using Jupyter Notebook.
 
 ### PBL Notes
+
+#### JavaScript
+
 [Fetch API](https://lwu1822.github.io/fastpages/js/2022/10/01/w6_jsFetchAPINote.html)
+
+[JavaScript](https://lwu1822.github.io/fastpages/2022/09/25/w5_javascript.html)
 
 
 

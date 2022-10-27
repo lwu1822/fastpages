@@ -15,11 +15,20 @@ Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend.
 
 ### PBL Notes
 
+#### API
+
 [Using an API on Backend](https://lwu1822.github.io/fastpages/backend/2022/10/05/w6_javaBackendAPI.html)
 
 Using an API on backend with Spring Boot, and displaying it in a frontend HTML file. Notes on Thymeleaf template engine syntax. 
 
+#### Spring Boot
+
 [How Spring Boot works](https://lwu1822.github.io/fastpages/backend/2022/10/10/w7_springBoot.html)
+
+
+#### JavaScript
+
+[JavaScript](https://lwu1822.github.io/fastpages/2022/09/25/w5_javascript.html)
 
 ### Misc
 [Applying arrays to change images](https://lwu1822.github.io/fastpages/2022/10/01/w6_img.html)
@@ -41,6 +50,8 @@ Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and g
 
 
 ### Unit 4: Iteration
+[Notes](https://lwu1822.github.io/fastpages/2022/09/24/w5_fibonacci.html)
+
 [Homework](https://lwu1822.github.io/fastpages/2022/10/21/w9_unit4Iteration.html)
 
 ### Unit 5: Writing Classes
