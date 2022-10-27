@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: 
+description: Notes on Spring Boot
 categories: [backend]
 title: Spring Boot
 comments: true

@@ -22,4 +22,7 @@ Using JavaScript Fetch API to take a definition of a word from a dictionary API.
 
 ## AP Curriculum
 
-### Unit 1
+### Big Idea 1
+
+### Big Idea 4: Computer Systems and Networks
+[4.1 Notes](https://lwu1822.github.io/fastpages/cb/2022/10/16/w8_CB_4-1.html)

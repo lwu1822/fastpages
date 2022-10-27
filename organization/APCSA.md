@@ -13,8 +13,9 @@ permalink: /organization/APCSA
 
 Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. 
 
-### My notes
+### PBL Notes
 
+[How Spring Boot works](https://lwu1822.github.io/fastpages/backend/2022/10/10/w7_springBoot.html)
 
 
 ## AP Curriculum
