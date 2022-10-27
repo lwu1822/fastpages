@@ -134,10 +134,10 @@
   
     
         ,"post12": {
-            "title": "API (CSP)",
+            "title": "API with Jupyter Notebook",
             "content": "import requests url = &quot;https://dictionary-by-api-ninjas.p.rapidapi.com/v1/dictionary&quot; querystring = {&quot;word&quot;:&quot;bright&quot;} headers = { &quot;X-RapidAPI-Key&quot;: &quot;cc6d770f58msh120c53d95d27c68p1d2955jsn1898ff4fa031&quot;, &quot;X-RapidAPI-Host&quot;: &quot;dictionary-by-api-ninjas.p.rapidapi.com&quot; } response = requests.request(&quot;GET&quot;, url, headers=headers, params=querystring) wordDefinition = response.json().get(&#39;definition&#39;) word = response.json().get(&#39;word&#39;) print(&quot;Word: &quot;) print(word) print() print(&quot;Definition: &quot;) print(wordDefinition) . Word: bright Definition: See Brite, v. i. 1. Radiating or reflecting light; shedding or having much light; shining; luminous; not dark. The sun was bright o&#39;erhead. Longfellow. The earth was dark, but the heavens were bright. Drake. The public places were as bright as at noonday. Macaulay. 2. Transmitting light; clear; transparent. From the brightest wines He &#39;d turn abhorrent. Thomson. 3. Having qualities that render conspicuous or attractive, or that affect the mind as light does the eye; resplendent with charms; as, bright beauty. Bright as an angel new-dropped from the sky. Parnell. 4. Having a clear, quick intellect; intelligent. 5. Sparkling with wit; lively; vivacious; shedding cheerfulness and joy around; cheerful; cheery. Be bright and jovial among your guests. Shak. 6. Illustrious; glorious. In the brightest annals of a female reign. Cotton. 7. Manifest to the mind, as light is to the eyes; clear; evident; plain. That he may with more ease, with brighter evidence, and with surer success, draw the bearner on. I. Watts. 8. Of brilliant color; of lively hue or appearance. Here the bright crocus and blue violet grew. Pope. Note: Bright is used in composition in the sense of brilliant, clear, sunny, etc.; as, bright-eyed, bright-haired, bright-hued. Syn. -- Shining; splending; luminous; lustrous; brilliant; resplendent; effulgent; refulgent; radiant; sparkling; glittering; lucid; beamy; clear; transparent; illustrious; witty; clear; vivacious; sunny. Splendor; brightness. [Poetic] Dark with excessive bright thy skirts appear. Milton. Brightly. Chaucer. I say it is the moon that shines so bright. Shak. To be or become overripe, as wheat, barley, or hops. [Prov. Eng.] .",
-            "url": "https://lwu1822.github.io/fastpages/2022/10/09/cspAPI.html",
-            "relUrl": "/2022/10/09/cspAPI.html",
+            "url": "https://lwu1822.github.io/fastpages/2022/10/09/dictionaryJupyterAPI.html",
+            "relUrl": "/2022/10/09/dictionaryJupyterAPI.html",
             "date": " • Oct 9, 2022"
         }
         
@@ -640,7 +640,7 @@
   
       ,"page9": {
           "title": "",
-          "content": "AP CSP . Project Based Learning (PBL) . Final Project: Dictionary . Feedback Page . Frontend code using HTML and JavaScript to fetch a feedback API from Spring backend. For people who use our dictionary project to leave some feedback. . APIs . JavaScript Fetch API . Using JavaScript Fetch API to take a definition of a word from a dictionary API. . AP Curriculum . Big Idea 1 . Big Idea 4: Computer Systems and Networks . 4.1 Notes .",
+          "content": "AP CSP . Project Based Learning (PBL) . Final Project: Dictionary . Feedback Page . Frontend code using HTML and JavaScript to fetch a feedback API from Spring backend. For people who use our dictionary project to leave some feedback. . APIs . JavaScript Fetch API . Using JavaScript Fetch API to take a definition of a word from a dictionary API. . AP Curriculum . Big Idea 1: Creative Development . Debugging Code . Learning how to debug code. . Big Idea 4: Computer Systems and Networks . 4.1 Notes .",
           "url": "https://lwu1822.github.io/fastpages/organization/APCSP",
           "relUrl": "/organization/APCSP",
           "date": ""
