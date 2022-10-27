@@ -21,6 +21,11 @@ Using an API on backend with Spring Boot, and displaying it in a frontend HTML f
 
 [How Spring Boot works](https://lwu1822.github.io/fastpages/backend/2022/10/10/w7_springBoot.html)
 
+### Misc
+[Applying arrays to change images](https://lwu1822.github.io/fastpages/2022/10/01/w6_img.html)
+
+Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and greenscale Mona Lisa art.
+
 
 ## AP Curriculum
 
