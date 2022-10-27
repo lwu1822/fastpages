@@ -3,10 +3,11 @@ toc: true
 layout: post
 description: it finally worked ;-;
 categories: [API]
-title: CSP Frontend API Table
+title: JavaScript Fetch API
 comments: true
 ---
 
+Below is a table created using HTML. The table displays the word bright, and its definition, which was taken from an API. The API was called using JavaScript Fetch. 
 
 <table>
   <thead>
