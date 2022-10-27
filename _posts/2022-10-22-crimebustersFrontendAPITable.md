@@ -17,6 +17,10 @@ Quiz yourself on crime safety!
 
 <br>
 
+<mark>Note:</mark> If the table shows an error of <code>TypeError: Failed to fetch https://crimebusters.nighthawkcoding.ml/api/jokes/</code>, see if using a VPN works :)
+
+<br>
+
 
 <!-- HTML table fragment for page -->
 <table>
