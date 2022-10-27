@@ -1,10 +1,19 @@
 ---
-title: Crimebusters Quiz (Work In Progress)
+title: Crime Safety Quiz (Work In Progress)
 layout: default
-description: Quiz yourself on facts about crime! A frontend display of quiz questions that connects to backend using Spring and Java. 
+description: Quiz yourself on crime safety! A frontend display of quiz questions that connects to backend using Spring and Java. 
 permalink: /crimebusters/quiz
 ---
 
+# Crime Safety Quiz (Work In Progress)
+
+Quiz yourself on crime safety!
+
+**What this project currently does**: Currently, the quiz is in a table that has two answer choices: A and B. The table records the number of times people selected the answer choice.
+
+**To be added**: 
+* We are going to add two more answer choices to the table (C and D), and connect them to the backend using Spring Framework. The number of times users selected C and D will also be saved in a MYSQL database. 
+* After the user selects one of the answer choices, there will also be feedback given on whether the user selected the right or wrong answer choice. If the user selected the wrong answer, the correct answer will be displayed. 
 
 
 <!-- HTML table fragment for page -->
