@@ -57,10 +57,10 @@
   
     
         ,"post5": {
-            "title": "Title",
+            "title": "Unit 5 Writing Classes Hacks (Work In Progress)",
             "content": "public class Cow { private String cowType; private String sound; private int numMilkings; public Cow(){ this.numMilkings = 0; this.cowType = null; this.sound = null; } public Cow (String cowType, String sound) { this.numMilkings = 0; this.cowType = cowType; this.sound = sound; } public Cow(String cowType, String sound, int numMilikings) { this.numMilkings = numMilikings; this.cowType = cowType; this.sound = sound; } public void setcowType(String cowType) { this.cowType = cowType; } public String getcowType() { return cowType; } public void toString() { } public static void main(String[] args) { Cow firstCow = new Cow(&quot;holstein&quot;, &quot;moo&quot;); Cow secondCow = new Cow(); Cow thirdCow = new Cow(&quot;holstein&quot;, &quot;moo&quot;, 100); firstCow.setcowType(&quot;a&quot;); firstCow.getcowType(); System.out.println(firstCow.getcowType()); } } Cow.main(null) . a .",
-            "url": "https://lwu1822.github.io/fastpages/2022/10/20/w9_unit5.html",
-            "relUrl": "/2022/10/20/w9_unit5.html",
+            "url": "https://lwu1822.github.io/fastpages/2022/10/20/w9_unit5ClassHack.html",
+            "relUrl": "/2022/10/20/w9_unit5ClassHack.html",
             "date": " • Oct 20, 2022"
         }
         
