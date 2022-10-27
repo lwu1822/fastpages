@@ -629,7 +629,7 @@
   
       ,"page8": {
           "title": "",
-          "content": "AP CSA . Project Based Learning (PBL) . Final Project: Crimebusters . Crime safety quiz . Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. . PBL Notes . API . Using an API on Backend . Using an API on backend with Spring Boot, and displaying it in a frontend HTML file. Notes on Thymeleaf template engine syntax. . Spring Boot . How Spring Boot works . JavaScript . JavaScript . Misc . Applying arrays to change images . Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and greenscale Mona Lisa art. . Creating a table with JavaScript . AP Curriculum . Unit 1: Primitive Types . Homework and Notes . Unit 2: Using Objects . Homework (2021 FRQ) . Unit 3: Boolean Expressions and if Statements . Unit 4: Iteration . Notes . Homework . Unit 5: Writing Classes . Homework . Unit 6: Array . Homework (Work In Progress) . Unit 7: ArrayList . Notes . Unit 8: 2D Array . 2D Arrays with Monkey Song . Using 2D Arrays to print out the monkey song .",
+          "content": "AP CSA . Project Based Learning (PBL) . Final Project: Crimebusters . Crime safety quiz . Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. . PBL Notes . API . Using an API on Backend . Using an API on backend with Spring Boot, and displaying it in a frontend HTML file. Notes on Thymeleaf template engine syntax. . Spring Boot . How Spring Boot works . JavaScript . JavaScript . Misc . Applying arrays to change images . Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and greenscale Mona Lisa art. . Creating a table with JavaScript . AP Curriculum . Test Prep . 2022 and 2016 FRQ . Unit 1: Primitive Types . Homework and Notes . Unit 2: Using Objects . Homework (2021 FRQ) . Unit 3: Boolean Expressions and if Statements . Notes . Unit 4: Iteration . Notes . Homework . Unit 5: Writing Classes . Homework . Unit 6: Array . Homework (Work In Progress) . Unit 7: ArrayList . Notes . Unit 8: 2D Array . 2D Arrays with Monkey Song . Using 2D Arrays to print out the monkey song .",
           "url": "https://lwu1822.github.io/fastpages/organization/APCSA",
           "relUrl": "/organization/APCSA",
           "date": ""
@@ -640,7 +640,7 @@
   
       ,"page9": {
           "title": "",
-          "content": "AP CSP . Project Based Learning (PBL) . Final Project: Dictionary . Feedback Page . Frontend code using HTML and JavaScript to fetch a feedback API from Spring backend. For people who use our dictionary project to leave some feedback. . Final Project Planning . Plan . APIs . JavaScript Fetch API . Using JavaScript Fetch API to take a definition of a word from a dictionary API. . Python API using Jupyter Notebook . Working with a Python API using Jupyter Notebook. . PBL Notes . JavaScript . Fetch API . JavaScript . AP Curriculum . Create Performance . Planning . Big Idea 1: Creative Development . 1.1 Notes . 1.2 Notes . 1.3 Notes . Debugging Code . Learning how to debug code. . Big Idea 4: Computer Systems and Networks . 4.1 Notes .",
+          "content": "AP CSP . Project Based Learning (PBL) . Final Project: Dictionary . Feedback Page . Frontend code using HTML and JavaScript to fetch a feedback API from Spring backend. For people who use our dictionary project to leave some feedback. . Final Project Planning . Plan . APIs . JavaScript Fetch API . Using JavaScript Fetch API to take a definition of a word from a dictionary API. . Python API using Jupyter Notebook . Working with a Python API using Jupyter Notebook. . PBL Notes . JavaScript . Fetch API . JavaScript . Python . Dictionary . Input and Output . AP Curriculum . Create Performance . Planning . AppLab . Planning and project description . Big Idea 1: Creative Development . 1.1 Notes . 1.2 Notes . 1.3 Notes . Debugging Code . Learning how to debug code. . Big Idea 4: Computer Systems and Networks . 4.1 Notes .",
           "url": "https://lwu1822.github.io/fastpages/organization/APCSP",
           "relUrl": "/organization/APCSP",
           "date": ""
@@ -671,9 +671,20 @@
   
 
   
+      ,"page12": {
+          "title": "",
+          "content": "Additional Coding . How I made my background a gradient .",
+          "url": "https://lwu1822.github.io/fastpages/organization/additionalCoding",
+          "relUrl": "/organization/additionalCoding",
+          "date": ""
+      }
+      
+  
 
   
-      ,"page13": {
+
+  
+      ,"page14": {
           "title": "",
           "content": "Life . Psychology and the Good Life video . Thoughts from the Psychology and the Good Life video by Laurie Santos, Professor of Psychology at Yale .",
           "url": "https://lwu1822.github.io/fastpages/organization/life",
@@ -705,7 +716,7 @@
   
 
   
-      ,"page22": {
+      ,"page23": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://lwu1822.github.io/fastpages/robots.txt",
