@@ -58,6 +58,13 @@ Using arrays and ImageIO to make an ASCII, grayscale, redscale, bluescale, and g
 [Homework](https://lwu1822.github.io/fastpages/2022/10/25/w9_unit5Class.html)
 
 ### Unit 6: Array
-[Notes](https://lwu1822.github.io/fastpages/2022/10/07/w7_arrayList.html)
 
 [Homework (Work In Progress)](https://lwu1822.github.io/fastpages/2022/10/24/w10_unit5JavaHacks.html)
+
+### Unit 7: ArrayList
+[Notes](https://lwu1822.github.io/fastpages/2022/10/07/w7_arrayList.html)
+
+### Unit 8: 2D Array
+[2D Arrays with Monkey Song](https://lwu1822.github.io/fastpages/java/2022/09/14/w4_2D_Array.html)
+
+Using 2D Arrays to print out the monkey song

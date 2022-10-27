@@ -37,6 +37,9 @@ Working with a Python API using Jupyter Notebook.
 
 ## AP Curriculum
 
+### Create Performance
+[Planning](https://lwu1822.github.io/fastpages/create-performance-task/2022/09/11/createTaskLog.html)
+
 ### Big Idea 1: Creative Development
 [1.1 Notes](https://lwu1822.github.io/fastpages/cb/2022/09/17/w4_CB_1-1.html)
 
