@@ -22,7 +22,10 @@ Using JavaScript Fetch API to take a definition of a word from a dictionary API.
 
 ## AP Curriculum
 
-### Big Idea 1
+### Big Idea 1: Creative Development
+[Debugging Code](https://lwu1822.github.io/fastpages/2022/10/09/w7_codeCorrection.html)
+
+Learning how to debug code. 
 
 ### Big Idea 4: Computer Systems and Networks
 [4.1 Notes](https://lwu1822.github.io/fastpages/cb/2022/10/16/w8_CB_4-1.html)
