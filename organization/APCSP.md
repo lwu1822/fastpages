@@ -30,6 +30,8 @@ Working with a Python API using Jupyter Notebook.
 ## AP Curriculum
 
 ### Big Idea 1: Creative Development
+[1.2 Notes](https://lwu1822.github.io/fastpages/cb/2022/09/25/w5_CB_1-2.html)
+
 [1.3 Notes](https://lwu1822.github.io/fastpages/cb/2022/10/02/w6_CB_1-3.html)
 
 [Debugging Code](https://lwu1822.github.io/fastpages/2022/10/09/w7_codeCorrection.html)
