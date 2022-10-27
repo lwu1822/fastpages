@@ -36,4 +36,6 @@ Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend.
 [Homework](https://lwu1822.github.io/fastpages/2022/10/25/w9_unit5Class.html)
 
 ### Unit 6: Array
+[Notes](https://lwu1822.github.io/fastpages/2022/10/07/w7_arrayList.html)
+
 [Homework (Work In Progress)](https://lwu1822.github.io/fastpages/2022/10/24/w10_unit5JavaHacks.html)

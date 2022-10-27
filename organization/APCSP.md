@@ -18,6 +18,10 @@ Frontend code using HTML and JavaScript to fetch a feedback API from Spring back
 
 Using JavaScript Fetch API to take a definition of a word from a dictionary API. 
 
+[Python API using Jupyter Notebook](https://lwu1822.github.io/fastpages/2022/10/09/dictionaryJupyterAPI.html)
+
+Working with a Python API using Jupyter Notebook.
+
 
 
 ## AP Curriculum
