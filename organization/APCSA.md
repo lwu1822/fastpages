@@ -13,12 +13,17 @@ permalink: /organization/APCSA
 
 Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. 
 
+### My notes
+
+
 
 ## AP Curriculum
 
 ### Unit 1: Primitive Types
+[Homework and Notes](https://lwu1822.github.io/fastpages/2022/10/17/w8_unit1Primitives.html)
 
 ### Unit 2: Using Objects 
+[Homework (2021 FRQ)](https://lwu1822.github.io/fastpages/2022/10/16/w8_unit2Objects.html)
 
 ### Unit 3: Boolean Expressions and if Statements
 

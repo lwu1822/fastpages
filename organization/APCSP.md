@@ -9,9 +9,9 @@ permalink: /organization/APCSP
 ## Project Based Learning (PBL)
 
 ### Final Project: Dictionary
-[Crime safety quiz](https://lwu1822.github.io/fastpages/crimebusters/quiz)
+[Feedback Page](https://lwu1822.github.io/fastpages/teamberries/feedback)
 
-Frontend code using HTML and JavaScript to fetch a quiz API from Spring backend. 
+Frontend code using HTML and JavaScript to fetch a feedback API from Spring backend. For people who use our dictionary project to leave some feedback.
 
 ### APIs
 [JavaScript Fetch API](https://lwu1822.github.io/fastpages/api/2022/10/21/w9_dictionaryFEJSFetchAPITable.html)
