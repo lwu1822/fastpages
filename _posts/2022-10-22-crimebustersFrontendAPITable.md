@@ -29,6 +29,8 @@ Quiz yourself on crime safety!
     <th>Question</th>
     <th>Answer Choice: A</th>
     <th>B</th>
+    <th>C</th>
+    <th>D</th>
   </tr>
   </thead>
   <tbody id="result">
@@ -45,6 +47,10 @@ Quiz yourself on crime safety!
   // keys for joke reactions
   const HAHA = "haha";
   const BOOHOO = "boohoo";
+  const CHOICEC = "choiceC";
+  const CHOICED = "choiceD";
+
+
 
   // prepare fetch urls
   // const url = "https://flask.nighthawkcodingsociety.com/api/jokes";
@@ -52,6 +58,9 @@ Quiz yourself on crime safety!
   const get_url = url +"/";
   const like_url = url + "/like/";  // haha reaction
   const jeer_url = url + "/jeer/";  // boohoo reaction
+  const choiceC_url = url + "/choiceC/";  // choiceC option
+  const choiceD_url = url + "/choiceD/";  // choiceC option
+
 
   // prepare fetch GET options
   const options = {
@@ -109,10 +118,35 @@ Quiz yourself on crime safety!
               };
               boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
              
+             const choiceC = document.createElement("td");
+              const choiceC_but = document.createElement('button');
+              choiceC_but.id = CHOICEC+row.id  // establishes a BOOHOO JS id for cell
+              choiceC_but.innerHTML = row.choiceC;  // add fetched "boohoo count" to innerHTML
+              choiceC_but.onclick = function () {
+                // onclick function call with "jeer parameters"
+                reaction(CHOICEC, choiceC_url+row.id, choiceC_but.id);  
+              };
+             choiceC.appendChild(choiceC_but);  // add "boohoo button" to boohoo cell
+
+             const choiceD = document.createElement("td");
+              const choiceD_but = document.createElement('button');
+              choiceD_but.id = CHOICED+row.id  // establishes a BOOHOO JS id for cell
+              choiceD_but.innerHTML = row.choiceD;  // add fetched "boohoo count" to innerHTML
+              choiceD_but.onclick = function () {
+                // onclick function call with "jeer parameters"
+                reaction(CHOICED, choiceD_url+row.id, choiceD_but.id);  
+              };
+             choiceD.appendChild(choiceD_but);  // add "boohoo button" to boohoo cell
+
+
             // this builds ALL td's (cells) into tr (row) element
             tr.appendChild(joke);
             tr.appendChild(haha);
             tr.appendChild(boohoo);
+            tr.appendChild(choiceC);
+            tr.appendChild(choiceD);
+
+
 
             // this adds all the tr (row) work above to the HTML "result" container
             resultContainer.appendChild(tr);
@@ -144,6 +178,10 @@ Quiz yourself on crime safety!
             document.getElementById(elemID).innerHTML = data.haha;  // fetched haha data assigned to haha Document Object Model (DOM)
           else if (type === BOOHOO) // jeer data element
             document.getElementById(elemID).innerHTML = data.boohoo;  // fetched boohoo data assigned to boohoo Document Object Model (DOM)
+          else if (type === CHOICEC) // jeer data element
+            document.getElementById(elemID).innerHTML = data.choiceC;  // fetched boohoo data assigned to boohoo Document Object Model (DOM)
+          else if (type === CHOICED) // jeer data element
+            document.getElementById(elemID).innerHTML = data.choiceD;  // fetched boohoo data assigned to boohoo Document Object Model (DOM)
           else
             error("unknown type: " + type);  // should never occur
       })
@@ -165,6 +203,7 @@ Quiz yourself on crime safety!
     td.innerHTML = err;
     tr.appendChild(td);
     resultContainer.appendChild(tr);
+
   }
 
 </script>
