@@ -76,6 +76,7 @@ Quiz yourself on crime safety!
   // prepare fetch PUT options, clones with JS Spread Operator (...)
   const put_options = {...options, method: 'PUT'}; // clones and replaces method
 
+  const answers = ["People are hesitant to call out of fear they will be identified by the potential criminal", "People take for granted that someone else has already contacted the police", "They worry about being embarrassed if their suspicions prove to be unfounded", "All of the above", "Charge at them and take care of it yourself", "Hide somewhere safe and call the police", "Give up your belongings and run from your house", "Don't do anything", "A vehicles moving slowly and without lights, or seemingly repetitive or suspicious", "Containing one or more suspicious people observed at an unusual hour.", "Vehicles being loaded with valuables in front of closed businesses or residences", "All of the above", "Run away in the other direction as fast as you can", "Give them your belongings and retreat a good distance away", "Adamantly refuse to listen to their demands", "Slowly back up at a slow pace and negotiate with the criminal"];
   // fetch the API
   fetch(get_url, options)
     // response is a RESTful "promise" on any successful fetch
@@ -88,13 +89,20 @@ Quiz yourself on crime safety!
       // valid response will have JSON data
       response.json().then(data => {
           console.log(data);
+          var i = 0;
           for (const row of data) {
+            if (i == 0) {
+              console.log("i = 0");
+            }
+            if (i == 1) {
+              console.log("i = 1");
+            }
             // make "tr element" for each "row of data"
             const tr = document.createElement("tr");
             
             // td for joke cell
             const joke = document.createElement("td");
-              joke.innerHTML = row.id + ". " + row.joke;  // add fetched data to innerHTML
+              joke.innerHTML = row.id + ". " + row.joke + "<br />" + answers[i] + "<br />" + answers[i+1] + "<br />" + answers[i+2] + "<br />" + answers[i+3];  // add fetched data to innerHTML
 
             // td for haha cell with onclick actions
             const haha = document.createElement("td");
@@ -150,6 +158,7 @@ Quiz yourself on crime safety!
 
             // this adds all the tr (row) work above to the HTML "result" container
             resultContainer.appendChild(tr);
+            i+=4;
           }
       })
   })
