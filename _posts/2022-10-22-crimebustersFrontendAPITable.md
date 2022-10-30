@@ -112,6 +112,8 @@ Quiz yourself on crime safety!
               haha_but.onclick = function () {
                 // onclick function call with "like parameters"
                 reaction(HAHA, like_url+row.id, haha_but.id);  
+                console.log(haha_but.id);
+               
               };
               haha.appendChild(haha_but);  // add "haha button" to haha cell
 
@@ -122,7 +124,17 @@ Quiz yourself on crime safety!
               boohoo_but.innerHTML = row.boohoo;  // add fetched "boohoo count" to innerHTML
               boohoo_but.onclick = function () {
                 // onclick function call with "jeer parameters"
+                console.log(boohoo_but.id);
+
                 reaction(BOOHOO, jeer_url+row.id, boohoo_but.id);  
+
+                if (boohoo_but.id == "boohoo2") {
+                  alert('yayy');
+                }
+
+                if (boohoo_but.id == "boohoo4") {
+                  alert('yayy');
+                }
               };
               boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
              
@@ -132,6 +144,8 @@ Quiz yourself on crime safety!
               choiceC_but.innerHTML = row.choiceC;  // add fetched "boohoo count" to innerHTML
               choiceC_but.onclick = function () {
                 // onclick function call with "jeer parameters"
+                console.log(choiceC_but.id);
+
                 reaction(CHOICEC, choiceC_url+row.id, choiceC_but.id);  
               };
              choiceC.appendChild(choiceC_but);  // add "boohoo button" to boohoo cell
@@ -142,7 +156,16 @@ Quiz yourself on crime safety!
               choiceD_but.innerHTML = row.choiceD;  // add fetched "boohoo count" to innerHTML
               choiceD_but.onclick = function () {
                 // onclick function call with "jeer parameters"
+                console.log(choiceD_but.id);
+
                 reaction(CHOICED, choiceD_url+row.id, choiceD_but.id);  
+                if (choiceD_but.id == "choiceD1") {
+                  alert('yayy');
+                } 
+
+                if (choiceD_but.id == "choiceD3") {
+                  alert('yayy');
+                }
               };
              choiceD.appendChild(choiceD_but);  // add "boohoo button" to boohoo cell
 
