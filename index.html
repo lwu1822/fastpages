@@ -4,12 +4,119 @@ search_exclude: true
 image: images/logo.png
 ---
 
+<style>
+    .card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, .125);
+        border-radius: .25rem
+    }
+
+    .card-body {
+        flex: 1 1 auto;
+        padding: 1rem 1rem;
+        color: rgb(0, 0, 0) !important;
+    }
+
+    .card-title {
+        margin-bottom: .1rem;
+        color: rgb(0, 0, 0) !important;
+        
+    }
+
+    .card-text:last-child {
+        margin-bottom: 0;
+        color: rgb(0, 0, 0) !important;
+    }
+
+    
+
+    .px-5 {
+        padding-right: 3rem !important;
+        padding-left: 3rem !important
+    }
+
+    .py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important
+    }
+
+    .mx-auto {
+        margin-right: auto !important;
+        margin-left: auto !important
+    }
+
+    .row {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: calc(var(--bs-gutter-y) * -1);
+        margin-right: calc(var(--bs-gutter-x) * -.5);
+        margin-left: calc(var(--bs-gutter-x) * -.5)
+    }
+
+    .row>* {
+        flex-shrink: 0;
+        width: 50%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        margin-top: var(--bs-gutter-y)
+    }
+
+    .link {
+        color: rgb(12, 56, 250) !important;
+    }
+    
+    .link:hover {
+        color:rgb(91, 121, 255) !important;
+    }
+</style>
+
+
 ![]({{site.baseurl}}/images/index-welcome.png)
 Check out some of my posts below! :)
 
 # Projects
-## [Crimebusters](https://crimebusters.nighthawkcoding.ml/)
-## [Dictionary and Reverse Dictionary](https://teamberries.tk/)
+<div class="px-5 py-5 mx-auto">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title"><a class="link" href="https://crimebusters.nighthawkcoding.ml/">Crimebusters (Work in Progress) </a></h2>
+                    <p class="card-text">
+                            <h6>Expected completion date: 11/3</h6>
+                            <h4>Find the latest news regarding local crime, observe the safety of different places on a national level, and learn how to protect yourself from crime and be safe.</h4>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title"><a class="link" href="https://teamberries.tk/">Dictionary and Reverse Dictionary (Work in Progress) </a></h2>
+                    <p class="card-text">
+                            <h6>Expected completion date: 11/3</h6>
+                            <h4>Need help defining a word? We got you covered.</h4>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+   
+
+</div>
+
+
+
 
 
 # Posts (Organized by category)
@@ -20,5 +127,6 @@ Check out some of my posts below! :)
 ## [Additional coding]({{site.baseurl}}/organization/additionalCoding)
 
 ## [Life]({{site.baseurl}}/organization/life)
+
 
 # Posts (Organized by chronology)
