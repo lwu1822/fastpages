@@ -113,6 +113,13 @@ Quiz yourself on crime safety!
                 // onclick function call with "like parameters"
                 reaction(HAHA, like_url+row.id, haha_but.id);  
                 console.log(haha_but.id);
+                
+                for (let i = 1; i <= 4; i++) {
+                  if (haha_but.id == "haha".concat(String(i))) {
+                  alert('Incorrect. Try again.');
+                  }
+                }
+                
                
               };
               haha.appendChild(haha_but);  // add "haha button" to haha cell
@@ -146,7 +153,14 @@ Quiz yourself on crime safety!
                 // onclick function call with "jeer parameters"
                 console.log(choiceC_but.id);
 
-                reaction(CHOICEC, choiceC_url+row.id, choiceC_but.id);  
+                reaction(CHOICEC, choiceC_url+row.id, choiceC_but.id); 
+                
+                for (let i = 1; i <= 4; i++) {
+                  if (choiceC_but.id == "choiceC".concat(String(i))) {
+                  alert('Incorrect. Try again.');
+                  }
+                }
+                
               };
              choiceC.appendChild(choiceC_but);  // add "boohoo button" to boohoo cell
 
