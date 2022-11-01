@@ -27,7 +27,7 @@ Quiz yourself on crime safety!
   <thead>
   <tr>
     <th>Question</th>
-    <th>Answer Choice: A</th>
+    <th>A</th>
     <th>B</th>
     <th>C</th>
     <th>D</th>
