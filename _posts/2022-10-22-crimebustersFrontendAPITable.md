@@ -129,11 +129,11 @@ Quiz yourself on crime safety!
                 reaction(BOOHOO, jeer_url+row.id, boohoo_but.id);  
 
                 if (boohoo_but.id == "boohoo2") {
-                  alert('yayy');
+                  alert('Correct!');
                 }
 
                 if (boohoo_but.id == "boohoo4") {
-                  alert('yayy');
+                  alert('Correct!');
                 }
               };
               boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
@@ -160,11 +160,11 @@ Quiz yourself on crime safety!
 
                 reaction(CHOICED, choiceD_url+row.id, choiceD_but.id);  
                 if (choiceD_but.id == "choiceD1") {
-                  alert('yayy');
+                  alert('Correct!');
                 } 
 
                 if (choiceD_but.id == "choiceD3") {
-                  alert('yayy');
+                  alert('Correct!');
                 }
               };
              choiceD.appendChild(choiceD_but);  // add "boohoo button" to boohoo cell
