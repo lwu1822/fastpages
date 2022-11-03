@@ -139,9 +139,6 @@ Quiz yourself on crime safety!
                   alert('Correct!');
                 }
 
-                if (boohoo_but.id == "boohoo4") {
-                  alert('Correct!');
-                }
               };
               boohoo.appendChild(boohoo_but);  // add "boohoo button" to boohoo cell
              
