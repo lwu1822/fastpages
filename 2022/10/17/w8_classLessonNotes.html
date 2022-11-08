@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -133,9 +133,33 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Unit-1-Primitives">Unit 1 Primitives </a></li>
 <li class="toc-entry toc-h1"><a href="#What-are-primitives?">What are primitives? </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Scanners">Scanners </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Unit-2-Objects">Unit 2 Objects </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#What-are-objects?">What are objects? </a></li>
+<li class="toc-entry toc-h2"><a href="#Creating-objects">Creating objects </a></li>
+<li class="toc-entry toc-h2"><a href="#Methods">Methods </a></li>
+<li class="toc-entry toc-h2"><a href="#Static-vs-non-static">Static vs non static </a></li>
+<li class="toc-entry toc-h2"><a href="#Math-class">Math class </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Unit-4-Iteration">Unit 4 Iteration </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#while-loops">while loops </a></li>
+<li class="toc-entry toc-h2"><a href="#for-loops">for loops </a></li>
+<li class="toc-entry toc-h2"><a href="#for-each-loop">for each loop </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Unit-5-Writing-Classes">Unit 5 Writing Classes </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#What-are-classes?">What are classes? </a></li>
+<li class="toc-entry toc-h2"><a href="#Access-modifiers">Access modifiers </a></li>
+<li class="toc-entry toc-h2"><a href="#Getters-and-setters">Getters and setters </a></li>
 </ul>
 </li>
 </ul><!--
@@ -150,6 +174,9 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-1-Primitives">
+<a class="anchor" href="#Unit-1-Primitives" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 1 Primitives<a class="anchor-link" href="#Unit-1-Primitives"> </a>
+</h1>
 <p><em>Note: Credit to Period 1's Primitives presentation for the information below</em></p>
 <h1 id="What-are-primitives?">
 <a class="anchor" href="#What-are-primitives?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are primitives?<a class="anchor-link" href="#What-are-primitives?"> </a>
@@ -162,6 +189,99 @@ window.onload = wrap_img;
 </h2>
 <p>To take in input in java, the Scanner class needs to be first imported with <code>import java.util.Scanner;</code>. Next, a scanner object can be created with <code>Scanner <em>object name</em> = new Scanner(System.in)</code>. To take in input, specify the data type that the scanner takes in with <code>scanner.next<em>data type</em></code></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-2-Objects">
+<a class="anchor" href="#Unit-2-Objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 2 Objects<a class="anchor-link" href="#Unit-2-Objects"> </a>
+</h1>
+<h2 id="What-are-objects?">
+<a class="anchor" href="#What-are-objects?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are objects?<a class="anchor-link" href="#What-are-objects?"> </a>
+</h2>
+<p>Objects are instances of a class. There are three steps to create an object: <strong>declaration, instantiation, and initialization</strong>. Declaration is specified through a type followed by the variable name. Instantiation instantiates the object with the <code>new</code> keyword. Initialization occurs the name of the constructor method is specified after the <code>new</code> keyword.</p>
+<h2 id="Creating-objects">
+<a class="anchor" href="#Creating-objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating objects<a class="anchor-link" href="#Creating-objects"> </a>
+</h2>
+<p>The syntax to create objects is: <code><em>Class-name</em> <em>object-name</em> = new <em>constructor-name</em></code></p>
+<h2 id="Methods">
+<a class="anchor" href="#Methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods<a class="anchor-link" href="#Methods"> </a>
+</h2>
+<p>Methods are defined with a return type (int, bool, etc. or void (no return type)) and the method name.</p>
+<h2 id="Static-vs-non-static">
+<a class="anchor" href="#Static-vs-non-static" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static vs non static<a class="anchor-link" href="#Static-vs-non-static"> </a>
+</h2>
+<p>A static method can only access other static methods, while a nonstatic method can access both static and nonstatic methods.</p>
+<h2 id="Math-class">
+<a class="anchor" href="#Math-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Math class<a class="anchor-link" href="#Math-class"> </a>
+</h2>
+<p>Important methods: <code>Math.abs</code>, <code>Math.random()</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-4-Iteration">
+<a class="anchor" href="#Unit-4-Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 4 Iteration<a class="anchor-link" href="#Unit-4-Iteration"> </a>
+</h1>
+<h2 id="while-loops">
+<a class="anchor" href="#while-loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>while loops<a class="anchor-link" href="#while-loops"> </a>
+</h2>
+<p>The syntax of a while loop looks like this:</p>
+
+<pre><code>while (condition) {
+
+}</code></pre>
+<p>Everytime the while loop executes, it first checks the condition. If the condition is true, the code inside the loop is ran. After the code finishes, the while loop checks again with the condition.</p>
+<h2 id="for-loops">
+<a class="anchor" href="#for-loops" aria-hidden="true"><span class="octicon octicon-link"></span></a>for loops<a class="anchor-link" href="#for-loops"> </a>
+</h2>
+<p>The syntax of a for loop looks like this:</p>
+
+<pre><code>for (initialize variable; condition; change variable) {
+
+}</code></pre>
+<p>Every time the for loop executes, it checks the condition. If the condition is true, the code inside the for loop is ran. After the code finishes running, the variable is incremented by the amount specified.</p>
+<p><br></p>
+<p>There can also be nested iteration (ex: for loop within for loop)</p>
+<h2 id="for-each-loop">
+<a class="anchor" href="#for-each-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>for each loop<a class="anchor-link" href="#for-each-loop"> </a>
+</h2>
+<p>The syntax for a for-each loop looks like this:</p>
+
+<pre><code>for (dataType item : array){
+
+}</code></pre>
+<p>This is especially useful for iterating through arrays.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Unit-5-Writing-Classes">
+<a class="anchor" href="#Unit-5-Writing-Classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unit 5 Writing Classes<a class="anchor-link" href="#Unit-5-Writing-Classes"> </a>
+</h1>
+<h2 id="What-are-classes?">
+<a class="anchor" href="#What-are-classes?" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are classes?<a class="anchor-link" href="#What-are-classes?"> </a>
+</h2>
+<p>Classes are the blueprints for objects. They contain instance variables, constructors, and methods. <mark>Objects</mark> are instances of classes.</p>
+<h2 id="Access-modifiers">
+<a class="anchor" href="#Access-modifiers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Access modifiers<a class="anchor-link" href="#Access-modifiers"> </a>
+</h2>
+<p><code>public</code>: Can be accessed in classes outside of the declaring class</p>
+<p><code>private</code>: Can only be accessed in the declaring class</p>
+<h2 id="Getters-and-setters">
+<a class="anchor" href="#Getters-and-setters" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getters and setters<a class="anchor-link" href="#Getters-and-setters"> </a>
+</h2>
+<p>Getters help make variables read only. Setters allow write only permissions.</p>
+<p>The syntax for getters is:</p>
+<pre>public <em>data-type</em> get<em>Name</em></pre>
 </div>
 </div>
 </div>
