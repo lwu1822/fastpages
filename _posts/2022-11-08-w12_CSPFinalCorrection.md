@@ -1,7 +1,7 @@
 ---
 toc: true
 layout: post
-description: AP CSP Finas Corrections
+description: AP CSP Finlas Corrections
 categories: [life]
 title: AP CSP Finals
 comments: true
