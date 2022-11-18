@@ -3,7 +3,6 @@ title: Binary Color
 layout: default
 description: A Binary Math illustrative application using HTML, Liquid, and JavaScript.
 permalink: /frontend/binary
-image: /images/binary.png
 categories: [3.B, 3.C, C4.4]
 tags: [html, liquid, javascript]
 week: 13
@@ -229,3 +228,15 @@ type: pbl
 
     
 </script>
+
+{% raw %}
+
+<h2>Learnings from code:</h2>
+<p>When I first looked at the code for the binary table, I was confused with some of the syntax. Below is a documentation of things that I learned and an explanation of the code.</p>
+<p> Many buttons have an <code>id</code>. This id is later used in Javascript. Furthermore, this: <code> {{ i }} </code> is liquid syntax. The <code>i</code> is referred from the for loop, whose syntax is this: <code> {% for i in (<em>start-num</em> .. <em>end-num</em>)</code>. </p>
+<p> Looking at the first button, there is a function called <code>add</code>. This results in calling the <code>add</code> function in JavaScript. Within the function, the <code>getBits</code> function is called and stored within the variable <code>binary</code>. This function takes the current values of the binary (the 0s or 1s underneath the light bulbs) and stores it into a variable called <code>bits</code>. Next, the variable <code>decimal</code> takes <code>binary</code> and converts it from base 2 into decimal. </p>
+<p> The next part is confusing. Within the if statement, <code>n > 0</code> means that the +1 button was pressed, while the else statement means that the -1 button was pressed. The decimal of the binary value is then set to a certain number. In <code>decimal = MAX === decimal ? 0 : decimal += n</code>, <code>MAX === decimal</code> is a boolean expression which says that if true, the first option before <code>:</code> will run, and if false, the second option will run. <code>MAX</code>, as defined in the constructor, is equal to 255. Therefore, the code is saying that if the decimal (remember that the decimal is equivalent to the value of the 0s and 1s underneath the light bulbs) number is equal to 255, then when you add 1, turn the decimal number into 0 (since the maximum is 8 bits, 2^8 = 256, binary starts from 0, so maximum number is 255). However, if the decimal number is not equal to <code>MAX</code>, just add 1 to decimal. Same thing in the else part of the loop, only this time, it refers to if the -1 button is clicked. If decimal is 0, when the -1 button is clicked, go back to 255, otherwise, just decrease by 1. </p>
+<p>After that, the decimal number is converted to binary and stored in the <code>binary</code> variable. To convert to binary, the <code>decimal_2_base</code> function is ran. Within the function, something new that I saw was the <mark>do while loop</mark>. I learned that the difference between this loop and the while loop was that the while loop would run only if the condition is fulfilled. The do while loop will always run once, and then if the condition in the <code>while</code> portion is fulfilled, the loop will run again. Within the loop, the variable <code>digit</code> is assigned to be equal to the remainder of the decimal number and the base, which when passed into the <code>decimal_2_base</code> function, was 2. <code>digit</code> is then passed into the variable <code>conversion</code> as a string. The next piece of code that I was confused about was <code>~~(decimal / base);</code>. This is the same as <code>Math.floor()</code>, but runs faster. This piece of code devices the two variables <code>decimal</code> and <code>base</code>, and rounds to the largest integer that is less than or equal to the value. </p>
+<p>For example, if <code>decimal</code> = 5, and <code>base</code> = 2, <code>~~(decimal / base) </code> = <code>~~(2.5)</code> which will round down to 2. 
+
+{% endraw %}
