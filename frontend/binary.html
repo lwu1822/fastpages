@@ -125,6 +125,26 @@ window.onload = wrap_img;
              
             <!-- 2nd table -->
             <table class="table">
+            <!-- Print out value for 2^# on table-->
+            <tr>
+                
+                <td><p id="binaryNote0"></p></td>
+                
+                <td><p id="binaryNote1"></p></td>
+                
+                <td><p id="binaryNote2"></p></td>
+                
+                <td><p id="binaryNote3"></p></td>
+                
+                <td><p id="binaryNote4"></p></td>
+                
+                <td><p id="binaryNote5"></p></td>
+                
+                <td><p id="binaryNote6"></p></td>
+                
+                <td><p id="binaryNote7"></p></td>
+                
+            </tr>
             <tr>
                 
                 
@@ -242,6 +262,12 @@ window.onload = wrap_img;
     const IMAGE_ON = "/fastpages/images/w13Binary-bulbOn.gif";
     const MSG_OFF = "Turn off";
     const IMAGE_OFF = "/fastpages/images/w13Binary-bulbOff.png"
+
+    // IMPORTANT: print out value for 2^# in <p> tag
+    for (let i = 0; i < BITS; i++) {
+        const binNote = document.getElementById('binaryNote' + i);
+        binNote.innerHTML = (2**(BITS - 1 - i));
+    }
 
     // return string with current value of each bit
     function getBits() {
