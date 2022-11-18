@@ -37,12 +37,12 @@ type: pbl
             <tr>
                 <!-- 1st table: button that says "+1" -->
                 <!-- onclick="add(1)", if change 1 to another number, can change increment -->
-                <td><button type="button" id="add1{{ j }}" onclick="add(1, j)">+1</button></td>
+                <td><button type="button" id="add1{{ j }}" onclick="add(1, {{ j }})">+1</button></td>
                 <td id="binary{{ j }}">00000000</td>
                 <td id="octal{{ j }}">0</td>
                 <td id="hexadecimal{{ j }}">0</td>
                 <td id="decimal{{ j }}">0</td>
-                <td><button type="button" id="sub1{{ j }}" onclick="add(-1, j)">-1</button></td>
+                <td><button type="button" id="sub1{{ j }}" onclick="add(-1, {{ j }})">-1</button></td>
             </tr>
             </table>
         </div>
