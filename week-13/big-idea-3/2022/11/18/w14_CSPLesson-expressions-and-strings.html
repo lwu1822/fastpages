@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -148,6 +148,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Vocab:-fill-in-the-blanks">Vocab: fill in the blanks </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#Challenge">Challenge </a></li>
 <li class="toc-entry toc-h2"><a href="#3.4-Strings(Show-video-1)">3.4 Strings(Show video 1) </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Vocab:-fill-in-the-blanks-using-the-video">Vocab: fill in the blanks using the video </a></li>
@@ -155,6 +156,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#Substring/Length-Practice:-change-the-print-functions-to-print-"hello",-"bye",-and-the-string-length">Substring/Length Practice: change the print functions to print &quot;hello&quot;, &quot;bye&quot;, and the string length </a></li>
 </ul>
 </li>
+<li class="toc-entry toc-h2"><a href="#Challenge">Challenge </a></li>
 <li class="toc-entry toc-h1"><a href="#Stuck?">Stuck? </a></li>
 <li class="toc-entry toc-h1"><a href="#Have-any-questions?">Have any questions? </a></li>
 </ul><!--
@@ -306,16 +308,22 @@ Hint: use the MOD operator (a % b) to find the remainder when a is divided by b.
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="n">seven</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="mi">128</span><span class="p">));</span> 
-    <span class="n">six</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="n">num</span><span class="o">%</span><span class="k">128</span>)/64)); 
-    <span class="n">five</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="mi">32</span><span class="p">));</span> 
-    <span class="n">four</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="mi">16</span><span class="p">));</span>
-    <span class="n">three</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="mi">8</span><span class="p">));</span>
-    <span class="n">two</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="mi">4</span><span class="p">));</span>
-    <span class="n">one</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="mi">2</span><span class="p">));</span>
-    <span class="n">zero</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="mi">1</span><span class="p">));</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">seven</span> <span class="o">+</span> <span class="n">six</span> <span class="o">+</span> <span class="n">five</span> <span class="o">+</span> <span class="n">four</span> <span class="o">+</span> <span class="n">three</span> <span class="o">+</span> <span class="n">two</span> <span class="o">+</span> <span class="n">one</span> <span class="o">+</span> <span class="n">zero</span><span class="p">)</span>
+    <span class="n">numOfBinary</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">binary</span> <span class="o">=</span> <span class="p">[];</span> 
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">""</span>
     
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numOfBinary</span><span class="p">):</span> 
+        <span class="n">binary</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">numOfBinary</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)))</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">binary</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">-</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">-=</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">"1"</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">"0"</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+        
 <span class="n">convert</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
 </pre></div>
 
@@ -329,7 +337,7 @@ Hint: use the MOD operator (a % b) to find the remainder when a is divided by b.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0001361225
+<pre>00011001
 </pre>
 </div>
 </div>
@@ -340,6 +348,84 @@ Hint: use the MOD operator (a % b) to find the remainder when a is divided by b.
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Challenge">
+<a class="anchor" href="#Challenge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge<a class="anchor-link" href="#Challenge"> </a>
+</h2>
+<p>Using JavaScript and HTML frontend:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>&lt;p id="binary"&gt;&lt;/p&gt;
+
+
+&lt;script&gt;
+    let num = 25; // change 25 to binary
+    const numOfBinary = 8; // 8 bits (2^8 = 256, 256 possible numbers from 1-255)
+    const binary = []; 
+    let output = ""
+
+    // add powers of 2 to the binary array
+    for (let i = 0; i &lt; numOfBinary; i++) {
+        binary.push(2**(numOfBinary - 1 - i)); 
+    }
+
+    // subtract powers of 2 from num (value = 25) and add 0s or 1s to the binary string accordingly
+    for (let i = 0; i &lt; binary.length; i++) {
+        if (num - binary[i] &gt;= 0) {
+            num -= binary[i]; 
+            output += "1"; 
+        } else {
+            output += "0";
+        }
+    }
+
+    document.getElementById("binary").innerHTML = "Output" + String(output);
+
+&lt;/script&gt;</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p id="binary"></p>
+<script>
+    // IMPORTANT: this has to be let
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+    let num = 25;
+    const numOfBinary = 8; 
+    const binary = []; 
+    let output = ""
+
+    for (let i = 0; i < numOfBinary; i++) {
+        binary.push(2**(numOfBinary - 1 - i)); 
+    }
+
+    for (let i = 0; i < binary.length; i++) {
+        if (num - binary[i] >= 0) {
+            num -= binary[i]; 
+            output += "1"; 
+        } else {
+            output += "0";
+        }
+    }
+
+    // IMPORTANT: need to typecast to String
+    document.getElementById("binary").innerHTML = "Output: " + String(output);
+
+</script>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -536,6 +622,63 @@ Length of orlando: 7
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Challenge">
+<a class="anchor" href="#Challenge" aria-hidden="true"><span class="octicon octicon-link"></span></a>Challenge<a class="anchor-link" href="#Challenge"> </a>
+</h2>
+<p>Using JavaScript and HTML frontend:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>
+&lt;p id="list"&gt;&lt;/p&gt;
+
+
+&lt;script&gt;
+
+
+    const names = ["jaden", "max", "dylan", "orlando"]; 
+
+
+    for (name of names) {
+        document.getElementById("list").innerHTML += String(name) + "&lt;br&gt;" + "Length of " + String(name) + ": " + String(name.length) + "&lt;br&gt;";        
+    }
+
+
+&lt;/script&gt;</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p id="list"></p>
+<script>
+    // IMPORTANT: Apparently cells are also connected with each other so paragraph IDs MUST be diff
+
+    const names = ["jaden", "max", "dylan", "orlando"]; 
+
+    // to add newline, n do <br>, c't do \n
+    // how to append text: https://stackoverflow.com/questions/5677799/how-to-append-text-to-a-div
+    // using <br>, not \n: https://stackoverflow.com/questions/61374913/why-does-n-sometimes-act-as-a-space-in-javascript-instead-of-a-new-line-charact
+    // also you need to use String(name), c't do name
+    for (name of names) {
+        document.getElementById("list").innerHTML += String(name) + "<br>" + "Length of " + String(name) + ": " + String(name.length) + "<br>";        
+    }
+
+
+</script>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
