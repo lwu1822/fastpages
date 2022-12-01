@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -150,7 +150,12 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#List">List </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#3.2-Data-Abstraction">3.2 Data Abstraction </a></li>
+<li class="toc-entry toc-h2"><a href="#3.2-Data-Abstraction">3.2 Data Abstraction </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Lists">Lists </a></li>
+<li class="toc-entry toc-h3"><a href="#Lists">Lists </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><!--
@@ -169,49 +174,49 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="nx">albums</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s2">"Welcome to my Nightmare"</span><span class="p">,</span> <span class="s2">"Alice Cooper"</span><span class="p">,</span> <span class="mf">1975</span><span class="p">,</span>   <span class="err">#</span> <span class="nx">First</span> <span class="nx">album</span> <span class="nx">list</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">albums</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">"Welcome to my Nightmare"</span><span class="p">,</span> <span class="s2">"Alice Cooper"</span><span class="p">,</span> <span class="mi">1975</span><span class="p">,</span>   <span class="c1"># First album list</span>
      <span class="p">[</span>
-         <span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="s2">"Welcome to my Nightmare"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="s2">"Devil's Food"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="s2">"The Black Widow"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="s2">"Some Folks"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">5</span><span class="p">,</span> <span class="s2">"Only Women Bleed"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"Welcome to my Nightmare"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"Devil's Food"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"The Black Widow"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"Some Folks"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">"Only Women Bleed"</span><span class="p">),</span>
      <span class="p">]</span>
      <span class="p">),</span>
-    <span class="p">(</span><span class="s2">"Bad Company"</span><span class="p">,</span> <span class="s2">"Bad Company"</span><span class="p">,</span> <span class="mf">1974</span><span class="p">,</span>   <span class="err">#</span> <span class="nx">Second</span> <span class="nx">album</span> <span class="nx">list</span>
+    <span class="p">(</span><span class="s2">"Bad Company"</span><span class="p">,</span> <span class="s2">"Bad Company"</span><span class="p">,</span> <span class="mi">1974</span><span class="p">,</span>   <span class="c1"># Second album list</span>
      <span class="p">[</span>
-         <span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="s2">"Can't Get Enough"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="s2">"Rock Steady"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="s2">"Ready for Love"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="s2">"Don't Let Me Down"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">5</span><span class="p">,</span> <span class="s2">"Bad Company"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">6</span><span class="p">,</span> <span class="s2">"The Way I Choose"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">7</span><span class="p">,</span> <span class="s2">"Movin' On"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">8</span><span class="p">,</span> <span class="s2">"Seagull"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"Can't Get Enough"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"Rock Steady"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"Ready for Love"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"Don't Let Me Down"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s2">"Bad Company"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="s2">"The Way I Choose"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s2">"Movin' On"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s2">"Seagull"</span><span class="p">),</span>
      <span class="p">]</span>
      <span class="p">),</span>
-    <span class="p">(</span><span class="s2">"Nightflight"</span><span class="p">,</span> <span class="s2">"Budgie"</span><span class="p">,</span> <span class="mf">1981</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">"Nightflight"</span><span class="p">,</span> <span class="s2">"Budgie"</span><span class="p">,</span> <span class="mi">1981</span><span class="p">,</span>
      <span class="p">[</span>
-         <span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="s2">"I Turned to Stone"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="s2">"Keeping a Rendezvous"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="s2">"Reaper of the Glory"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="s2">"She Used Me Up"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"I Turned to Stone"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"Keeping a Rendezvous"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"Reaper of the Glory"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"She Used Me Up"</span><span class="p">),</span>
      <span class="p">]</span>
      <span class="p">),</span>
-    <span class="p">(</span><span class="s2">"More Mayhem"</span><span class="p">,</span> <span class="s2">"Imelda May"</span><span class="p">,</span> <span class="mf">2011</span><span class="p">,</span>
+    <span class="p">(</span><span class="s2">"More Mayhem"</span><span class="p">,</span> <span class="s2">"Imelda May"</span><span class="p">,</span> <span class="mi">2011</span><span class="p">,</span>
      <span class="p">[</span>
-         <span class="p">(</span><span class="mf">1</span><span class="p">,</span> <span class="s2">"Pulling the Rug"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">2</span><span class="p">,</span> <span class="s2">"Psycho"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="s2">"Mayhem"</span><span class="p">),</span>
-         <span class="p">(</span><span class="mf">4</span><span class="p">,</span> <span class="s2">"Kentish Town Waltz"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"Pulling the Rug"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">"Psycho"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s2">"Mayhem"</span><span class="p">),</span>
+         <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="s2">"Kentish Town Waltz"</span><span class="p">),</span>
      <span class="p">]</span>
      <span class="p">),</span>
 <span class="p">]</span>
 
-<span class="nx">album</span> <span class="o">=</span> <span class="nx">input</span><span class="p">()</span>
-<span class="nx">song</span> <span class="o">=</span> <span class="nx">input</span><span class="p">()</span>
-<span class="nx">print</span><span class="p">(</span><span class="s2">"Playing "</span> <span class="o">+</span> <span class="s2">"\""</span> <span class="o">+</span> <span class="nx">str</span><span class="p">(</span><span class="nx">albums</span><span class="p">[</span><span class="kr">int</span><span class="p">(</span><span class="nx">album</span><span class="p">)</span><span class="o">-</span><span class="mf">1</span><span class="p">][</span><span class="mf">3</span><span class="p">][</span><span class="kr">int</span><span class="p">(</span><span class="nx">song</span><span class="p">)</span><span class="o">-</span><span class="mf">1</span><span class="p">][</span><span class="mf">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">"\""</span><span class="p">)</span>
+<span class="n">album</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="n">song</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Playing "</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">albums</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">album</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="nb">int</span><span class="p">(</span><span class="n">song</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\"</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -250,16 +255,16 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="nx">data</span> <span class="o">=</span> <span class="p">[</span><span class="mf">104</span><span class="p">,</span> <span class="mf">101</span><span class="p">,</span> <span class="mf">4</span><span class="p">,</span> <span class="mf">105</span><span class="p">,</span> <span class="mf">308</span><span class="p">,</span> <span class="mf">103</span><span class="p">,</span> <span class="mf">5</span><span class="p">,</span> <span class="mf">107</span><span class="p">,</span>
-        <span class="mf">100</span><span class="p">,</span> <span class="mf">306</span><span class="p">,</span> <span class="mf">106</span><span class="p">,</span> <span class="mf">102</span><span class="p">,</span> <span class="mf">108</span><span class="p">]</span>    <span class="err">#</span> <span class="nx">list</span> <span class="k">of</span> <span class="nx">the</span> <span class="nx">different</span> <span class="nx">numerical</span> <span class="nx">values</span>
-<span class="nx">min_valid</span> <span class="o">=</span> <span class="mf">100</span>  <span class="err">#</span> <span class="nx">minimum</span> <span class="nx">value</span>
-<span class="nx">max_valid</span> <span class="o">=</span> <span class="mf">200</span>  <span class="err">#</span> <span class="nx">maximum</span> <span class="nx">value</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">104</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">105</span><span class="p">,</span> <span class="mi">308</span><span class="p">,</span> <span class="mi">103</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">107</span><span class="p">,</span>
+        <span class="mi">100</span><span class="p">,</span> <span class="mi">306</span><span class="p">,</span> <span class="mi">106</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mi">108</span><span class="p">]</span>    <span class="c1"># list of the different numerical values</span>
+<span class="n">min_valid</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># minimum value</span>
+<span class="n">max_valid</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># maximum value</span>
 
-<span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span> <span class="nx">len</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span><span class="o">:</span> 
-    <span class="k">if</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">100</span><span class="o">:</span>
-        <span class="nx">print</span><span class="p">(</span><span class="nx">str</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">str</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span>
-    <span class="k">if</span> <span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mf">200</span><span class="o">:</span> 
-        <span class="nx">print</span><span class="p">(</span><span class="nx">str</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nx">str</span><span class="p">(</span><span class="nx">data</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)):</span> 
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">200</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
 </pre></div>
 
     </div>
@@ -369,8 +374,35 @@ const <em>name</em> = [
 <a class="anchor" href="#3.2-Data-Abstraction" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.2 Data Abstraction<a class="anchor-link" href="#3.2-Data-Abstraction"> </a>
 </h2>
 <ul>
-<li>Data abstraction: Separates </li>
+<li>Data abstraction: Simplifies code by hiding unnecessary information. An example of using data abstraction is lists, which are able to store multiple values. Lists can be more useful than variables in that you can have one list that stores multiple values which would otherwise have needed multiple variables to store them. </li>
 </ul>
+<h3 id="Lists">
+<a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
+</h3>
+<p>Data abstraction: Simplifies code by hiding unnecssary information. An example of using data abstraction is lists, which are able to store multiple values. Lists can be more useful than variables in that you can have one list that stores multiple values which would otherwise have needed multiple variables to store them.</p>
+<h3 id="Lists">
+<a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
+</h3>
+<p>Code:</p>
+<ul>
+<li>
+<p><code><em>name</em> = [<em>element 1 </em>, <em>element 2</em>]</code></p>
+<p>Elements can also be separated by newlines to increase readability:</p>
+<pre>
+<em>name</em> = [
+  <em>element 1</em>, 
+  <em>element 2</em>
+]
+</pre>
+</li>
+<li>
+<p><code>id(<em>list name</em>)</code>: Each list has an id that can be displayed</p>
+</li>
+<li>
+<p><code><em>list name</em> += [<em>element</em>]</code> or  Add an element to the list</p>
+</li>
+</ul>
+<p><code><em>list name</em>.append(<em>element</em>)</code>:</p>
 
 </div>
 </div>
