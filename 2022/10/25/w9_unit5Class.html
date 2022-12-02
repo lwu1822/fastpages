@@ -142,6 +142,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Static-vs-nonstatic">Static vs nonstatic </a></li>
 <li class="toc-entry toc-h2"><a href="#Tester-methods">Tester methods </a></li>
 <li class="toc-entry toc-h2"><a href="#Inheritance">Inheritance </a></li>
+<li class="toc-entry toc-h2"><a href="#Abstract-classes">Abstract classes </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#toString()">toString() </a></li>
@@ -731,6 +732,79 @@ Tabby cat has tail? true
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Abstract-classes">
+<a class="anchor" href="#Abstract-classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Abstract classes<a class="anchor-link" href="#Abstract-classes"> </a>
+</h2>
+<p>Objects can not be created from abstract classes. Abstract classes serve as a blueprint that other classes can extend from.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">AbstractCat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sayMeow</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"meow"</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">TabbyCatAbstract</span> <span class="kd">extends</span> <span class="n">AbstractCat</span><span class="p">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">furType</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"striped"</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TabbyCatAbstract</span> <span class="n">tabbycat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TabbyCatAbstract</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">tabbycat</span><span class="p">.</span><span class="na">furType</span><span class="p">());</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">TabbyCatAbstract</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>striped
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
