@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -150,7 +150,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#for-each-loops">for each loops </a></li>
 <li class="toc-entry toc-h1"><a href="#Class">Class </a>
 <ul>
+<li class="toc-entry toc-h2"><a href="#What-I-learned">What I learned </a></li>
 <li class="toc-entry toc-h2"><a href="#Explanation-of-items-in-the-code">Explanation of items in the code </a></li>
+<li class="toc-entry toc-h2"><a href="#Static-vs-nonstatic">Static vs nonstatic </a></li>
 </ul>
 </li>
 </ul><!--
@@ -1061,6 +1063,10 @@ The value of i is: 5
 <h1 id="Class">
 <a class="anchor" href="#Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class<a class="anchor-link" href="#Class"> </a>
 </h1>
+<h2 id="What-I-learned">
+<a class="anchor" href="#What-I-learned" aria-hidden="true"><span class="octicon octicon-link"></span></a>What I learned<a class="anchor-link" href="#What-I-learned"> </a>
+</h2>
+<p>Static methods are used mainly for convenience. If you create a regular method, you need to create an object to execute the method. However, an object does not need to be created to access a static method.</p>
 <p>Below is a piece of code that illustrates many parts of a class.</p>
 
 </div>
@@ -1144,6 +1150,158 @@ person1's height is: 65
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Static-vs-nonstatic">
+<a class="anchor" href="#Static-vs-nonstatic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static vs nonstatic<a class="anchor-link" href="#Static-vs-nonstatic"> </a>
+</h2>
+<p>In short, to access a variable from a static method, the variable must be declared with static.</p>
+<p><strong>static variables can be accessed in both static and nonstatic methods. nonstatic variables can only be accessed in nonstatic methods</strong></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">staticDemo</span><span class="p">{</span>
+    
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">staticVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">staticVar</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">staticDemo</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will produce an <mark>error</mark> because there is <mark>no static</mark>!</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">staticDemo</span><span class="p">{</span>
+    
+    <span class="kt">int</span> <span class="n">staticVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">staticVar</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">staticDemo</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">staticVar</span><span class="ansi-black-intense-fg ansi-bold">); </span>
+<span class="ansi-red-intense-fg ansi-bold">non-static variable staticVar cannot be referenced from a static context</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Static variables can be accessed in nonstatic methods!</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">staticDemo</span><span class="p">{</span>
+    
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">staticVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printVar</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">staticVar</span><span class="p">);</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">staticDemo</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">staticDemo</span><span class="p">();</span> 
+        <span class="n">a</span><span class="p">.</span><span class="na">printVar</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">staticDemo</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
