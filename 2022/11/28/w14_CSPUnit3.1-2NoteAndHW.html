@@ -152,8 +152,12 @@ window.onload = wrap_img;
 </li>
 <li class="toc-entry toc-h2"><a href="#3.2-Data-Abstraction">3.2 Data Abstraction </a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#Lists">Lists </a></li>
-<li class="toc-entry toc-h3"><a href="#Lists">Lists </a></li>
+<li class="toc-entry toc-h3"><a href="#Lists">Lists </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Iterating-through-lists">Iterating through lists </a></li>
+<li class="toc-entry toc-h4"><a href="#Miscellaneous">Miscellaneous </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -380,9 +384,6 @@ const <em>name</em> = [
 <a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
 </h3>
 <p>Data abstraction: Simplifies code by hiding unnecssary information. An example of using data abstraction is lists, which are able to store multiple values. Lists can be more useful than variables in that you can have one list that stores multiple values which would otherwise have needed multiple variables to store them.</p>
-<h3 id="Lists">
-<a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
-</h3>
 <p>Code:</p>
 <ul>
 <li>
@@ -399,10 +400,22 @@ const <em>name</em> = [
 <p><code>id(<em>list name</em>)</code>: Each list has an id that can be displayed</p>
 </li>
 <li>
-<p><code><em>list name</em> += [<em>element</em>]</code> or  Add an element to the list</p>
+<p><code><em>list name</em> += [<em>element</em>]</code> or <code><em>list name</em>.append(<em>element</em>)</code>: Add an element to the list</p>
 </li>
 </ul>
-<p><code><em>list name</em>.append(<em>element</em>)</code>:</p>
+<h4 id="Iterating-through-lists">
+<a class="anchor" href="#Iterating-through-lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iterating through lists<a class="anchor-link" href="#Iterating-through-lists"> </a>
+</h4>
+<p><code>for <em>variable 1</em>, <em>variable 2</em> in <em>list name</em>:</code></p>
+<h4 id="Miscellaneous">
+<a class="anchor" href="#Miscellaneous" aria-hidden="true"><span class="octicon octicon-link"></span></a>Miscellaneous<a class="anchor-link" href="#Miscellaneous"> </a>
+</h4>
+<ul>
+<li>
+<code><em>string</em>.split()</code>: Split each word of a string into an element in a list</li>
+<li>
+<code>"".join(<em>list name</em>)</code>: Join elements of a list into a string</li>
+</ul>
 
 </div>
 </div>
