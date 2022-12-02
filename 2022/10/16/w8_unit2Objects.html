@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      5 min read
     
 </span></p>
 
@@ -133,6 +133,21 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Notes">Notes </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Creating-objects">Creating objects </a></li>
+<li class="toc-entry toc-h2"><a href="#Methods">Methods </a></li>
+<li class="toc-entry toc-h2"><a href="#Static-vs-non-static">Static vs non static </a></li>
+<li class="toc-entry toc-h2"><a href="#Math-class">Math class </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Comparing">Comparing </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Numbers">Numbers </a></li>
+<li class="toc-entry toc-h2"><a href="#Strings">Strings </a></li>
+<li class="toc-entry toc-h2"><a href="#Objects">Objects </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#1a">1a </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Initial-attempt:">Initial attempt: </a></li>
@@ -155,6 +170,304 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h1>
+<p>Objects are instances of a class. There are three steps to create an object: <strong>declaration, instantiation, and initialization</strong>. Declaration is specified through a type followed by the variable name. Instantiation instantiates the object with the <code>new</code> keyword. Initialization occurs the name of the constructor method is specified after the <code>new</code> keyword.</p>
+<h2 id="Creating-objects">
+<a class="anchor" href="#Creating-objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating objects<a class="anchor-link" href="#Creating-objects"> </a>
+</h2>
+<p>The syntax to create objects is: <code><em>Class-name</em> <em>object-name</em> = new <em>constructor-name</em></code></p>
+<h2 id="Methods">
+<a class="anchor" href="#Methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods<a class="anchor-link" href="#Methods"> </a>
+</h2>
+<p>Methods are defined with a return type (int, bool, etc. or void (no return type)) and the method name.</p>
+<h2 id="Static-vs-non-static">
+<a class="anchor" href="#Static-vs-non-static" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static vs non static<a class="anchor-link" href="#Static-vs-non-static"> </a>
+</h2>
+<p>A static method can only access other static methods, while a nonstatic method can access both static and nonstatic methods.</p>
+<h2 id="Math-class">
+<a class="anchor" href="#Math-class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Math class<a class="anchor-link" href="#Math-class"> </a>
+</h2>
+<p>Important methods: <code>Math.abs</code>, <code>Math.random()</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Comparing">
+<a class="anchor" href="#Comparing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comparing<a class="anchor-link" href="#Comparing"> </a>
+</h1>
+<h2 id="Numbers">
+<a class="anchor" href="#Numbers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Numbers<a class="anchor-link" href="#Numbers"> </a>
+</h2>
+<p>Numbers can be compared using <code>==</code>. Numbers can always be compared with <code>==</code> because they are primitive types and not objects.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> 
+<span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> 
+
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"a = b"</span><span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>a = b
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Strings">
+<a class="anchor" href="#Strings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Strings<a class="anchor-link" href="#Strings"> </a>
+</h2>
+<p>There are two ways to compare strings: <code>==</code> and <code>.equals()</code>.</p>
+<p>You can use <code>==</code> to compare strings when they are declared like this: <code>String <em>name</em> = "<em>string</em>";</code></p>
+<p>An example is shown below:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">"foo"</span><span class="p">;</span> 
+<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="s">"foo"</span><span class="p">;</span> 
+
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The two strings are equal"</span><span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The two strings are equal
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>However, if your two strings are objects, you can not use <code>==</code> to compare them (see below):</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">"foo"</span><span class="p">);</span> 
+<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">"foo"</span><span class="p">);</span> 
+
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The two strings are equal"</span><span class="p">);</span> 
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The two strings are not equal"</span><span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The two strings are not equal
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Instead, you need to use <code>.equals()</code> to compare the two string <strong>objects</strong>.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">"foo"</span><span class="p">);</span> 
+<span class="n">String</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">"foo"</span><span class="p">);</span> 
+
+<span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">b</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The two strings are equal"</span><span class="p">);</span> 
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"The two strings are not equal"</span><span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The two strings are equal
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note: <code>a</code> and <code>b</code> are different objects, but they contain the same string of <code>foo</code>, which is what <code>.equals()</code> checks for.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Objects">
+<a class="anchor" href="#Objects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objects<a class="anchor-link" href="#Objects"> </a>
+</h2>
+<p>There is a way to compare if two objects have the same attributes using the <code>.equals()</code> method. However, you need to first override the method to do so.</p>
+<p>Below is an example:</p>
+<p>To override the <code>.equals()</code> method, you need to create the method that takes in an object. In this example, the object is the format of <code>Object obj</code>. In the <code>.equals()</code> method, <code>Object obj</code> refers to <code>test2</code>. Next, <code>obj</code> needs to be typecasted to the class, in this case <code>ObjectTest</code>, for comparison to work. The return statement checks to see if the attributes of the two objects are equal. Note: <code>this</code> refers to <code>test1</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ObjectTest</span> <span class="p">{</span>
+    <span class="n">String</span> <span class="n">attribute1</span><span class="p">;</span>
+    <span class="n">String</span> <span class="n">attribute2</span><span class="p">;</span> 
+    
+    <span class="c1">// IMPORTANT: forgot to specify String in parameters</span>
+    <span class="c1">// see https://www.daniweb.com/programming/software-development/threads/346224/identifier-expected-in-constructor-definition</span>
+    <span class="c1">// youtube reference for comparing objects: https://www.youtube.com/watch?v=X2AjBFZfFCY</span>
+    <span class="kd">public</span> <span class="nf">ObjectTest</span><span class="p">(</span><span class="n">String</span> <span class="n">attribute1</span><span class="p">,</span> <span class="n">String</span> <span class="n">attribute2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">attribute1</span> <span class="o">=</span> <span class="n">attribute1</span><span class="p">;</span> 
+        <span class="k">this</span><span class="p">.</span><span class="na">attribute2</span> <span class="o">=</span> <span class="n">attribute2</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ObjectTest</span> <span class="n">test</span> <span class="o">=</span> <span class="p">(</span><span class="n">ObjectTest</span><span class="p">)</span><span class="n">obj</span><span class="p">;</span> 
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">attribute1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">test</span><span class="p">.</span><span class="na">attribute1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">attribute2</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">test</span><span class="p">.</span><span class="na">attribute2</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ObjectTest</span> <span class="n">test1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectTest</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">);</span> 
+        <span class="n">ObjectTest</span> <span class="n">test2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ObjectTest</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">);</span> 
+
+        
+        <span class="k">if</span> <span class="p">(</span><span class="n">test1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">test2</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Same attributes"</span><span class="p">);</span> 
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">ObjectTest</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Same attributes
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">

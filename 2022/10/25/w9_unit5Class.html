@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      5 min read
     
 </span></p>
 
@@ -133,6 +133,18 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Notes">Notes </a></li>
+<li class="toc-entry toc-h1"><a href="#Class">Class </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#What-I-learned">What I learned </a></li>
+<li class="toc-entry toc-h2"><a href="#Explanation-of-items-in-the-code">Explanation of items in the code </a></li>
+<li class="toc-entry toc-h2"><a href="#Static-vs-nonstatic">Static vs nonstatic </a></li>
+<li class="toc-entry toc-h2"><a href="#Tester-methods">Tester methods </a></li>
+<li class="toc-entry toc-h2"><a href="#Inheritance">Inheritance </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#toString()">toString() </a></li>
+<li class="toc-entry toc-h1"><a href="#hashCode()">hashCode() </a></li>
 <li class="toc-entry toc-h1"><a href="#2019-FRQ-#2">2019 FRQ #2 </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Initial-attempt">Initial attempt </a></li>
@@ -149,6 +161,510 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h1>
+<h1 id="Class">
+<a class="anchor" href="#Class" aria-hidden="true"><span class="octicon octicon-link"></span></a>Class<a class="anchor-link" href="#Class"> </a>
+</h1>
+<h2 id="What-I-learned">
+<a class="anchor" href="#What-I-learned" aria-hidden="true"><span class="octicon octicon-link"></span></a>What I learned<a class="anchor-link" href="#What-I-learned"> </a>
+</h2>
+<p>Static methods are used mainly for convenience. If you create a regular method, you need to create an object to execute the method. However, an object does not need to be created to access a static method.</p>
+<p>Below is a piece of code that illustrates many parts of a class.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">age</span><span class="p">;</span> 
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">height</span><span class="p">;</span> 
+
+    <span class="kd">public</span> <span class="nf">Person</span><span class="p">(){</span>
+
+    <span class="p">}</span>
+    
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAge</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAge</span><span class="p">(</span><span class="kt">int</span> <span class="n">age</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">age</span> <span class="o">=</span> <span class="n">age</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHeight</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">height</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHeight</span><span class="p">(</span><span class="kt">int</span> <span class="n">height</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">height</span> <span class="o">=</span> <span class="n">height</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Person</span> <span class="n">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="p">();</span> 
+        <span class="n">person1</span><span class="p">.</span><span class="na">setAge</span><span class="p">(</span><span class="mi">20</span><span class="p">);</span>
+        <span class="n">person1</span><span class="p">.</span><span class="na">setHeight</span><span class="p">(</span><span class="mi">65</span><span class="p">);</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"person1's age is: "</span> <span class="o">+</span> <span class="n">person1</span><span class="p">.</span><span class="na">getAge</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"person1's height is: "</span> <span class="o">+</span> <span class="n">person1</span><span class="p">.</span><span class="na">getHeight</span><span class="p">());</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Person</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>person1's age is: 20
+person1's height is: 65
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Explanation-of-items-in-the-code">
+<a class="anchor" href="#Explanation-of-items-in-the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Explanation of items in the code<a class="anchor-link" href="#Explanation-of-items-in-the-code"> </a>
+</h2>
+<p>A class is like a blueprint for an object. In this case, the class is <code>Person</code> (names of classes by convention have the first letter capitalized). The <code>Person</code> class has an empty constructor. Common things found in a class are <strong>getters</strong> and <strong>setters</strong>. Getters are created with <code>get<em>variable name</em></code>, and setters are created with <code>set<em>variable name</em></code>. In both cases, the first letter of the variable name should be capitalized, as in accordance with Java variable naming conventions. Getters and setters are used to protect your data so that you do not assign unintended values to your variables. Lastly, the <code>this</code> keyword is used to refer to the declared variables. <code>this</code> is used to differentiate between the declared variables and the variables that are passed into a method as parameters and who may have the same name.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Static-vs-nonstatic">
+<a class="anchor" href="#Static-vs-nonstatic" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static vs nonstatic<a class="anchor-link" href="#Static-vs-nonstatic"> </a>
+</h2>
+<p>In short, to access a variable from a static method, the variable must be declared with static.</p>
+<p><strong>static variables can be accessed in both static and nonstatic methods. nonstatic variables can only be accessed in nonstatic methods</strong></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">staticDemo</span><span class="p">{</span>
+    
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">staticVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">staticVar</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">staticDemo</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This will produce an <mark>error</mark> because there is <mark>no static</mark>!</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">staticDemo</span><span class="p">{</span>
+    
+    <span class="kt">int</span> <span class="n">staticVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">staticVar</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">staticDemo</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">staticVar</span><span class="ansi-black-intense-fg ansi-bold">); </span>
+<span class="ansi-red-intense-fg ansi-bold">non-static variable staticVar cannot be referenced from a static context</span>
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Static variables can be accessed in nonstatic methods!</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">staticDemo</span><span class="p">{</span>
+    
+    <span class="kd">static</span> <span class="kt">int</span> <span class="n">staticVar</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printVar</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">staticVar</span><span class="p">);</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">staticDemo</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">staticDemo</span><span class="p">();</span> 
+        <span class="n">a</span><span class="p">.</span><span class="na">printVar</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">staticDemo</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tester-methods">
+<a class="anchor" href="#Tester-methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tester methods<a class="anchor-link" href="#Tester-methods"> </a>
+</h2>
+<p>Tester methods can be used to test if your code is working the way you want it to work.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Inheritance">
+<a class="anchor" href="#Inheritance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inheritance<a class="anchor-link" href="#Inheritance"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Cat</span><span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasTail</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sayMeow</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Meow!"</span><span class="p">);</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TabbyCat</span> <span class="kd">extends</span> <span class="n">Cat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">furType</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"striped"</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasTail</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">hasTail</span><span class="p">();</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TabbyCat</span> <span class="n">cat1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TabbyCat</span><span class="p">();</span> 
+        <span class="n">cat1</span><span class="p">.</span><span class="na">sayMeow</span><span class="p">();</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tabby cat fur type: "</span> <span class="o">+</span> <span class="n">cat1</span><span class="p">.</span><span class="na">furType</span><span class="p">());</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tabby cat has tail? "</span> <span class="o">+</span> <span class="n">cat1</span><span class="p">.</span><span class="na">hasTail</span><span class="p">());</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">TabbyCat</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Meow!
+Tabby cat fur type: striped
+Tabby cat has tail? true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the example above, the <strong>superclass</strong> is <code>Cat</code>, while the <strong>subclass</strong> is <code>TabbyCat</code>. Extends helps save time from copying and pasting code. <code>TabbyCat</code> has access to all of the methods in <code>Cat</code>, but also has its specific method, <code>furType()</code>. The <code>super</code> keyword calls the superclass.</p>
+<p>One interesting thing is that if the subclass has the same method as the superclass, the subclass's method will override the superclass. This is called <mark>polymorphism</mark>. See below:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TabbyCat</span> <span class="kd">extends</span> <span class="n">Cat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">furType</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">"striped"</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">hasTail</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> <span class="c1">// oof</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">TabbyCat</span> <span class="n">cat1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TabbyCat</span><span class="p">();</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Tabby cat has tail? "</span> <span class="o">+</span> <span class="n">cat1</span><span class="p">.</span><span class="na">hasTail</span><span class="p">());</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">TabbyCat</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Tabby cat has tail? false
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>During compilation though, the <code>hasTail()</code> method will be looked for in the <code>Cat</code> class. Only during run time, the method will be resolved to the <code>TabbyCat</code> object. This is called late binding (using overriding)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Something very cool in Java is that you can have methods with the same name, <strong>as long as they have different parameters</strong>. This would result in overloading.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="toString()">
+<a class="anchor" href="#toString()" aria-hidden="true"><span class="octicon octicon-link"></span></a>toString()<a class="anchor-link" href="#toString()"> </a>
+</h1>
+<p>toString changes the value into a String object</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="n">Integer</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> 
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Data type of x is: "</span> <span class="o">+</span> <span class="n">x</span><span class="p">.</span><span class="na">toString</span><span class="p">().</span><span class="na">getClass</span><span class="p">().</span><span class="na">getSimpleName</span><span class="p">());</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Data type of x is: String
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="hashCode()">
+<a class="anchor" href="#hashCode()" aria-hidden="true"><span class="octicon octicon-link"></span></a>hashCode()<a class="anchor-link" href="#hashCode()"> </a>
+</h1>
+<p>hashCode returns the hash code for an object. If obj1.equals(obj2), then obj1.hashCode() == obj2.hashCode();</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">"foo"</span><span class="p">);</span> 
+<span class="n">String</span> <span class="n">text2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="p">(</span><span class="s">"foo"</span><span class="p">);</span> 
+
+<span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">text2</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">hashCode</span><span class="p">()</span> <span class="o">==</span> <span class="n">text2</span><span class="p">.</span><span class="na">hashCode</span><span class="p">());</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
