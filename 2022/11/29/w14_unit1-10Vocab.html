@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -878,6 +878,7 @@ Set B: {5, 6, 8}</p>
 </h2>
 <p>There is a way to compare if two objects have the same attributes using the <code>.equals()</code> method. However, you need to first override the method to do so.</p>
 <p>Below is an example:</p>
+<p>To override the <code>.equals()</code> method, you need to create the method that takes in an object. In this example, the object is the format of <code>Object obj</code>. In the <code>.equals()</code> method, <code>Object obj</code> refers to <code>test2</code>. Next, <code>obj</code> needs to be typecasted to the class, in this case <code>ObjectTest</code>, for comparison to work. The return statement checks to see if the attributes of the two objects are equal. Note: <code>this</code> refers to <code>test1</code></p>
 
 </div>
 </div>
@@ -895,6 +896,7 @@ Set B: {5, 6, 8}</p>
     
     <span class="c1">// IMPORTANT: forgot to specify String in parameters</span>
     <span class="c1">// see https://www.daniweb.com/programming/software-development/threads/346224/identifier-expected-in-constructor-definition</span>
+    <span class="c1">// youtube reference for comparing objects: https://www.youtube.com/watch?v=X2AjBFZfFCY</span>
     <span class="kd">public</span> <span class="nf">ObjectTest</span><span class="p">(</span><span class="n">String</span> <span class="n">attribute1</span><span class="p">,</span> <span class="n">String</span> <span class="n">attribute2</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">this</span><span class="p">.</span><span class="na">attribute1</span> <span class="o">=</span> <span class="n">attribute1</span><span class="p">;</span> 
         <span class="k">this</span><span class="p">.</span><span class="na">attribute2</span> <span class="o">=</span> <span class="n">attribute2</span><span class="p">;</span> 
