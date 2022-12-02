@@ -25,7 +25,7 @@
     
         ,"post2": {
             "title": "AP CSP Unit 3 Sections 3-4",
-            "content": "Iteration: Loop (ex: for, while) . Substring syntax in Python: string[start index:end index - 1] .",
+            "content": "Vocab . Iteration: Loop (ex: for, while) . 3.3 Expressions . The symbol for exponents is ** . 3.4 Strings . Psuedocode: Using common language to write out code. Good for planning purposes and helps other people understand what you intend to do with the code. . Substring syntax in Python: string[start index:end index - 1] .",
             "url": "https://lwu1822.github.io/fastpages/2022/11/29/w14_CSPUnit3.3-4NoteAndHW.html",
             "relUrl": "/2022/11/29/w14_CSPUnit3.3-4NoteAndHW.html",
             "date": " • Nov 29, 2022"
