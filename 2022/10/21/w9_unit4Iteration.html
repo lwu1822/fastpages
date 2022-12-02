@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -133,6 +133,7 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Learnings">Learnings </a></li>
 <li class="toc-entry toc-h1"><a href="#Notes">Notes </a></li>
 <li class="toc-entry toc-h1"><a href="#for-loops">for loops </a></li>
 <li class="toc-entry toc-h1"><a href="#for-each-loops">for each loops </a>
@@ -151,6 +152,17 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Learnings">
+<a class="anchor" href="#Learnings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Learnings<a class="anchor-link" href="#Learnings"> </a>
+</h2>
+<p>The do while loop: I learned that the difference between this loop and the while loop was that the while loop would run only if the condition is fulfilled. The do while loop will always run once, and then if the condition in the <code>while</code> portion is fulfilled, the loop will run again.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -158,54 +170,12 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CaesarCipher</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
 
-    <span class="n">String</span><span class="o">[]</span> <span class="n">letters</span> <span class="o">=</span> <span class="p">{</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">,</span> <span class="s">"d"</span><span class="p">,</span> <span class="s">"e"</span><span class="p">,</span> <span class="s">"f"</span><span class="p">,</span> <span class="s">"g"</span><span class="p">,</span> <span class="s">"h"</span><span class="p">,</span> <span class="s">"i"</span><span class="p">,</span> <span class="s">"j"</span><span class="p">,</span> <span class="s">"k"</span><span class="p">,</span> <span class="s">"l"</span><span class="p">,</span> <span class="s">"m"</span><span class="p">,</span> <span class="s">"n"</span><span class="p">,</span> <span class="s">"o"</span><span class="p">,</span> <span class="s">"p"</span><span class="p">,</span> <span class="s">"q"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">,</span> <span class="s">"s"</span><span class="p">,</span> <span class="s">"t"</span><span class="p">,</span> <span class="s">"u"</span><span class="p">,</span> <span class="s">"v"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">,</span> <span class="s">"x"</span><span class="p">,</span> <span class="s">"y"</span><span class="p">,</span> <span class="s">"z"</span><span class="p">};</span>
-    <span class="n">String</span><span class="o">[]</span> <span class="n">capitalLetters</span> <span class="o">=</span> <span class="p">{</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"B"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">,</span> <span class="s">"E"</span><span class="p">,</span> <span class="s">"F"</span><span class="p">,</span> <span class="s">"G"</span><span class="p">,</span> <span class="s">"H"</span><span class="p">,</span> <span class="s">"I"</span><span class="p">,</span> <span class="s">"J"</span><span class="p">,</span> <span class="s">"K"</span><span class="p">,</span> <span class="s">"L"</span><span class="p">,</span> <span class="s">"M"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">,</span> <span class="s">"O"</span><span class="p">,</span> <span class="s">"P"</span><span class="p">,</span> <span class="s">"Q"</span><span class="p">,</span> <span class="s">"R"</span><span class="p">,</span> <span class="s">"S"</span><span class="p">,</span> <span class="s">"T"</span><span class="p">,</span> <span class="s">"U"</span><span class="p">,</span> <span class="s">"V"</span><span class="p">,</span> <span class="s">"W"</span><span class="p">,</span> <span class="s">"X"</span><span class="p">,</span> <span class="s">"Y"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">};</span>
-    
-    <span class="kd">static</span> <span class="n">String</span> <span class="n">message1</span> <span class="o">=</span> <span class="s">"Kfzb gly!"</span><span class="p">;</span> 
-    <span class="kd">static</span> <span class="n">String</span> <span class="n">message2</span> <span class="o">=</span> <span class="s">"zlab zlab zlab"</span><span class="p">;</span>
-    <span class="kd">static</span> <span class="n">String</span> <span class="n">message3</span> <span class="o">=</span> <span class="s">"prmbozxifcoxdfifpqfzbumfxifalzflrp"</span><span class="p">;</span>
-
-    <span class="n">String</span> <span class="n">letterIndividual</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
-
-
-    <span class="kd">public</span> <span class="nf">CaesarCipher</span><span class="p">(</span><span class="n">String</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">msg</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">letterIndividual</span> <span class="o">=</span> <span class="n">msg</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
-
-
-            <span class="k">if</span> <span class="p">(</span><span class="n">letterIndividual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">" "</span><span class="p">))</span> <span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span> 
-            <span class="p">}</span>
-
-            <span class="k">if</span> <span class="p">(</span><span class="n">letterIndividual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"!"</span><span class="p">))</span> <span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"!"</span><span class="p">);</span> 
-            <span class="p">}</span>
-
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">letters</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">letterIndividual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">letters</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">letters</span><span class="o">[</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">%</span><span class="mi">26</span><span class="o">]</span><span class="p">);</span> 
-                <span class="p">}</span>
-
-                <span class="k">if</span> <span class="p">(</span><span class="n">letterIndividual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">capitalLetters</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">capitalLetters</span><span class="o">[</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">%</span><span class="mi">26</span><span class="o">]</span><span class="p">);</span> 
-                <span class="p">}</span>
-                
-                
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span> 
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">CaesarCipher</span> <span class="n">decode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CaesarCipher</span><span class="p">(</span><span class="n">message1</span><span class="p">);</span> 
-        <span class="n">CaesarCipher</span> <span class="n">decode2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CaesarCipher</span><span class="p">(</span><span class="n">message2</span><span class="p">);</span> 
-        <span class="n">CaesarCipher</span> <span class="n">decode3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CaesarCipher</span><span class="p">(</span><span class="n">message3</span><span class="p">);</span> 
-
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">CaesarCipher</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="k">do</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"i is: "</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span> 
+    <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span><span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 
     </div>
@@ -218,9 +188,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Nice job!
-code code code
-supercalifragilisticexpialidocious
+<pre>i is: 0
 </pre>
 </div>
 </div>
@@ -234,7 +202,34 @@ supercalifragilisticexpialidocious
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><br></p>
+<p>Compare the code above with the while loop below:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+<span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"i is: "</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span> <span class="c1">// no output</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Notes">
 <a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
 </h1>
@@ -378,6 +373,86 @@ The value of i is: 5
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CaesarCipher</span> <span class="p">{</span>
+
+    <span class="n">String</span><span class="o">[]</span> <span class="n">letters</span> <span class="o">=</span> <span class="p">{</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">,</span> <span class="s">"d"</span><span class="p">,</span> <span class="s">"e"</span><span class="p">,</span> <span class="s">"f"</span><span class="p">,</span> <span class="s">"g"</span><span class="p">,</span> <span class="s">"h"</span><span class="p">,</span> <span class="s">"i"</span><span class="p">,</span> <span class="s">"j"</span><span class="p">,</span> <span class="s">"k"</span><span class="p">,</span> <span class="s">"l"</span><span class="p">,</span> <span class="s">"m"</span><span class="p">,</span> <span class="s">"n"</span><span class="p">,</span> <span class="s">"o"</span><span class="p">,</span> <span class="s">"p"</span><span class="p">,</span> <span class="s">"q"</span><span class="p">,</span> <span class="s">"r"</span><span class="p">,</span> <span class="s">"s"</span><span class="p">,</span> <span class="s">"t"</span><span class="p">,</span> <span class="s">"u"</span><span class="p">,</span> <span class="s">"v"</span><span class="p">,</span> <span class="s">"w"</span><span class="p">,</span> <span class="s">"x"</span><span class="p">,</span> <span class="s">"y"</span><span class="p">,</span> <span class="s">"z"</span><span class="p">};</span>
+    <span class="n">String</span><span class="o">[]</span> <span class="n">capitalLetters</span> <span class="o">=</span> <span class="p">{</span><span class="s">"A"</span><span class="p">,</span> <span class="s">"B"</span><span class="p">,</span> <span class="s">"C"</span><span class="p">,</span> <span class="s">"D"</span><span class="p">,</span> <span class="s">"E"</span><span class="p">,</span> <span class="s">"F"</span><span class="p">,</span> <span class="s">"G"</span><span class="p">,</span> <span class="s">"H"</span><span class="p">,</span> <span class="s">"I"</span><span class="p">,</span> <span class="s">"J"</span><span class="p">,</span> <span class="s">"K"</span><span class="p">,</span> <span class="s">"L"</span><span class="p">,</span> <span class="s">"M"</span><span class="p">,</span> <span class="s">"N"</span><span class="p">,</span> <span class="s">"O"</span><span class="p">,</span> <span class="s">"P"</span><span class="p">,</span> <span class="s">"Q"</span><span class="p">,</span> <span class="s">"R"</span><span class="p">,</span> <span class="s">"S"</span><span class="p">,</span> <span class="s">"T"</span><span class="p">,</span> <span class="s">"U"</span><span class="p">,</span> <span class="s">"V"</span><span class="p">,</span> <span class="s">"W"</span><span class="p">,</span> <span class="s">"X"</span><span class="p">,</span> <span class="s">"Y"</span><span class="p">,</span> <span class="s">"Z"</span><span class="p">};</span>
+    
+    <span class="kd">static</span> <span class="n">String</span> <span class="n">message1</span> <span class="o">=</span> <span class="s">"Kfzb gly!"</span><span class="p">;</span> 
+    <span class="kd">static</span> <span class="n">String</span> <span class="n">message2</span> <span class="o">=</span> <span class="s">"zlab zlab zlab"</span><span class="p">;</span>
+    <span class="kd">static</span> <span class="n">String</span> <span class="n">message3</span> <span class="o">=</span> <span class="s">"prmbozxifcoxdfifpqfzbumfxifalzflrp"</span><span class="p">;</span>
+
+    <span class="n">String</span> <span class="n">letterIndividual</span> <span class="o">=</span> <span class="s">""</span><span class="p">;</span>
+
+
+    <span class="kd">public</span> <span class="nf">CaesarCipher</span><span class="p">(</span><span class="n">String</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">msg</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">letterIndividual</span> <span class="o">=</span> <span class="n">msg</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">letterIndividual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">" "</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span> 
+            <span class="p">}</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="n">letterIndividual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"!"</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">"!"</span><span class="p">);</span> 
+            <span class="p">}</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">letters</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">letterIndividual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">letters</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">letters</span><span class="o">[</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">%</span><span class="mi">26</span><span class="o">]</span><span class="p">);</span> 
+                <span class="p">}</span>
+
+                <span class="k">if</span> <span class="p">(</span><span class="n">letterIndividual</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">capitalLetters</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">capitalLetters</span><span class="o">[</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">%</span><span class="mi">26</span><span class="o">]</span><span class="p">);</span> 
+                <span class="p">}</span>
+                
+                
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">""</span><span class="p">);</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">CaesarCipher</span> <span class="n">decode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CaesarCipher</span><span class="p">(</span><span class="n">message1</span><span class="p">);</span> 
+        <span class="n">CaesarCipher</span> <span class="n">decode2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CaesarCipher</span><span class="p">(</span><span class="n">message2</span><span class="p">);</span> 
+        <span class="n">CaesarCipher</span> <span class="n">decode3</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CaesarCipher</span><span class="p">(</span><span class="n">message3</span><span class="p">);</span> 
+
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">CaesarCipher</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Nice job!
+code code code
+supercalifragilisticexpialidocious
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
