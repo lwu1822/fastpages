@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -223,6 +223,11 @@ window.onload = wrap_img;
 <a class="anchor" href="#Overview-and-Notes:--3.8---Iteration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview and Notes:  3.8 - Iteration<a class="anchor-link" href="#Overview-and-Notes:--3.8---Iteration"> </a>
 </h2>
 <p>Add your <mark>OWN</mark> Notes for 3.8 here:</p>
+<p>Use iteration to simplify your code and to prevent manually repeating code over and over again.</p>
+<p>Iteration:</p>
+<p>While loop: <code>while <em>condition</em>:</code></p>
+<p>For loop (iterate through lists): <code> for <em>element name</em> in <em>list name</em>:</code></p>
+<p>You can put a dictionary in a list</p>
 
 </div>
 </div>
@@ -380,14 +385,49 @@ artichoke
     <span class="s2">"01001001"</span><span class="p">,</span> <span class="s2">"10101010"</span><span class="p">,</span> <span class="s2">"10010110"</span><span class="p">,</span> <span class="s2">"00110111"</span><span class="p">,</span> <span class="s2">"11101100"</span><span class="p">,</span> <span class="s2">"11010001"</span><span class="p">,</span> <span class="s2">"10000001"</span>
 <span class="p">]</span>
 
+<span class="n">decimalList</span> <span class="o">=</span> <span class="p">[]</span>
+
 <span class="k">def</span> <span class="nf">binary_convert</span><span class="p">(</span><span class="n">binary</span><span class="p">):</span>
+    <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+
+    <span class="k">for</span> <span class="n">binaryNum</span> <span class="ow">in</span> <span class="n">binarylist</span><span class="p">:</span> 
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">):</span> 
+            <span class="n">binaryDigit</span> <span class="o">=</span> <span class="n">binaryNum</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">binaryDigit</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">:</span>
+                <span class="nb">sum</span> <span class="o">+=</span> <span class="mi">2</span> <span class="o">**</span> <span class="p">(</span><span class="mi">7</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span>
+        <span class="n">decimalList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+        <span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
+            
+                
     <span class="c1">#use this function to convert every binary value in binarylist to decimal</span>
     <span class="c1">#afterward, get rid of the values that are greater than 100 in decimal</span>
 
 <span class="c1">#when done, print the results</span>
+
+<span class="n">binary_convert</span><span class="p">(</span><span class="n">binarylist</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">decimalNum</span> <span class="ow">in</span> <span class="n">decimalList</span><span class="p">:</span> 
+    <span class="k">if</span> <span class="n">decimalNum</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span> 
+        <span class="n">decimalList</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">decimalNum</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">decimalList</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[170, 150, 236, 209, 129]
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
