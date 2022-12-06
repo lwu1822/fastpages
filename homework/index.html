@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -253,20 +253,70 @@ window.onload = wrap_img;
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"What is the method that adds an element to the end of the list?"</span><span class="p">,</span>
+    <span class="s2">"Refer to the list: [1, 2, 3]. What index is the element </span><span class="se">\"</span><span class="s2">3</span><span class="se">\"</span><span class="s2"> at?"</span><span class="p">,</span> 
+    <span class="s2">"T/F: Lists can contain many items in the form of tuples or hash maps."</span><span class="p">,</span> 
+    <span class="s2">"What are the three types of iteration loops? List them in alphabetical order, separated by commas, no caps, omit the word </span><span class="se">\"</span><span class="s2">loops</span><span class="se">\"</span><span class="s2">. Ex: a, b, c"</span><span class="p">,</span>
+    <span class="s2">"Write out the for loop that would iterate through each element in a list called </span><span class="se">\"</span><span class="s2">myList</span><span class="se">\"</span><span class="s2">. Use the variable </span><span class="se">\"</span><span class="s2">items</span><span class="se">\"</span><span class="s2">."</span>
     <span class="c1">#questions go here (remember to make them strings!)</span>
 <span class="p">]</span>
 
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"append"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"T"</span><span class="p">,</span> <span class="s2">"for, recursion, while"</span><span class="p">,</span> <span class="s2">"for items in myList:"</span><span class="p">]</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+
 <span class="k">def</span> <span class="nf">questionloop</span><span class="p">():</span>
-    <span class="k">pass</span>
+    <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">:</span>
+        <span class="k">global</span> <span class="n">number</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="n">usrAnswer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter answer:"</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Enter answer: "</span> <span class="o">+</span> <span class="n">usrAnswer</span><span class="p">)</span>
+        <span class="n">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">)</span>
+        <span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># IMPORTANT: rem pass</span>
     <span class="c1">#make an iterative function to ask the questions</span>
     <span class="c1">#this can be any loop you want as long as it works!</span>
 
-<span class="k">def</span> <span class="nf">answercheck</span><span class="p">():</span>
-    <span class="k">pass</span>
+<span class="k">def</span> <span class="nf">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">usrAnswer</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">number</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
     <span class="c1">#make a function to check if the answer was correct or not</span>
+    
+<span class="n">questionloop</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What is the method that adds an element to the end of the list?
+Enter answer: append
+Correct!
+Refer to the list: [1, 2, 3]. What index is the element "3" at?
+Enter answer: 2
+Correct!
+T/F: Lists can contain many items in the form of tuples or hash maps.
+Enter answer: T
+Correct!
+What are the three types of iteration loops? List them in alphabetical order, separated by commas, no caps, omit the word "loops". Ex: a, b, c
+Enter answer: for, recursion, while
+Correct!
+Write out the for loop that would iterate through each element in a list called "myList". Use the variable "items".
+Enter answer: for items in myList;
+Incorrect!
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
