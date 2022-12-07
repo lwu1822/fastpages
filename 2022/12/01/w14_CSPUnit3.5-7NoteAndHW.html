@@ -274,6 +274,70 @@ x is not equal to 3
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><br></p>
+<p>You can create truth tables with logical operators.</p>
+<p>A <mark>truth table</mark> lists all the possible True/False values that two booleans (P and Q is the convention) can take. These True/False values are then used to evaluate a third expression to see if all cases are true.</p>
+<p>An example below is an application of DeMorgan's Law.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">checkDeMorgans</span><span class="p">():</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">a</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">b</span> <span class="o">==</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="n">a</span> <span class="ow">and</span> <span class="n">b</span><span class="p">)):</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"DeMorgan's Law is true"</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="n">checkDeMorgans</span><span class="p">()</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">True</span> 
+<span class="n">checkDeMorgans</span><span class="p">()</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">False</span> 
+<span class="n">checkDeMorgans</span><span class="p">()</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">checkDeMorgans</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>DeMorgan's Law is true
+DeMorgan's Law is true
+DeMorgan's Law is true
+DeMorgan's Law is true
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Order-of-operations">
 <a class="anchor" href="#Order-of-operations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Order of operations<a class="anchor-link" href="#Order-of-operations"> </a>
 </h2>
