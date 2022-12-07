@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      10 min read
     
 </span></p>
 
@@ -135,15 +135,18 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#Overview-and-Notes:--3.10---Lists">Overview and Notes:  3.10 - Lists </a></li>
 <li class="toc-entry toc-h2"><a href="#Overview-and-Notes:--3.8---Iteration">Overview and Notes:  3.8 - Iteration </a></li>
-<li class="toc-entry toc-h2"><a href="#Homework-Assignment">Homework Assignment </a>
+<li class="toc-entry toc-h2"><a href="#Homework-Assignment">Homework Assignment </a></li>
+<li class="toc-entry toc-h2"><a href="#Ver-1">Ver 1 </a></li>
+<li class="toc-entry toc-h2"><a href="#Ver-#2">Ver #2 </a></li>
+<li class="toc-entry toc-h1"><a href="#Extra">Extra </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#Hacks">Hacks </a></li>
-</ul>
-</li>
 <li class="toc-entry toc-h2"><a href="#Challenges">Challenges </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#3.10-Challenge">3.10 Challenge </a></li>
 <li class="toc-entry toc-h3"><a href="#3.8-Challenge">3.8 Challenge </a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul><!--
@@ -173,6 +176,9 @@ window.onload = wrap_img;
 <li>Index: Specify the location where a list element is found, usually starts at 0
 <mark>Note:</mark> In AP CSP, list indexes start at 1</li>
 </ul>
+<p>Example: myList = [0, 1, 2]</p>
+<p>print(myList[0]) will output 0</p>
+<p><br></p>
 <p>Fill out the empty boxes:</p>
 <table>
 <thead>
@@ -235,7 +241,67 @@ window.onload = wrap_img;
 <p>Iteration:</p>
 <p>While loop: <code>while <em>condition</em>:</code></p>
 <p>For loop (iterate through lists): <code> for <em>element name</em> in <em>list name</em>:</code></p>
-<p>You can put a dictionary in a list</p>
+<p>Recursive loop: Recursive loops call themselves by calling the function name again</p>
+<p>Note: Don't do the code below, will run forever</p>
+
+<pre><code>def recursive_function():
+    recursive_function</code></pre>
+<p><br></p>
+<p>You can put a dictionary in a list, below is an example:</p>
+<p><mark>Note</mark>: When you are printing a dictionary by its key, specify the key name in brackets [].</p>
+<p>Example: myList = {"myKey":"myValue"}, to print out the value, do: <code>print(myList["myKey"])</code></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">"red"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">"blue"</span><span class="p">},</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="s2">"purple"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s2">"green"</span><span class="p">}]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Printing the first dictionary in myList: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myList</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Printing the second dictionary in myList: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myList</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Printing the second key in the first dictionary in myList: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myList</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Printing the first dictionary in myList: {1: 'red', 2: 'blue'}
+Printing the second dictionary in myList: {1: 'purple', 2: 'green'}
+Printing the second key in the first dictionary in myList: blue
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br></p>
+<h2 id="Homework-Assignment">
+<a class="anchor" href="#Homework-Assignment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework Assignment<a class="anchor-link" href="#Homework-Assignment"> </a>
+</h2>
+<p>Instead of us making a quiz for you to take, we would like YOU to make a quiz about the material we reviewed.</p>
+<p>We would like you to <mark>input questions into a list</mark>, and use some sort of iterative system to print the questions, detect an input, and determine if you answered correctly. There should be <em>at least</em> <mark>five questions</mark>, each with <em>at least</em> <mark>three possible answers</mark>.</p>
+<p>You may use the template below as a framework for this assignment.</p>
 
 </div>
 </div>
@@ -243,12 +309,11 @@ window.onload = wrap_img;
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Homework-Assignment">
-<a class="anchor" href="#Homework-Assignment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Homework Assignment<a class="anchor-link" href="#Homework-Assignment"> </a>
+<p><br></p>
+<h2 id="Ver-1">
+<a class="anchor" href="#Ver-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ver 1<a class="anchor-link" href="#Ver-1"> </a>
 </h2>
-<p>Instead of us making a quiz for you to take, we would like YOU to make a quiz about the material we reviewed.</p>
-<p>We would like you to <mark>input questions into a list</mark>, and use some sort of iterative system to print the questions, detect an input, and determine if you answered correctly. There should be <em>at least</em> <mark>five questions</mark>, each with <em>at least</em> <mark>three possible answers</mark>.</p>
-<p>You may use the template below as a framework for this assignment.</p>
+<p>Below is my quiz that does not use randomization. It has 6 questions, and some questions have more than 3 answer choices. At the end of the quiz, a score will be displayed with a message saying whether the user has passed or not.</p>
 
 </div>
 </div>
@@ -262,16 +327,23 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">"What is the method that adds an element to the end of the list?"</span><span class="p">,</span>
-    <span class="s2">"What methods can edit a list?"</span><span class="p">,</span> 
+    <span class="s2">"What is a method that can be used to edit a list?"</span><span class="p">,</span> 
     <span class="s2">"T/F: Lists can contain many items in the form of tuples or hash maps."</span><span class="p">,</span> 
-    <span class="s2">"What are the three types of iteration loops?"</span><span class="p">,</span>
-    <span class="s2">"Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?"</span>
-    <span class="c1">#questions go here (remember to make them strings!)</span>
+    <span class="s2">"Give an example of an iteration loops"</span><span class="p">,</span>
+    <span class="s2">"Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?"</span><span class="p">,</span>
+    <span class="s2">"Write out the code that will create a list called </span><span class="se">\"</span><span class="s2">myList</span><span class="se">\"</span><span class="s2"> and store the numbers: 1, 2, 3 (you can write it in any order)"</span>
 <span class="p">]</span>
 
-<span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"append"</span><span class="p">,</span> <span class="s2">".append"</span><span class="p">,</span> <span class="s2">".append()"</span><span class="p">,</span>  <span class="s2">"insert"</span><span class="p">,</span> <span class="s2">"append"</span><span class="p">,</span> <span class="s2">"remove"</span><span class="p">,</span> <span class="s2">"T"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">,</span> <span class="s2">"for"</span><span class="p">,</span> <span class="s2">"recursion"</span><span class="p">,</span> <span class="s2">"while"</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">]</span>
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"append"</span><span class="p">,</span> <span class="s2">".append"</span><span class="p">,</span> <span class="s2">".append()"</span><span class="p">],</span>  
+<span class="p">[</span><span class="s2">"insert"</span><span class="p">,</span> <span class="s2">"append"</span><span class="p">,</span> <span class="s2">"remove"</span><span class="p">],</span> 
+<span class="p">[</span><span class="s2">"T"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">],</span> 
+<span class="p">[</span><span class="s2">"for"</span><span class="p">,</span> <span class="s2">"recursion"</span><span class="p">,</span> <span class="s2">"while"</span><span class="p">],</span> 
+<span class="p">[</span><span class="s2">"0"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"Zero"</span><span class="p">,</span> <span class="s2">"Two"</span><span class="p">,</span> <span class="s2">"Three"</span><span class="p">],</span>
+<span class="p">[</span><span class="s2">"myList = [1, 2, 3]"</span><span class="p">,</span> <span class="s2">"myList = [1, 3, 2]"</span><span class="p">,</span><span class="s2">"myList = [2, 1, 3]"</span><span class="p">,</span><span class="s2">"myList = [2, 3, 1]"</span><span class="p">,</span><span class="s2">"myList = [3, 1, 2]"</span><span class="p">,</span><span class="s2">"myList = [3, 2, 1]"</span><span class="p">]</span>
+<span class="p">]</span>
 
 <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="k">def</span> <span class="nf">questionloop</span><span class="p">():</span>
     <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">:</span>
@@ -281,19 +353,22 @@ window.onload = wrap_img;
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Enter answer: "</span> <span class="o">+</span> <span class="n">usrAnswer</span><span class="p">)</span>
         <span class="n">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">)</span>
         <span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your score is: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="n">score</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.7</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Congrats! You passed!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You did not pass. Try again."</span><span class="p">)</span>
     
     <span class="c1"># IMPORTANT: rem pass</span>
-    <span class="c1">#make an iterative function to ask the questions</span>
-    <span class="c1">#this can be any loop you want as long as it works!</span>
 
 <span class="k">def</span> <span class="nf">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">number</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">number</span><span class="o">*</span> <span class="mi">3</span><span class="o">+</span><span class="mi">3</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">usrAnswer</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">[</span><span class="n">number</span><span class="p">])):</span>
+        <span class="k">if</span> <span class="n">usrAnswer</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">number</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span>
             <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct!"</span><span class="p">)</span>
+            <span class="k">global</span> <span class="n">score</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">return</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
-        <span class="k">return</span>
-    <span class="c1">#make a function to check if the answer was correct or not</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
     
 <span class="n">questionloop</span><span class="p">()</span>
 </pre></div>
@@ -309,20 +384,25 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>What is the method that adds an element to the end of the list?
-Enter answer: append
+Enter answer: .append
 Correct!
-What methods can edit a list?
+What is a method that can be used to edit a list?
+Enter answer: remove
+Correct!
+T/F: Lists can contain many items in the form of tuples or hash maps.
 Enter answer: wrong answer
 Incorrect!
-T/F: Lists can contain many items in the form of tuples or hash maps.
-Enter answer: T
-Correct!
-What are the three types of iteration loops?
+Give an example of an iteration loops
 Enter answer: for
 Correct!
 Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?
-Enter answer: 0
+Enter answer: Zero
 Correct!
+Write out the code that will create a list called "myList" and store the numbers: 1, 2, 3 (you can write it in any order)
+Enter answer: myList = [3, 2, 1]
+Correct!
+Your score is: 5/6
+Congrats! You passed!
 </pre>
 </div>
 </div>
@@ -336,19 +416,161 @@ Correct!
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ver-#2">
+<a class="anchor" href="#Ver-#2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ver #2<a class="anchor-link" href="#Ver-#2"> </a>
+</h2>
+<p>In this version of the quiz, I imported the <code>random</code> library to randomize the questions. All of the other features remain the same.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"What is the method that adds an element to the end of the list?"</span><span class="p">,</span>
+    <span class="s2">"What is a method that can be used to edit a list?"</span><span class="p">,</span> 
+    <span class="s2">"T/F: Lists can contain many items in the form of tuples or hash maps."</span><span class="p">,</span> 
+    <span class="s2">"Give an example of an iteration loops"</span><span class="p">,</span>
+    <span class="s2">"Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?"</span><span class="p">,</span>
+    <span class="s2">"Write out the code that will create a list called </span><span class="se">\"</span><span class="s2">myList</span><span class="se">\"</span><span class="s2"> and store the numbers: 1, 2, 3 (you can write it in any order)"</span>
+<span class="p">]</span>
+
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"append"</span><span class="p">,</span> <span class="s2">".append"</span><span class="p">,</span> <span class="s2">".append()"</span><span class="p">],</span>  
+<span class="p">[</span><span class="s2">"insert"</span><span class="p">,</span> <span class="s2">"append"</span><span class="p">,</span> <span class="s2">"remove"</span><span class="p">],</span> 
+<span class="p">[</span><span class="s2">"T"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">],</span> 
+<span class="p">[</span><span class="s2">"for"</span><span class="p">,</span> <span class="s2">"recursion"</span><span class="p">,</span> <span class="s2">"while"</span><span class="p">],</span> 
+<span class="p">[</span><span class="s2">"0"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">,</span> <span class="s2">"zero"</span><span class="p">,</span> <span class="s2">"two"</span><span class="p">,</span> <span class="s2">"three"</span><span class="p">,</span> <span class="s2">"Zero"</span><span class="p">,</span> <span class="s2">"Two"</span><span class="p">,</span> <span class="s2">"Three"</span><span class="p">],</span>
+<span class="p">[</span><span class="s2">"myList = [1, 2, 3]"</span><span class="p">,</span> <span class="s2">"myList = [1, 3, 2]"</span><span class="p">,</span><span class="s2">"myList = [2, 1, 3]"</span><span class="p">,</span><span class="s2">"myList = [2, 3, 1]"</span><span class="p">,</span><span class="s2">"myList = [3, 1, 2]"</span><span class="p">,</span><span class="s2">"myList = [3, 2, 1]"</span><span class="p">]</span>
+<span class="p">]</span>
+
+
+<span class="n">order</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)),</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">))</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)):</span>
+    <span class="n">storage</span> <span class="o">=</span> <span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+    <span class="n">storageAnswer</span> <span class="o">=</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">questions</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">answers</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="n">questions</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">storage</span>
+    <span class="n">answers</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">storageAnswer</span>
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>  
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+
+<span class="k">def</span> <span class="nf">questionloop</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">:</span>
+        <span class="k">global</span> <span class="n">number</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="n">usrAnswer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Enter answer: "</span> <span class="o">+</span> <span class="n">usrAnswer</span><span class="p">)</span>
+        <span class="n">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">)</span>
+        <span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your score is: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="n">score</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.7</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Congrats! You passed!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You did not pass. Try again."</span><span class="p">)</span>
+    
+
+<span class="k">def</span> <span class="nf">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">[</span><span class="n">number</span><span class="p">])):</span>
+        <span class="k">if</span> <span class="n">usrAnswer</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">number</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct!"</span><span class="p">)</span>
+            <span class="k">global</span> <span class="n">score</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
+    
+<span class="n">questionloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What is a method that can be used to edit a list?
+Enter answer: remove
+Correct!
+What is the method that adds an element to the end of the list?
+Enter answer: .append
+Correct!
+Give an example of an iteration loops
+Enter answer: for
+Correct!
+Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?
+Enter answer: Zero
+Correct!
+T/F: Lists can contain many items in the form of tuples or hash maps.
+Enter answer: wrong answer
+Incorrect!
+Write out the code that will create a list called "myList" and store the numbers: 1, 2, 3 (you can write it in any order)
+Enter answer: myList = [3, 2, 1]
+Correct!
+Your score is: 5/6
+Congrats! You passed!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Extra">
+<a class="anchor" href="#Extra" aria-hidden="true"><span class="octicon octicon-link"></span></a>Extra<a class="anchor-link" href="#Extra"> </a>
+</h1>
+<p>Below is the quiz that I made with JavaScript. You can go forward and backwards to try out different questions, and you can type in answer. The check button will give you feedback on if your answer is right or wrong.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p id="question"></p>
 <input type="text" id="answerBox">
 
 <button onclick="check()">Check</button>
 <br>
 <br>
+<button onclick="backQuestion()">Back</button>
 <button onclick="nextQuestion()">Next</button><p id="feedback"></p>
 <script>
     let questions = ["What is the method that adds an element to the end of the list?",
-        "Refer to the list: [1, 2, 3]. What index is the element \"3\" at?" 
+    "What is a method that can be used to edit a list?", 
+    "T/F: Lists can contain many items in the form of tuples or hash maps.", 
+    "Give an example of an iteration loop",
+    "Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?",
+    "Write out the code that will create a list called \"myList\" and store the numbers: 1, 2, 3 (you can write it in any order)"
     ];
 
-    let answers = ["append", "2"];
+    let answers = [["append", ".append()", ".append"],
+    ["insert", "append", "remove"],
+    ["T", "true", "True"], 
+    ["for", "recursion", "while"], 
+    ["0", "2", "3", "zero", "two", "three", "Zero", "Two", "Three"],
+    ["myList = [1, 2, 3]", "myList = [1, 3, 2]","myList = [2, 1, 3]","myList = [2, 3, 1]","myList = [3, 1, 2]","myList = [3, 2, 1]"]
+    ];
 
     let i = 0; 
     document.getElementById("question").innerHTML = questions[0]; 
@@ -363,16 +585,104 @@ Correct!
         document.getElementById("question").innerHTML = questions[i]; 
     }
 
+    function backQuestion() {
+
+        if (i > 0){
+            document.getElementById("feedback").innerHTML = ""; 
+            document.getElementById("answerBox").value = ""; 
+            i--;
+        }
+        document.getElementById("question").innerHTML = questions[i]; 
+    }
+
     function check() {
         var response = document.getElementById("answerBox").value;
-        if (response == answers[i]) {
-            document.getElementById("feedback").innerHTML = "Correct";
-        } else {
-            document.getElementById("feedback").innerHTML = "Incorrect";
+        for (let multiA = 0; multiA < answers[i].length; multiA++) {
+            if (response == answers[i][multiA]) {
+                document.getElementById("feedback").innerHTML = "Correct";
+                return;
+            } 
         }
+
+        document.getElementById("feedback").innerHTML = "Incorrect";
     }
 
 </script>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is my code:</p>
+
+<pre><code>
+&lt;p id="question"&gt;&lt;/p&gt;
+
+&lt;input type="text" id="answerBox"&gt;
+
+&lt;button onclick="check()"&gt;Check&lt;/button&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;button onclick="backQuestion()"&gt;Back&lt;/button&gt;
+&lt;button onclick="nextQuestion()"&gt;Next&lt;/button&gt;
+
+&lt;p id="feedback"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+    let questions = ["What is the method that adds an element to the end of the list?",
+    "What is a method that can be used to edit a list?", 
+    "T/F: Lists can contain many items in the form of tuples or hash maps.", 
+    "Give an example of an iteration loop",
+    "Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?",
+    "Write out the code that will create a list called \"myList\" and store the numbers: 1, 2, 3 (you can write it in any order)"
+    ];
+
+    let answers = [["append", ".append()", ".append"],
+    ["insert", "append", "remove"],
+    ["T", "true", "True"], 
+    ["for", "recursion", "while"], 
+    ["0", "2", "3", "zero", "two", "three", "Zero", "Two", "Three"],
+    ["myList = [1, 2, 3]", "myList = [1, 3, 2]","myList = [2, 1, 3]","myList = [2, 3, 1]","myList = [3, 1, 2]","myList = [3, 2, 1]"]
+    ];
+
+    let i = 0; 
+    document.getElementById("question").innerHTML = questions[0]; 
+
+    function nextQuestion() {
+
+        if (i &lt; questions.length - 1){
+            document.getElementById("feedback").innerHTML = ""; 
+            document.getElementById("answerBox").value = ""; 
+            i++;
+        }
+        document.getElementById("question").innerHTML = questions[i]; 
+    }
+
+    function backQuestion() {
+
+        if (i &gt; 0){
+            document.getElementById("feedback").innerHTML = ""; 
+            document.getElementById("answerBox").value = ""; 
+            i--;
+        }
+        document.getElementById("question").innerHTML = questions[i]; 
+    }
+
+    function check() {
+        var response = document.getElementById("answerBox").value;
+        for (let multiA = 0; multiA &lt; answers[i].length; multiA++) {
+            if (response == answers[i][multiA]) {
+                document.getElementById("feedback").innerHTML = "Correct";
+                return;
+            } 
+        }
+
+        document.getElementById("feedback").innerHTML = "Incorrect";
+    }
+
+&lt;/script&gt;</code></pre>
+
 </div>
 </div>
 </div>
