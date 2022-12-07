@@ -165,6 +165,14 @@ window.onload = wrap_img;
 <li>Make sure you complete the challenge in the challenges section while we present the lesson! </li>
 </ul>
 <p>Add your <mark>OWN</mark> Notes for 3.10 here:</p>
+<ul>
+<li>Lists: Collections that store data, can use loops to iterate through them</li>
+</ul>
+<p>Python: <code><em>list name</em> = [<em>element 1 </em>, <em>element 2 </em>]</code></p>
+<ul>
+<li>Index: Specify the location where a list element is found, usually starts at 0
+<mark>Note:</mark> In AP CSP, list indexes start at 1</li>
+</ul>
 <p>Fill out the empty boxes:</p>
 <table>
 <thead>
@@ -254,14 +262,14 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">"What is the method that adds an element to the end of the list?"</span><span class="p">,</span>
-    <span class="s2">"Refer to the list: [1, 2, 3]. What index is the element </span><span class="se">\"</span><span class="s2">3</span><span class="se">\"</span><span class="s2"> at?"</span><span class="p">,</span> 
+    <span class="s2">"What methods can edit a list?"</span><span class="p">,</span> 
     <span class="s2">"T/F: Lists can contain many items in the form of tuples or hash maps."</span><span class="p">,</span> 
-    <span class="s2">"What are the three types of iteration loops? List them in alphabetical order, separated by commas, no caps, omit the word </span><span class="se">\"</span><span class="s2">loops</span><span class="se">\"</span><span class="s2">. Ex: a, b, c"</span><span class="p">,</span>
-    <span class="s2">"Write out the for loop that would iterate through each element in a list called </span><span class="se">\"</span><span class="s2">myList</span><span class="se">\"</span><span class="s2">. Use the variable </span><span class="se">\"</span><span class="s2">items</span><span class="se">\"</span><span class="s2">."</span>
+    <span class="s2">"What are the three types of iteration loops?"</span><span class="p">,</span>
+    <span class="s2">"Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?"</span>
     <span class="c1">#questions go here (remember to make them strings!)</span>
 <span class="p">]</span>
 
-<span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"append"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"T"</span><span class="p">,</span> <span class="s2">"for, recursion, while"</span><span class="p">,</span> <span class="s2">"for items in myList:"</span><span class="p">]</span>
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"append"</span><span class="p">,</span> <span class="s2">".append"</span><span class="p">,</span> <span class="s2">".append()"</span><span class="p">,</span>  <span class="s2">"insert"</span><span class="p">,</span> <span class="s2">"append"</span><span class="p">,</span> <span class="s2">"remove"</span><span class="p">,</span> <span class="s2">"T"</span><span class="p">,</span> <span class="s2">"true"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">,</span> <span class="s2">"for"</span><span class="p">,</span> <span class="s2">"recursion"</span><span class="p">,</span> <span class="s2">"while"</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">,</span> <span class="s2">"2"</span><span class="p">,</span> <span class="s2">"3"</span><span class="p">]</span>
 
 <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>
 
@@ -279,10 +287,12 @@ window.onload = wrap_img;
     <span class="c1">#this can be any loop you want as long as it works!</span>
 
 <span class="k">def</span> <span class="nf">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">usrAnswer</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">number</span><span class="p">]:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct!"</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">number</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span> <span class="n">number</span><span class="o">*</span> <span class="mi">3</span><span class="o">+</span><span class="mi">3</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">usrAnswer</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct!"</span><span class="p">)</span>
+            <span class="k">return</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
+        <span class="k">return</span>
     <span class="c1">#make a function to check if the answer was correct or not</span>
     
 <span class="n">questionloop</span><span class="p">()</span>
@@ -301,18 +311,18 @@ window.onload = wrap_img;
 <pre>What is the method that adds an element to the end of the list?
 Enter answer: append
 Correct!
-Refer to the list: [1, 2, 3]. What index is the element "3" at?
-Enter answer: 2
-Correct!
+What methods can edit a list?
+Enter answer: wrong answer
+Incorrect!
 T/F: Lists can contain many items in the form of tuples or hash maps.
 Enter answer: T
 Correct!
-What are the three types of iteration loops? List them in alphabetical order, separated by commas, no caps, omit the word "loops". Ex: a, b, c
-Enter answer: for, recursion, while
+What are the three types of iteration loops?
+Enter answer: for
 Correct!
-Write out the for loop that would iterate through each element in a list called "myList". Use the variable "items".
-Enter answer: for items in myList;
-Incorrect!
+Refer to the following list: [1, 2, 7, 3, 10]. What index contains an odd number?
+Enter answer: 0
+Correct!
 </pre>
 </div>
 </div>
@@ -323,6 +333,49 @@ Incorrect!
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p id="question"></p>
+<input type="text" id="answerBox">
+
+<button onclick="check()">Check</button>
+<br>
+<br>
+<button onclick="nextQuestion()">Next</button><p id="feedback"></p>
+<script>
+    let questions = ["What is the method that adds an element to the end of the list?",
+        "Refer to the list: [1, 2, 3]. What index is the element \"3\" at?" 
+    ];
+
+    let answers = ["append", "2"];
+
+    let i = 0; 
+    document.getElementById("question").innerHTML = questions[0]; 
+
+    function nextQuestion() {
+
+        if (i < questions.length - 1){
+            document.getElementById("feedback").innerHTML = ""; 
+            document.getElementById("answerBox").value = ""; 
+            i++;
+        }
+        document.getElementById("question").innerHTML = questions[i]; 
+    }
+
+    function check() {
+        var response = document.getElementById("answerBox").value;
+        if (response == answers[i]) {
+            document.getElementById("feedback").innerHTML = "Correct";
+        } else {
+            document.getElementById("feedback").innerHTML = "Incorrect";
+        }
+    }
+
+</script>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
