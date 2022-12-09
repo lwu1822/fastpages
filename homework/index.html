@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -239,15 +239,61 @@ window.onload = wrap_img;
 <p>Add your <mark>OWN</mark> Notes for 3.8 here:</p>
 <p>Use iteration to simplify your code and to prevent manually repeating code over and over again.</p>
 <p>Iteration:</p>
-<p>While loop: <code>while <em>condition</em>:</code></p>
-<p>For loop (iterate through lists): <code> for <em>element name</em> in <em>list name</em>:</code></p>
+<p><mark>While loop</mark>: <code>while <em>condition</em>:</code></p>
+<p>See the code cell below for an example of iterating through a list using a while loop.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">myList</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"apples"</span><span class="p">,</span> <span class="s2">"oranges"</span><span class="p">,</span> <span class="s2">"bananas"</span><span class="p">]</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">myList</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">myList</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>apples
+oranges
+bananas
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>For loop</mark> (iterate through lists): <code> for <em>element name</em> in <em>list name</em>:</code></p>
 <p>Recursive loop: Recursive loops call themselves by calling the function name again</p>
 <p>Note: Don't do the code below, will run forever</p>
 
 <pre><code>def recursive_function():
     recursive_function</code></pre>
 <p><br></p>
-<p>You can put a dictionary in a list, below is an example:</p>
+<p>You can put a <mark>dictionary</mark> in a list, below is an example:</p>
 <p><mark>Note</mark>: When you are printing a dictionary by its key, specify the key name in brackets [].</p>
 <p>Example: myList = {"myKey":"myValue"}, to print out the value, do: <code>print(myList["myKey"])</code></p>
 

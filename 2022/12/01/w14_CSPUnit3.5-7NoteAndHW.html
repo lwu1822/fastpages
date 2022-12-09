@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      3 min read
     
 </span></p>
 
@@ -145,7 +145,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#3.6-Conditionals">3.6 Conditionals </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Vocab">Vocab </a></li>
-<li class="toc-entry toc-h2"><a href="#if-else">if-else </a></li>
+<li class="toc-entry toc-h2"><a href="#Conditionals">Conditionals </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#3.7-Nested-Conditionals">3.7 Nested Conditionals </a></li>
@@ -170,12 +170,13 @@ window.onload = wrap_img;
 <h2 id="Booleans">
 <a class="anchor" href="#Booleans" aria-hidden="true"><span class="octicon octicon-link"></span></a>Booleans<a class="anchor-link" href="#Booleans"> </a>
 </h2>
-<p>Booleans have 2 values: True and False.</p>
+<p><mark>Booleans</mark> have 2 values: True and False.</p>
+<p>Note: All of the code cells on this blog demonstrate boolean expressions and selections. Check a <a href="https://lwu1822.github.io/fastpages/2022/11/28/w14_CSPUnit3.1-2NoteAndHW.html#Functions">JavaScript</a> version to see boolean expressions and iteration.</p>
 <h2 id="Relational-Operators">
 <a class="anchor" href="#Relational-Operators" aria-hidden="true"><span class="octicon octicon-link"></span></a>Relational Operators<a class="anchor-link" href="#Relational-Operators"> </a>
 </h2>
 <p><code>==, !=, &gt;, &lt;, &gt;=, &lt;=</code></p>
-<p>Relational operators can compare numbers, but they can also be used to compare strings. The later a letter is, the greater its value.</p>
+<p>Relational/<mark>comparison operators</mark> can compare numbers, but they can also be used to compare strings. The later a letter is, the greater its value.</p>
 <p>For example, as you can see in the code below, <code>print(b &gt; a)</code> outputs as true, because in alphabetical order, b is after a.</p>
 
 </div>
@@ -355,13 +356,14 @@ DeMorgan's Law is true
 <h2 id="Vocab">
 <a class="anchor" href="#Vocab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vocab<a class="anchor-link" href="#Vocab"> </a>
 </h2>
-<p>Algorithm: A set of instructions to do a certain task</p>
-<p>Selection: Determines which parts of codes are ran based on if they evaluate to true or false. Used with <code>if</code> statements.</p>
+<p><mark>Algorithm</mark>: A set of instructions to do a certain task</p>
+<p><mark>Selection</mark>: Determines which parts of codes are ran based on if they evaluate to true or false. Used with <code>if</code> statements.</p>
 <p>Conditional: Different code statements are executed based of if they evaluate to true or false (<strong>boolean</strong> expressions (See 3.5))</p>
-<h2 id="if-else">
-<a class="anchor" href="#if-else" aria-hidden="true"><span class="octicon octicon-link"></span></a>if-else<a class="anchor-link" href="#if-else"> </a>
+<h2 id="Conditionals">
+<a class="anchor" href="#Conditionals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conditionals<a class="anchor-link" href="#Conditionals"> </a>
 </h2>
-<p>Below is an example of an if else statement that relates to binary</p>
+<p>Below is an example of an <mark>if else</mark> statement that relates to binary</p>
+<p>This should be pretty straightforward in demonstrating what an <mark>if</mark> statement is, so I'm not going to do a code example for an if statement. Check the code cell below the next to see an example of a <mark>elif</mark>.</p>
 
 </div>
 </div>
@@ -402,11 +404,49 @@ DeMorgan's Law is true
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="s2">"rainy"</span>
+
+<span class="k">if</span> <span class="n">weather</span> <span class="o">==</span> <span class="s2">"sunny"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Remember to bring a hat"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">weather</span> <span class="o">==</span> <span class="s2">"windy"</span><span class="p">:</span>   
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Go fly a kite!"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Remember to bring an umbrella"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Remember to bring an umbrella
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="3.7-Nested-Conditionals">
-<a class="anchor" href="#3.7-Nested-Conditionals" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.7 Nested Conditionals<a class="anchor-link" href="#3.7-Nested-Conditionals"> </a>
+<a class="anchor" href="#3.7-Nested-Conditionals" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.7 <mark>Nested Conditionals</mark><a class="anchor-link" href="#3.7-Nested-Conditionals"> </a>
 </h1>
 <p>Nested conditionals are essentially conditionals within conditionals.</p>
 <p>Below is an example of nested if statements in Python</p>

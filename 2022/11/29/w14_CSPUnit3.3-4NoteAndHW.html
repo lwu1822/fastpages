@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      2 min read
     
 </span></p>
 
@@ -157,9 +157,10 @@ window.onload = wrap_img;
 <a class="anchor" href="#Vocab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Vocab<a class="anchor-link" href="#Vocab"> </a>
 </h1>
 <p>The three important vocab words for AP CSP are sequencing, selection, and iteration.</p>
-<p>Sequencing: The order in which an algorithm runs.</p>
-<p>Selection: Algorithms figure out whether to execute a boolean statement (if statement)</p>
-<p>Iteration: Loop (ex: for, while)</p>
+<p><mark>Sequencing</mark>: The order in which an algorithm runs.</p>
+<p><mark>Selection</mark>: Algorithms figure out whether to execute a boolean statement (if statement)</p>
+<p><mark>Iteration</mark>: Loop (ex: for, while)</p>
+<p>See <a href="https://lwu1822.github.io/fastpages/2022/11/29/w14_CSPUnit3.3-4NoteAndHW.html#Coding-example">here</a> for a coding example demonstrating sequencing, selection, and iteration.</p>
 
 </div>
 </div>
@@ -170,7 +171,9 @@ window.onload = wrap_img;
 <h1 id="3.3-Expressions">
 <a class="anchor" href="#3.3-Expressions" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.3 Expressions<a class="anchor-link" href="#3.3-Expressions"> </a>
 </h1>
-<p>The symbol for exponents is <code>**</code></p>
+<p><mark>Expressions</mark> are values that can be combined to be interpreted into a new value.</p>
+<p>The usual mathematical symbols apply, the main difference is that the symbol for exponents is <code>**</code>, not ^.</p>
+<p>The coding example <a href="https://lwu1822.github.io/fastpages/2022/11/29/w14_CSPUnit3.3-4NoteAndHW.html#Coding-example">here</a> demonstrates how to use the <code>**</code> (exponent).</p>
 
 </div>
 </div>
@@ -179,17 +182,19 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="3.4-Strings">
-<a class="anchor" href="#3.4-Strings" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.4 Strings<a class="anchor-link" href="#3.4-Strings"> </a>
+<a class="anchor" href="#3.4-Strings" aria-hidden="true"><span class="octicon octicon-link"></span></a>3.4 <mark>Strings</mark><a class="anchor-link" href="#3.4-Strings"> </a>
 </h1>
 <p>Psuedocode: Using common language to write out code. Good for planning purposes and helps other people understand what you intend to do with the code.</p>
 <p>Index: Represents the position of an array.</p>
-<p>Length: How long something is. For example, the length of a string is the number of characters it has.</p>
+<p><mark>Length</mark>: How long something is. For example, the length of a string is the number of characters it has.</p>
 <h2 id="Python">
 <a class="anchor" href="#Python" aria-hidden="true"><span class="octicon octicon-link"></span></a>Python<a class="anchor-link" href="#Python"> </a>
 </h2>
 <p>Length: <code>len(<em>value you want to find length of</em>)</code></p>
 <p>Substring syntax in Python: <code>string[<em>start index</em>:<em>end index - 1</em>]</code></p>
-<p>Below is an example of traversing through a string.</p>
+<p>In this <a href="https://lwu1822.github.io/fastpages/homework/#3.8-Challenge">code</a>, the substring takes an individual character from the binary string and calculates its values based on the base two power place it is in.</p>
+<p>This can show specific <mark>characters</mark> in a string, which are the individual letters/numbers.</p>
+<p>Below is an example of <mark>traversing</mark> through a string.</p>
 
 </div>
 </div>
@@ -236,6 +241,51 @@ G
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>You can also change a string to uppercase or lowercase with the <mark><code>upper()</code></mark> and <mark><code>lower</code></mark> functions.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">msg</span> <span class="o">=</span> <span class="s2">"dEfaUlt stRinG"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" now uppercase"</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">+</span> <span class="s2">" now lowercase"</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>dEfaUlt stRinG
+DEFAULT STRING NOW UPPERCASE
+default string now lowercase
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Coding-example">
 <a class="anchor" href="#Coding-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coding example<a class="anchor-link" href="#Coding-example"> </a>
 </h1>
@@ -245,6 +295,7 @@ G
 <li>Selection: The if statement determines if a "1" or a "0" is added to the binary string. </li>
 <li>Iteration: Two for loops are present; the first adds binary numbers to the list and the second adds a 1 or a 0 to the binary string. </li>
 </ul>
+<p>Furthermore, this code segment demonstrates <mark>concatenating</mark> strings. As you can see in the example below, the output string is either appended to <code>1</code> or <code>0</code> depending on if the power of 2 fits in the number.</p>
 
 </div>
 </div>
