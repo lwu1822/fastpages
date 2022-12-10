@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      4 min read
     
 </span></p>
 
@@ -176,26 +176,26 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="nx">decimal</span> <span class="o">=</span> <span class="mf">7</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">decimal</span> <span class="o">=</span> <span class="mi">7</span>
 
-<span class="nx">def</span> <span class="nx">convertToBinary</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span><span class="o">:</span>
-    <span class="nx">numOfBinary</span> <span class="o">=</span> <span class="mf">8</span>
-    <span class="nx">binary</span> <span class="o">=</span> <span class="p">[];</span> 
-    <span class="nx">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">def</span> <span class="nf">convertToBinary</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">numOfBinary</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">binary</span> <span class="o">=</span> <span class="p">[];</span> 
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     
-    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="nx">numOfBinary</span><span class="p">)</span><span class="o">:</span> 
-        <span class="nx">binary</span><span class="p">.</span><span class="nx">append</span><span class="p">((</span><span class="mf">2</span><span class="o">**</span><span class="p">(</span><span class="nx">numOfBinary</span> <span class="o">-</span> <span class="mf">1</span> <span class="o">-</span> <span class="nx">i</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numOfBinary</span><span class="p">):</span> 
+        <span class="n">binary</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">numOfBinary</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)))</span>
     
-    <span class="k">for</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">range</span><span class="p">(</span><span class="nx">len</span><span class="p">(</span><span class="nx">binary</span><span class="p">))</span><span class="o">:</span>
-        <span class="k">if</span> <span class="nx">num</span> <span class="o">-</span> <span class="nx">binary</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0</span><span class="o">:</span>
-            <span class="nx">num</span> <span class="o">-=</span> <span class="nx">binary</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span>
-            <span class="nx">output</span> <span class="o">+=</span> <span class="s2">&quot;1&quot;</span>
-        <span class="k">else</span><span class="o">:</span> 
-            <span class="nx">output</span> <span class="o">+=</span> <span class="s2">&quot;0&quot;</span>
-    <span class="k">return</span><span class="p">(</span><span class="nx">output</span><span class="p">)</span>    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">binary</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">-</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">-=</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;1&quot;</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;0&quot;</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>    
 
-<span class="nx">conversion</span> <span class="o">=</span> <span class="nx">convertToBinary</span><span class="p">(</span><span class="nx">decimal</span><span class="p">)</span> 
-<span class="nx">print</span><span class="p">(</span><span class="nx">conversion</span><span class="p">)</span>
+<span class="n">conversion</span> <span class="o">=</span> <span class="n">convertToBinary</span><span class="p">(</span><span class="n">decimal</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">conversion</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -232,20 +232,20 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="nx">def</span> <span class="nx">findMax</span><span class="p">(</span><span class="nx">numberA</span><span class="p">,</span> <span class="nx">numberB</span><span class="p">)</span><span class="o">:</span>
-    <span class="k">if</span> <span class="nx">numberA</span> <span class="o">&gt;</span> <span class="nx">numberB</span><span class="o">:</span> 
-        <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Maximum is: &quot;</span> <span class="o">+</span> <span class="nx">str</span><span class="p">(</span><span class="nx">numberA</span><span class="p">))</span>
-    <span class="k">else</span><span class="o">:</span> 
-        <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Maximum is: &quot;</span> <span class="o">+</span> <span class="nx">str</span><span class="p">(</span><span class="nx">numberB</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">findMax</span><span class="p">(</span><span class="n">numberA</span><span class="p">,</span> <span class="n">numberB</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">numberA</span> <span class="o">&gt;</span> <span class="n">numberB</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numberA</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Maximum is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numberB</span><span class="p">))</span>
         
-<span class="nx">def</span> <span class="nx">findMin</span><span class="p">(</span><span class="nx">numberA</span><span class="p">,</span> <span class="nx">numberB</span><span class="p">)</span><span class="o">:</span> 
-    <span class="k">if</span> <span class="nx">numberA</span> <span class="o">&lt;</span> <span class="nx">numberB</span><span class="o">:</span> 
-        <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Minimum is: &quot;</span> <span class="o">+</span> <span class="nx">str</span><span class="p">(</span><span class="nx">numberA</span><span class="p">))</span>
-    <span class="k">else</span><span class="o">:</span> 
-        <span class="nx">print</span><span class="p">(</span><span class="s2">&quot;Minimum is: &quot;</span> <span class="o">+</span> <span class="nx">str</span><span class="p">(</span><span class="nx">numberB</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">findMin</span><span class="p">(</span><span class="n">numberA</span><span class="p">,</span> <span class="n">numberB</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="n">numberA</span> <span class="o">&lt;</span> <span class="n">numberB</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimum is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numberA</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Minimum is: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numberB</span><span class="p">))</span>
         
-<span class="nx">findMin</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="mf">5</span><span class="p">)</span>
-<span class="nx">findMax</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="mf">5</span><span class="p">)</span>
+<span class="n">findMin</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">findMax</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -283,25 +283,25 @@ Maximum is: 5
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="kd">function</span> <span class="nx">findMax</span><span class="p">(</span><span class="nx">numberA</span><span class="p">,</span> <span class="nx">numberB</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">numberA</span> <span class="o">&gt;</span> <span class="nx">numberB</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Maximum is: &quot;</span> <span class="o">+</span> <span class="nx">numberA</span><span class="p">);</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">function</span> <span class="n">findMax</span><span class="p">(</span><span class="n">numberA</span><span class="p">,</span> <span class="n">numberB</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">numberA</span> <span class="o">&gt;</span> <span class="n">numberB</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Maximum is: &quot;</span> <span class="o">+</span> <span class="n">numberA</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Maximum is: &quot;</span> <span class="o">+</span> <span class="nx">numberB</span><span class="p">);</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Maximum is: &quot;</span> <span class="o">+</span> <span class="n">numberB</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
 
-<span class="kd">function</span> <span class="nx">findMin</span><span class="p">(</span><span class="nx">numberA</span><span class="p">,</span> <span class="nx">numberB</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">numberA</span> <span class="o">&lt;</span> <span class="nx">numberB</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Minimum is: &quot;</span> <span class="o">+</span> <span class="nx">numberA</span><span class="p">);</span>
+<span class="n">function</span> <span class="n">findMin</span><span class="p">(</span><span class="n">numberA</span><span class="p">,</span> <span class="n">numberB</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">numberA</span> <span class="o">&lt;</span> <span class="n">numberB</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Minimum is: &quot;</span> <span class="o">+</span> <span class="n">numberA</span><span class="p">);</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Minimum is: &quot;</span> <span class="o">+</span> <span class="nx">numberB</span><span class="p">);</span> 
+        <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="s2">&quot;Minimum is: &quot;</span> <span class="o">+</span> <span class="n">numberB</span><span class="p">);</span> 
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="nx">findMax</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="mf">5</span><span class="p">);</span> 
-<span class="nx">findMin</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span> <span class="mf">5</span><span class="p">);</span>
+<span class="n">findMax</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> 
+<span class="n">findMin</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span> 
 </pre></div>
 
     </div>
@@ -332,6 +332,14 @@ Minimum is: 3
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Comments">Comments<a class="anchor-link" href="#Comments"> </a></h2><p>My code below uses Python. To convert the characters into ASCII, I used the <code>ord()</code> function. I then created my own decimal to binary converter with the <code>asciiToBinary()</code> function (procedure), using different code than the binary converter I made in Challenge 1.</p>
+<p>While I was searching how to convert characters into ASCII, I also wondered if there was a Python function that convert decimal to binary. I found that the <code>bin()</code> function could do the task, so below, I did the same homework using the <code>bin()</code> function.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -339,9 +347,47 @@ Minimum is: 3
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="nx">def</span> <span class="nx">charToBinary</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span><span class="o">:</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">binaryList</span> <span class="o">=</span> <span class="p">[]</span>
 
-<span class="err">#</span> <span class="nx">The</span> <span class="nx">output</span> <span class="nx">shown</span> <span class="nx">below</span> <span class="nx">is</span> <span class="nx">the</span> <span class="nx">output</span> <span class="nx">you</span> <span class="nx">are</span> <span class="nx">supposed</span> <span class="nx">to</span> <span class="nx">get</span>
+<span class="k">def</span> <span class="nf">charToAscii</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span> 
+    <span class="n">ascii</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+    <span class="n">asciiToBinary</span><span class="p">(</span><span class="n">ascii</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">asciiToBinary</span><span class="p">(</span><span class="n">ascii</span><span class="p">):</span>
+    <span class="n">binaryNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">binaryString</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">;</span> 
+    <span class="k">while</span> <span class="n">binaryNum</span> <span class="o">&lt;</span> <span class="n">ascii</span><span class="p">:</span>
+        <span class="n">binaryNum</span> <span class="o">=</span> <span class="mi">2</span><span class="o">**</span><span class="n">count</span> 
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">ascii</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">count</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">):</span> 
+        <span class="k">if</span> <span class="n">ascii</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="o">**</span><span class="n">count</span><span class="p">:</span> 
+            <span class="n">ascii</span> <span class="o">-=</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">count</span><span class="p">)</span>
+            <span class="n">binaryString</span> <span class="o">+=</span> <span class="s2">&quot;1&quot;</span>
+            <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">binaryString</span> <span class="o">+=</span> <span class="s2">&quot;0&quot;</span>
+            <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="k">while</span> <span class="n">count</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">binaryString</span> <span class="o">+=</span> <span class="s2">&quot;0&quot;</span>
+            <span class="n">count</span> <span class="o">-=</span> <span class="mi">1</span>
+            
+    <span class="n">binaryString</span> <span class="o">=</span> <span class="n">binaryString</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">binaryString</span><span class="p">)]</span>
+    <span class="n">binaryList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">binaryString</span><span class="p">)</span>
+
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;APCSP&#39; in binary is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">binaryList</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -354,8 +400,8 @@ Minimum is: 3
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>&#39;&#39;APCSP&#39;&#39; in binary is 
-[1000001, 1010000, 1000011, 1010011, 1010000]
+<pre>&#39;APCSP&#39; in binary is
+[&#39;1000001&#39;, &#39;1010000&#39;, &#39;1000011&#39;, &#39;1010011&#39;, &#39;1010000&#39;]
 </pre>
 </div>
 </div>
@@ -366,6 +412,132 @@ Minimum is: 3
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-bin()">Using <code>bin()</code><a class="anchor-link" href="#Using-bin()"> </a></h2><p><em>well this used up much fewer lines of code :P</em></p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">binaryList</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">def</span> <span class="nf">charToAscii</span><span class="p">(</span><span class="n">letter</span><span class="p">):</span> 
+    <span class="n">ascii</span> <span class="o">=</span> <span class="nb">ord</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+    <span class="n">asciiToBinary</span><span class="p">(</span><span class="n">ascii</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">asciiToBinary</span><span class="p">(</span><span class="n">ascii</span><span class="p">):</span>
+    
+    <span class="n">binaryString</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">ascii</span><span class="p">)</span>
+    <span class="n">binaryString</span> <span class="o">=</span> <span class="n">binaryString</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">binaryString</span><span class="p">)]</span>
+    <span class="n">binaryList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">binaryString</span><span class="p">)</span>
+
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">)</span>
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;S&quot;</span><span class="p">)</span>
+<span class="n">charToAscii</span><span class="p">(</span><span class="s2">&quot;P&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&#39;APCSP&#39; in binary is&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">binaryList</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&#39;APCSP&#39; in binary is
+[&#39;1000001&#39;, &#39;1010000&#39;, &#39;1000011&#39;, &#39;1010011&#39;, &#39;1010000&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="JavaScript-version">JavaScript version<a class="anchor-link" href="#JavaScript-version"> </a></h2><p>I was also curious to see if I could make a JavaScript version of the homework assignment. I learned that the JavaScript function that converts characters to ASCII is <code>.charCodeAt(0)</code>, and the function that converts ASCII to binary is <code>toString(2)</code>. Below is my code.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>&lt;p id="binary"&gt;&lt;/p&gt;
+
+
+&lt;script&gt;
+    const numOfBinary = 8; 
+    let binary = []; 
+    let ascii = "";
+
+    function charToAscii(letter) {
+        ascii = letter.charCodeAt(0); 
+        asciiToBinary(ascii); 
+    }
+
+    function asciiToBinary(ascii) {
+        binary.push(ascii.toString(2)); 
+    }
+
+    charToAscii("A");
+    charToAscii("P");
+    charToAscii("C");
+    charToAscii("S");
+    charToAscii("P");
+
+    document.getElementById("binary").innerHTML = "'APCSP' in binary is" + "&lt;br&gt;" + binary;
+
+&lt;/script&gt;</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p id="binary"></p><script>
+    const numOfBinary = 8; 
+    let binary = []; 
+    let ascii = "";
+
+    function charToAscii(letter) {
+        ascii = letter.charCodeAt(0); 
+        asciiToBinary(ascii); 
+    }
+
+    function asciiToBinary(ascii) {
+        binary.push(ascii.toString(2)); 
+    }
+
+    charToAscii("A");
+    charToAscii("P");
+    charToAscii("C");
+    charToAscii("S");
+    charToAscii("P");
+
+    document.getElementById("binary").innerHTML = "'APCSP' in binary is" + "<br>" + binary;
+
+</script>
+</div>
+</div>
+</div>
 </div>
 
 
