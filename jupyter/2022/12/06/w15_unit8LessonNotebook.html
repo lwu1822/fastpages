@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      6 min read
     
 </span></p>
 
@@ -172,6 +172,18 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h4"><a href="#Please-submit-screenshots-of-your-4-hacks-up-and-running-to-our-Google-Form,-which-also-has-a-few-2D-array-related-multiple-choice-questions.">Please submit screenshots of your 4 hacks up and running to our Google Form, which also has a few 2D array related multiple choice questions. </a></li>
 <li class="toc-entry toc-h4"><a href="#Additionally,-Complete-and-send-a-screenshot-of-your-code-for-2017-FRQ-Q4:-Successor-Array-in-that-same-google-form.">Additionally, Complete and send a screenshot of your code for 2017 FRQ Q4: Successor Array in that same google form. </a></li>
 <li class="toc-entry toc-h4"><a href="#Please-submit-as-a-pair-or-group.">Please submit as a pair or group. </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#2017-FRQ-#4a">2017 FRQ #4a </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#1st-attempt">1st attempt </a></li>
+<li class="toc-entry toc-h2"><a href="#Comments">Comments </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#4b">4b </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#1st-attempt">1st attempt </a></li>
+<li class="toc-entry toc-h2"><a href="#Comments">Comments </a></li>
 </ul>
 </li>
 </ul><!--
@@ -340,7 +352,6 @@ arr[2][1] = 8
  
       <span class="c1">// Print the last element in the array!</span>
       <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">arr</span><span class="o">[</span><span class="mi">2</span><span class="o">][</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span>
-      <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">);</span> 
     <span class="p">}</span>
  
  <span class="p">}</span>
@@ -358,7 +369,6 @@ arr[2][1] = 8
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>i
-3
 </pre>
 </div>
 </div>
@@ -749,6 +759,166 @@ Cincinnati
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2017-FRQ-#4a">
+<a class="anchor" href="#2017-FRQ-#4a" aria-hidden="true"><span class="octicon octicon-link"></span></a>2017 FRQ #4a<a class="anchor-link" href="#2017-FRQ-#4a"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1st-attempt">
+<a class="anchor" href="#1st-attempt" aria-hidden="true"><span class="octicon octicon-link"></span></a>1st attempt<a class="anchor-link" href="#1st-attempt"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Position</span> <span class="nf">findPosition</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">intArr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">intArr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">intArr</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">intArr</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> 
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Comments">
+<a class="anchor" href="#Comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comments<a class="anchor-link" href="#Comments"> </a>
+</h2>
+<p>I graded my first attempt a 4/5 because I did not know how to return an object since the method type is of class <code>Position</code>. The way to do so is: <code>return new Position(row, col);</code>, which returns a Position object with the row and column location of the number. Below is my correction:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Position</span> <span class="nf">findPosition</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">intArr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">intArr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">intArr</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">intArr</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="k">new</span> <span class="n">Position</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">);</span> <span class="c1">// correction </span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">null</span><span class="p">;</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="4b">
+<a class="anchor" href="#4b" aria-hidden="true"><span class="octicon octicon-link"></span></a>4b<a class="anchor-link" href="#4b"> </a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1st-attempt">
+<a class="anchor" href="#1st-attempt" aria-hidden="true"><span class="octicon octicon-link"></span></a>1st attempt<a class="anchor-link" href="#1st-attempt"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Position</span><span class="o">[][]</span> <span class="nf">getSuccessorArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">intArr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Position</span><span class="o">[][]</span> <span class="n">arr</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">intArr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">intArr</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="n">findPosition</span><span class="p">(</span><span class="n">intArr</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">intArr</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Comments">
+<a class="anchor" href="#Comments" aria-hidden="true"><span class="octicon octicon-link"></span></a>Comments<a class="anchor-link" href="#Comments"> </a>
+</h2>
+<p>I graded my first attempt a 3/4 because I did not create the 2D array correctly. Since the successor array has the same dimension as the integer array, the dimensions of the successor array needed to be specified with <code>Position[][] arr = new Position[intArr.length][intArr[0].length];</code>. Below is my correction.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="n">Position</span><span class="o">[][]</span> <span class="nf">getSuccessorArray</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">intArr</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Position</span><span class="o">[][]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Position</span><span class="o">[</span><span class="n">intArr</span><span class="p">.</span><span class="na">length</span><span class="o">][</span><span class="n">intArr</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span> <span class="c1">// correction</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">row</span> <span class="o">&lt;</span> <span class="n">intArr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">row</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">intArr</span><span class="o">[</span><span class="n">row</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">arr</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">=</span> <span class="n">findPosition</span><span class="p">(</span><span class="n">intArr</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">intArr</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">arr</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
