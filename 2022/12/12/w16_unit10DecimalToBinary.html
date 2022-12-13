@@ -149,7 +149,10 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecimalToBinaryConverter</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="p">;</span>
+
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DecimalToBinaryConverter</span> <span class="p">{</span>
 
     <span class="kt">int</span> <span class="n">numOfBinary</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> 
     <span class="kt">int</span><span class="o">[]</span> <span class="n">binary</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">numOfBinary</span><span class="o">]</span><span class="p">;</span> 
@@ -180,16 +183,17 @@ window.onload = wrap_img;
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">DecimalToBinaryConverter</span> <span class="n">number</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DecimalToBinaryConverter</span><span class="p">();</span>
         <span class="n">number</span><span class="p">.</span><span class="na">fillArray</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-         
-        <span class="n">number</span><span class="p">.</span><span class="na">decimalToBinary</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">number</span><span class="p">.</span><span class="na">output</span><span class="p">);</span>
         
-        <span class="cm">/* </span>
-<span class="cm">        for (int i = 0; i &lt; number.binary.length; i++) {</span>
+        <span class="n">Scanner</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="p">(</span><span class="n">System</span><span class="p">.</span><span class="na">in</span><span class="p">);</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"What number would you like to convert to decimal?"</span><span class="p">);</span> 
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">nextInt</span><span class="p">();</span>
 
-<span class="cm">            System.out.println(number.binary[i]); </span>
-<span class="cm">        }</span>
-<span class="cm">        */</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+
+        <span class="n">number</span><span class="p">.</span><span class="na">decimalToBinary</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="s">" converted to binary is: "</span> <span class="o">+</span> <span class="n">number</span><span class="p">.</span><span class="na">output</span><span class="p">);</span>
+        
+    
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">DecimalToBinaryConverter</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
@@ -204,13 +208,11 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">java.lang.ArrayIndexOutOfBoundsException: Index 25 out of bounds for length 8</span>
-<span class="ansi-red-intense-fg ansi-bold">	at DecimalToBinaryConverter.decimalToBinary(#18:1)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at DecimalToBinaryConverter.main(#18:1)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at .(#34:1)</span></pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What number would you like to convert to decimal?
+25
+25 converted to binary is: 00011001
+</pre>
 </div>
 </div>
 
