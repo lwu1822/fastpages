@@ -357,6 +357,7 @@ Dice Roll</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>EXTRA: Create a function that will randomly select 5 playing Cards and check if the 5 cards are a Royal Flush</p>
+<p>NOTE: I didn't finish this extra challenge because I didn't have enough time.</p>
 
 </div>
 </div>
@@ -410,6 +411,54 @@ as Extra convert it to hexidecimal as well.</p>
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="n">numOfBinary</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">binary</span> <span class="o">=</span> <span class="p">[];</span> 
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">""</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numOfBinary</span><span class="p">):</span> 
+        <span class="n">binary</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">numOfBinary</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)))</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">binary</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">-</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">num</span> <span class="o">-=</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">"1"</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">"0"</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="n">output</span><span class="p">)</span>
+        
+<span class="n">convert</span><span class="p">(</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>00011001
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
