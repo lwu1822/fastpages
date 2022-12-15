@@ -133,6 +133,12 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Notes">Notes </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Errors">Errors </a></li>
+<li class="toc-entry toc-h2"><a href="#for-each-loop">for each loop </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="##3a">#3a </a></li>
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a>
 <ul>
@@ -149,6 +155,164 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Notes">
+<a class="anchor" href="#Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes<a class="anchor-link" href="#Notes"> </a>
+</h1>
+<p>Arrays store one data type and has a fixed size.</p>
+<p>The syntax to create an array is: <code><em>data type</em>[] <em>name</em> = new <em>data type</em>[<em>num&lt;/em]&lt;/code&gt;. This creates an array with constructors.&lt;/p&gt;
+<p>The other way to create an array is to <strong>pre-initialize</strong> it. To do this, type <code><em>data type</em>[] <em>name</em> = {<em>elements</em>}</code>.</p>
+<p>The element of arrays can be accessed through the index.</p>
+<h2 id="Errors">
+<a class="anchor" href="#Errors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Errors<a class="anchor-link" href="#Errors"> </a>
+</h2>
+<p><code>ArrayIndexOutOfBoundsException</code>: Arrays can be iterated through loops. If the loop accesses an index that the array does not have, this error can occur. An example is listed below:</p>
+
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span> 
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// uh-oh</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3</span>
+<span class="ansi-red-intense-fg ansi-bold">	at .(#17:4)</span></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the example above, the code failed because the for loop iterates from i = 0 to i = 3. The array does not contain an element at index 3. Therefore, the code needs to be altered below:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span> 
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numbers</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// uh-oh</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numbers</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="for-each-loop">
+<a class="anchor" href="#for-each-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>for each loop<a class="anchor-link" href="#for-each-loop"> </a>
+</h2>
+<p>A for each loop is especially useful to traverse through an array. An example is shown below:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">};</span> 
+
+<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">num</span> <span class="p">:</span> <span class="n">numbers</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// uh-oh</span>
+    <span class="n">sum</span> <span class="o">+=</span> <span class="n">num</span><span class="p">;</span> 
+<span class="p">}</span>
+
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">sum</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>6
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -258,8 +422,13 @@ window.onload = wrap_img;
 </div>
 </div>
 </div>
-</div>
+&lt;/div&gt;
+ 
 
+</em></code></p>
+</div>
+</div></div>
+</div>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
