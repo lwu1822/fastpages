@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Homework 3.17 - 3.18 | Lily</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Homework 3.17 - 3.18" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://lwu1822.github.io/fastpages/homework1718" />
+<meta property="og:url" content="https://lwu1822.github.io/fastpages/homework1718" />
+<meta property="og:site_name" content="Lily" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-14T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Homework 3.17 - 3.18" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-14T00:00:00-06:00","datePublished":"2022-12-14T00:00:00-06:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Homework 3.17 - 3.18","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/homework1718"},"url":"https://lwu1822.github.io/fastpages/homework1718"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://lwu1822.github.io/fastpages/feed.xml" title="Lily" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpages/">Lily</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpages/about/">About Me</a><a class="page-link" href="/fastpages/notes/">Notes</a><a class="page-link" href="/fastpages/weekly-work/">Weekly Work</a><a class="page-link" href="/fastpages/cb/">College Board</a><a class="page-link" href="/fastpages/class/">Other classes</a><a class="page-link" href="/fastpages/search/">Search</a><a class="page-link" href="/fastpages/categories/">Tags</a><a class="page-link" href="/fastpages/t/CSA">CSA</a><a class="page-link" href="/fastpages/CSP/">CSP</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Homework 3.17 - 3.18</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-12-14T00:00:00-06:00" itemprop="datePublished">
+        Dec 14, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      6 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/lwu1822/fastpages/tree/master/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/lwu1822/fastpages/master?filepath=_notebooks%2F2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/lwu1822/fastpages/blob/master/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Flwu1822%2Ffastpages%2Fblob%2Fmaster%2F_notebooks%2F2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/fastpages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.17-Algorithmic-Efficiency">3.17 Algorithmic Efficiency<a class="anchor-link" href="#3.17-Algorithmic-Efficiency"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Vocabulary">Vocabulary<a class="anchor-link" href="#Vocabulary"> </a></h2><ul>
+<li>Problem:<ul>
+<li>Decision Problem: A problem with yes/no answer</li>
+<li>Organization Problem: A problem with the goal of finding a best answer</li>
+</ul>
+</li>
+<li>Instance: Problem with specific input</li>
+<li>Efficiency: How much computing you need for a problem to be resolved <ul>
+<li>Polynomial Efficiency (Good): Proportional amount of time (linear) the more work you do</li>
+<li>Exponential Efficiency (Bad): Exponential amount of time the more work you do (ex: double the amount of time)</li>
+</ul>
+</li>
+<li>Heuristic Approach: Finding a more efficient optimal solution</li>
+<li>Decidable Problem: A decision problem with a solution that always outputs correctly</li>
+<li>Undecidable Problem: A decision problem with no solution</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Notes">Notes<a class="anchor-link" href="#Notes"> </a></h2><ul>
+<li>Code that performs the same task can have a different amount of time that it runs </li>
+<li>The more functions you add, the more time it takes to run the code 
+For example, an add function that converts <code>toint</code> and then <code>tostr</code> will take up more seconds than a function that merely adds the functions and returns the value to a print statement (because a print statement can print an integer if that is the only value)</li>
+<li>Polynomial creates the least cycles (ex: 3x and (2x)^2) vs exponential which creates more cycles (ex: 3^x)</li>
+</ul>
+<p><br /></p>
+<ul>
+<li>Undecidable problem: Give multiple answers or none</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Challenge">Challenge<a class="anchor-link" href="#Challenge"> </a></h2><p>Try and fix this ineficcient code!
+Only change the code between the two commented lines.
+Fully programmed solution will improve your grade, at a minimum show that you tried.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="n">numlist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">19</span><span class="p">]</span>
+<span class="n">valuelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">21</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">isvalue</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="n">array</span><span class="p">):</span>
+    <span class="c1">#--------------------</span>
+    <span class="nb">min</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="nb">max</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">numlist</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">while</span> <span class="nb">max</span> <span class="o">&gt;=</span> <span class="nb">min</span><span class="p">:</span> 
+        <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="nb">min</span> <span class="o">+</span> <span class="nb">max</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+        <span class="k">if</span> <span class="n">array</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">==</span> <span class="n">value</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        <span class="k">elif</span> <span class="n">array</span><span class="p">[</span><span class="n">mid</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">value</span><span class="p">:</span> 
+            <span class="nb">max</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">min</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span> 
+    <span class="k">return</span> <span class="kc">False</span> 
+        
+    <span class="c1">#--------------------</span>
+<span class="n">starttime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">valuelist</span><span class="p">)):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">isvalue</span><span class="p">(</span><span class="n">valuelist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">numlist</span><span class="p">)</span>
+<span class="n">endtime</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">endtime</span><span class="o">-</span><span class="n">starttime</span><span class="p">,</span><span class="s1">&#39;seconds&#39;</span><span class="p">)</span> 
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1.288701057434082 seconds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="3.18-Undecidable-Problems">3.18 Undecidable Problems<a class="anchor-link" href="#3.18-Undecidable-Problems"> </a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Notes">Notes<a class="anchor-link" href="#Notes"> </a></h2><ul>
+<li><strong>Undecidable problems</strong> occur when a paradox is created, for exaple, a program that produces an error, then reverses it, which results in no error. </li>
+</ul>
+<p>Real life example: Internet connections time out if a website does not load</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Homework!">Homework!<a class="anchor-link" href="#Homework!"> </a></h1><p>Make an algorithm that finds the fastest route that hits every location once starting and ending at Del Norte. Make sure to show your thinking. If you are strugling, try using a huristic approach. Remember, what matters more than having perfectly functioning code is that you tried your hardest.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;DelNorte&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;Westview&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
+        <span class="s1">&#39;MtCarmel&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+        <span class="s1">&#39;Poway&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
+        <span class="s1">&#39;RanchoBernardo&#39;</span><span class="p">:</span><span class="mi">50</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;Westview&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;DelNorte&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
+        <span class="s1">&#39;MtCarmel&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
+        <span class="s1">&#39;Poway&#39;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span>
+        <span class="s1">&#39;RanchoBernardo&#39;</span><span class="p">:</span> <span class="mi">45</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;MtCarmel&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;Westview&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
+        <span class="s1">&#39;DelNorte&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+        <span class="s1">&#39;Poway&#39;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span>
+        <span class="s1">&#39;RanchoBernardo&#39;</span><span class="p">:</span><span class="mi">30</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;Poway&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;Westview&#39;</span><span class="p">:</span><span class="mi">25</span><span class="p">,</span>
+        <span class="s1">&#39;MtCarmel&#39;</span><span class="p">:</span><span class="mi">40</span><span class="p">,</span>
+        <span class="s1">&#39;DelNorte&#39;</span><span class="p">:</span><span class="mi">35</span><span class="p">,</span>
+        <span class="s1">&#39;RanchoBernardo&#39;</span><span class="p">:</span><span class="mi">15</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;RanchoBernardo&#39;</span><span class="p">:{</span>
+        <span class="s1">&#39;Westview&#39;</span><span class="p">:</span><span class="mi">45</span><span class="p">,</span>
+        <span class="s1">&#39;MtCarmel&#39;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span>
+        <span class="s1">&#39;Poway&#39;</span><span class="p">:</span><span class="mi">15</span><span class="p">,</span>
+        <span class="s1">&#39;DelNorte&#39;</span><span class="p">:</span><span class="mi">50</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Comments">Comments<a class="anchor-link" href="#Comments"> </a></h1><p>I don't know how to make the best algorithm to perform the task. The best that I managed was to repeatedly finding the shortest path (making sure that the next destination has not been arrived yet) for 4 times. Some of my other attempts are below the following code cell. (The one below works but probably is not the most efficient (I tried though and spent 2 hours on this))</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">drivetime</span> 
+    <span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">global</span> <span class="n">order</span> 
+    <span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">#CODE,CODE,CODE</span>
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        
+    <span class="n">travelPlace2</span> <span class="o">=</span> <span class="n">start</span> 
+    
+
+    <span class="n">shortestTime</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">travelPlace</span> <span class="o">=</span> <span class="n">travelPlace2</span> 
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">])):</span>
+        
+        <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">shortestTime</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+                <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">travelPlace2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="k">continue</span> 
+                
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">travelPlace2</span><span class="p">)</span>
+    <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">shortestTime</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">travelPlace2</span><span class="p">)</span>
+        
+        
+        
+    <span class="n">shortestTime</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">travelPlace</span> <span class="o">=</span> <span class="n">travelPlace2</span> 
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">])):</span>
+        
+        <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">shortestTime</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+                <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">travelPlace2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="k">continue</span> 
+                
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">travelPlace2</span><span class="p">)</span>
+    <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">shortestTime</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">travelPlace2</span><span class="p">)</span>
+
+
+    <span class="n">shortestTime</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">travelPlace</span> <span class="o">=</span> <span class="n">travelPlace2</span> 
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">])):</span>
+        
+        <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">shortestTime</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+                <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">travelPlace2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="k">continue</span> 
+                
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">travelPlace2</span><span class="p">)</span>
+    <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">shortestTime</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">travelPlace2</span><span class="p">)</span>
+
+    <span class="n">shortestTime</span> <span class="o">=</span> <span class="mi">100</span>
+
+    <span class="n">travelPlace</span> <span class="o">=</span> <span class="n">travelPlace2</span> 
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">])):</span>
+        
+        <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">shortestTime</span><span class="p">:</span> 
+            <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+                <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">travelPlace2</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span> 
+                <span class="k">continue</span> 
+                
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">travelPlace2</span><span class="p">)</span>
+    <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">shortestTime</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">travelPlace2</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">drivetime</span><span class="p">)</span>
+    
+    <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace2</span><span class="p">][</span><span class="s1">&#39;DelNorte&#39;</span><span class="p">]</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">drivetime</span><span class="p">)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="s1">&#39;DelNorte&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">dataset</span>
+<span class="n">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># &#39;dataset&#39; is the name of the nested key value pair</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;DelNorte&#39;, &#39;Westview&#39;]
+Westview
+[&#39;DelNorte&#39;, &#39;Westview&#39;, &#39;Poway&#39;]
+Poway
+[&#39;DelNorte&#39;, &#39;Westview&#39;, &#39;Poway&#39;, &#39;RanchoBernardo&#39;]
+RanchoBernardo
+[&#39;DelNorte&#39;, &#39;Westview&#39;, &#39;Poway&#39;, &#39;RanchoBernardo&#39;, &#39;MtCarmel&#39;]
+MtCarmel
+85
+105
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">drivetime</span> 
+    <span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">global</span> <span class="n">order</span> 
+    <span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">#CODE,CODE,CODE</span>
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        
+    <span class="n">travelPlace</span> <span class="o">=</span> <span class="n">start</span> 
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">):</span>
+        <span class="n">initialPlace</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+        
+        
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">])):</span>
+            <span class="k">while</span> <span class="n">initialPlace</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+                <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">travelPlace</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+                
+            <span class="n">search</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">search</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span> 
+                <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">shortestTime</span><span class="p">:</span>
+                    <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+                    <span class="n">travelPlace</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+                
+        <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">travelPlace</span><span class="p">)</span>
+        <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">shortestTime</span>
+        
+        
+        <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">drivetime</span><span class="p">)</span>
+    
+
+
+<span class="n">start</span> <span class="o">=</span> <span class="s1">&#39;DelNorte&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">dataset</span>
+<span class="n">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="c1"># &#39;dataset&#39; is the name of the nested key value pair</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;DelNorte&#39;, &#39;Westview&#39;]
+15
+[&#39;DelNorte&#39;, &#39;Westview&#39;, &#39;DelNorte&#39;]
+30
+[&#39;DelNorte&#39;, &#39;Westview&#39;, &#39;DelNorte&#39;, &#39;Westview&#39;]
+45
+[&#39;DelNorte&#39;, &#39;Westview&#39;, &#39;DelNorte&#39;, &#39;Westview&#39;, &#39;DelNorte&#39;]
+60
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span> <span class="nf">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">drivetime</span> 
+    <span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">global</span> <span class="n">order</span> 
+    <span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">#CODE,CODE,CODE</span>
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+    <span class="n">mv</span><span class="p">(</span><span class="n">start</span><span class="p">)</span>
+        
+<span class="k">def</span> <span class="nf">mv</span><span class="p">(</span><span class="n">travelPlace</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">drivetime</span> 
+    <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">travelPlace</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">])):</span>
+        <span class="n">search</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">find</span><span class="p">(</span><span class="n">search</span><span class="p">):</span> 
+            <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">shortestTime</span><span class="p">:</span>
+                <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">travelPlace</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">travelPlace</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+            
+    <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">travelPlace</span><span class="p">)</span>
+    <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">shortestTime</span>
+    
+    
+    <span class="n">mv</span><span class="p">(</span><span class="n">travelPlace</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    
+<span class="k">def</span> <span class="nf">find</span><span class="p">(</span><span class="n">nextPlace</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">order</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">nextPlace</span> <span class="o">==</span> <span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span> 
+        
+    <span class="nb">print</span><span class="p">(</span><span class="n">drivetime</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="c1">#return(drivetime,order)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="s1">&#39;DelNorte&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">dataset</span>
+<span class="n">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="c1"># &#39;dataset&#39; is the name of the nested key value pair</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">RecursionError</span>                            Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb Cell 12</span> in <span class="ansi-cyan-fg">&lt;cell line: 41&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=38&#39;&gt;39&lt;/a&gt;</span> start = &#39;DelNorte&#39;
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=39&#39;&gt;40&lt;/a&gt;</span> data = dataset
+<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=40&#39;&gt;41&lt;/a&gt;</span> fastestroute(start, data)
+
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb Cell 12</span> in <span class="ansi-cyan-fg">fastestroute</span><span class="ansi-blue-fg">(start, data)</span>
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=6&#39;&gt;7&lt;/a&gt;</span> #CODE,CODE,CODE
+<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=7&#39;&gt;8&lt;/a&gt;</span> order.append(start)
+<span class="ansi-green-fg">----&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=8&#39;&gt;9&lt;/a&gt;</span> mv(start)
+
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb Cell 12</span> in <span class="ansi-cyan-fg">mv</span><span class="ansi-blue-fg">(travelPlace)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=21&#39;&gt;22&lt;/a&gt;</span> order.append(travelPlace)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=22&#39;&gt;23&lt;/a&gt;</span> drivetime += shortestTime
+<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=25&#39;&gt;26&lt;/a&gt;</span> mv(travelPlace)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=26&#39;&gt;27&lt;/a&gt;</span> print(order)
+
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb Cell 12</span> in <span class="ansi-cyan-fg">mv</span><span class="ansi-blue-fg">(travelPlace)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=21&#39;&gt;22&lt;/a&gt;</span> order.append(travelPlace)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=22&#39;&gt;23&lt;/a&gt;</span> drivetime += shortestTime
+<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=25&#39;&gt;26&lt;/a&gt;</span> mv(travelPlace)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=26&#39;&gt;27&lt;/a&gt;</span> print(order)
+
+    <span class="ansi-red-fg">[... skipping similar frames: mv at line 26 (2967 times)]</span>
+
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb Cell 12</span> in <span class="ansi-cyan-fg">mv</span><span class="ansi-blue-fg">(travelPlace)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=21&#39;&gt;22&lt;/a&gt;</span> order.append(travelPlace)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=22&#39;&gt;23&lt;/a&gt;</span> drivetime += shortestTime
+<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=25&#39;&gt;26&lt;/a&gt;</span> mv(travelPlace)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=26&#39;&gt;27&lt;/a&gt;</span> print(order)
+
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb Cell 12</span> in <span class="ansi-cyan-fg">mv</span><span class="ansi-blue-fg">(travelPlace)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=14&#39;&gt;15&lt;/a&gt;</span> for j in range(len(dataset[travelPlace])):
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=15&#39;&gt;16&lt;/a&gt;</span>     search = list(dataset[travelPlace].keys())[j]
+<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=16&#39;&gt;17&lt;/a&gt;</span>     if find(search): 
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=17&#39;&gt;18&lt;/a&gt;</span>         if list(dataset[travelPlace].values())[j] &lt; shortestTime:
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=18&#39;&gt;19&lt;/a&gt;</span>             shortestTime = list(dataset[travelPlace].values())[j]
+
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb Cell 12</span> in <span class="ansi-cyan-fg">find</span><span class="ansi-blue-fg">(nextPlace)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=28&#39;&gt;29&lt;/a&gt;</span> def find(nextPlace):
+<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=29&#39;&gt;30&lt;/a&gt;</span>     for i in range(len(order)):
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=30&#39;&gt;31&lt;/a&gt;</span>         if nextPlace == order[i]:
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2022-12-14-w16_CSP3.17-3.18LessonNotebook.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=31&#39;&gt;32&lt;/a&gt;</span>             return False
+
+<span class="ansi-red-fg">RecursionError</span>: maximum recursion depth exceeded while calling a Python object</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">drivetime</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">order</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="c1">#CODE,CODE,CODE</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">)):</span>
+        <span class="n">place</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">place</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">travelPlace</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">place</span><span class="p">])):</span>
+            <span class="k">if</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">place</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">shortestTime</span><span class="p">:</span>
+                <span class="n">shortestTime</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">place</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+                <span class="n">travelPlace</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">dataset</span><span class="p">[</span><span class="n">place</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())[</span><span class="n">j</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">travelPlace</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+            <span class="n">order</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">travelPlace</span><span class="p">)</span>
+        <span class="n">drivetime</span> <span class="o">+=</span> <span class="n">shortestTime</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="n">drivetime</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">order</span><span class="p">)</span>
+    <span class="c1">#return(drivetime,order)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="s1">&#39;DelNorte&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">dataset</span>
+<span class="n">fastestroute</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="c1"># &#39;dataset&#39; is the name of the nested key value pair</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>80
+[&#39;Del Norte&#39;, &#39;RanchoBernrdo&#39;, &#39;Poway&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Grading:">Grading:<a class="anchor-link" href="#Grading:"> </a></h3><table>
+<thead><tr>
+<th>Challenge</th>
+<th>Homework</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.15 pts for attempt</td>
+<td>.65 for attempt</td>
+</tr>
+<tr>
+<td>.20 pts for complete</td>
+<td>.70 for complete</td>
+</tr>
+<tr>
+<td>.25 pts for above and beyond</td>
+<td>.75 pts for above and beyond</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><a class="u-url" href="/fastpages/homework1718" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
