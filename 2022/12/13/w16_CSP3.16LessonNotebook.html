@@ -163,7 +163,7 @@ window.onload = wrap_img;
 <p>Write any extra notes you have here</p>
 <ul>
 <li>
-<p>Simulations: Abstractions that mimic things that occur in the real world, you can use simulations to calculate things that you can't test in the real world 
+<p><mark>Simulations</mark>: Abstractions that mimic things that occur in the real world, you can use simulations to calculate things that you can't test in the real world 
 May contain bias because some real world elements can not be factored in 
 Use random number generators to <strong>simulate</strong> randomness and variability. Applications: Rolling a dice, flipping a coin, spinners</p>
 </li>
@@ -653,7 +653,7 @@ Player 2 goes first
         <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">2. The simulation can be run more safely than an actual experiment"</span> \
         <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">3. The simulation will accurately predict the parachute's safety level, while an experiment may be inaccurate due to faulty experimental design."</span> \
         <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">4. The simulation can test the parachute design in a wide range of environmental conditions that may be difficult to reliably reproduce in an experiment."</span> \
-        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">* this question has 2 correct answers"</span><span class="p">,</span> 
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">* this question has 2 correct answers, answer with a comma and space in between (ex: a, b)"</span><span class="p">,</span> 
     
     <span class="s2">"What library can be used when creating a simulation?"</span><span class="p">,</span> 
     
@@ -664,7 +664,7 @@ Player 2 goes first
 <span class="n">answers</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"2"</span><span class="p">],</span>  
 <span class="p">[</span><span class="s2">"4"</span><span class="p">],</span> 
 <span class="p">[</span><span class="s2">"3"</span><span class="p">],</span> 
-<span class="p">[</span><span class="s2">"2"</span><span class="p">,</span> <span class="s2">"4"</span><span class="p">],</span>
+<span class="p">[</span><span class="s2">"2, 4"</span><span class="p">,</span> <span class="s2">"4, 2"</span><span class="p">],</span>
 <span class="p">[</span><span class="s2">"random"</span><span class="p">],</span>
 <span class="p">[</span><span class="s2">"random.randint(0, 1)"</span><span class="p">]</span>
 <span class="p">]</span>
@@ -679,6 +679,8 @@ Player 2 goes first
     <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">answers</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
     <span class="n">questions</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">storage</span>
     <span class="n">answers</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">storageAnswer</span>
+
+
 
 <span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>  
 <span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
@@ -708,7 +710,7 @@ Player 2 goes first
             <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">return</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
-    
+
 <span class="n">questionloop</span><span class="p">()</span>
 </pre></div>
 
@@ -722,14 +724,7 @@ Player 2 goes first
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>A researcher gathers data about the effect of Advanced Placement classes on students'success in college and career, and develops a simulation to show how a sequence of APclasses affect a hypothetical student's pathway.Several school administrators areconcerned that the simulation contains bias favoring high-income students, however.
-1. The simulation is an abstraction and therefore cannot contain any bias
-2. The simulation may accidentally contain bias due to the exclusion of details
-3. If the simulation is found to contain bias, then it is not possible to remove the bias from the simulation
-4. The only way for the simulation to be biased is if the researcher intentionally used data that favored their desired output.
-Enter answer: 2
-Correct!
-Jack is trying to plan his financial future using an online tool. The tool starts off by asking him to input details about his current finances and career. It then lets him choose different future scenarios, such as having children. For each scenario chosen, the tool does some calculations and outputs his projected savings at the ages of 35, 45, and 55.Would that be considered a simulation and why? 
+<pre>Jack is trying to plan his financial future using an online tool. The tool starts off by asking him to input details about his current finances and career. It then lets him choose different future scenarios, such as having children. For each scenario chosen, the tool does some calculations and outputs his projected savings at the ages of 35, 45, and 55.Would that be considered a simulation and why? 
  
 1. No, it's not a simulation because it does not include a visualization of the results.
 2. No, it's not a simulation because it does not include all the details of his life history and the future financial environment.
@@ -737,20 +732,27 @@ Jack is trying to plan his financial future using an online tool. The tool start
 4. Yes, it's a simulation because it is an abstraction of a real world scenario that enables the drawing of inferences.
 Enter answer: 3
 Incorrect!
-Sylvia is an industrial engineer working for a sporting goods company. She is developing a baseball bat that can hit balls with higher accuracy and askstheir software engineering team to develop a simulation to verify the design.Which of the following details is most important to include in this simulation?
-1. Realistic sound effects based on the material of the baseball bat and the velocity of the hit
-2. A depiction of an audience in the stands with lifelike behavior in response to hit accuracy
-3. Accurate accounting for the effects of wind conditions on the movement of the ball
-4. A baseball field that is textured to differentiate between the grass and the dirt
-Enter answer: 3
+A researcher gathers data about the effect of Advanced Placement classes on students'success in college and career, and develops a simulation to show how a sequence of APclasses affect a hypothetical student's pathway.Several school administrators areconcerned that the simulation contains bias favoring high-income students, however.
+1. The simulation is an abstraction and therefore cannot contain any bias
+2. The simulation may accidentally contain bias due to the exclusion of details
+3. If the simulation is found to contain bias, then it is not possible to remove the bias from the simulation
+4. The only way for the simulation to be biased is if the researcher intentionally used data that favored their desired output.
+Enter answer: 2
 Correct!
 Ashlynn is an industrial engineer who is trying to design a safer parachute. She creates a computer simulation of the parachute opening at different heightsand in different environmental conditions.What are advantages of running the simulation versus an actual experiment?
 1. The simulation will not contain any bias that favors one body type over another, while an experiment will be biased.
 2. The simulation can be run more safely than an actual experiment
 3. The simulation will accurately predict the parachute's safety level, while an experiment may be inaccurate due to faulty experimental design.
 4. The simulation can test the parachute design in a wide range of environmental conditions that may be difficult to reliably reproduce in an experiment.
-* this question has 2 correct answers
-Enter answer: 4
+* this question has 2 correct answers, answer with a comma and space in between (ex: a, b)
+Enter answer: 4, 2
+Correct!
+Sylvia is an industrial engineer working for a sporting goods company. She is developing a baseball bat that can hit balls with higher accuracy and askstheir software engineering team to develop a simulation to verify the design.Which of the following details is most important to include in this simulation?
+1. Realistic sound effects based on the material of the baseball bat and the velocity of the hit
+2. A depiction of an audience in the stands with lifelike behavior in response to hit accuracy
+3. Accurate accounting for the effects of wind conditions on the movement of the ball
+4. A baseball field that is textured to differentiate between the grass and the dirt
+Enter answer: 3
 Correct!
 What library can be used when creating a simulation?
 Enter answer: random
@@ -851,7 +853,7 @@ Be creative! Think about instances in your own life, science, puzzles that can b
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Recommended books: Legend, The Hunger Games"</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">aCounter</span> <span class="ow">and</span> <span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">cCounter</span> <span class="ow">and</span> <span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">dCounter</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is thriller"</span><span class="p">)</span>   
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"Recommended books: One of us is lying, Sherlock Holmes"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Recommended books: One of us is Lying, Sherlock Holmes"</span><span class="p">)</span>
 <span class="k">if</span> <span class="p">(</span><span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">aCounter</span> <span class="ow">and</span> <span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">bCounter</span> <span class="ow">and</span> <span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">dCounter</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is tragedy"</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Recommended books: Salt to the Sea, The Scarlet Letter"</span><span class="p">)</span>
