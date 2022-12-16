@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      16 min read
     
 </span></p>
 
@@ -775,6 +775,117 @@ Be creative! Think about instances in your own life, science, puzzles that can b
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I made a book recommender based on the genre that the person likes. The quiz first asks some questions to identify the person's preferred genre based on the greatest number of answer choices they selected (A corresponds to action, B corresponds to thriller, C corresponds to tragedy, and D corresponds to fantasy).</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"What do you look for in movies?"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> A. Something with a lot of action!! Otherwise it's too boring"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> B. Something that keeps me at the edge of my seat"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> C. Something sentimental! I love sad stories :3"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> D. It must have magic!"</span><span class="p">,</span> 
+    <span class="s2">"What do you like most in a book?"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> A. A fast paced story. I don't care if there are plot holes. Just give me the action!"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> B. Plot twists are a MUST"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> C. I LOVE BOOKS WITH A SAD ENDING"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> D. Anything mythical! Take me to a land far, far away."</span><span class="p">,</span> 
+    <span class="s2">"What do you hate most about in a book?"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> A. Slow stories BORE ME TO DEATH"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> B. I can't stand predictable plots"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> C. I will cry if everyone gets a happy ending"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> D. If the setting is in the modern world"</span><span class="p">,</span> 
+    <span class="s2">"Do you have a favorite genre?"</span>
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> A. Dystopian"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> B. Thriller"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> C. Tragedy"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> D. Fantasy"</span>
+<span class="p">]</span>
+
+<span class="n">aCounter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">bCounter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">cCounter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dCounter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Answer: "</span> <span class="o">+</span> <span class="n">answer</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">"A"</span><span class="p">):</span>
+        <span class="n">aCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">"B"</span><span class="p">):</span>
+        <span class="n">bCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">"C"</span><span class="p">):</span>
+        <span class="n">cCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">"D"</span><span class="p">):</span>
+        <span class="n">dCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">aCounter</span> <span class="o">&gt;</span> <span class="n">bCounter</span> <span class="ow">and</span> <span class="n">aCounter</span> <span class="o">&gt;</span> <span class="n">cCounter</span> <span class="ow">and</span> <span class="n">aCounter</span> <span class="o">&gt;</span> <span class="n">dCounter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is dystopian"</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">aCounter</span> <span class="ow">and</span> <span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">cCounter</span> <span class="ow">and</span> <span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">dCounter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is thriller"</span><span class="p">)</span>   
+<span class="k">if</span> <span class="p">(</span><span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">aCounter</span> <span class="ow">and</span> <span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">bCounter</span> <span class="ow">and</span> <span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">dCounter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is tragedy"</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">dCounter</span> <span class="o">&gt;</span> <span class="n">aCounter</span> <span class="ow">and</span> <span class="n">dCounter</span> <span class="o">&gt;</span> <span class="n">bCounter</span> <span class="ow">and</span> <span class="n">dCounter</span> <span class="o">&gt;</span> <span class="n">cCounter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is fantasy"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What do you look for in movies?
+ A. Something with a lot of action!! Otherwise it's too boring
+ B. Something that keeps me at the edge of my seat
+ C. Something sentimental! I love sad stories :3
+ D. It must have magic!
+Answer: C
+What do you like most in a book?
+ A. A fast paced story. I don't care if there are plot holes. Just give me the action!
+ B. Plot twists are a MUST
+ C. I LOVE BOOKS WITH A SAD ENDING
+ D. Anything mythical! Take me to a land far, far away.
+Answer: C
+What do you hate most about in a book?
+ A. Slow stories BORE ME TO DEATH
+ B. I can't stand predictable plots
+ C. I will cry if everyone gets a happy ending
+ D. If the setting is in the modern world
+Answer: C
+Do you have a favorite genre?
+ A. Dystopian
+ B. Thriller
+ C. Tragedy
+ D. Fantasy
+Answer: C
+Your genre is tragedy
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
