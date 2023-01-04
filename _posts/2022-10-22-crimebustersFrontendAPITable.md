@@ -7,6 +7,12 @@ permalink: /crimebusters/quiz
 
 # Crime Safety Quiz 
 
+<mark>Note:</mark> Unfortunately, this quiz requires the use of backend Spring framework, which was deployed on AWS. The AWS instance has shutdown, which means that the quiz does not work anymore.  
+
+[This](https://github.com/VidhiKulkarni/crimebusters) is the repository that contains the backend code that uses Spring.
+
+[This](https://raw.githubusercontent.com/lwu1822/fastpages/master/_posts/2022-10-22-crimebustersFrontendAPITable.md) is the code that was used to create the table.
+
 Quiz yourself on crime safety!
 
 **What this project does**: This is a quiz that tests players on how much they understand about crime safety. It is in a table that records the number of times each answer choice is selected. The answer choices are connected to the backend using the Spring Framework. The number of times users selected the answer choices are saved in a MYSQL database. After the user selects one of the answer choices, there will also be feedback given on whether the user selected the right or wrong answer choice. 
