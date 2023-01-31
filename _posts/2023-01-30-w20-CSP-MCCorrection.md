@@ -13,3 +13,5 @@ The question that I got wrong was #45. The question asks for the benefit of a he
 
 
 ![]({{ site.baseurl }}/images/mc.jpg)
+
+Another question that gave me a little bit of trouble is #15. The main issue I had with this problem was that I didn't understand the code `CAN_MOVE`. After some time, I realized that `CAN_MOVE` just means that there was not an obstacle in the specific direction, and that allowed me to select D) as the answer.
