@@ -1,6 +1,6 @@
 ---
 title: Dictionary Feedback (Work In Progress)
-layout: default
+layout: base
 description: Feedback page for users who tried out our dictionary project
 permalink: /teamberries/feedback
 ---

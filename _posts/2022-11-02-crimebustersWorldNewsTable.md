@@ -1,6 +1,6 @@
 ---
 title: World Crime News Table
-layout: default
+layout: base
 description: Information about world crime news!
 permalink: /crimebusters/news
 ---

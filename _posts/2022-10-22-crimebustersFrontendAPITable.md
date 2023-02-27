@@ -1,6 +1,6 @@
 ---
 title: Crime Safety Quiz 
-layout: default
+layout: base
 description: Quiz yourself on crime safety! A frontend display of quiz questions that connects to backend using Spring and Java. 
 permalink: /crimebusters/quiz
 ---
