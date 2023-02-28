@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      1 min read
+      4 min read
     
 </span></p>
 
@@ -113,6 +113,10 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h2"><a href="#collegeboard-criteria">CollegeBoard Criteria</a></li>
+<li class="toc-entry toc-h1"><a href="#create">Create</a></li>
+<li class="toc-entry toc-h1"><a href="#read">Read</a></li>
+<li class="toc-entry toc-h1"><a href="#update">Update</a></li>
+<li class="toc-entry toc-h1"><a href="#delete">Delete</a></li>
 </ul><p>The project that I will make for MyToolkit is MyClasses, a feature that can allow students to search for classes and see others’ review of them.</p>
 
 <h2 id="collegeboard-criteria">
@@ -120,19 +124,55 @@ window.onload = wrap_img;
 
 <p><strong>Program Purpose and Function</strong>: The purpose of the program is to help students in their course selection process. The function will be to let the student search for the class that they are interested in taking and show a list of reviews that other students have left for the class. Input will be the class that the student searches for and output will be the reviews for that class.</p>
 
-<p><strong>Data Abstraction</strong>: A list could possibly include some specific aspects of the review, such as the number of hours of homework, how many days in between each test. The data in the list could be called to display on frontend.</p>
+<p><strong>Data Abstraction</strong>: In my search feature, I created a list with possible class names. The name of my list is <code class="language-plaintext highlighter-rouge">dnClasses</code>, and the data in the list is all of the class names. This allows the search to find if the class that the student inputs exists or not, and also allows the program to see if the class that the student entered matches to the class in the list without regard to case. By ensuring that the class that the student entered is valid, the program can proceed to find class reviews on the backend and allow the student to view the reviews that they wish to see.</p>
 
-<p><strong>Managing complexity</strong>: The information could be taken from the list, which manages complexity because otherwise each piece of information about the review would need to be stored within variables, creating a large amount of unnecessary code.</p>
+<p><img src="/fastpages/images/list.jpg"></p>
 
-<p><strong>Proceduaral Abstraction</strong>: The procedure would be a search function.</p>
+<p><img src="/fastpages/images/list2.jpg"></p>
 
-<p><strong>Algorithm Implementation</strong>: Within the procedure, the search function would have selection by selecting the specific class. Iteration would be used to repeatedly print out reviews.</p>
+<p><strong>Managing complexity</strong>: The list stores all of the classes at Del Norte. This manages complexity because the program can search through the list to see if one of the classes matches the one that the student enters. Without the list, each class name would have to be stored in a variable and individually compared with the class that the student enters.</p>
 
-<p><strong>Testing</strong>: The user could search different classes to have different reviews displayed.</p>
+<p><strong>Proceduaral Abstraction</strong>: The function name is <code class="language-plaintext highlighter-rouge">findClass(classInput)</code>. This contributes to the functionality of the program by deciding if the program should get data of the class that the student inputted on the backend or if it should output an error message.</p>
+
+<p><img src="/fastpages/images/algorithm.jpg"></p>
+
+<p><strong>Algorithm Implementation</strong>: The function name is <code class="language-plaintext highlighter-rouge">findClass(classInput)</code>. The function takes in the name of the class that the student is searching for, and repeatedly compares it to the class names in the <code class="language-plaintext highlighter-rouge">dnClasses</code> list to see if one of the lists matches (iteration). If there is a match (selection), the <code class="language-plaintext highlighter-rouge">classFound</code> boolean variable is set to true. This way, if the class was not found, an error message could be displayed in HTML on the website. Otherwise, if the class was found, the next function, <code class="language-plaintext highlighter-rouge">getClassData</code>, would be called.</p>
+
+<p><strong>Testing</strong>: The two calls are <code class="language-plaintext highlighter-rouge">findClass("AP Biology")</code> and <code class="language-plaintext highlighter-rouge">findClass("test")</code>. The first call sends a valid class name, AP Biology. Therefore, the first section of the code is executed and the variable <code class="language-plaintext highlighter-rouge">classFound</code> is set to true. The second call sends an invalid class name. <code class="language-plaintext highlighter-rouge">classFound</code> is false, and an error message is displayed on the screen.</p>
 
 <p><br></p>
 
-<p>My video would probably show a search for the class and the specific reviews for that class as the output.</p>
+<p>The theme of our project is school. Our website consists of features that include a login, an area where the students can input their schedules, gpa, class reviews, and tasks.</p>
+
+<p><br></p>
+
+<p>The parts that I worked on was the <strong>class review</strong></p>
+
+<p>In the sections below, I will document what I did to create these features and some interesting things that I learned.</p>
+
+<h1 id="create">
+<a class="anchor" href="#create" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create</h1>
+
+<p>The first section is the submit review. Students can enter in a class name, difficulty, hours of homework, days between tests, memorization level, and comments.</p>
+
+<p><img src="/fastpages/images/create.jpg"></p>
+
+<p>This sends a fetch request using POST to the backend. On the backend, I have an API endpoint called <code class="language-plaintext highlighter-rouge">CreateClassReview</code>. This endpoint takes in the body, which includes the username, class name, etc., and creates a <code class="language-plaintext highlighter-rouge">ClassReview</code> object and adds it into the database.</p>
+
+<h1 id="read">
+<a class="anchor" href="#read" aria-hidden="true"><span class="octicon octicon-link"></span></a>Read</h1>
+
+<p>This is the place where the student can search for a class review. On the frontend, the class that the student searches for is taken in as a variable. This variable is used to query for the class reviews that are fetched from the backend. All classes are returned from the backend; however, on the frontend, the program searches through each class name until it finds a matches.</p>
+
+<h1 id="update">
+<a class="anchor" href="#update" aria-hidden="true"><span class="octicon octicon-link"></span></a>Update</h1>
+
+<p>My update review consists of a section where students can edit their reviews. On the backend, the code is basically the same as my create endpoint. However, I call the <code class="language-plaintext highlighter-rouge">update()</code> method instead of <code class="language-plaintext highlighter-rouge">create()</code>, which saves the same object instead of creating a new object.</p>
+
+<h1 id="delete">
+<a class="anchor" href="#delete" aria-hidden="true"><span class="octicon octicon-link"></span></a>Delete</h1>
+
+<p>Students can also delete a class review. On the backend, the program takes in the username and class name, searches for the specific database entry that corresponds to the students’ input, and then calls the <code class="language-plaintext highlighter-rouge">delete()</code> method.</p>
 
   </div><!-- from https://github.com/utterance/utterances -->
 <script src="https://utteranc.es/client.js"
