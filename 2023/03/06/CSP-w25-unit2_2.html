@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      12 min read
     
 </span></p>
 
@@ -283,6 +283,64 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb Cell 5</span> in <span class="ansi-cyan-fg">&lt;cell line: 22&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=21'&gt;22&lt;/a&gt;</span> if __name__ == "__main__":
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=22'&gt;23&lt;/a&gt;</span>     # print parameter supplied image
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=23'&gt;24&lt;/a&gt;</span>     green_square = image_data(images=[{'source': "Internet", 'label': "Green Square", 'file': "green-square-16.png"}])
+<span class="ansi-green-fg">---&gt; &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=24'&gt;25&lt;/a&gt;</span>     image_display(green_square)
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=26'&gt;27&lt;/a&gt;</span>     # display default images from image_data()
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=27'&gt;28&lt;/a&gt;</span>     default_images = image_data()
+
+<span class="ansi-green-intense-fg ansi-bold">/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb Cell 5</span> in <span class="ansi-cyan-fg">image_display</span><span class="ansi-blue-fg">(images)</span>
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=15'&gt;16&lt;/a&gt;</span> def image_display(images):
+<span class="ansi-green-intense-fg ansi-bold">     &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=16'&gt;17&lt;/a&gt;</span>     for image in images:  
+<span class="ansi-green-fg">---&gt; &lt;a href='vscode-notebook-cell://wsl%2Bubuntu/home/lwu1822/vscode/fastpages/_notebooks/2023-03-06-CSP-w25-unit2_2.ipynb#W4sdnNjb2RlLXJlbW90ZQ%3D%3D?line=17'&gt;18&lt;/a&gt;</span>         display(Image(filename=image['filename']))
+
+File <span class="ansi-green-fg">~/anaconda3/lib/python3.9/site-packages/IPython/core/display.py:957</span>, in <span class="ansi-cyan-fg">Image.__init__</span><span class="ansi-blue-fg">(self, data, url, filename, format, embed, width, height, retina, unconfined, metadata, alt)</span>
+<span class="ansi-green-intense-fg ansi-bold">    955</span> self.unconfined = unconfined
+<span class="ansi-green-intense-fg ansi-bold">    956</span> self.alt = alt
+<span class="ansi-green-fg">--&gt; 957</span> super(Image, self).__init__(data=data, url=url, filename=filename,
+<span class="ansi-green-intense-fg ansi-bold">    958</span>         metadata=metadata)
+<span class="ansi-green-intense-fg ansi-bold">    960</span> if self.width is None and self.metadata.get('width', {}):
+<span class="ansi-green-intense-fg ansi-bold">    961</span>     self.width = metadata['width']
+
+File <span class="ansi-green-fg">~/anaconda3/lib/python3.9/site-packages/IPython/core/display.py:327</span>, in <span class="ansi-cyan-fg">DisplayObject.__init__</span><span class="ansi-blue-fg">(self, data, url, filename, metadata)</span>
+<span class="ansi-green-intense-fg ansi-bold">    324</span> elif self.metadata is None:
+<span class="ansi-green-intense-fg ansi-bold">    325</span>     self.metadata = {}
+<span class="ansi-green-fg">--&gt; 327</span> self.reload()
+<span class="ansi-green-intense-fg ansi-bold">    328</span> self._check_data()
+
+File <span class="ansi-green-fg">~/anaconda3/lib/python3.9/site-packages/IPython/core/display.py:992</span>, in <span class="ansi-cyan-fg">Image.reload</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    990</span> """Reload the raw data from file or URL."""
+<span class="ansi-green-intense-fg ansi-bold">    991</span> if self.embed:
+<span class="ansi-green-fg">--&gt; 992</span>     super(Image,self).reload()
+<span class="ansi-green-intense-fg ansi-bold">    993</span>     if self.retina:
+<span class="ansi-green-intense-fg ansi-bold">    994</span>         self._retina_shape()
+
+File <span class="ansi-green-fg">~/anaconda3/lib/python3.9/site-packages/IPython/core/display.py:353</span>, in <span class="ansi-cyan-fg">DisplayObject.reload</span><span class="ansi-blue-fg">(self)</span>
+<span class="ansi-green-intense-fg ansi-bold">    351</span> if self.filename is not None:
+<span class="ansi-green-intense-fg ansi-bold">    352</span>     encoding = None if "b" in self._read_flags else "utf-8"
+<span class="ansi-green-fg">--&gt; 353</span>     with open(self.filename, self._read_flags, encoding=encoding) as f:
+<span class="ansi-green-intense-fg ansi-bold">    354</span>         self.data = f.read()
+<span class="ansi-green-intense-fg ansi-bold">    355</span> elif self.url is not None:
+<span class="ansi-green-intense-fg ansi-bold">    356</span>     # Deferred import
+
+<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: 'images/green-square-16.png'</pre>
+</div>
+</div>
+
 </div>
 </div>
 
