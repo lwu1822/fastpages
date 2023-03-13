@@ -578,8 +578,8 @@ Student ID  GPA
 
 <span class="c1">#the data can be stored as a python dictionary</span>
 <span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">"calories"</span><span class="p">:</span> <span class="p">[</span><span class="mi">420</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">390</span><span class="p">],</span>
-  <span class="s2">"duration"</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
+  <span class="s2">"calories"</span><span class="p">:</span> <span class="p">[</span><span class="mi">420</span><span class="p">,</span> <span class="mi">380</span><span class="p">,</span> <span class="mi">390</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+  <span class="s2">"duration"</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
 <span class="p">}</span>
 <span class="c1">#stores the data in a data frame</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"-------------Dict_to_DF------------------"</span><span class="p">)</span>
@@ -589,7 +589,7 @@ Student ID  GPA
 <span class="nb">print</span><span class="p">(</span><span class="s2">"----------Dict_to_DF_labels--------------"</span><span class="p">)</span>
 
 <span class="c1">#or with the index argument, you can label rows.</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day2"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">dict</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"day1"</span><span class="p">,</span> <span class="s2">"day2"</span><span class="p">,</span> <span class="s2">"day3"</span><span class="p">,</span> <span class="s2">"day4"</span><span class="p">])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
 </pre></div>
 
@@ -608,11 +608,13 @@ Student ID  GPA
 0       420        50
 1       380        40
 2       390        45
+3       200        20
 ----------Dict_to_DF_labels--------------
       calories  duration
 day1       420        50
 day2       380        40
 day3       390        45
+day4       200        20
 </pre>
 </div>
 </div>
@@ -662,6 +664,7 @@ day3       390        45
       calories  duration
 day1       420        50
 day3       390        45
+day4       200        20
 --------Examine Single Row-----------
 calories    420
 duration     50
@@ -884,6 +887,10 @@ None
 <li>Add this Blog to you own Blogging site.  In the Blog add notes and observations on each code cell.</li>
 <li>In blog add College Board practice problems for 2.3.</li>
 </ul>
+</blockquote>
+<p><img src="/fastpages/images/copied_from_nb/images/CSP/CSP-w25-unit2_3-mcScore.jpg" alt="">
+<img src="/fastpages/images/copied_from_nb/images/CSP/CSP-w25-unit2_3-mcScore2.jpg" alt=""></p>
+<blockquote>
 <p>The next 4 weeks, Teachers want you to improve your understanding of data.  Look at the blog and others on Unit 2.  Your intention is to find some things to differentiate your individual College Board project.</p>
 </blockquote>
 <ul>
