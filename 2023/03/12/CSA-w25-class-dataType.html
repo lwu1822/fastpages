@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      7 min read
     
 </span></p>
 
@@ -563,6 +563,7 @@ false</pre>
 <li>Pass-by-value: The value of a variable is passed</li>
 <li>Pass-by-reference: The variable's reference is passed. This allows the contents of the variable to be changed.</li>
 <li>There can only be 1 return value per method in Java</li>
+<li>Classes and generics allow "pass-by-reference"</li>
 </ul>
 <h2 id="Overall-explanation-of-code">Overall explanation of code<a class="anchor-link" href="#Overall-explanation-of-code"> </a></h2><p><em>This is my thought process as I went through the code. It's easier for me to figure out key knowledge by going through the entire code and documenting what it does.</em></p>
 <p><em>Anything that I highlight below are included in the key knowledge</em></p>
@@ -580,6 +581,10 @@ false</pre>
 <h3 id="Limited-return">Limited return<a class="anchor-link" href="#Limited-return"> </a></h3><h4 id="main()"><code>main()</code><a class="anchor-link" href="#main()"> </a></h4><p>An array named <code>nums2</code> is assigned to <code>1, 2, 3, 4, 5</code>. <code>value</code> is assigned to <code>6</code>, and <code>name</code> is assigned to <code>limited</code>. <code>name</code> is then assigned to the return of <code>changeIt3()</code> and masses in <code>nums2</code> and <code>name</code>.</p>
 <h4 id="changeIt3()"><code>changeIt3()</code><a class="anchor-link" href="#changeIt3()"> </a></h4><p>Within the <code>changeIt3()</code> method, you can see that the parameter <code>word</code> (passed in as argument <code>name</code>) is assigned to a <code>new String</code>. A simplified way of writing this would be <code>word = word.substring(0, 5)</code>. Both ways work because the shorthand for creating wrapper classes is directly assigning the class to a value; however, behind the scenes, an object is still created.</p>
 <p>Within this method, each element of the array is modified to <code>0</code>, and the <code>word</code> is modified to <code>limit</code>.</p>
+<h4 id="main()"><code>main()</code><a class="anchor-link" href="#main()"> </a></h4><p>Back to <code>main()</code> again, the elements of <code>nums2</code> are printed out. <mark>The edited elements from `changeIt3()` are present because arrays are objects, and the value of an object is its reference</mark>.</p>
+<h3 id="Do-Something-with-Class">Do Something with Class<a class="anchor-link" href="#Do-Something-with-Class"> </a></h3><p>At this point, I got a general understanding of what the code does, so I did not need to write out what each line does.</p>
+<p>This section creates a <code>DoNothingByValue</code> object with an object name of <code>doSomething</code>. The constructor runs. Since the object's value is its reference, the constructor can directly edit the variables. As a result, the output in <code>main()</code> shows the changes of the constructor.</p>
+<h3 id="Do-Something-with-Generics">Do Something with Generics<a class="anchor-link" href="#Do-Something-with-Generics"> </a></h3><p>This is basically the same thing as class since generics are like objects but are more general, so you can specify different data types.</p>
 
 </div>
 </div>
