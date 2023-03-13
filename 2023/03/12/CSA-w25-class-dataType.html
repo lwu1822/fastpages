@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      6 min read
     
 </span></p>
 
@@ -314,6 +314,8 @@ window.onload = wrap_img;
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Wrapper-classes">Wrapper classes<a class="anchor-link" href="#Wrapper-classes"> </a></h1><p>Wrapper classes provide a class for each primitive type in Java. For example, the wrapper class for <code>int</code> is <code>Integer</code>, <code>char</code> is <code>Character</code>, and so on. These wrapper classes extend the object class.</p>
 <p>The syntax for a wrapper object is: <code><em>wrapper class</em> <em>name</em> = <em>value</em>;</code></p>
+<p>Beware, though. Not all data types that start with a capital letter is a wrapper class. For instance, I originally thought that <code>String</code> was a wrapper class. After googling "is String a wrapper class?", the results told me that <code>String</code> is <strong>not</strong> a wrapper class because it does not have a primitive class that it wraps.</p>
+<p>Therefore, wrapper classes only wrap the eight primitive types, which means there are only <strong>eight</strong> wrapper classes.</p>
 <p>The following cells consist of the previous primitive type examples converted into wrapper classes.</p>
 
 </div>
@@ -534,6 +536,67 @@ false</pre>
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Math.random()"><code>Math.random()</code><a class="anchor-link" href="#Math.random()"> </a></h1><p><code>Math.random()</code> returns a random number between 0 and 1, <strong>but not including 1</strong>. The data type that <code>Math.random()</code> returns is a double.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br /></p>
+<h1 id="DoNothingByValue"><code>DoNothingByValue</code><a class="anchor-link" href="#DoNothingByValue"> </a></h1><h2 id="Key-knowledge">Key knowledge<a class="anchor-link" href="#Key-knowledge"> </a></h2><ul>
+<li><p>The value of arguments are passed into a method's parameters</p>
+<ul>
+<li><p>Java is <strong>pass-by-value</strong>, not pass-by-reference for methods</p>
+<ul>
+<li>If you go down the StackOverflow <a href="https://stackoverflow.com/questions/12757841/are-arrays-passed-by-value-or-passed-by-reference-in-java">rabbit hole</a>, users claim that everything in java is <strong>pass-by-value</strong>. Honestly I'm not too sure how this works, but people on StackOverflow really pay close attention to detail so...</li>
+</ul>
+<p>Unfortunately I don't have enough time right now to look into it closely. I might in the future though 😃</p>
+<p>But basically since everything is pass-by-value, arrays are also passed-by-value. However, <strong>the value of an array is its reference</strong>. Therefore, when an array is passed into a method, the elements of the array can be changed directly.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Pass-by-value: The value of a variable is passed</li>
+<li>Pass-by-reference: The variable's reference is passed. This allows the contents of the variable to be changed.</li>
+<li>There can only be 1 return value per method in Java</li>
+</ul>
+<h2 id="Overall-explanation-of-code">Overall explanation of code<a class="anchor-link" href="#Overall-explanation-of-code"> </a></h2><p><em>This is my thought process as I went through the code. It's easier for me to figure out key knowledge by going through the entire code and documenting what it does.</em></p>
+<p><em>Anything that I highlight below are included in the key knowledge</em></p>
+<h3 id="Do-Nothings">Do Nothings<a class="anchor-link" href="#Do-Nothings"> </a></h3><h4 id="main()"><code>main()</code><a class="anchor-link" href="#main()"> </a></h4><p>An array called <code>nums</code> is created and set to <code>{1, 3, 4, 5, 5}</code>. The data type is the primitive data type <code>int</code>. An <code>int</code> of name <code>value</code> is also created and set to <code>6</code>. A data type (but not wrapper class) of <code>String</code> with name <code>name</code> is created and set to <code>blackboard</code>. The code outputs <code>Do Nothings</code> and executes the <code>changeIt</code> method, passing in <code>nums</code>, <code>value</code>, and <code>name</code>.</p>
+<h4 id="changeIt()"><code>changeIt()</code><a class="anchor-link" href="#changeIt()"> </a></h4><p>Within the <code>changeIt</code> method, the argument <code>nums</code> relates to the parameter <code>arr</code>, <code>value</code> to <code>val</code>, and <code>name</code> to <code>word</code>. <code>arr</code> is created to have 5 elements, <code>val</code> is set to 0, and <code>word</code> is set to a substring of the <code>word</code> argumenent of <code>blackboard</code>. As such, <code>word</code> is set to <code>black</code>.</p>
+<p>However, before the variables are reassigned to new values, <mark>the arguments were passed into the method's parameters</mark>. For instance, if I use a for loop to output the values of <code>arr</code>, I get <code>1, 2, 3, 4, 5</code>, not <code>0, 0, 0, 0, 0</code>.</p>
+<p><img src="/fastpages/images/copied_from_nb/images/CSA/CSA-w25-class-dataType-originalParaValue.jpg" alt="" /></p>
+<p><img src="/fastpages/images/copied_from_nb/images/CSA/CSA-w25-class-dataType-originalParaValueOutput.jpg" alt="" /></p>
+<p>The for loop (the actual one in the file) then assigns each element in <code>arr</code> to 0, and outputs it to the terminal. Lastly, the value of <code>word</code> (<code>black</code>) is outputted.</p>
+<p><br /></p>
+<p>Next thing in <code>main()</code> is <code>changeIt2()</code></p>
+<h4 id="changeIt2()"><code>changeIt2()</code><a class="anchor-link" href="#changeIt2()"> </a></h4><p>In <code>changeIt2()</code>, the arguments are passed in as parameters of <code>nums</code>, <code>value</code>, and <code>name</code>. Notice how these parameters have the same name as the arguments. Based on the comment in the file, we can see that the name of the parameter can be the same as the arguments' names.</p>
+<p><code>changeIt2()</code> essentially does the same thing as <code>changeIt()</code></p>
+<h5 id="main()"><code>main()</code><a class="anchor-link" href="#main()"> </a></h5><p>What's important is that when you go back to <code>main()</code>, the for loop after <code>changeIt2()</code> outputs all of the original values of <code>nums</code>, <code>value</code>, and <code>name</code>. This is because <mark>Java is pass-by-value for methods</mark>, which means that the variable's values are passed into the method, NOT the reference. On the other hand, <mark>pass-by-reference allows you to edit the contents of a variable because the **reference** to the variable is passed</mark>.</p>
+<h3 id="Limited-return">Limited return<a class="anchor-link" href="#Limited-return"> </a></h3><h4 id="main()"><code>main()</code><a class="anchor-link" href="#main()"> </a></h4><p>An array named <code>nums2</code> is assigned to <code>1, 2, 3, 4, 5</code>. <code>value</code> is assigned to <code>6</code>, and <code>name</code> is assigned to <code>limited</code>. <code>name</code> is then assigned to the return of <code>changeIt3()</code> and masses in <code>nums2</code> and <code>name</code>.</p>
+<h4 id="changeIt3()"><code>changeIt3()</code><a class="anchor-link" href="#changeIt3()"> </a></h4><p>Within the <code>changeIt3()</code> method, you can see that the parameter <code>word</code> (passed in as argument <code>name</code>) is assigned to a <code>new String</code>. A simplified way of writing this would be <code>word = word.substring(0, 5)</code>. Both ways work because the shorthand for creating wrapper classes is directly assigning the class to a value; however, behind the scenes, an object is still created.</p>
+<p>Within this method, each element of the array is modified to <code>0</code>, and the <code>word</code> is modified to <code>limit</code>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br /></p>
+<h2 id="Notes:">Notes:<a class="anchor-link" href="#Notes:"> </a></h2><ul>
+<li>Answer what are Methods and Control Structures</li>
+<li>Explore AP FRQ that teaches us about Methods and Control Structures FRQ</li>
+<li>Look at Diverse Arrays, Matrix in Teacher code and see if you think this is Methods and Control structures.</li>
+<li>Look at Diverse Arrays,Matrix in Teacher code an see if you thing this fits Data Types.</li>
+</ul>
+
+</div>
+</div>
+</div>
 </div>
 
 
