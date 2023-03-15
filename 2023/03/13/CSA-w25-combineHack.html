@@ -959,9 +959,13 @@ false</pre>
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FrogSimulation</span>
 <span class="p">{</span>
+    <span class="c1">// data type is an integer </span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">goalDistance</span><span class="p">;</span> <span class="c1">// distance in inches, from the starting position to the goal</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">maxHops</span><span class="p">;</span> <span class="c1">//  max number of hops allowed to reach the goal</span>
 
+    <span class="c1">// ArrayList is created to store hopdistances </span>
+    <span class="c1">// Data type is wrapper class Integer, the reason is because ArrayLists can only store wrapper types</span>
+    <span class="c1">// and not primitive types</span>
     <span class="kd">private</span> <span class="n">ArrayList</span> <span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">hopDistances</span><span class="p">;</span>
 
     <span class="kd">public</span> <span class="nf">FrogSimulation</span><span class="p">(</span><span class="kt">int</span> <span class="n">dist</span><span class="p">,</span> <span class="kt">int</span> <span class="n">numHops</span><span class="p">)</span>
