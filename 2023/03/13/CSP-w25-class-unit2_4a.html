@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      14 min read
     
 </span></p>
 
@@ -141,7 +141,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Model-Definition">Model Definition </a></li>
 <li class="toc-entry toc-h2"><a href="#Initial-Data">Initial Data </a></li>
 <li class="toc-entry toc-h2"><a href="#Check-for-given-Credentials-in-users-table-in-sqlite.db">Check for given Credentials in users table in sqlite.db </a></li>
+<li class="toc-entry toc-h2"><a href="#My-notes">My notes </a></li>
 <li class="toc-entry toc-h2"><a href="#Create-a-new-User-in-table-in-Sqlite.db">Create a new User in table in Sqlite.db </a></li>
+<li class="toc-entry toc-h2"><a href="#Alternate-create()-method">Alternate create() method </a></li>
 <li class="toc-entry toc-h2"><a href="#Reading-users-table-in-sqlite.db">Reading users table in sqlite.db </a></li>
 </ul>
 </li>
@@ -563,6 +565,13 @@ Created new uid raven
 </ol>
 </li>
 </ul>
+<p><strong>Response</strong></p>
+<ul>
+<li>
+<code>User.query.filter_by</code> searches through the database based on the attributes specified. The <code>.first()</code> method retrieves the first result found in the database. You can also use <code>.all()</code>, which will retrieve all instances found in the database (see code example below)</li>
+<li>
+<code>.is_password()</code> checks to see if the user's password matches the password specified. This is achieved by calling the imported <code>check_password_hash()</code> method and specifying the hash of the user's password (found in the database) and the inputted password (the password you want to check against the hash).</li>
+</ul>
 
 </div>
 </div>
@@ -589,10 +598,78 @@ Created new uid raven
         <span class="k">return</span> <span class="kc">True</span>
     <span class="k">return</span> <span class="kc">False</span>
         
-<span class="c1">#check_credentials("indi", "123qwerty")</span>
+<span class="n">check_credentials</span><span class="p">(</span><span class="s2">"indi"</span><span class="p">,</span> <span class="s2">"123qwerty"</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="My-notes">
+<a class="anchor" href="#My-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a><mark>My notes</mark><a class="anchor-link" href="#My-notes"> </a>
+</h2>
+<p><code>.query.filter_by</code> can end with <code>.all()</code> instead of <code>first()</code>. However, this returns the objects in a list format, so to get the actual contents of the object, you need to output the element by specifying the index of the list (ex: <code>print(user[0])</code>)</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">find_by_uid2</span><span class="p">(</span><span class="n">uid</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="n">_uid</span><span class="o">=</span><span class="n">uid</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">user</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">uid</span><span class="p">)</span>
+
+        
+<span class="n">find_by_uid2</span><span class="p">(</span><span class="s2">"indi"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&lt;User 5&gt;]
+{"id": 5, "name": "Indiana Jones", "uid": "indi", "dob": "10-21-1920", "age": 102}
+indi
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -616,6 +693,17 @@ Created new uid raven
 <li>user.create() and try/except</li>
 </ol>
 </li>
+</ul>
+<p><strong>Response</strong></p>
+<ul>
+<li>The program first takes in the uid that is specified by the user, and stores it in the variable <code>uid</code>. This variable is passed into the method <code>find_by_uid()</code> to see if the user id already exists in the database. The <code>try/except</code> clause takes in the user object and attempts to execute the <code>read()</code> method on it. If successful, the program stops, because that means that the user was found in the database and therefore could not be added into the database. If the user was not present in the database, the <code>try</code> statement would result in an error, therefore executing the statement in the <code>except</code> clause, which says <code>pass</code>, or to keep executing the code below.</li>
+<li>
+<code>user = User()</code> initializes a User object. Although the <code>dob</code> was not specified, the constructor contains a default value for the <code>dob</code> parameter. <em>Alternatively, you can specify the <code>dob</code> variable before you initialize the User object, and then add it as an attribute to the User object (see in code example below)</em>
+</li>
+<li>
+<code>user.dob</code> is a setter that sets the birthday of the user. The setter is defined with the <code>@dob.setter</code> decorator. The try/except checks to see if the date that the user inputted is a valid date.</li>
+<li>
+<code>user.create()</code> creates the user in the try statement. The try statement attempts to read the user object after the user is created. If this fails, that means that the user object was not successfully added to the database, so an error message will be printed.</li>
 </ul>
 
 </div>
@@ -678,7 +766,88 @@ Created new uid raven
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Created
- {'id': 7, 'name': 'Lily', 'uid': '7', 'dob': '01-01-2006', 'age': 17}
+ {'id': 7, 'name': 'Bob', 'uid': 'bob', 'dob': '03-25-2023', 'age': 0}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Alternate-create()-method">
+<a class="anchor" href="#Alternate-create()-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alternate create() method<a class="anchor-link" href="#Alternate-create()-method"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Inputs, Try/Except, and SQLAlchemy work together to build a valid database object</span>
+<span class="k">def</span> <span class="nf">create</span><span class="p">():</span>
+    <span class="c1"># optimize user time to see if uid exists</span>
+    <span class="n">uid</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your user id:"</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">find_by_uid</span><span class="p">(</span><span class="n">uid</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Found</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="n">user</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="k">return</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span> <span class="c1"># keep going</span>
+    
+    <span class="c1"># request value that ensure creating valid object</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your name:"</span><span class="p">)</span>
+    <span class="n">password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your password"</span><span class="p">)</span>
+
+    <span class="n">dob</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter your date of birth 'YYYY-MM-DD'"</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">dob</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">dob</span><span class="p">,</span> <span class="s1">'%Y-%m-</span><span class="si">%d</span><span class="s1">'</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">()</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="n">dob</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Invalid date </span><span class="si">{</span><span class="n">dob</span><span class="si">}</span><span class="s2"> require YYYY-mm-dd, date defaulted to </span><span class="si">{</span><span class="n">user</span><span class="o">.</span><span class="n">dob</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+        
+    <span class="c1"># Initialize User object before date</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> 
+                <span class="n">uid</span><span class="o">=</span><span class="n">uid</span><span class="p">,</span> 
+                <span class="n">password</span><span class="o">=</span><span class="n">password</span><span class="p">,</span>
+                <span class="n">dob</span><span class="o">=</span><span class="n">dob</span>
+                <span class="p">)</span>
+    
+    <span class="c1"># create user.dob, fail with today as dob</span>
+    
+           
+    <span class="c1"># write object to database</span>
+    <span class="k">with</span> <span class="n">app</span><span class="o">.</span><span class="n">app_context</span><span class="p">():</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="nb">object</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Created</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nb">object</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+        <span class="k">except</span><span class="p">:</span>  <span class="c1"># error raised if object not created</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Unknown error uid </span><span class="si">{uid}</span><span class="s2">"</span><span class="p">)</span>
+        
+<span class="n">create</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Created
+ {'id': 8, 'name': 'bob2', 'uid': 'bob2', 'dob': '03-25-2023', 'age': 0}
 </pre>
 </div>
 </div>
@@ -703,6 +872,16 @@ Created new uid raven
 <li>User.query.all</li>
 <li>json_ready assignment, google List Comprehension</li>
 </ol>
+</li>
+</ul>
+<p><strong>Response</strong></p>
+<ul>
+<li>As noted above, the <code>.all()</code> method returns all of the entries in the table that match the query filter (in this case, there is no filter; therefore, all entries are obtained)</li>
+<li>
+<p><code>json_ready</code> calls the <code>.read()</code> method on all of the objects in the <code>table</code> list.
+List comprehension allows an easier way to iterate through statements in the list. The format of a list comprehension is:<code>[<em>expression</em> <em>for-each-loop</em> <em>if-loop</em>]</code>.<br>
+Expression is related to the item in the iteration and also the outcome of the element in the list.</p>
+<p>In this case, the list comprehension adds the JSON output of the users data from the database into the <code>json_ready</code> list.</p>
 </li>
 </ul>
 
@@ -746,17 +925,17 @@ Created new uid raven
  {'id': 2,
   'name': 'Nikola Tesla',
   'uid': 'niko',
-  'dob': '03-15-2023',
+  'dob': '03-25-2023',
   'age': 0},
  {'id': 3,
   'name': 'Alexander Graham Bell',
   'uid': 'lex',
-  'dob': '03-15-2023',
+  'dob': '03-25-2023',
   'age': 0},
  {'id': 4,
   'name': 'Eli Whitney',
   'uid': 'whit',
-  'dob': '03-15-2023',
+  'dob': '03-25-2023',
   'age': 0},
  {'id': 5,
   'name': 'Indiana Jones',
@@ -768,7 +947,8 @@ Created new uid raven
   'uid': 'raven',
   'dob': '10-21-1921',
   'age': 101},
- {'id': 7, 'name': 'Lily', 'uid': '7', 'dob': '01-01-2006', 'age': 17}]</pre>
+ {'id': 7, 'name': 'Bob', 'uid': 'bob', 'dob': '03-25-2023', 'age': 0},
+ {'id': 8, 'name': 'bob2', 'uid': 'bob2', 'dob': '03-25-2023', 'age': 0}]</pre>
 </div>
 
 </div>
