@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      10 min read
     
 </span></p>
 
@@ -204,6 +204,18 @@ window.onload = wrap_img;
 </ol>
 </li>
 </ul>
+<p><br></p>
+<p><strong>Response:</strong></p>
+<ul>
+<li>The code below were present in the Tri 2 final project's Flask portfolio. </li>
+<li>The Flask app object "implements a WSGI application". A WSGI application is used by web servers to send requests to applications that are written with Python.</li>
+<li>In the code below, the SQLAlchemy db object is created. The class is used to integrate SQLAlchemy to Flask. The object is created so that Flask will support it when needed (as opposed to doing:</li>
+</ul>
+<p><br></p>
+
+<pre><code>app = Flask(__name__)
+db = SQLAlchemy(app)</code></pre>
+<p>where the the instance is bound to Flask so that methods can be used at anytime.)</p>
 
 </div>
 </div>
@@ -272,6 +284,13 @@ This is the constructor of the <code>User</code> class. </li>
 <code>@peroperty</code> relates to create, while <code>@column.setter</code> relates to create or update. </li>
 </ul>
 </li>
+</ul>
+<p><br></p>
+<p><strong>Response</strong></p>
+<ul>
+<li>The columns in the sqlite.db table can be associated with the variables defined in the code below. In this case, the columns/variables are:<code>_name</code>, <code>_uid</code>, <code>_password</code>, and <code>_dob</code>.</li>
+<li>Initialization can be found in the <code>__init__</code> constructor. Within the constructor, the name, uid, password, and dob is initialized to the values specified by the user. If the password is not specified, it is set to the default value of <code>123qwerty</code>.</li>
+<li>CRUD methods can be seen in the four methods at the end of the code (<code>create</code>, <code>read</code>, <code>update</code>, and <code>delete</code>)</li>
 </ul>
 
 </div>
