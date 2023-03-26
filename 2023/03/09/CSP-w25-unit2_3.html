@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      17 min read
     
 </span></p>
 
@@ -163,6 +163,11 @@ window.onload = wrap_img;
 </ul>
 </li>
 <li class="toc-entry toc-h2"><a href="#Machine-Learning-Visit-Tutorials-Point">Machine Learning Visit Tutorials Point </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Notes:">Notes: </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Note-on-project:">Note on project: </a></li>
 </ul>
 </li>
 </ul><!--
@@ -1428,6 +1433,33 @@ Please also refer to the documentation for alternative solver options:
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Notes:">
+<a class="anchor" href="#Notes:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes:<a class="anchor-link" href="#Notes:"> </a>
+</h1>
+<ul>
+<li>Read a JSON file: <code>pd.read_json(file_name)</code>
+</li>
+<li>Read a column's info: <code>df['name']</code>
+</li>
+<li>Print info: <code>df.info()</code>
+</li>
+</ul>
+<p>To import pandas, run <code>import pandas as pd</code>
+One issue that I encountered on my flask portfolio was that the code could not find the pandas library. I tried running with pip install pandas, but that did not work either.</p>
+<p>After some researching, I also tried running pip install -r requirements.txt. That also did not solve the issue.</p>
+<p>I then tried running in nix-shell, and for some reason, that was successful. One hypothesis I had is that I might have needed to refresh my VS Code after running the install requirements.</p>
+<h2 id="Note-on-project:">
+<a class="anchor" href="#Note-on-project:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note on project:<a class="anchor-link" href="#Note-on-project:"> </a>
+</h2>
+<p>My project was focused on providing class reviews. I recalled seeing a Google Spreadsheet on the APStudents subreddit that included student's ratings of how they felt about AP Classes. I made a copy of the spreadsheet and then took the difficulty ratings of AP CSP.</p>
+<p>It took me a long time to find how to convert Google Sheets to JSON. I looked at multiple YouTube videos, but finally, I had to settle with using an online tool that could give me the JSON output. After importing it into my flask portfolio, I was able to use pandas to print out information of the data.</p>
+
+</div>
+</div>
+</div>
 </div>
 
 
