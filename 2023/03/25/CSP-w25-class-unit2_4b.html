@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      9 min read
     
 </span></p>
 
@@ -144,7 +144,11 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Delete-a-User-in-table-in-Sqlite.db">Delete a User in table in Sqlite.db </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Menu-Interface-to-CRUD-operations">Menu Interface to CRUD operations </a></li>
+<li class="toc-entry toc-h1"><a href="#Menu-Interface-to-CRUD-operations">Menu Interface to CRUD operations </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Using-a-list">Using a list </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#Hacks">Hacks </a></li>
 </ul><!--
 #################################################
@@ -408,6 +412,20 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>A new user record a has been created
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -427,7 +445,9 @@ window.onload = wrap_img;
 </blockquote>
 <ul>
 <li>The hacked part checks to see if the password length is too small (1 character). If so, the program will replace the user's inputted password with its own password.</li>
-<li>If there was an error in executing the UPDATE command, an error will be printed onto the terminal</li>
+<li>If there was an error in executing the UPDATE command, an error will be printed onto the terminal.</li>
+<li>
+<code>conn = sqlite3.connect(database)</code>, <code>cursor = conn.cursor()</code>, <code>cursor.close()</code>, and <code>conn.close()</code> are repeated in each example. They are needed to establish a connection with the database and to perform actions on it.</li>
 </ul>
 <p>Side note:Why does UPDATE work but not the update method in 2.4a? &gt;:(
 Note: <code>as error</code> takes the error message and stores it in the variable <code>error</code>. This way, you can see what the error is with <code>print(error)</code>. It's kind of like <code>import <em>library</em> as <em>name</em></code></p>
@@ -513,6 +533,11 @@ Note: <code>as error</code> takes the error message and stores it in the variabl
 <li>In the print statemements, what is the "f" and what does {uid} do?</li>
 </ul>
 </blockquote>
+<p><strong>Response</strong></p>
+<ul>
+<li>DELETE can be dangerous because it is unrecoverable.</li>
+<li>The "f" is the format method. This allows easier printing of variables within a string. The variable, in this case, <code>uid</code>, is put in curly braces so that the <code>str()</code> typecast is not needed.</li>
+</ul>
 
 </div>
 </div>
@@ -551,10 +576,24 @@ Note: <code>as error</code> takes the error message and stores it in the variabl
     <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
-<span class="c1">#delete()</span>
+<span class="n">delete</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The row with uid a was successfully deleted
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -574,6 +613,10 @@ Note: <code>as error</code> takes the error message and stores it in the variabl
 <li>Could you refactor this menu?  Make it work with a List?</li>
 </ul>
 </blockquote>
+<p><strong>Response</strong></p>
+<ul>
+<li>The menu repeats because of a recursive loop (shown at the end of the <code>menu()</code> function).</li>
+</ul>
 
 </div>
 </div>
@@ -610,6 +653,82 @@ Note: <code>as error</code> takes the error message and stores it in the variabl
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(1, 'Thomas Edison', 'toby', 'sha256$as2rGNQBIy1beIzh$13e1662b25c9e05226f739b503b034c24572bc07d709c1ddad3717f76886c5dd', '1847-02-11')
+(2, 'Nikola Tesla', 'niko', 'sha256$xBmOw3KdC3kbdPlL$512245789e5e80844b8458df9d9e8aa1f7948271a2008118e461be192c527f57', '2023-03-25')
+(3, 'Alexander Graham Bell', 'lex', 'sha256$1kf841f73hR5Zyrd$e33ed3aba81e5a203ef7e1956091bee3f0ca35484c2836883b738129c4db426f', '2023-03-25')
+(4, 'Eli Whitney', 'whit', 'sha256$qCY9yr7fhIH22nw5$cb65502870f8d21d6ae72bc0a8bf2e2150255094ef47eaa2ab489172686a18cd', '2023-03-25')
+(5, 'Indiana Jones', 'indi', 'sha256$WocVg7o7fmSIVc1V$c3d4f8c99904dd62f0209e8fda4959330885f1434ab4481d4011a032227fa6b8', '1920-10-21')
+(6, 'Marion Ravenwood', 'raven', 'sha256$SCPV89620HgaMicv$db044b4ef887499f397f93967a346c75eb6dd0f2d6753d09f72c1e0e826f23c5', '1921-10-21')
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-a-list">
+<a class="anchor" href="#Using-a-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using a list<a class="anchor-link" href="#Using-a-list"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+    <span class="n">operation</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter: (C)reate (R)ead (U)pdate or (D)elete or (S)chema"</span><span class="p">)</span>
+    <span class="n">operationList</span> <span class="o">=</span> <span class="p">[</span><span class="n">create</span><span class="p">,</span> <span class="n">read</span><span class="p">,</span> <span class="n">update</span><span class="p">,</span> <span class="n">delete</span><span class="p">,</span> <span class="n">schema</span><span class="p">]</span>
+    <span class="n">option</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"c"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">,</span> <span class="s2">"u"</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">,</span> <span class="s2">"s"</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">option</span><span class="p">)):</span> 
+        <span class="k">if</span> <span class="n">operation</span> <span class="o">==</span> <span class="n">option</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+            <span class="n">operationList</span><span class="p">[</span><span class="n">i</span><span class="p">]()</span>
+    
+   
+        
+<span class="n">menu</span><span class="p">()</span> <span class="c1"># start menu</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(1, 'Thomas Edison', 'toby', 'sha256$as2rGNQBIy1beIzh$13e1662b25c9e05226f739b503b034c24572bc07d709c1ddad3717f76886c5dd', '1847-02-11')
+(2, 'Nikola Tesla', 'niko', 'sha256$xBmOw3KdC3kbdPlL$512245789e5e80844b8458df9d9e8aa1f7948271a2008118e461be192c527f57', '2023-03-25')
+(3, 'Alexander Graham Bell', 'lex', 'sha256$1kf841f73hR5Zyrd$e33ed3aba81e5a203ef7e1956091bee3f0ca35484c2836883b738129c4db426f', '2023-03-25')
+(4, 'Eli Whitney', 'whit', 'sha256$qCY9yr7fhIH22nw5$cb65502870f8d21d6ae72bc0a8bf2e2150255094ef47eaa2ab489172686a18cd', '2023-03-25')
+(5, 'Indiana Jones', 'indi', 'sha256$WocVg7o7fmSIVc1V$c3d4f8c99904dd62f0209e8fda4959330885f1434ab4481d4011a032227fa6b8', '1920-10-21')
+(6, 'Marion Ravenwood', 'raven', 'sha256$SCPV89620HgaMicv$db044b4ef887499f397f93967a346c75eb6dd0f2d6753d09f72c1e0e826f23c5', '1921-10-21')
+(7, 'a', 'a', 'a', '2023-03-25')
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
