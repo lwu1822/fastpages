@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      7 min read
     
 </span></p>
 
@@ -187,6 +187,13 @@ window.onload = wrap_img;
 <li>What is the purpose of a primary key in SQL database?</li>
 <li>What are the Data Types in SQL table?</li>
 </ul>
+<p><strong>Response</strong></p>
+<ul>
+<li>A schema determines how data is organized in a database.</li>
+<li>The identity column is a column in the table that automatically fills an integer within the column. I'm not certain about this, but the identity column is either related to a column with a primary key or is somehow used to make the primary key. </li>
+<li>A primary key provides a unique number to identify each row.</li>
+<li>The data types are integer, string, and date.</li>
+</ul>
 
 </div>
 </div>
@@ -227,6 +234,24 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(0, 'id', 'INTEGER', 1, None, 1)
+(1, '_name', 'VARCHAR(255)', 1, None, 0)
+(2, '_uid', 'VARCHAR(255)', 1, None, 0)
+(3, '_password', 'VARCHAR(255)', 1, None, 0)
+(4, '_dob', 'DATE', 0, None, 0)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -243,7 +268,15 @@ window.onload = wrap_img;
 <li>What is a connection object?  After you google it, what do you think it does?</li>
 <li>Same for cursor object?</li>
 <li>Look at conn object and cursor object in VSCode debugger.  What attributes are in the object?</li>
-<li>Is "results" an object?  How do you know?</li>
+<li>
+<p>Is "results" an object?  How do you know?</p>
+<p><strong>Response</strong></p>
+</li>
+<li>
+<p>A connection object establishes a connection between the SQL database and the Python code.</p>
+</li>
+<li>A cursor object allows execution of SQLite methods. </li>
+<li>One thing I noticed when using the debugger on the conn and cursor object is that they contain function variables. These could be the methods that work with the object. For instance, the function variables of <code>cursor</code> include <code>execute</code>, <code>executemany</code>, etc., which can also be found <a href="https://www.tutorialspoint.com/python_data_access/python_sqlite_cursor_object.htm">here</a>.* No, <code>results</code> is a list. Looking at the debugger, you can see that <code>results</code> contains indexes with elements. The elements are the user objects. A quick <a href="https://stackoverflow.com/questions/51240863/python-sqlite-select-query-returning-list-instead-of-integer">google search</a> also reports that the <code>.fetchall()</code> method returns table entries in the format of a list.</li>
 </ul>
 
 </div>
@@ -286,6 +319,26 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(1, 'Thomas Edison', 'toby', 'sha256$as2rGNQBIy1beIzh$13e1662b25c9e05226f739b503b034c24572bc07d709c1ddad3717f76886c5dd', '1847-02-11')
+(2, 'Nikola Tesla', 'niko', 'sha256$xBmOw3KdC3kbdPlL$512245789e5e80844b8458df9d9e8aa1f7948271a2008118e461be192c527f57', '2023-03-25')
+(3, 'Alexander Graham Bell', 'lex', 'sha256$1kf841f73hR5Zyrd$e33ed3aba81e5a203ef7e1956091bee3f0ca35484c2836883b738129c4db426f', '2023-03-25')
+(4, 'Eli Whitney', 'whit', 'sha256$qCY9yr7fhIH22nw5$cb65502870f8d21d6ae72bc0a8bf2e2150255094ef47eaa2ab489172686a18cd', '2023-03-25')
+(5, 'Indiana Jones', 'indi', 'sha256$WocVg7o7fmSIVc1V$c3d4f8c99904dd62f0209e8fda4959330885f1434ab4481d4011a032227fa6b8', '1920-10-21')
+(6, 'Marion Ravenwood', 'raven', 'sha256$SCPV89620HgaMicv$db044b4ef887499f397f93967a346c75eb6dd0f2d6753d09f72c1e0e826f23c5', '1921-10-21')
+(7, 'a', 'a', 'a', '2023-03-25')
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -302,6 +355,11 @@ window.onload = wrap_img;
 <li>Explain purpose of SQL INSERT.   Is this the same as User <strong>init</strong>?</li>
 </ul>
 </blockquote>
+<p><strong>Response</strong></p>
+<ul>
+<li>Both lessons create a user. In 2.4a, the create method contains <code>db.session.add(object)</code>, which adds to the database using SQLAlchemy. However, in 2.4b, sqlite3 is used, which adds entries into the database using sqlite3 commands. The advantages of 2.4a is that the code is easier to read since it is written in Python. The advantages of 2.4b is that OOP is not needed; however, you would need to learn SQL to be able to add entries intot eh database.</li>
+<li>INSERT adds a row into the database. It is not the same as <code>__init__</code> because <code>__init__</code> is a constructor that initializes the variables. However, <code>__init__</code> does not add entries into the database. The <code>create()</code> method does that. On the other hand, INSERT directly adds a row into the database.</li>
+</ul>
 
 </div>
 </div>
