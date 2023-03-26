@@ -401,7 +401,7 @@ window.onload = wrap_img;
     <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
-<span class="c1">#create()</span>
+<span class="n">create</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -425,6 +425,12 @@ window.onload = wrap_img;
 <li>What code seems to be repeated in each of these examples to point, why is it repeated?</li>
 </ul>
 </blockquote>
+<ul>
+<li>The hacked part checks to see if the password length is too small (1 character). If so, the program will replace the user's inputted password with its own password.</li>
+<li>If there was an error in executing the UPDATE command, an error will be printed onto the terminal</li>
+</ul>
+<p>Side note:Why does UPDATE work but not the update method in 2.4a? &gt;:(
+Note: <code>as error</code> takes the error message and stores it in the variable <code>error</code>. This way, you can see what the error is with <code>print(error)</code>. It's kind of like <code>import <em>library</em> as <em>name</em></code></p>
 
 </div>
 </div>
@@ -470,10 +476,24 @@ window.onload = wrap_img;
     <span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
     
-<span class="c1">#update()</span>
+<span class="n">update</span><span class="p">()</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The row with user id a the password has been hacked
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
