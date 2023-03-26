@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      28 min read
+      30 min read
     
 </span></p>
 
@@ -889,18 +889,45 @@ Time taken: 4.234471797943115 seconds
 </ul>
 <p>Complete the Time and Space Complexity analysis questions linked below.
 <a href="https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/">Practice</a></p>
+<p><strong>Response</strong></p>
+<ul>
+<li>Images: A smaller image means that it takes less time to output the image on Jupyter Notebook. For example, the base width of the image originally was 2792 pixels, which took 0.5 seconds to display. Once shrank to a base of 50 pixels, the time decreased to 0.4 seconds.</li>
+<li><p>Sorting: The following are some sorting algorithms and explanations on their time complexity:</p>
+<ul>
+<li><p>Bubble sort: <strong>O(n^2)</strong></p>
+<p>Bubble sort compares each adjacent pairs until the list is ordered from lowest to highest. The first time through the list, bubble sort repeats (n-1) times. The next time through the list, bubble sort then iterates (n-2) times. Because of this, the maximum number of times that bubble sort can swap is n(n-1)/2.</p>
+</li>
+<li><p>Selection sort: <strong>O(n^2)</strong></p>
+<p>Selection sort consists of a sorted and unsorted sublist. Initially, all values in the list are in the unsorted sublist. The smallest element is found in the sublist, and then moved to the sorted sublist. This is repeated until all values are in the sorted sublist. The time complexity is also O(n^2), because similar to bubble sort, the first time through the unsorted sublist, (n-1) comparisons need to be made, and the next time, (n-2) comparisons, and so on.</p>
+</li>
+<li><p>Insertion sort: <strong>O(n^2)</strong></p>
+<p>Insertion sort, like selection sort, consists of an unsorted sublist and a sorted sublist. However, in insertion sort, the first element of the sorted sublist is the first element of the list. The remaining elements of the unsorted sublist are then placed in the correct order in the sorted sublist. The worst case scenario for insertion sort is if the original list was reversed. Therefore, the element would have to be inserted at the beginning of the sorted sublist.</p>
+</li>
+</ul>
+</li>
+<li><p>Time and space complexity are important because you would want to have an efficient program that runs quickly and does not take up a lot of resources.</p>
+</li>
+<li>It depends. A constant time algorithm would be faster; however, a lot of algorithms that have bad time complexity also have good space complexity. As a result, the decision to use a time algorithm depends on whether the programmer wants a fast program or one that does not take up a lot of resources. </li>
+<li>Generally algorithms with worse time complexity have better space complexity. The best algorithm may be heapsort, which has a time complexity of O(nlog(n)) and a space complexity of O(1). </li>
+</ul>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><br /></p>
-<ul>
-<li><p>Record your findings when testing the time elapsed of the different algorithms.</p>
-<p>Images: A smaller image means that it takes less time to output the image on Jupyter Notebook. For example, the base width of the image originally was 2792 pixels, which took 0.5 seconds to display. Once shrank to a base of 50 pixels, the time decreased to 0.4 seconds.</p>
-</li>
-</ul>
+<h2 id="Time-and-space-complexity-questions">Time and space complexity questions<a class="anchor-link" href="#Time-and-space-complexity-questions"> </a></h2><ol>
+<li>3</li>
+<li>4</li>
+<li>The answer is 2 because j doubles until it is less than or equal to n. When this occurs, the time complexity is O(log(n)). Since the first for loop runs n//2 times, the time complexity is O(n/2(log(n))) which can be simplified to O(nlog(n)). </li>
+<li>2</li>
+<li>The answer is 4 because i is divided by 2 each time. Therefore, the maximum number of times that the program runs is 2^i &gt; N, which would result in a logarithmic time complexity. </li>
+<li>3</li>
+<li>2</li>
+<li>No idea why time complexity is O(logk(n))</li>
+<li>3</li>
+<li>The answer is False because this is a <strong>worse</strong> time complexity scenario. Therefore, it is possible that A runs faster than B. </li>
+</ol>
 
 </div>
 </div>
