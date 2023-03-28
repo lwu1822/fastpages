@@ -609,18 +609,18 @@ Generic: Users listed by score
 <span class="cm">     * Add a list of objects to queue</span>
 <span class="cm">     */</span>
 
-     <span class="cm">/* </span>
-<span class="cm">    public int queueSize() {</span>
-<span class="cm">        int size = 0;</span>
+     
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">queueSize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-<span class="cm">        for (T data : queue) {</span>
-<span class="cm">            size++;</span>
-<span class="cm">        }</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">size</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
 
-<span class="cm">        return size; </span>
+        <span class="k">return</span> <span class="n">size</span><span class="p">;</span> 
 
-<span class="cm">    }</span>
-<span class="cm">    */</span>
+    <span class="p">}</span>
+    
 
     <span class="cm">/********************************************************************************* */</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addList</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span><span class="p">...</span> <span class="n">seriesOfObjects</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//accepts multiple generic T lists</span>
@@ -650,10 +650,9 @@ Generic: Users listed by score
     <span class="p">}</span>
     <span class="cm">/********************************************************************************* */</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sortSteps</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;sortstep&quot;</span><span class="p">);</span>
-        <span class="c1">//addList(seriesOfObjects);</span>
-        <span class="c1">//sort();</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sortSteps</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span><span class="p">...</span> <span class="n">seriesOfObjects</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">addList</span><span class="p">(</span><span class="n">seriesOfObjects</span><span class="p">);</span>
+        <span class="n">sort</span><span class="p">();</span>
     <span class="p">}</span>
    
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sort</span><span class="p">()</span> <span class="p">{</span>
@@ -918,8 +917,9 @@ Words data:
         <span class="n">Object</span><span class="o">[]</span> <span class="n">numbers2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
         <span class="n">QueueManager</span> <span class="n">qNums</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">&quot;Integers&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">numbers2</span><span class="p">);</span>
 
-        <span class="c1">//qNums.sortSteps();</span>
+        <span class="n">qNums</span><span class="p">.</span><span class="na">sortSteps</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">numbers2</span><span class="p">);</span>
 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">qNums</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span>
 
 
         <span class="c1">//qNums.printQueue();</span>
@@ -932,6 +932,28 @@ Words data:
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+1
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
