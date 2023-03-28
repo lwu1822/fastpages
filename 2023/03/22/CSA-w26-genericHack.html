@@ -610,19 +610,20 @@ Generic: Users listed by score
 <span class="cm">     */</span>
 
      
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">queueSize</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// RETURN SIZE OF QUEUE</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">queueSize</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queueInput</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queueInput</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">size</span><span class="o">++</span><span class="p">;</span>
         <span class="p">}</span>
 
         <span class="k">return</span> <span class="n">size</span><span class="p">;</span> 
-
     <span class="p">}</span>
     
 
     <span class="cm">/********************************************************************************* */</span>
+    <span class="c1">// HACK 1</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addList</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span><span class="p">...</span> <span class="n">seriesOfObjects</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">//accepts multiple generic T lists</span>
         <span class="k">for</span> <span class="p">(</span><span class="n">T</span><span class="o">[]</span> <span class="n">objects</span><span class="p">:</span> <span class="n">seriesOfObjects</span><span class="p">)</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">objects</span><span class="p">)</span> <span class="p">{</span>
@@ -649,48 +650,44 @@ Generic: Users listed by score
             <span class="p">}</span>
     <span class="p">}</span>
     <span class="cm">/********************************************************************************* */</span>
-
+    <span class="c1">// HACK 2</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sortSteps</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span><span class="p">...</span> <span class="n">seriesOfObjects</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">addList</span><span class="p">(</span><span class="n">seriesOfObjects</span><span class="p">);</span>
         <span class="n">sort</span><span class="p">();</span>
     <span class="p">}</span>
    
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">sort</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queueSort</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
 
-        <span class="c1">//int size = queueSize(this.queue);</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
         
-        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">size</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-        
-
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// take first item in queue</span>
             <span class="n">T</span> <span class="n">a</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
-                    <span class="n">T</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
-                    <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
-                    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">T</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+            <span class="c1">// remove the first item</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
+            <span class="c1">// do a bubble sort</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
+                <span class="n">b</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
 
-                        <span class="c1">//this.queue.delete(); </span>
-
-                        <span class="n">b</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
-
-                        <span class="k">if</span> <span class="p">((</span><span class="n">Integer</span><span class="p">)</span><span class="n">a</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-                            <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
-                            <span class="n">a</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
-                            <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
-                        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                            <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> 
-                            <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
-                        <span class="p">}</span>
-
-                    
-                    <span class="p">}</span>
-
+                <span class="c1">// add the smaller number to the end of the queue</span>
+                <span class="c1">// this way, the largest number is left at the very back</span>
+                <span class="k">if</span> <span class="p">((</span><span class="n">Integer</span><span class="p">)</span><span class="n">a</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">Integer</span><span class="p">)</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
                     <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+                    <span class="n">a</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
+                    <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">b</span><span class="p">);</span> 
+                    <span class="k">this</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="c1">// add the largest number to the back of the queue</span>
+            <span class="c1">// largest number is always a because it is either:</span>
+            <span class="c1">// 1. a = this.queue.peek() (last element of queue = biggest)</span>
+            <span class="c1">// or 2. if b &lt; a, then a is already the biggest number</span>
+            <span class="n">queue</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
         <span class="p">}</span>
        
         <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
@@ -911,21 +908,12 @@ Words data:
 <div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">QueueTester2</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
     <span class="p">{</span>
-       
         <span class="c1">// Create iterable Queue of Integers</span>
         <span class="n">Object</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
         <span class="n">Object</span><span class="o">[]</span> <span class="n">numbers2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>
         <span class="n">QueueManager</span> <span class="n">qNums</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">&quot;Integers&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">numbers2</span><span class="p">);</span>
 
         <span class="n">qNums</span><span class="p">.</span><span class="na">sortSteps</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span> <span class="n">numbers2</span><span class="p">);</span>
-
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">qNums</span><span class="p">.</span><span class="na">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">());</span>
-
-
-        <span class="c1">//qNums.printQueue();</span>
-
-        <span class="c1">//qNums.sort();</span>
-
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">QueueTester2</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
@@ -949,7 +937,6 @@ Words data:
 6
 7
 8
-1
 </pre>
 </div>
 </div>
