@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      14 min read
+      13 min read
     
 </span></p>
 
@@ -302,12 +302,12 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$17$Users; 2
+<pre>class [LREPL.$JShell$13$Users; 2
 Generic: Users listed by name
 Bob
 Jane
 
-class [LREPL.$JShell$17$Users; 2
+class [LREPL.$JShell$13$Users; 2
 Generic: Users listed by score
 08
 10
@@ -736,14 +736,14 @@ Generic: Users listed by score
         <span class="p">}</span>
 
         <span class="k">while</span> <span class="p">(</span><span class="n">originalOrder</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">//System.out.println(originalOrder.remove((int)(Math.random() * originalOrder.size()))); </span>
-
             <span class="c1">// some number between 0 and 7</span>
             <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">originalOrder</span><span class="p">.</span><span class="na">remove</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">originalOrder</span><span class="p">.</span><span class="na">size</span><span class="p">()));</span>
             <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="n">originalOrder</span><span class="p">.</span><span class="na">remove</span><span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="n">originalOrder</span><span class="p">.</span><span class="na">size</span><span class="p">()));</span>
 
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;NUM: &quot;</span> <span class="o">+</span> <span class="n">num</span><span class="p">);</span> 
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;NUM2: &quot;</span> <span class="o">+</span> <span class="n">num2</span><span class="p">);</span> 
+            <span class="cm">/* DEBUGGING </span>
+<span class="cm">            System.out.println(&quot;NUM: &quot; + num); </span>
+<span class="cm">            System.out.println(&quot;NUM2: &quot; + num2); </span>
+<span class="cm">            */</span>
 
             <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
                 <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">num2</span><span class="p">;</span> 
@@ -780,8 +780,10 @@ Generic: Users listed by score
             <span class="n">T</span> <span class="n">pos1</span> <span class="o">=</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peekLast</span><span class="p">();</span>
             <span class="n">T</span> <span class="n">pos2</span> <span class="o">=</span> <span class="n">queue3</span><span class="p">.</span><span class="na">peekLast</span><span class="p">();</span> 
 
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;pos1: &quot;</span> <span class="o">+</span> <span class="n">pos1</span><span class="p">);</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;pos2: &quot;</span> <span class="o">+</span> <span class="n">pos2</span><span class="p">);</span>
+            <span class="cm">/* DEBUGGING </span>
+<span class="cm">            System.out.println(&quot;pos1: &quot; + pos1);</span>
+<span class="cm">            System.out.println(&quot;pos2: &quot; + pos2);</span>
+<span class="cm">            */</span>
 
             <span class="c1">// size of two queues</span>
             <span class="kt">int</span> <span class="n">queue2Size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue2</span><span class="p">);</span>
@@ -832,16 +834,20 @@ Generic: Users listed by score
                 <span class="n">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
             <span class="p">}</span>
 
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*************&quot;</span><span class="p">);</span>
+    
 
-            <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> 
-            <span class="p">}</span>
+            <span class="cm">/*DEBUGGING </span>
+<span class="cm">            System.out.println(&quot;*************&quot;);</span>
 
+<span class="cm">            for (T data : queue) {</span>
+<span class="cm">                System.out.println(data); </span>
+<span class="cm">            }</span>
+<span class="cm">            System.out.println(&quot;****************&quot;);</span>
+<span class="cm">            */</span>
+        <span class="p">}</span>
 
-
-           
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;****************&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
         <span class="p">}</span>
 
        
@@ -1081,62 +1087,14 @@ Words data:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>NUM: 6
-NUM2: 8
-pos1: 7
-pos2: 8
-*************
-1
-2
-3
-4
+<pre>1
 5
 6
-8
 7
-****************
-NUM: 5
-NUM2: 7
-pos1: 6
-pos2: 7
-*************
-1
 2
-3
-4
-5
-7
 8
-6
-****************
-NUM: 4
-NUM2: 3
-pos1: 4
-pos2: 5
-*************
-1
-2
-3
-5
 4
-7
-8
-6
-****************
-NUM: 2
-NUM2: 1
-pos1: 2
-pos2: 3
-*************
-1
 3
-2
-5
-4
-7
-8
-6
-****************
 </pre>
 </div>
 </div>
@@ -1147,218 +1105,12 @@ pos2: 3
 </div>
     
 
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">QueueTester2</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
-    <span class="p">{</span>
-       
-        <span class="c1">// Create iterable Queue of Integers</span>
-        <span class="n">Object</span><span class="o">[]</span> <span class="n">numbers</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">};</span>
-        <span class="n">QueueManager</span> <span class="n">qNums</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QueueManager</span><span class="p">(</span><span class="s">&quot;Integers&quot;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">);</span>
-
-        <span class="n">qNums</span><span class="p">.</span><span class="na">random</span><span class="p">();</span>
-
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="n">QueueTester2</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-</pre></div>
-
-    </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Hack-4">Hack 4<a class="anchor-link" href="#Hack-4"> </a></h1>
 </div>
 </div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Queue at beginning
-1
-Queue at beginning
-2
-Queue at beginning
-3
-Queue at beginning
-4
-Queue at beginning
-5
-Queue at beginning
-6
-Queue at beginning
-7
-Queue at beginning
-8
-QUEUE
-6
-QUEUE
-7
-QUEUE
-8
-QUEUE
-1
-QUEUE
-2
-QUEUE
-3
-QUEUE
-4
-QUEUE
-5
-Queue at beginning
-6
-Queue at beginning
-7
-Queue at beginning
-8
-Queue at beginning
-1
-Queue at beginning
-2
-Queue at beginning
-3
-Queue at beginning
-4
-Queue at beginning
-5
-QUEUE
-3
-QUEUE
-4
-QUEUE
-5
-QUEUE
-6
-QUEUE
-7
-QUEUE
-8
-QUEUE
-1
-QUEUE
-2
-Queue at beginning
-3
-Queue at beginning
-4
-Queue at beginning
-5
-Queue at beginning
-6
-Queue at beginning
-7
-Queue at beginning
-8
-Queue at beginning
-1
-Queue at beginning
-2
-QUEUE
-8
-QUEUE
-1
-QUEUE
-2
-QUEUE
-3
-QUEUE
-4
-QUEUE
-5
-QUEUE
-6
-QUEUE
-7
-Queue at beginning
-8
-Queue at beginning
-1
-Queue at beginning
-2
-Queue at beginning
-3
-Queue at beginning
-4
-Queue at beginning
-5
-Queue at beginning
-6
-Queue at beginning
-7
-QUEUE
-3
-QUEUE
-4
-QUEUE
-5
-QUEUE
-6
-QUEUE
-7
-QUEUE
-8
-QUEUE
-1
-QUEUE
-2
-Queue at beginning
-3
-Queue at beginning
-4
-Queue at beginning
-5
-Queue at beginning
-6
-Queue at beginning
-7
-Queue at beginning
-8
-Queue at beginning
-1
-Queue at beginning
-2
-QUEUE
-8
-QUEUE
-1
-QUEUE
-2
-QUEUE
-3
-QUEUE
-4
-QUEUE
-5
-QUEUE
-6
-QUEUE
-7
-****
-8
-1
-2
-3
-4
-5
-6
-7
-****
-</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
     
     
 <div class="cell border-box-sizing code_cell rendered">
