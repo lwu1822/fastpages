@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      14 min read
     
 </span></p>
 
@@ -735,7 +735,7 @@ Generic: Users listed by score
             <span class="n">originalOrder</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> 
         <span class="p">}</span>
 
-        <span class="c1">//while (originalOrder.size() &gt; 0) {</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">originalOrder</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
             <span class="c1">//System.out.println(originalOrder.remove((int)(Math.random() * originalOrder.size()))); </span>
 
             <span class="c1">// some number between 0 and 7</span>
@@ -760,11 +760,17 @@ Generic: Users listed by score
 
             <span class="c1">// splite queue into queue (678) and queue3 (345)</span>
             <span class="c1">// queue2 = 12</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num2</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">T</span> <span class="n">a</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
-                <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> 
-                <span class="n">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
+            <span class="k">if</span> <span class="p">(</span><span class="n">num2</span> <span class="o">==</span> <span class="mi">8</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num2</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">T</span> <span class="n">a</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
+                    <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> 
+                    <span class="n">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
+                <span class="p">}</span>
             <span class="p">}</span>
+
+
 
             <span class="c1">// finding last elements of queues (these numbers should be swapped)</span>
             <span class="n">T</span> <span class="n">pos1</span> <span class="o">=</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peekLast</span><span class="p">();</span>
@@ -830,109 +836,11 @@ Generic: Users listed by score
 
 
 
-            <span class="c1">// System.out.println(&quot;*************&quot;);</span>
-            <span class="c1">// for (T data : queue2) {</span>
-            <span class="c1">//     System.out.println(data);</span>
-            <span class="c1">// }</span>
-            <span class="c1">// System.out.println(&quot;************&quot;);</span>
-            <span class="c1">// for (T data : queue3) {</span>
-            <span class="c1">//     System.out.println(data); </span>
-            <span class="c1">// }</span>
+           
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;****************&quot;</span><span class="p">);</span>
-        <span class="c1">//}</span>
+        <span class="p">}</span>
 
-        <span class="cm">/* </span>
-<span class="cm">        for (int i = 0; i &lt; originalOrder.size(); i++) {</span>
-<span class="cm">            System.out.println(originalOrder.get(i));</span>
-<span class="cm">        }</span>
-<span class="cm">        */</span>
-
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">order</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">size</span><span class="o">]</span><span class="p">;</span>
-
-        <span class="c1">// for (int i = 0; i &lt; size; i++) {</span>
-
-        <span class="c1">//     match = true; </span>
-
-        <span class="c1">//     while (match) {</span>
-        <span class="c1">//         randInt = rand.nextInt(size); </span>
-        <span class="c1">//         match = matchElem(randInt, order);</span>
-        <span class="c1">//     }</span>
-
-        <span class="c1">//     /* </span>
-        <span class="c1">//     match = false;</span>
-        <span class="c1">//     for (int j = 0; j &lt; order.length; j++) {</span>
-
-        <span class="c1">//         if (randInt == order[j]) {</span>
-        <span class="c1">//             match = true;</span>
-        <span class="c1">//             randInt = rand.nextInt(size);</span>
-        <span class="c1">//             match = false; </span>
-        <span class="c1">//         }</span>
-        <span class="c1">//     }</span>
-        <span class="c1">//     */</span>
-
-        <span class="c1">//     order[i] = randInt; </span>
-        <span class="c1">// }</span>
-
-        <span class="c1">// for (int i = 0; i &lt; order.length; i++) {</span>
-        <span class="c1">//     System.out.println(order[i]); </span>
-        <span class="c1">// }</span>
-
-        
-
-        <span class="cm">/* </span>
-<span class="cm">        for (int z = 0; z &lt; 5; z++) {</span>
-<span class="cm">            for (T data : queue) {</span>
-<span class="cm">                System.out.println(&quot;Queue at beginning&quot;);</span>
-<span class="cm">                System.out.println(data); </span>
-<span class="cm">            }</span>
-
-<span class="cm">            Queue&lt;T&gt; queue2 = new Queue&lt;&gt;();</span>
-
-
-<span class="cm">            Random rand = new Random(); </span>
-<span class="cm">            int randInt = rand.nextInt(9); </span>
-
-<span class="cm">            for (int i = 0; i &lt;= randInt; i++) {</span>
-<span class="cm">                T a = this.queue.peek(); </span>
-<span class="cm">                this.queue.delete(); </span>
-
-<span class="cm">                queue2.add(a); </span>
-<span class="cm">            }</span>
-
-<span class="cm">            </span>
-<span class="cm">            int size = 0;</span>
-
-<span class="cm">            for (T data : queue2) {</span>
-<span class="cm">                size++;</span>
-<span class="cm">            }</span>
-<span class="cm">            </span>
-
-<span class="cm">            for (int i = 0; i &lt; size; i++) {</span>
-<span class="cm">                T a = queue2.peek(); </span>
-<span class="cm">                queue2.delete(); </span>
-
-<span class="cm">                queue.add(a); </span>
-<span class="cm">            }</span>
-
-<span class="cm">            for (T data : queue) {</span>
-<span class="cm">                System.out.println(&quot;QUEUE&quot;);</span>
-<span class="cm">                System.out.println(data);</span>
-<span class="cm">            }</span>
-<span class="cm">        }</span>
-<span class="cm">       </span>
-<span class="cm">        </span>
-
-<span class="cm">         </span>
-
-<span class="cm">        System.out.println(&quot;****&quot;);</span>
-<span class="cm">      for (T data : queue) {</span>
-<span class="cm">                System.out.println(data); </span>
-<span class="cm">        }   </span>
-<span class="cm">        </span>
-<span class="cm">       </span>
-
-<span class="cm">        System.out.println(&quot;****&quot;);</span>
-<span class="cm">       */</span>
+       
     <span class="p">}</span>
 
     <span class="cm">/********************************************************************************* */</span>
@@ -1169,21 +1077,64 @@ Words data:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>NUM: 2
+<pre>NUM: 1
 NUM2: 6
-pos1: 3
+pos1: 2
 pos2: 7
 *************
 1
-2
 7
+3
 4
 5
 6
-3
+2
 8
 ****************
+NUM: 7
+NUM2: 2
+pos1: 3
+pos2: 8
+*************
+1
+7
+8
+4
+5
+6
+2
+3
+****************
+NUM: 3
+NUM2: 4
+pos1: 4
+pos2: 5
+*************
+1
+7
+8
+5
+4
+6
+2
+3
+****************
+NUM: 5
+NUM2: 8
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">java.lang.NullPointerException: Cannot invoke &#34;REPL.$JShell$13$LinkedList.getData()&#34; because &#34;this.head&#34; is null</span>
+<span class="ansi-red-intense-fg ansi-bold">	at Queue.peek(#16:1)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at QueueManager.random(#20:1)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at QueueTester3.main(#21:10)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at .(#80:1)</span></pre>
 </div>
 </div>
 
