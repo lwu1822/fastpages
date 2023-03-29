@@ -254,8 +254,8 @@ window.onload = wrap_img;
 		<span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">name</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
 			<span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="p">;</span>
 		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">score</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
-			<span class="n">output</span> <span class="o">+=</span> <span class="s">&quot;00&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">score</span><span class="p">;</span>
-			<span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+			<span class="n">output</span> <span class="o">+=</span>   <span class="k">this</span><span class="p">.</span><span class="na">score</span><span class="p">;</span>
+			<span class="c1">//output = output.substring(output.length() - 2);</span>
 		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
 			<span class="n">output</span> <span class="o">+=</span> <span class="kd">super</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;: &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">name</span> <span class="o">+</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">score</span><span class="p">;</span>
 		<span class="p">}</span>
@@ -302,14 +302,14 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$13$Users; 2
+<pre>class [LREPL.$JShell$13C$Users; 2
 Generic: Users listed by name
 Bob
 Jane
 
-class [LREPL.$JShell$13$Users; 2
+class [LREPL.$JShell$13C$Users; 2
 Generic: Users listed by score
-08
+8
 10
 
 </pre>
