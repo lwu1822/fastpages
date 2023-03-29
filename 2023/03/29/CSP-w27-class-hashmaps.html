@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      7 min read
     
 </span></p>
 
@@ -159,14 +159,14 @@ window.onload = wrap_img;
 <p>A hashtable is a data structure that with a collection of key-value pairs, where each key maps to a value, and the keys must be unique and hashable.</p>
 </blockquote>
 <ul>
-<li>In Python there is a built in hashtable known as a <strong><strong><strong>___</strong></strong></strong>.</li>
+<li>In Python there is a built in hashtable known as a <strong>__</strong>dictionary<strong><strong>_</strong></strong>.</li>
 </ul>
 <blockquote>
 <p>The primary purpose of a hashtable is to provide efficient lookup, insertion, and deletion operations. When an element is to be inserted into the hashtable, a hash function is used to map the key to a specific index in the underlying array that is used to store the key-value pairs. The value is then stored at that index. When searching for a value, the hash function is used again to find the index where the value is stored.</p>
 <p>The key advantage of a hashtable over other data structures like arrays and linked lists is its average-case time complexity for lookup, insertion, and deletion operations.</p>
 </blockquote>
 <ul>
-<li>The typical time complexity of a hashtable is <strong><strong><strong>___</strong></strong></strong>. </li>
+<li>The typical time complexity of a hashtable is <strong>_</strong>O(1)<strong><strong>__</strong></strong> because each key only has one value. If you know the key, you would know the value. </li>
 </ul>
 
 </div>
@@ -200,15 +200,29 @@ window.onload = wrap_img;
 <span class="nb">print</span><span class="p">(</span><span class="n">my_set</span><span class="p">)</span>  
 
 <span class="c1"># What do you notice in the output?</span>
-<span class="c1">#</span>
-<span class="c1">#</span>
+<span class="c1"># The values of a list are outputted as part of a set. Perhaps the set only takes in unique elements</span>
+<span class="c1"># because although the list has two 2s and 1s, the set only outputs one 1 and 2. </span>
 
 <span class="c1"># Why do you think Sets are in the same tech talk as Hashmaps/Hashtables?</span>
-<span class="c1">#</span>
+<span class="c1"># Sets </span>
 <span class="c1">#</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{1, 2, 3}
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -272,6 +286,20 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'title': 'Lover', 'artist': 'Taylor Swift', 'year': 2019, 'genre': ['Pop', 'Synth-pop'], 'tracks': {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight'}}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -291,6 +319,21 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight'}
+{1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight'}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -307,6 +350,21 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The Man
+The Man
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -334,6 +392,20 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'title': 'Lover', 'artist': 'Taylor Swift', 'year': 2019, 'genre': ['Pop', 'Synth-pop'], 'tracks': {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight'}, 'producer': ['Taylor Swift', 'Jack Antonoff', 'Joel Little', 'Taylor Swift', 'Louis Bell', 'Frank Dukes']}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -358,6 +430,20 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{'title': 'Lover', 'artist': 'Taylor Swift', 'year': 2019, 'genre': ['Pop', 'Synth-pop'], 'tracks': {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight', 19: 'All Of The Girls You Loved Before'}, 'producer': ['Taylor Swift', 'Jack Antonoff', 'Joel Little', 'Taylor Swift', 'Louis Bell', 'Frank Dukes']}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -377,6 +463,25 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>title: Lover
+artist: Taylor Swift
+year: 2019
+genre: ['Pop', 'Synth-pop']
+tracks: {1: 'I Forgot That You Existed', 2: 'Cruel Summer', 3: 'Lover', 4: 'The Man', 5: 'The Archer', 6: 'I Think He Knows', 7: 'Miss Americana &amp; The Heartbreak Prince', 8: 'Paper Rings', 9: 'Cornelia Street', 10: 'Death By A Thousand Cuts', 11: 'London Boy', 12: "Soon You'll Get Better (feat. Dixie Chicks)", 13: 'False God', 14: 'You Need To Calm Down', 15: 'Afterglow', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)', 17: "It's Nice To Have A Friend", 18: 'Daylight', 19: 'All Of The Girls You Loved Before'}
+producer: ['Taylor Swift', 'Jack Antonoff', 'Joel Little', 'Taylor Swift', 'Louis Bell', 'Frank Dukes']
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -405,6 +510,20 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>['Taylor Swift', 'Jack Antonoff', 'Joel Little', 'Taylor Swift', 'Louis Bell', 'Frank Dukes']
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
