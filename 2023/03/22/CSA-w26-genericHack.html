@@ -735,7 +735,7 @@ Generic: Users listed by score
             <span class="n">originalOrder</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> 
         <span class="p">}</span>
 
-        <span class="k">while</span> <span class="p">(</span><span class="n">originalOrder</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//while (originalOrder.size() &gt; 0) {</span>
             <span class="c1">//System.out.println(originalOrder.remove((int)(Math.random() * originalOrder.size()))); </span>
 
             <span class="c1">// some number between 0 and 7</span>
@@ -752,7 +752,7 @@ Generic: Users listed by score
             <span class="p">}</span>
 
             <span class="c1">// split queue into queue (bigger #) (345678) and queue2 (smaller #) (12)</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">T</span> <span class="n">a</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
                 <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
                 <span class="n">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
@@ -760,53 +760,52 @@ Generic: Users listed by score
 
             <span class="c1">// splite queue into queue (678) and queue3 (345)</span>
             <span class="c1">// queue2 = 12</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">num2</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num2</span><span class="o">-</span><span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">T</span> <span class="n">a</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
                 <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> 
                 <span class="n">queue</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
             <span class="p">}</span>
 
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;queeu1&quot;</span><span class="p">);</span>
 
-            <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+            <span class="n">T</span> <span class="n">pos1</span> <span class="o">=</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peekLast</span><span class="p">();</span>
+            <span class="n">T</span> <span class="n">pos2</span> <span class="o">=</span> <span class="n">queue3</span><span class="p">.</span><span class="na">peekLast</span><span class="p">();</span> 
+
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;pos1: &quot;</span> <span class="o">+</span> <span class="n">pos1</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;pos2: &quot;</span> <span class="o">+</span> <span class="n">pos2</span><span class="p">);</span>
+
+            
+            <span class="kt">int</span> <span class="n">pos1Size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue2</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">pos2Size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue3</span><span class="p">);</span>
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">pos1Size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">T</span> <span class="n">a</span> <span class="o">=</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
+                <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> 
+                <span class="n">queue2</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
             <span class="p">}</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;queeu1&quot;</span><span class="p">);</span>
+            <span class="n">T</span> <span class="n">queue2Last</span> <span class="o">=</span> <span class="n">queue2</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+            <span class="n">queue2</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
+
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">pos2Size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">T</span> <span class="n">a</span> <span class="o">=</span> <span class="n">queue3</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span> 
+                <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+                <span class="n">queue3</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
+            <span class="p">}</span>   
+            <span class="n">T</span> <span class="n">queue3Last</span> <span class="o">=</span> <span class="n">queue3</span><span class="p">.</span><span class="na">peek</span><span class="p">();</span>
+            <span class="n">queue3</span><span class="p">.</span><span class="na">delete</span><span class="p">();</span> 
+            
+            <span class="n">queue2</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue2Last</span><span class="p">);</span>
+            <span class="n">queue3</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">queue3Last</span><span class="p">);</span> 
+
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;*************&quot;</span><span class="p">);</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue2</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
             <span class="p">}</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;queeu1&quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;************&quot;</span><span class="p">);</span>
             <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue3</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">data</span><span class="p">);</span> 
             <span class="p">}</span>
-
-
-            <span class="c1">// T pos1 = queue.peekLast();</span>
-            <span class="c1">// T pos2 = queue2.peekLast(); </span>
-
-            <span class="c1">// System.out.println(&quot;pos1: &quot; + pos1);</span>
-            <span class="c1">// System.out.println(&quot;pos2: &quot; + pos2);</span>
-
-            
-            <span class="c1">// int pos1Size = queueSize(queue);</span>
-            <span class="c1">// int pos2Size = queueSize(queue2);</span>
-
-            <span class="c1">// for (int i = 0; i &lt; pos1Size - 1; i++) {</span>
-            <span class="c1">//     T a = queue.peek(); </span>
-            <span class="c1">//     queue2.add(a); </span>
-            <span class="c1">//     queue.delete(); </span>
-            <span class="c1">// }</span>
-            <span class="c1">// T queue1Last = queue.peek();</span>
-            <span class="c1">// queue.delete(); </span>
-
-
-
-            <span class="c1">// for (T data : queue2) {</span>
-            <span class="c1">//     System.out.println(data); </span>
-            <span class="c1">// }</span>
-
-            <span class="c1">// System.out.println(num); </span>
-        <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;****************&quot;</span><span class="p">);</span>
+        <span class="c1">//}</span>
 
         <span class="cm">/* </span>
 <span class="cm">        for (int i = 0; i &lt; originalOrder.size(); i++) {</span>
@@ -1136,35 +1135,20 @@ Words data:
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>NUM: 7
-NUM2: 2
-queeu1
-7
-8
-queeu1
-1
-2
-queeu1
+<pre>NUM: 1
+NUM2: 5
+pos1: 2
+pos2: 6
+*************
 3
 4
 5
+2
+************
+1
 6
-NUM: 8
-NUM2: 1
+****************
 </pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">java.lang.NullPointerException: Cannot invoke &#34;REPL.$JShell$15$LinkedList.getData()&#34; because &#34;this.head&#34; is null</span>
-<span class="ansi-red-intense-fg ansi-bold">	at Queue.peek(#18:1)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at QueueManager.random(#22:1)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at QueueTester3.main(#23:10)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at .(#65:1)</span></pre>
 </div>
 </div>
 
