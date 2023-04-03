@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -528,11 +528,31 @@ tracks: 1: I Forgot That You Existed
     <span class="k">else</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">lover_album</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">search</span><span class="o">.</span><span class="n">lower</span><span class="p">()))</span>
 
-<span class="n">search</span><span class="p">()</span>
+<span class="c1">#search()</span>
 
 <span class="c1"># This is a very basic code segment, how can you improve upon this code?</span>
 <span class="c1">#</span>
 <span class="c1">#</span>
+
+<span class="k">def</span> <span class="nf">add</span><span class="p">():</span>
+    <span class="n">track</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter favorite track number:"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Enter favorite track number, enter finish to end:"</span><span class="p">)</span>
+
+    <span class="n">favorite_tracks</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">while</span> <span class="n">track</span> <span class="o">!=</span> <span class="s2">"finish"</span><span class="p">:</span>
+        <span class="n">favorite_tracks</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="nb">int</span><span class="p">(</span><span class="n">track</span><span class="p">):</span> <span class="n">lover_album</span><span class="p">[</span><span class="s2">"tracks"</span><span class="p">][</span><span class="nb">int</span><span class="p">(</span><span class="n">track</span><span class="p">)]})</span>
+        <span class="n">track</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Enter favorite track number:"</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">favorite_tracks</span>
+        
+
+<span class="n">decision</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Would you like to search or add to list?"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Would you like to search or add to list?"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">decision</span> <span class="o">==</span> <span class="s2">"add"</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Favorite tracks: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">add</span><span class="p">()))</span>
+    
+    
 </pre></div>
 
     </div>
@@ -545,7 +565,9 @@ tracks: 1: I Forgot That You Existed
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>['Taylor Swift', 'Jack Antonoff', 'Joel Little', 'Taylor Swift', 'Louis Bell', 'Frank Dukes']
+<pre>Would you like to search or add to list?
+Enter favorite track number, enter finish to end:
+Favorite tracks: {8: 'Paper Rings', 16: 'Me! (feat. Brendon Urie of Panic! At The Disco)'}
 </pre>
 </div>
 </div>
@@ -569,6 +591,11 @@ tracks: 1: I Forgot That You Existed
 <li>Dictionary vs List    </li>
 </ul>
 </li>
+</ul>
+<p><strong>Reponse</strong></p>
+<p><img src="/fastpages/images/copied_from_nb/images/CSP/CSP-w28-class-hashmaps-hashtablesProCon.jpg" alt=""></p>
+<p><img src="/fastpages/images/copied_from_nb/images/CSP/CSP-w28-class-hashmaps-dictionaryVsList.jpg" alt=""></p>
+<ul>
 <li>Expand upon the code given to you, possible improvements in comments</li>
 <li>
 <p>Build your own album showing features of a python dictionary</p>
