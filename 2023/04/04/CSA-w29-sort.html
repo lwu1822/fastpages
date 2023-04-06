@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      14 min read
+      19 min read
     
 </span></p>
 
@@ -790,6 +790,7 @@ window.onload = wrap_img;
             <span class="k">this</span><span class="p">.</span><span class="na">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="p">;</span>  <span class="c1">// update tail</span>
         <span class="p">}</span>
         <span class="k">this</span><span class="p">.</span><span class="na">count</span><span class="o">++</span><span class="p">;</span>
+
     <span class="p">}</span>
 
     <span class="cm">/** Add a list of Objects</span>
@@ -870,15 +871,51 @@ window.onload = wrap_img;
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printQueue</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">:</span> <span class="k">this</span><span class="p">)</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Object</span> <span class="n">obj</span><span class="p">:</span> <span class="k">this</span><span class="p">){</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">obj</span> <span class="o">+</span> <span class="s">&quot; &quot;</span><span class="p">);</span>
+        <span class="p">}</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;TAIL: &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">tail</span><span class="p">.</span><span class="na">getPrevious</span><span class="p">());</span>
+
     <span class="p">}</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="p">(</span><span class="n">T</span><span class="o">[]</span> <span class="n">test</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;hi&quot;</span><span class="p">);</span>
+
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="cm">/* </span>
+<span class="cm">        int size = this.queueSize();</span>
+<span class="cm">        System.out.println(size);</span>
+
+<span class="cm">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="cm">            for (int j = 0; j &lt; size - i - 1; j++) {</span>
+
+<span class="cm">            }</span>
+<span class="cm">        }</span>
+<span class="cm">        */</span>
+
+        <span class="cm">/* </span>
+<span class="cm">        for (Object obj: this){</span>
+<span class="cm">            System.out.print(&quot;&quot; + obj + &quot; &quot;);</span>
+<span class="cm">        }</span>
+<span class="cm">        System.out.println();</span>
+
+<span class="cm">        System.out.println(this.queueSize());</span>
+<span class="cm">        */</span>
+        
     <span class="p">}</span>
 
+    <span class="c1">// RETURN SIZE OF QUEUE</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">queueSize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">size</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">size</span><span class="p">;</span> 
+    <span class="p">}</span>
 
 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="p">(</span><span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">test</span><span class="p">)</span> <span class="p">{</span>
@@ -889,6 +926,208 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public void addList(</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">T[]... seriesOfObjects</span><span class="ansi-black-intense-fg ansi-bold">) {  //accepts multiple generic T lists</span>
+<span class="ansi-red-intense-fg ansi-bold">Possible heap pollution from parameterized vararg type T[]</span>
+
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">/**</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold"> * Queue: custom implementation</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold"> * @author     John Mortensen</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold"> *</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold"> * 1. Uses custom LinkedList of Generic type T</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold"> * 2. Implements Iterable</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold"> * 3. &#34;has a&#34; LinkedList for head and tail</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold"> */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">public class Queue&lt;T&gt; implements Iterable&lt;T&gt; {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    private String name = null; // name of queue</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    private int count = 0; // number of objects in queue</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    LinkedList&lt;T&gt; head = null, tail = null;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Constructor</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *  Queue constructor</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *  Parameters to name queue and Data Objects</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     /* </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public Queue(String name, T[]... seriesOfObjects) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        this.name = name;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        this.addList(seriesOfObjects);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">  </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Queue Accessors / Getters</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * These gettrs return Queue Meta Data</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public String getName() {return this.name;}</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public int getCount() {return this.count;}</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Add an object</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *  Parameter is a Data Object that is added to end of the Queue,</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * @param  data,  is the data to be inserted in the Queue.</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public void add(T data) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        // add new object to end of Queue</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        LinkedList&lt;T&gt; tail = new LinkedList&lt;&gt;(data, null);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        if (this.head == null)  // initial condition</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            this.head = this.tail = tail;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        else {  // nodes in queue</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            this.tail.setNextNode(tail); // current tail points to new tail</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            this.tail = tail;  // update tail</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        this.count++;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(&#34;link: &#34; + this.getNext());</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Add a list of Objects</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * Paramter is a serise of Data Objects to be added to Queue</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public void addList(T[]... seriesOfObjects) {  //accepts multiple generic T lists</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        for (T[] objects: seriesOfObjects)</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            for (T data : objects) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">                this.add(data);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        printQueue();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Delete Head Element</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *  Returns the data of head.</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * @return  data, the dequeued data</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public T delete() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        T data = this.peek();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        if (this.tail != null) { // initial or empty condition</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            this.head = this.head.getNext(); // current tail points to new tail</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            if (this.head != null) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">                this.head.setPrevNode(tail);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            this.count--;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        return data;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Peak at Head Data</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *  Returns the data of head element</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * @return  this.head.getData(), the head data in Queue.</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public T peek() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        return this.head.getData();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Get Head</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *  Returns the head object</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * @return  this.head, the head object in Queue.</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public LinkedList&lt;T&gt; getHead() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        return this.head;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Get Tail</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *  Returns the tail object</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * @return  this.tail, the last object in Queue</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public LinkedList&lt;T&gt; getTail() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        return this.tail;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Implements Iterator</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *  Returns the iterator object.</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     *</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * @return  this, instance of object</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public Iterator&lt;T&gt; iterator() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        return new QueueIterator&lt;&gt;(this.head);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    /** Print Queue</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * Prints which by usage validates iterable and getters</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     * </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">     */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public void print() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.print(this.getName() + &#34; &#34; + this.getCount() +&#34;: &#34;);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        for (Object obj: this)</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            System.out.print(&#34;&#34; + obj + &#34; &#34;);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public void printQueue() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        for (Object obj: this){</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            System.out.print(&#34;&#34; + obj + &#34; &#34;);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(&#34;TAIL: &#34; + this.tail.getPrevious());</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public void test() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        /* </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        int size = this.queueSize();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(size);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        for (int i = 0; i &lt; size; i++) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            for (int j = 0; j &lt; size - i - 1; j++) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        /* </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        for (Object obj: this){</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            System.out.print(&#34;&#34; + obj + &#34; &#34;);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println();</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(this.queueSize());</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        */</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    // RETURN SIZE OF QUEUE</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public int queueSize() {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        int size = 0;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        for (T data : this) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">            size++;</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        return size; </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    public void test(LinkedList&lt;T&gt; test) {</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(&#34;hi&#34;);</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    }</span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">    </span>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">}</span>
+<span class="ansi-red-intense-fg ansi-bold">Unresolved dependencies:</span>
+<span class="ansi-red-intense-fg ansi-bold">   - method getNext()</span></pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1081,6 +1320,7 @@ window.onload = wrap_img;
         <span class="n">Integer</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
         <span class="n">queue</span><span class="p">.</span><span class="na">addList</span><span class="p">(</span><span class="n">words</span><span class="p">);</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">test</span><span class="p">();</span>
        
         <span class="c1">//Object[] words = new Integer[] {1, 9, 3, 2, 5};</span>
         <span class="c1">//Queue nums = new Queue(&quot;words&quot;, words);</span>
@@ -1106,6 +1346,8 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1 9 3 2 5 
+TAIL: null
+REPL.$JShell$13$LinkedList@40decb7c
 </pre>
 </div>
 </div>
