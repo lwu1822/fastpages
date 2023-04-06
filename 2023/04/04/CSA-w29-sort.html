@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      14 min read
+      15 min read
     
 </span></p>
 
@@ -924,6 +924,31 @@ window.onload = wrap_img;
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">bubble</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">head</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;HEAD DATA: &quot;</span> <span class="o">+</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+
+        <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">setData</span><span class="p">(</span><span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;NEW: &quot;</span> <span class="o">+</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+        
+        <span class="cm">/* </span>
+<span class="cm">        System.out.println(&quot;HEAD: &quot; + head);</span>
+
+<span class="cm">        System.out.println(&quot;CLASS: &quot; + queue.getHead());</span>
+
+<span class="cm">        System.out.println(&quot;NEXT: &quot; + head.getNext().getNext().getData());</span>
+
+<span class="cm">        System.out.println(&quot;PREVIOUS: &quot; + head.getPrevious().getData());</span>
+<span class="cm">        */</span>
+
+        <span class="cm">/* </span>
+<span class="cm">        if (head.getNext() == head.getPrevious()) {</span>
+<span class="cm">            System.out.println(&quot;compare&quot;);</span>
+<span class="cm">        } else {</span>
+<span class="cm">            System.out.println(&quot;no compare&quot;);</span>
+<span class="cm">        }</span>
+<span class="cm">        */</span>
         <span class="k">return</span> <span class="n">queue</span><span class="p">;</span>
     <span class="p">}</span>
 
@@ -1158,9 +1183,11 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1 9 3 2 5 
-CLASS: class REPL.$JShell$16BQ$Queue
+CLASS: class REPL.$JShell$16DN$Queue
 TAIL: null
-REPL.$JShell$16BQ$Queue@75b10f7e
+HEAD DATA: 9
+NEW: 2
+REPL.$JShell$16DN$Queue@58e75bfe
 </pre>
 </div>
 </div>
