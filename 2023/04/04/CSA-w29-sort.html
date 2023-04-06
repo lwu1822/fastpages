@@ -1005,8 +1005,6 @@ window.onload = wrap_img;
     <span class="kd">public</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">bubble</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">head</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
 
-        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">test2</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">().</span><span class="na">getNext</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;test2: &quot;</span> <span class="o">+</span> <span class="n">test2</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
 
         <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
 
@@ -1079,6 +1077,9 @@ window.onload = wrap_img;
 <span class="cm">            System.out.println(&quot;no compare&quot;);</span>
 <span class="cm">        }</span>
 <span class="cm">        */</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;HEAD: &quot;</span> <span class="o">+</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+
         <span class="k">return</span> <span class="n">queue</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -1313,7 +1314,6 @@ window.onload = wrap_img;
 <pre>1 9 3 2 5 
 CLASS: class REPL.$JShell$16DZ$Queue
 TAIL: null
-test2: 9
 left: 1
 right: 9
 compare: -8
@@ -1354,8 +1354,19 @@ compareTo: 2
 left: 3
 right: 2
 compare: 1
-REPL.$JShell$16DZ$Queue@140e2f96
 </pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">java.lang.NullPointerException: Cannot invoke &#34;REPL.$JShell$13$LinkedList.getData()&#34; because the return value of &#34;REPL.$JShell$13$LinkedList.getNext()&#34; is null</span>
+<span class="ansi-red-intense-fg ansi-bold">	at Test.bubble(#39:78)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at QueueTester.main(#17:1)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at .(#109:1)</span></pre>
 </div>
 </div>
 
