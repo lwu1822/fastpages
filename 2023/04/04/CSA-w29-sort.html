@@ -1028,11 +1028,11 @@ window.onload = wrap_img;
 
                 <span class="k">if</span> <span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="na">toString</span><span class="p">().</span><span class="na">compareTo</span><span class="p">(</span><span class="n">right</span><span class="p">.</span><span class="na">toString</span><span class="p">())</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
                     <span class="n">T</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">left</span><span class="p">;</span>
-                    <span class="n">head</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">right</span><span class="p">);</span>
-                    <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">setData</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span> 
+                    <span class="n">leftList</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">right</span><span class="p">);</span>
+                    <span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">setData</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span> 
 
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;compareTo: &quot;</span> <span class="o">+</span> <span class="n">head</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
-                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;compareTo: &quot;</span> <span class="o">+</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;compareTo: &quot;</span> <span class="o">+</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;compareTo: &quot;</span> <span class="o">+</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
                 <span class="p">}</span>
 
 
@@ -1324,6 +1324,19 @@ right: 3
 compare: -2
 compareTo: 3
 compareTo: 1
+left: 1
+right: 2
+compare: -1
+compareTo: 2
+compareTo: 1
+left: 1
+right: 5
+compare: -4
+compareTo: 5
+compareTo: 1
+left: 9
+right: 3
+compare: 6
 left: 3
 right: 2
 compare: 1
@@ -1332,28 +1345,17 @@ right: 5
 compare: -3
 compareTo: 5
 compareTo: 2
-left: 5
-right: 2
-compare: 3
-left: 2
+left: 9
 right: 3
-compare: -1
+compare: 6
+left: 3
+right: 5
+compare: -2
+compareTo: 5
 compareTo: 3
-compareTo: 2
-left: 3
-right: 2
-compare: 1
-left: 3
-right: 2
-compare: 1
-left: 2
-right: 3
-compare: -1
-compareTo: 3
-compareTo: 2
-left: 3
-right: 2
-compare: 1
+left: 9
+right: 5
+compare: 4
 </pre>
 </div>
 </div>
@@ -1366,7 +1368,7 @@ compare: 1
 <span class="ansi-red-intense-fg ansi-bold">java.lang.NullPointerException: Cannot invoke &#34;REPL.$JShell$13$LinkedList.getData()&#34; because the return value of &#34;REPL.$JShell$13$LinkedList.getNext()&#34; is null</span>
 <span class="ansi-red-intense-fg ansi-bold">	at Test.bubble(#39:78)</span>
 <span class="ansi-red-intense-fg ansi-bold">	at QueueTester.main(#17:1)</span>
-<span class="ansi-red-intense-fg ansi-bold">	at .(#109:1)</span></pre>
+<span class="ansi-red-intense-fg ansi-bold">	at .(#116:1)</span></pre>
 </div>
 </div>
 
