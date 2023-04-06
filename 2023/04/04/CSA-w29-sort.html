@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      16 min read
+      17 min read
     
 </span></p>
 
@@ -1011,10 +1011,16 @@ window.onload = wrap_img;
         <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
 
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">T</span> <span class="n">left</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
-            <span class="n">T</span> <span class="n">right</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">();</span>
+            <span class="c1">// T left = head.getData();</span>
+            <span class="c1">// T right = head.getNext().getData();</span>
+
+            <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">leftList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+            <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">rightList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">().</span><span class="na">getNext</span><span class="p">();</span>
+
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
+                <span class="n">T</span> <span class="n">left</span> <span class="o">=</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
+                <span class="n">T</span> <span class="n">right</span> <span class="o">=</span> <span class="n">rightList</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
 
                 
                 <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;left: &quot;</span> <span class="o">+</span> <span class="n">left</span><span class="p">);</span>
@@ -1031,8 +1037,9 @@ window.onload = wrap_img;
                     <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;compareTo: &quot;</span> <span class="o">+</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
                 <span class="p">}</span>
 
-                <span class="n">left</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
-                <span class="n">right</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">();</span>
+
+                <span class="n">leftList</span> <span class="o">=</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span>
+                <span class="n">rightList</span> <span class="o">=</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span>
 
                 <span class="cm">/* </span>
 <span class="cm">                int left = data[j];</span>
@@ -1312,34 +1319,42 @@ right: 9
 compare: -8
 compareTo: 9
 compareTo: 1
-left: 9
-right: 1
-compare: 8
-left: 9
-right: 1
-compare: 8
-left: 9
-right: 1
-compare: 8
-left: 9
-right: 1
-compare: 8
-left: 9
-right: 1
-compare: 8
-left: 9
-right: 1
-compare: 8
-left: 9
-right: 1
-compare: 8
-left: 9
-right: 1
-compare: 8
-left: 9
-right: 1
-compare: 8
-REPL.$JShell$16DZ$Queue@c676cd1
+left: 1
+right: 3
+compare: -2
+compareTo: 3
+compareTo: 1
+left: 3
+right: 2
+compare: 1
+left: 2
+right: 5
+compare: -3
+compareTo: 5
+compareTo: 2
+left: 5
+right: 2
+compare: 3
+left: 2
+right: 3
+compare: -1
+compareTo: 3
+compareTo: 2
+left: 3
+right: 2
+compare: 1
+left: 3
+right: 2
+compare: 1
+left: 2
+right: 3
+compare: -1
+compareTo: 3
+compareTo: 2
+left: 3
+right: 2
+compare: 1
+REPL.$JShell$16DZ$Queue@140e2f96
 </pre>
 </div>
 </div>
