@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      16 min read
     
 </span></p>
 
@@ -908,10 +908,10 @@ window.onload = wrap_img;
     <span class="p">}</span>
 
     <span class="c1">// RETURN SIZE OF QUEUE</span>
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">queueSize</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">queueSize</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">T</span> <span class="n">data</span> <span class="p">:</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">size</span><span class="o">++</span><span class="p">;</span>
         <span class="p">}</span>
 
@@ -926,11 +926,37 @@ window.onload = wrap_img;
     <span class="kd">public</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">bubble</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">head</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;HEAD DATA: &quot;</span> <span class="o">+</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
 
-        <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">setData</span><span class="p">(</span><span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;NEW: &quot;</span> <span class="o">+</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+                <span class="n">T</span> <span class="n">left</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
+                <span class="n">T</span> <span class="n">right</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;left: &quot;</span> <span class="o">+</span> <span class="n">left</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;right: &quot;</span> <span class="o">+</span> <span class="n">right</span><span class="p">);</span>
+
+
+                <span class="cm">/* </span>
+<span class="cm">                int left = data[j];</span>
+<span class="cm">                int right = data[j+1]; </span>
+
+<span class="cm">                if (right &lt; left) {</span>
+<span class="cm">                    int temp = left; </span>
+<span class="cm">                    data[j] = right; </span>
+<span class="cm">                    data[j+1] = temp; </span>
+<span class="cm">                }    </span>
+<span class="cm">                */</span>            
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="cm">/* </span>
+<span class="cm">        System.out.println(&quot;HEAD DATA: &quot; + head.getNext().getData());</span>
+
+<span class="cm">        head.getNext().getNext().setData(head.getNext().getData());</span>
+
+<span class="cm">        System.out.println(&quot;NEW: &quot; + head.getNext().getNext().getNext().getData());</span>
+<span class="cm">        */</span>
         
         <span class="cm">/* </span>
 <span class="cm">        System.out.println(&quot;HEAD: &quot; + head);</span>
@@ -958,6 +984,84 @@ window.onload = wrap_img;
 <span class="cm">    }</span>
 <span class="cm">    */</span>
     
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">bubble</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">head</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="n">T</span> <span class="n">left</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
+                <span class="n">T</span> <span class="n">right</span> <span class="o">=</span> <span class="n">head</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">();</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;left: &quot;</span> <span class="o">+</span> <span class="n">left</span><span class="p">);</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;right: &quot;</span> <span class="o">+</span> <span class="n">right</span><span class="p">);</span>
+
+                <span class="cm">/* </span>
+<span class="cm">                if (left &lt; right) {</span>
+<span class="cm">                    System.out.println(&quot;less&quot;);</span>
+<span class="cm">                } </span>
+<span class="cm">                */</span>
+
+
+                <span class="cm">/* </span>
+<span class="cm">                int left = data[j];</span>
+<span class="cm">                int right = data[j+1]; </span>
+
+<span class="cm">                if (right &lt; left) {</span>
+<span class="cm">                    int temp = left; </span>
+<span class="cm">                    data[j] = right; </span>
+<span class="cm">                    data[j+1] = temp; </span>
+<span class="cm">                }    </span>
+<span class="cm">                */</span>            
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="cm">/* </span>
+<span class="cm">        System.out.println(&quot;HEAD DATA: &quot; + head.getNext().getData());</span>
+
+<span class="cm">        head.getNext().getNext().setData(head.getNext().getData());</span>
+
+<span class="cm">        System.out.println(&quot;NEW: &quot; + head.getNext().getNext().getNext().getData());</span>
+<span class="cm">        */</span>
+        
+        <span class="cm">/* </span>
+<span class="cm">        System.out.println(&quot;HEAD: &quot; + head);</span>
+
+<span class="cm">        System.out.println(&quot;CLASS: &quot; + queue.getHead());</span>
+
+<span class="cm">        System.out.println(&quot;NEXT: &quot; + head.getNext().getNext().getData());</span>
+
+<span class="cm">        System.out.println(&quot;PREVIOUS: &quot; + head.getPrevious().getData());</span>
+<span class="cm">        */</span>
+
+        <span class="cm">/* </span>
+<span class="cm">        if (head.getNext() == head.getPrevious()) {</span>
+<span class="cm">            System.out.println(&quot;compare&quot;);</span>
+<span class="cm">        } else {</span>
+<span class="cm">            System.out.println(&quot;no compare&quot;);</span>
+<span class="cm">        }</span>
+<span class="cm">        */</span>
+        <span class="k">return</span> <span class="n">queue</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -1155,8 +1259,13 @@ window.onload = wrap_img;
         <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
         <span class="n">queue</span><span class="p">.</span><span class="na">addList</span><span class="p">(</span><span class="n">words</span><span class="p">);</span>
 
-        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">test2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">Test</span> <span class="n">test2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="p">();</span> 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">test2</span><span class="p">.</span><span class="na">bubble</span><span class="p">(</span><span class="n">queue</span><span class="p">));</span>
+
+        <span class="cm">/* </span>
+<span class="cm">        Queue&lt;Integer&gt; test2 = new Queue&lt;&gt;();</span>
+<span class="cm">        System.out.println(test2.bubble(queue));</span>
+<span class="cm">        */</span>
         <span class="c1">//queue.printQueue();</span>
        
         <span class="c1">//Object[] words = new Integer[] {1, 9, 3, 2, 5};</span>
@@ -1183,11 +1292,29 @@ window.onload = wrap_img;
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>1 9 3 2 5 
-CLASS: class REPL.$JShell$16DN$Queue
+CLASS: class REPL.$JShell$16DZ$Queue
 TAIL: null
-HEAD DATA: 9
-NEW: 2
-REPL.$JShell$16DN$Queue@58e75bfe
+left: 1
+right: 9
+left: 1
+right: 9
+left: 1
+right: 9
+left: 1
+right: 9
+left: 1
+right: 9
+left: 1
+right: 9
+left: 1
+right: 9
+left: 1
+right: 9
+left: 1
+right: 9
+left: 1
+right: 9
+REPL.$JShell$16DZ$Queue@7d1f2f9e
 </pre>
 </div>
 </div>
