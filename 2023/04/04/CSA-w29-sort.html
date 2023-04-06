@@ -968,10 +968,13 @@ window.onload = wrap_img;
 
         <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
 
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">leftList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">rightList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">().</span><span class="na">getNext</span><span class="p">();</span>
+
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
-            <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">leftList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
-            <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">rightList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">().</span><span class="na">getNext</span><span class="p">();</span>
+            <span class="n">leftList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+            <span class="n">rightList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">().</span><span class="na">getNext</span><span class="p">();</span>
 
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
 
@@ -986,16 +989,18 @@ window.onload = wrap_img;
 
                 <span class="p">}</span>
 
-
                 <span class="n">leftList</span> <span class="o">=</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span>
                 <span class="n">rightList</span> <span class="o">=</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span>
 
             <span class="p">}</span>
         <span class="p">}</span>
 
-     
 
-        <span class="k">return</span> <span class="n">queue</span><span class="p">;</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queueReturn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">queueReturn</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">leftList</span><span class="p">.</span><span class="na">getData</span><span class="p">());</span>
+        <span class="n">queueReturn</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+
+        <span class="k">return</span> <span class="n">queueReturn</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -1196,7 +1201,7 @@ window.onload = wrap_img;
 
         <span class="n">Test</span> <span class="n">test2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="p">();</span> 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">test2</span><span class="p">.</span><span class="na">bubble</span><span class="p">(</span><span class="n">queue</span><span class="p">));</span>
-
+        <span class="n">test2</span><span class="p">.</span><span class="na">bubble</span><span class="p">(</span><span class="n">queue</span><span class="p">).</span><span class="na">printQueue</span><span class="p">();</span>
        
     <span class="p">}</span>
 <span class="p">}</span>
@@ -1204,6 +1209,21 @@ window.onload = wrap_img;
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>REPL.$JShell$16ED$Queue@b521fd6
+1 2 
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
