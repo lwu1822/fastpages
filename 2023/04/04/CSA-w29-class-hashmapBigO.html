@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      13 min read
     
 </span></p>
 
@@ -346,7 +346,7 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$13$Animal; 6
+<pre>class [LREPL.$JShell$17$Animal; 6
 Collectable: Animal listed by title
 Animal: Lion, Gold, 8
 Animal: Pig, Pink, 3
@@ -579,6 +579,7 @@ Midnight is a Black Cat and is 10 years old.
         <span class="c1">// using forEach() method with a lambda expression</span>
         <span class="n">animals</span><span class="p">.</span><span class="na">forEach</span><span class="p">(</span><span class="n">animal</span> <span class="o">-&gt;</span> <span class="p">{</span>
             <span class="n">String</span> <span class="n">message</span> <span class="o">=</span> <span class="s">"I "</span><span class="p">;</span>
+            <span class="c1">//ternary operator</span>
             <span class="n">message</span> <span class="o">+=</span> <span class="n">animal</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"dog"</span><span class="p">)</span> <span class="o">?</span> <span class="s">"like"</span> <span class="p">:</span> <span class="s">"don't like"</span><span class="p">;</span>
             <span class="n">message</span> <span class="o">+=</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">animal</span> <span class="o">+</span> <span class="s">"s "</span> <span class="o">+</span> <span class="s">"for pets"</span><span class="p">;</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
@@ -648,6 +649,240 @@ I don't like pigs for pets
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Animal class extends Collectable and defines abstract methods</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ClassRating</span> <span class="kd">extends</span> <span class="n">Collectable</span> <span class="p">{</span>
+	<span class="c1">// Class data</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">KeyTypes</span> <span class="n">key</span> <span class="o">=</span> <span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">;</span>  <span class="c1">// static initializer</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">setOrder</span><span class="p">(</span><span class="n">KeyTypes</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span> <span class="n">ClassRating</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span> <span class="p">}</span>
+	<span class="kd">public</span> <span class="kd">enum</span> <span class="n">KeyType</span> <span class="kd">implements</span> <span class="n">KeyTypes</span> <span class="p">{</span><span class="n">title</span><span class="p">,</span> <span class="n">classname</span><span class="p">,</span> <span class="n">rating</span><span class="p">}</span>
+
+	<span class="c1">// Instance data</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">classname</span><span class="p">;</span>
+	<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">rating</span><span class="p">;</span>
+
+	<span class="cm">/* constructor</span>
+<span class="cm">	 *</span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="nf">ClassRating</span><span class="p">(</span><span class="n">String</span> <span class="n">classname</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rating</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="kd">super</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="s">"ClassRating"</span><span class="p">);</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">classname</span> <span class="o">=</span> <span class="n">classname</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">rating</span> <span class="o">=</span> <span class="n">rating</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="cm">/* 'Collectable' requires getKey to help enforce KeyTypes usage */</span>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="n">KeyTypes</span> <span class="nf">getKey</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">ClassRating</span><span class="p">.</span><span class="na">key</span><span class="p">;</span> <span class="p">}</span>
+
+	<span class="cm">/* Getters</span>
+<span class="cm">	 * </span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">getClassname</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">classname</span><span class="p">;</span> <span class="p">}</span>
+	<span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRating</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">rating</span><span class="p">;</span> <span class="p">}</span>
+
+	
+	<span class="cm">/* 'Collectable' requires toString override</span>
+<span class="cm">	 * toString provides data based off of Static Key setting</span>
+<span class="cm">	 */</span>
+	<span class="nd">@Override</span>
+	<span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span>
+	<span class="p">{</span>
+		<span class="n">String</span> <span class="n">output</span><span class="o">=</span><span class="s">""</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">classname</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="k">this</span><span class="p">.</span><span class="na">classname</span><span class="p">;</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">rating</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getKey</span><span class="p">()))</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="s">"00"</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">rating</span><span class="p">;</span>
+			<span class="n">output</span> <span class="o">=</span> <span class="n">output</span><span class="p">.</span><span class="na">substring</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="na">length</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">);</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="n">output</span> <span class="o">+=</span> <span class="kd">super</span><span class="p">.</span><span class="na">getType</span><span class="p">()</span> <span class="o">+</span> <span class="s">": "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">classname</span> <span class="o">+</span> <span class="s">", "</span>  <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">rating</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">return</span> <span class="n">output</span><span class="p">;</span>
+		
+	<span class="p">}</span>
+
+	<span class="c1">// Test data initializer</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="n">ClassRating</span><span class="o">[]</span> <span class="nf">classes</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">ClassRating</span><span class="o">[]</span><span class="p">{</span>
+				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP CSA"</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP Stats"</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP US History"</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+		<span class="p">};</span>
+	<span class="p">}</span>
+	
+	<span class="cm">/* main to test Animal class</span>
+<span class="cm">	 * </span>
+<span class="cm">	 */</span>
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="c1">// Inheritance Hierarchy</span>
+		<span class="n">ClassRating</span><span class="o">[]</span> <span class="n">objs</span> <span class="o">=</span> <span class="n">classes</span><span class="p">();</span>
+
+		<span class="c1">// print with title</span>
+		<span class="n">ClassRating</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">);</span>
+		<span class="n">ClassRating</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">objs</span><span class="p">);</span>
+
+		<span class="c1">// convert to Coolection and sort in name order</span>
+		<span class="n">ClassRating</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">classname</span><span class="p">);</span>
+		<span class="n">List</span><span class="o">&lt;</span><span class="n">ClassRating</span><span class="o">&gt;</span> <span class="n">classes</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ClassRating</span><span class="o">&gt;</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="n">objs</span><span class="p">));</span>  <span class="c1">// Array has asList conversion</span>
+		<span class="n">Collections</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">classes</span><span class="p">);</span>
+		<span class="n">ClassRating</span><span class="p">.</span><span class="na">setOrder</span><span class="p">(</span><span class="n">KeyType</span><span class="p">.</span><span class="na">title</span><span class="p">);</span>
+		<span class="k">for</span> <span class="p">(</span><span class="n">ClassRating</span> <span class="n">classLoop</span> <span class="p">:</span> <span class="n">classes</span><span class="p">)</span> 
+			<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">classLoop</span><span class="p">);</span>
+		
+		
+	<span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">ClassRating</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>class [LREPL.$JShell$15B$ClassRating; 3
+Collectable: ClassRating listed by title
+ClassRating: AP CSA, 4
+ClassRating: AP Stats, 3
+ClassRating: AP US History, 4
+
+ClassRating: AP CSA, 4
+ClassRating: AP Stats, 3
+ClassRating: AP US History, 4
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Pets</span> <span class="p">{</span>
+    <span class="c1">// create a new HashMap</span>
+    <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Animal</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+    <span class="cm">/* Add Pets</span>
+<span class="cm">     * </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">Pets</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// add some key-value pairs to the HashMap</span>
+        <span class="n">names</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Leo"</span><span class="p">,</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">"Lion"</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="s">"Gold"</span><span class="p">));</span>
+        <span class="n">names</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Porky"</span><span class="p">,</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">"Pig"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s">"Pink"</span><span class="p">));</span>
+        <span class="n">names</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Ro-Ro"</span><span class="p">,</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">"Robin"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s">"Red"</span><span class="p">));</span>
+        <span class="n">names</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Midnight"</span><span class="p">,</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">"Cat"</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="s">"Black"</span><span class="p">));</span>
+        <span class="n">names</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Hobbes"</span><span class="p">,</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">"Kitty"</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s">"Calico"</span><span class="p">));</span>
+        <span class="n">names</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">"Duke"</span><span class="p">,</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">"Dog"</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="s">"Brown"</span><span class="p">));</span>
+    <span class="p">}</span> 
+
+    <span class="cm">/* Remove Pet</span>
+<span class="cm">     * </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">Animal</span> <span class="nf">remove</span><span class="p">(</span><span class="n">String</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// check if a key exists in the HashMap then remove</span>
+        <span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">animal</span> <span class="o">=</span> <span class="n">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+            <span class="n">names</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">animal</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* Print Pets</span>
+<span class="cm">     * </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// iterate over the keys in the HashMap</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">name</span><span class="p">:</span> <span class="n">names</span><span class="p">.</span><span class="na">keySet</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">Animal</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">" is a "</span> <span class="o">+</span> <span class="n">obj</span><span class="p">.</span><span class="na">getColor</span><span class="p">()</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">obj</span><span class="p">.</span><span class="na">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">" and is "</span> <span class="o">+</span> <span class="n">obj</span><span class="p">.</span><span class="na">getAge</span><span class="p">()</span> <span class="o">+</span> <span class="s">" years old."</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* Tester Method</span>
+<span class="cm">     * </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="c1">// intialize Pets</span>
+        <span class="n">Pets</span> <span class="n">pets</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Pets</span><span class="p">();</span>
+        <span class="n">pets</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+        
+        <span class="c1">// remove Pet</span>
+        <span class="n">String</span> <span class="n">key</span> <span class="o">=</span> <span class="s">"Hobbes"</span><span class="p">;</span>
+        <span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="n">pets</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="s">"Hobbes"</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">animal</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span> <span class="n">key</span> <span class="o">+</span> <span class="s">" not found"</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Removed: "</span> <span class="o">+</span> <span class="n">key</span> <span class="o">+</span> <span class="s">", "</span> <span class="o">+</span> <span class="n">animal</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">pets</span><span class="p">.</span><span class="na">print</span><span class="p">();</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Pets</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hobbes is a Calico Kitty and is 1 years old.
+Leo is a Gold Lion and is 8 years old.
+Porky is a Pink Pig and is 3 years old.
+Ro-Ro is a Red Robin and is 7 years old.
+Duke is a Brown Dog and is 14 years old.
+Midnight is a Black Cat and is 10 years old.
+
+Removed: Hobbes, Animal: Kitty, Calico, 1
+Leo is a Gold Lion and is 8 years old.
+Porky is a Pink Pig and is 3 years old.
+Ro-Ro is a Red Robin and is 7 years old.
+Duke is a Brown Dog and is 14 years old.
+Midnight is a Black Cat and is 10 years old.
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
