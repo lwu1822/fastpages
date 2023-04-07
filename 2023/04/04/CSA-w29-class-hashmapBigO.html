@@ -945,18 +945,12 @@ ClassRating: AP US History, 4
         <span class="kt">long</span> <span class="n">start</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
         <span class="kt">long</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-        <span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">num</span> <span class="p">:</span> <span class="n">cr</span><span class="p">.</span><span class="na">names</span><span class="p">.</span><span class="na">keySet</span><span class="p">())</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">key</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">end</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
+      
 
 
-        <span class="kt">long</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+        
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"time: "</span> <span class="o">+</span> <span class="n">diff</span><span class="p">);</span>
 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cr</span><span class="p">.</span><span class="na">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
 
         <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
         <span class="kt">int</span> <span class="n">high</span> <span class="o">=</span>  <span class="mi">4999</span><span class="p">;</span>
@@ -966,14 +960,16 @@ ClassRating: AP US History, 4
             <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span> <span class="o">+</span> <span class="n">low</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">cr</span><span class="p">.</span><span class="na">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">mid</span><span class="p">).</span><span class="na">index</span> <span class="o">==</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">found</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+                <span class="n">end</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span> 
+                <span class="k">break</span><span class="p">;</span>
             <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cr</span><span class="p">.</span><span class="na">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">mid</span><span class="p">).</span><span class="na">index</span> <span class="o">&gt;</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
                 <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
             <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
                 <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
             <span class="p">}</span>
         <span class="p">}</span>
-
-        <span class="c1">//System.out.println(cr.names.get(5).index == 5);</span>
+        <span class="kt">long</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"time: "</span> <span class="o">+</span> <span class="n">diff</span><span class="p">);</span>
         
        
 
@@ -992,9 +988,7 @@ ClassRating: AP US History, 4
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>time: 533418
-ClassRating: AP CSA, 3
-true
+<pre>time: 9721
 </pre>
 </div>
 </div>
