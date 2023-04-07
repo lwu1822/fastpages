@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      15 min read
+      16 min read
     
 </span></p>
 
@@ -964,9 +964,15 @@ window.onload = wrap_img;
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">swap</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">comparison</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    
 
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSwap</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">return</span> <span class="n">swap</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getComparison</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">comparison</span><span class="p">;</span> 
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">bubble</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
@@ -984,6 +990,8 @@ window.onload = wrap_img;
             <span class="n">rightList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">().</span><span class="na">getNext</span><span class="p">();</span>
 
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="n">comparison</span><span class="o">++</span><span class="p">;</span>
 
                 <span class="n">T</span> <span class="n">left</span> <span class="o">=</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
                 <span class="n">T</span> <span class="n">right</span> <span class="o">=</span> <span class="n">rightList</span><span class="p">.</span><span class="na">getData</span><span class="p">();</span>
@@ -1277,6 +1285,7 @@ window.onload = wrap_img;
 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;time: &quot;</span> <span class="o">+</span> <span class="n">diff</span> <span class="o">+</span> <span class="s">&quot; nanoseconds&quot;</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;swaps: &quot;</span> <span class="o">+</span> <span class="n">test2</span><span class="p">.</span><span class="na">getSwap</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;comparison: &quot;</span> <span class="o">+</span> <span class="n">test2</span><span class="p">.</span><span class="na">getComparison</span><span class="p">());</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">QueueTester</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
@@ -1292,9 +1301,10 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>REPL.$JShell$16E$Queue@5e5181a0
-time: 1276731930 nanoseconds
-swaps: 6268850
+<pre>REPL.$JShell$16E$Queue@480d27a8
+time: 1358933252 nanoseconds
+swaps: 6191332
+comparison: 24995000
 </pre>
 </div>
 </div>
