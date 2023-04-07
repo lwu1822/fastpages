@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      9 min read
+      12 min read
     
 </span></p>
 
@@ -141,6 +141,16 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Bubble-sort">Bubble sort<a class="anchor-link" href="#Bubble-sort"> </a></h1><p>Bubble sort compares two adjacent elements in an array. It swaps the two elements so that the smaller is on the left and the larger one is on the right. The sort then moves on to the next two elements and repeats the process. This way, the largest element will move to the end of the array. Bubble sort then repeats this process until all the elements are sorted. Since the largest element moves to the end at the end of each iteration, on the next iteration, bubble sort will ignore the last elements. This is indicated with the nested for loop:</p>
+
+<pre><code>for (int j = 0; j &lt; size - i - 1; j++)</code></pre>
+<p>As can be seen, j, or the index of the array, depends on the value of i.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1036,6 +1046,169 @@ time: 1270151950 nanoseconds
 swaps: 6214873
 comparison: 24995000
 </pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Selection-sort">Selection sort<a class="anchor-link" href="#Selection-sort"> </a></h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Selection</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="kd">extends</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">swap</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">comparison</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+    
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSwap</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">swap</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getComparison</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">comparison</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">selection</span><span class="p">(</span><span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queue</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">head</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">queueSize</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">leftList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">();</span>
+        <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">rightList</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="na">getHead</span><span class="p">().</span><span class="na">getNext</span><span class="p">();</span>
+
+        <span class="n">leftList</span> <span class="o">=</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">leftList</span><span class="p">.</span><span class="na">getPrevious</span><span class="p">().</span><span class="na">getData</span><span class="p">());</span>
+
+
+        <span class="c1">// for (int i = 0; i &lt; size; i++) {</span>
+
+        <span class="c1">//     leftList = queue.getHead();</span>
+        <span class="c1">//     rightList = queue.getHead().getNext();</span>
+
+        <span class="c1">//     int index = i; </span>
+
+        <span class="c1">//     T min = leftList.getData(); </span>
+
+
+        <span class="c1">//     for (int j = i + 1; j &lt; size; j++) {</span>
+
+        <span class="c1">//         // comparison++;</span>
+
+        <span class="c1">//         T left = leftList.getData();</span>
+        <span class="c1">//         T right = rightList.getData();</span>
+
+
+        <span class="c1">//         if (min.toString().compareTo(right.toString()) &gt; 0) {</span>
+
+        <span class="c1">//             min = right; </span>
+        <span class="c1">//             index = j; </span>
+
+        <span class="c1">//             // T temp = left;</span>
+        <span class="c1">//             // leftList.setData(right);</span>
+
+
+
+        <span class="c1">//             // leftList.getNext().setData(temp); </span>
+
+        <span class="c1">//             // swap++;</span>
+
+        <span class="c1">//             System.out.println(min);</span>
+
+        <span class="c1">//         }</span>
+
+        <span class="c1">//         System.out.println(min);</span>
+
+        <span class="c1">//         leftList = leftList.getNext();</span>
+        <span class="c1">//         rightList = leftList.getNext();</span>
+
+        <span class="c1">//     }</span>
+
+        <span class="c1">//     T temp = leftList.getData(); </span>
+        <span class="c1">//     leftList.setData(min);</span>
+
+        <span class="c1">//     for (int k = 0; k &lt; index; k++) {</span>
+        <span class="c1">//         leftList</span>
+        <span class="c1">//     }</span>
+        <span class="c1">// }</span>
+
+
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="n">queueReturn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+        <span class="c1">// // for (int i = 0; i &lt; size; i++) {</span>
+
+        <span class="c1">// //     queueReturn.add(leftList.getData());</span>
+
+        <span class="c1">// //     leftList = leftList.getNext();</span>
+
+        <span class="c1">// // }</span>
+        
+
+        <span class="k">return</span> <span class="n">queueReturn</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">SelectionTester</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+        
+        <span class="n">Integer</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[]</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">addList</span><span class="p">(</span><span class="n">words</span><span class="p">);</span>
+
+        <span class="n">Selection</span> <span class="n">selector</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Selection</span><span class="p">();</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">selector</span><span class="p">.</span><span class="na">selection</span><span class="p">(</span><span class="n">queue</span><span class="p">));</span>
+        <span class="n">selector</span><span class="p">.</span><span class="na">selection</span><span class="p">(</span><span class="n">queue</span><span class="p">).</span><span class="na">printQueue</span><span class="p">();</span>
+       
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">SelectionTester</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">java.lang.NullPointerException: Cannot invoke &#34;REPL.$JShell$13$LinkedList.getData()&#34; because the return value of &#34;REPL.$JShell$13$LinkedList.getPrevious()&#34; is null</span>
+<span class="ansi-red-intense-fg ansi-bold">	at Selection.selection(#25:24)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at SelectionTester.main(#23:1)</span>
+<span class="ansi-red-intense-fg ansi-bold">	at .(#39:1)</span></pre>
 </div>
 </div>
 
