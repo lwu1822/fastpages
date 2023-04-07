@@ -97,7 +97,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      12 min read
+      14 min read
     
 </span></p>
 
@@ -668,15 +668,17 @@ I don't like pigs for pets
 	<span class="c1">// Instance data</span>
 	<span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">classname</span><span class="p">;</span>
 	<span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">rating</span><span class="p">;</span>
+	<span class="kd">public</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">index</span><span class="p">;</span> 
 
 	<span class="cm">/* constructor</span>
 <span class="cm">	 *</span>
 <span class="cm">	 */</span>
-	<span class="kd">public</span> <span class="nf">ClassRating</span><span class="p">(</span><span class="n">String</span> <span class="n">classname</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rating</span><span class="p">)</span>
+	<span class="kd">public</span> <span class="nf">ClassRating</span><span class="p">(</span><span class="n">String</span> <span class="n">classname</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rating</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">)</span>
 	<span class="p">{</span>
 		<span class="kd">super</span><span class="p">.</span><span class="na">setType</span><span class="p">(</span><span class="s">"ClassRating"</span><span class="p">);</span>
 		<span class="k">this</span><span class="p">.</span><span class="na">classname</span> <span class="o">=</span> <span class="n">classname</span><span class="p">;</span>
 		<span class="k">this</span><span class="p">.</span><span class="na">rating</span> <span class="o">=</span> <span class="n">rating</span><span class="p">;</span>
+		<span class="k">this</span><span class="p">.</span><span class="na">index</span> <span class="o">=</span> <span class="n">index</span><span class="p">;</span> 
 	<span class="p">}</span>
 
 	<span class="cm">/* 'Collectable' requires getKey to help enforce KeyTypes usage */</span>
@@ -712,9 +714,9 @@ I don't like pigs for pets
 	<span class="c1">// Test data initializer</span>
 	<span class="kd">public</span> <span class="kd">static</span> <span class="n">ClassRating</span><span class="o">[]</span> <span class="nf">classes</span><span class="p">()</span> <span class="p">{</span>
 		<span class="k">return</span> <span class="k">new</span> <span class="n">ClassRating</span><span class="o">[]</span><span class="p">{</span>
-				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP CSA"</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
-				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP Stats"</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
-				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP US History"</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP CSA"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP Stats"</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+				<span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP US History"</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 		<span class="p">};</span>
 	<span class="p">}</span>
 	
@@ -755,7 +757,7 @@ I don't like pigs for pets
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>class [LREPL.$JShell$15B$ClassRating; 3
+<pre>class [LREPL.$JShell$13$ClassRating; 3
 Collectable: ClassRating listed by title
 ClassRating: AP CSA, 4
 ClassRating: AP Stats, 3
@@ -850,15 +852,7 @@ ClassRating: AP US History, 4
 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"time: "</span> <span class="o">+</span> <span class="n">diff</span><span class="p">);</span>
         
-        <span class="c1">// // remove Pet</span>
-        <span class="c1">// String key = "Hobbes";</span>
-        <span class="c1">// Animal animal = pets.remove("Hobbes");</span>
-        <span class="c1">// if (animal == null) {</span>
-        <span class="c1">//     System.out.println( key + " not found");</span>
-        <span class="c1">// } else {</span>
-        <span class="c1">//     System.out.println("Removed: " + key + ", " + animal);</span>
-        <span class="c1">// }</span>
-        <span class="c1">// pets.print();</span>
+       
 
     <span class="p">}</span>
 <span class="p">}</span>
@@ -876,6 +870,131 @@ ClassRating: AP US History, 4
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>time: 531001
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.HashMap</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Reviews</span> <span class="p">{</span>
+    <span class="c1">// create a new HashMap</span>
+    <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="p">,</span> <span class="n">ClassRating</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+
+    <span class="cm">/* Add Pets</span>
+<span class="cm">     * </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">Reviews</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// add some key-value pairs to the HashMap</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">names</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="k">new</span> <span class="n">ClassRating</span><span class="p">(</span><span class="s">"AP CSA"</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">6</span><span class="p">),</span> <span class="n">i</span><span class="p">));</span>
+        <span class="p">}</span>
+   
+    <span class="p">}</span> 
+
+    <span class="cm">/* Remove Pet</span>
+<span class="cm">     * </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="n">ClassRating</span> <span class="nf">remove</span><span class="p">(</span><span class="n">String</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// check if a key exists in the HashMap then remove</span>
+        <span class="n">ClassRating</span> <span class="n">classReview</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="na">containsKey</span><span class="p">(</span><span class="n">key</span><span class="p">))</span> <span class="p">{</span>
+            <span class="n">classReview</span> <span class="o">=</span> <span class="n">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+            <span class="n">names</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">key</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">classReview</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* Print Pets</span>
+<span class="cm">     * </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">print</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// iterate over the keys in the HashMap</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">name</span><span class="p">:</span> <span class="n">names</span><span class="p">.</span><span class="na">keySet</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">ClassRating</span> <span class="n">obj</span> <span class="o">=</span> <span class="n">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span> <span class="o">+</span> <span class="s">" is a "</span> <span class="o">+</span> <span class="n">obj</span><span class="p">.</span><span class="na">getClassname</span><span class="p">()</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">obj</span><span class="p">.</span><span class="na">getRating</span><span class="p">());</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="cm">/* Tester Method</span>
+<span class="cm">     * </span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+
+        <span class="c1">// intialize Pets</span>
+        <span class="n">Reviews</span> <span class="n">cr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Reviews</span><span class="p">();</span>
+        <span class="c1">// cr.print();</span>
+        
+        <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="mi">4500</span><span class="p">;</span> 
+
+
+        <span class="kt">long</span> <span class="n">start</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="kt">long</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="n">Integer</span> <span class="n">num</span> <span class="p">:</span> <span class="n">cr</span><span class="p">.</span><span class="na">names</span><span class="p">.</span><span class="na">keySet</span><span class="p">())</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">key</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">end</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+
+        <span class="kt">long</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"time: "</span> <span class="o">+</span> <span class="n">diff</span><span class="p">);</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">cr</span><span class="p">.</span><span class="na">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+        <span class="kt">int</span> <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+        <span class="kt">int</span> <span class="n">high</span> <span class="o">=</span>  <span class="mi">4999</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">found</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">key</span> <span class="o">=</span> <span class="mi">4500</span><span class="p">;</span> 
+        <span class="k">while</span> <span class="p">(</span><span class="n">high</span> <span class="o">&gt;=</span> <span class="n">low</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span> <span class="o">+</span> <span class="n">low</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">cr</span><span class="p">.</span><span class="na">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">mid</span><span class="p">).</span><span class="na">index</span> <span class="o">==</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">found</span> <span class="o">=</span> <span class="n">mid</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cr</span><span class="p">.</span><span class="na">names</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">mid</span><span class="p">).</span><span class="na">index</span> <span class="o">&gt;</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">//System.out.println(cr.names.get(5).index == 5);</span>
+        
+       
+
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Reviews</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>time: 533418
+ClassRating: AP CSA, 3
+true
 </pre>
 </div>
 </div>
