@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "FRQ Practice",
-            "content": "",
+            "content": "2022 . public int getScore() { private int points = 0; if (levelOne.goalReached()) { points += levelOne.getPoints(); if (levelTwo.goalReached()) { points += levelTwo.getPoints(); if (levelThree.goalReached()) { points += levelThree.getPoints(); } } } if (isBonus()) { points *= 3; } return points; } . public class Test { public void testMethod() { int a = 0; System.out.println(a); } public static void main(String[] args) { Test a = new Test(); a.testMethod(); } } Test.main(null) . 0 .",
             "url": "https://lwu1822.github.io/fastpages/2023/04/07/CSA-FRQ_Practice.html",
             "relUrl": "/2023/04/07/CSA-FRQ_Practice.html",
             "date": " • Apr 7, 2023"

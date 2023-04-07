@@ -141,6 +141,86 @@ window.onload = wrap_img;
 
 <div class="container" id="notebook-container">
         
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="2022">2022<a class="anchor-link" href="#2022"> </a></h1>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kt">int</span> <span class="nf">getScore</span><span class="p">()</span> <span class="p">{</span>
+	<span class="kd">private</span> <span class="kt">int</span> <span class="n">points</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">levelOne</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+		<span class="n">points</span> <span class="o">+=</span> <span class="n">levelOne</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">levelTwo</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">points</span> <span class="o">+=</span> <span class="n">levelTwo</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">levelThree</span><span class="p">.</span><span class="na">goalReached</span><span class="p">())</span> <span class="p">{</span>
+                <span class="n">points</span> <span class="o">+=</span> <span class="n">levelThree</span><span class="p">.</span><span class="na">getPoints</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isBonus</span><span class="p">())</span> <span class="p">{</span>
+        <span class="n">points</span> <span class="o">*=</span> <span class="mi">3</span><span class="p">;</span> 
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">points</span><span class="p">;</span> 
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testMethod</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">a</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Test</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="p">();</span> 
+        <span class="n">a</span><span class="p">.</span><span class="na">testMethod</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">Test</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
