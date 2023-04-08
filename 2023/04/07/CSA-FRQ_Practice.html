@@ -214,6 +214,44 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Textbook</span> <span class="kd">extends</span> <span class="n">Book</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">edition</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">Textbook</span><span class="p">(</span><span class="n">String</span> <span class="n">title</span><span class="p">,</span> <span class="kt">double</span> <span class="n">price</span><span class="p">,</span> <span class="kt">int</span> <span class="n">edition</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">price</span><span class="p">);</span> 
+        <span class="k">this</span><span class="p">.</span><span class="na">edition</span> <span class="o">=</span> <span class="n">edition</span><span class="p">;</span> 
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getEdition</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">edition</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getBookInfo</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kd">super</span><span class="p">.</span><span class="na">getBookInfo</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;-&quot;</span> <span class="o">+</span> <span class="n">edition</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">canSubstituteFor</span><span class="p">(</span><span class="n">Textbook</span> <span class="n">textbook</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">getTitle</span><span class="p">().</span><span class="na">equals</span><span class="p">(</span><span class="n">textbook</span><span class="p">.</span><span class="na">getTitle</span><span class="p">())</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="na">getEdition</span> <span class="o">&gt;=</span> <span class="n">textbook</span><span class="p">.</span><span class="na">getEdition</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span> 
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="p">{</span>
     <span class="kt">int</span> <span class="n">a</span><span class="p">;</span> 
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testMethod</span><span class="p">()</span> <span class="p">{</span>
