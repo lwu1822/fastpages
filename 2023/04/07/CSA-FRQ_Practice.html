@@ -252,20 +252,29 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">a</span><span class="p">;</span> 
-    <span class="kt">int</span> <span class="n">testVar</span><span class="p">;</span> 
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">Testing</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
 
-
-    <span class="kd">public</span> <span class="nf">Test</span><span class="p">(</span><span class="kt">int</span> <span class="n">testVar</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">testVar</span> <span class="o">=</span> <span class="n">testVar</span><span class="p">;</span> 
+    <span class="kd">public</span> <span class="nf">Testing</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> 
+        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> 
     <span class="p">}</span>
 
-   
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getA</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getB</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="p">{</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;hi: &quot;</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+        <span class="n">Testing</span> <span class="n">testObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Testing</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">testObj</span><span class="p">.</span><span class="na">getA</span><span class="p">());</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">Test</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
@@ -280,10 +289,8 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(&#34;hi: &#34; + </span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">b.toString</span><span class="ansi-black-intense-fg ansi-bold">());</span>
-<span class="ansi-red-intense-fg ansi-bold">int cannot be dereferenced</span>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
 </pre>
 </div>
 </div>
