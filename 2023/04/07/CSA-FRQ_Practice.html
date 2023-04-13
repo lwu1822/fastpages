@@ -252,39 +252,24 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">Testing</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">A</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+   <span class="kd">public</span> <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="nf">Testing</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> 
-        <span class="k">this</span><span class="p">.</span><span class="na">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> 
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getA</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getB</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="n">Testing</span> <span class="nf">pass</span><span class="p">(</span><span class="n">Testing</span> <span class="n">testObjPara</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">testObjPara</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Testing</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">changeA</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Test</span> <span class="p">{</span>
-
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">B</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Testing</span> <span class="n">testObj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Testing</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">testObj</span><span class="p">.</span><span class="na">getA</span><span class="p">());</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">testObj</span><span class="p">.</span><span class="na">pass</span><span class="p">(</span><span class="n">testObj</span><span class="p">).</span><span class="na">getA</span><span class="p">());</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">testObj</span><span class="p">.</span><span class="na">getA</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="na">a</span><span class="p">);</span>
 
+        <span class="n">A</span><span class="p">.</span><span class="na">changeA</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="na">a</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="n">Test</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+<span class="n">B</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -297,9 +282,8 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>1
-0
-1
+<pre>5
+5
 </pre>
 </div>
 </div>
