@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Unit 3 Lesson 16, Student Copy | Lily</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Unit 3 Lesson 16, Student Copy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
+<link rel="canonical" href="https://lwu1822.github.io/fastpages/2022/12/13/w16_CSP3.16LessonNotebook.html" />
+<meta property="og:url" content="https://lwu1822.github.io/fastpages/2022/12/13/w16_CSP3.16LessonNotebook.html" />
+<meta property="og:site_name" content="Lily" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-12-13T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Unit 3 Lesson 16, Student Copy" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-12-13T00:00:00-06:00","datePublished":"2022-12-13T00:00:00-06:00","description":"An easy to use blogging platform with support for Jupyter Notebooks.","headline":"Unit 3 Lesson 16, Student Copy","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/2022/12/13/w16_CSP3.16LessonNotebook.html"},"url":"https://lwu1822.github.io/fastpages/2022/12/13/w16_CSP3.16LessonNotebook.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://lwu1822.github.io/fastpages/feed.xml" title="Lily" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpages/">Lily</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpages/about/">About Me</a><a class="page-link" href="/fastpages/notes/">Notes</a><a class="page-link" href="/fastpages/weekly-work/">Weekly Work</a><a class="page-link" href="/fastpages/cb/">College Board</a><a class="page-link" href="/fastpages/class/">Other classes</a><a class="page-link" href="/fastpages/search/">Search</a><a class="page-link" href="/fastpages/categories/">Tags</a><a class="page-link" href="/fastpages/t/CSA">CSA</a><a class="page-link" href="/fastpages/CSP/">CSP</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Unit 3 Lesson 16, Student Copy</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-12-13T00:00:00-06:00" itemprop="datePublished">
+        Dec 13, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      17 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/lwu1822/fastpages/tree/master/_notebooks/2022-12-13-w16_CSP3.16LessonNotebook.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/lwu1822/fastpages/master?filepath=_notebooks%2F2022-12-13-w16_CSP3.16LessonNotebook.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/lwu1822/fastpages/blob/master/_notebooks/2022-12-13-w16_CSP3.16LessonNotebook.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2Flwu1822%2Ffastpages%2Fblob%2Fmaster%2F_notebooks%2F2022-12-13-w16_CSP3.16LessonNotebook.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/fastpages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+<li class="toc-entry toc-h3"><a href="#Hack-#1---Class-Notes">Hack #1 - Class Notes </a></li>
+<li class="toc-entry toc-h3"><a href="#Hack-#2---Functions-Classwork">Hack #2 - Functions Classwork </a></li>
+<li class="toc-entry toc-h2"><a href="#Bonus">Bonus </a></li>
+<li class="toc-entry toc-h2"><a href="#Check-in">Check in </a></li>
+<li class="toc-entry toc-h2"><a href="#Coin-flip-activity">Coin flip activity </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Hack-#3---Binary-Simulation-Problem">Hack #3 - Binary Simulation Problem </a></li>
+<li class="toc-entry toc-h3"><a href="#Hack-#4---Thinking-through-a-problem">Hack #4 - Thinking through a problem </a></li>
+<li class="toc-entry toc-h3"><a href="#Hack-5---Applying-your-knowledge-to-situation-based-problems">Hack 5 - Applying your knowledge to situation based problems </a></li>
+<li class="toc-entry toc-h3"><a href="#Hack-#6-/-Challenge---Taking-real-life-problems-and-implementing-them-into-code">Hack #6 / Challenge - Taking real life problems and implementing them into code </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-12-13-w16_CSP3.16LessonNotebook.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-#1---Class-Notes">
+<a class="anchor" href="#Hack-#1---Class-Notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack #1 - Class Notes<a class="anchor-link" href="#Hack-#1---Class-Notes"> </a>
+</h3>
+<p>Write any extra notes you have here</p>
+<ul>
+<li>
+<p><mark>Simulations</mark>: Abstractions that mimic things that occur in the real world, you can use simulations to calculate things that you can't test in the real world</p>
+<p>May contain bias because some real world elements can not be factored in</p>
+<p>Use random number generators to <strong>simulate</strong> randomness and variability. Applications: Rolling a dice, flipping a coin, spinners</p>
+<p>Contains varying set of values to demonstrate the variableness of real world phenomenon</p>
+<p>Some details may need to be simplified within a simulation</p>
+</li>
+<li>
+<p>Random number generator: You can use the random library: <code>import random</code></p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-#2---Functions-Classwork">
+<a class="anchor" href="#Hack-#2---Functions-Classwork" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack #2 - Functions Classwork<a class="anchor-link" href="#Hack-#2---Functions-Classwork"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> 
+<span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>26
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mycloset</span><span class="p">():</span>
+    <span class="n">myclothes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"red shoes"</span><span class="p">,</span> <span class="s2">"green pants"</span><span class="p">,</span> <span class="s2">"tie"</span><span class="p">,</span> <span class="s2">"belt"</span><span class="p">]</span>
+
+    <span class="n">trash</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">myclothes</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Throwing away "</span> <span class="o">+</span> <span class="n">trash</span><span class="p">)</span>
+    <span class="n">myclothes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">trash</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"My clothes: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myclothes</span><span class="p">))</span>
+    
+<span class="n">mycloset</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Throwing away tie
+My clothes: ['red shoes', 'green pants', 'belt']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Bonus">
+<a class="anchor" href="#Bonus" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bonus<a class="anchor-link" href="#Bonus"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mycloset</span><span class="p">():</span>
+    <span class="n">myclothes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"red shoes"</span><span class="p">,</span> <span class="s2">"green pants"</span><span class="p">,</span> <span class="s2">"tie"</span><span class="p">,</span> <span class="s2">"belt"</span><span class="p">]</span>
+    <span class="n">extraclothes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"white socks"</span><span class="p">,</span> <span class="s2">"polka dot socks"</span><span class="p">]</span>
+
+    <span class="n">choice</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"Add or remove clothes? "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Add or remove clothes? "</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">choice</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"add"</span><span class="p">:</span> 
+        <span class="n">addItem</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">extraclothes</span><span class="p">)</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Adding item "</span> <span class="o">+</span> <span class="n">addItem</span> <span class="o">+</span> <span class="s2">"..."</span><span class="p">)</span>
+        <span class="n">myclothes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">addItem</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"My clothes: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myclothes</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="s2">"remove"</span><span class="p">:</span> 
+        <span class="n">trash</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">myclothes</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Throwing away "</span> <span class="o">+</span> <span class="n">trash</span><span class="p">)</span>
+        <span class="n">myclothes</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">trash</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"My clothes: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myclothes</span><span class="p">))</span>
+        
+  
+    
+<span class="n">mycloset</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Add or remove clothes? 
+add
+Adding item polka dot socks...
+My clothes: ['red shoes', 'green pants', 'tie', 'belt', 'polka dot socks']
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Check-in">
+<a class="anchor" href="#Check-in" aria-hidden="true"><span class="octicon octicon-link"></span></a>Check in<a class="anchor-link" href="#Check-in"> </a>
+</h2>
+<p>Answer: 3</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Coin-flip-activity">
+<a class="anchor" href="#Coin-flip-activity" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coin flip activity<a class="anchor-link" href="#Coin-flip-activity"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">coinflip</span><span class="p">():</span>         <span class="c1">#def function </span>
+    <span class="n">randomflip</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#picks either 0 or 2 randomly (50/50 chance of either) </span>
+    <span class="k">if</span> <span class="n">randomflip</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">randomflip</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1">#assigning 0 and 1 to be heads--&gt; if 0 or 1 is chosen then it will print, "Heads"</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Heads"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">randomflip</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="c1">#assigning 2 to be tails--&gt; if 2 is chosen then it will print, "Tails"</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Tails"</span><span class="p">)</span>
+
+<span class="c1">#Tossing the coin 5 times:</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">coinflip</span><span class="p">()</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">coinflip</span><span class="p">()</span>
+<span class="n">t3</span> <span class="o">=</span> <span class="n">coinflip</span><span class="p">()</span>
+<span class="n">t4</span> <span class="o">=</span> <span class="n">coinflip</span><span class="p">()</span>
+<span class="n">t5</span> <span class="o">=</span> <span class="n">coinflip</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Heads
+Heads
+Heads
+Tails
+Heads
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-#3---Binary-Simulation-Problem">
+<a class="anchor" href="#Hack-#3---Binary-Simulation-Problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack #3 - Binary Simulation Problem<a class="anchor-link" href="#Hack-#3---Binary-Simulation-Problem"> </a>
+</h3>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="k">def</span> <span class="nf">randomnum</span><span class="p">():</span> <span class="c1"># function for generating random int</span>
+    <span class="n">ranNum</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ranNum</span>
+
+<span class="k">def</span> <span class="nf">converttobin</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># function for converting decimal to binary</span>
+    <span class="n">numOfBinary</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">binary</span> <span class="o">=</span> <span class="p">[];</span> 
+    <span class="n">output</span> <span class="o">=</span> <span class="s2">""</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">numOfBinary</span><span class="p">):</span> 
+        <span class="n">binary</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="mi">2</span><span class="o">**</span><span class="p">(</span><span class="n">numOfBinary</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)))</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">binary</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">-</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">n</span> <span class="o">-=</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">"1"</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">"0"</span>
+        
+    <span class="k">return</span> <span class="n">output</span>
+
+<span class="k">def</span> <span class="nf">survivors</span><span class="p">(</span><span class="n">binary</span><span class="p">):</span> <span class="c1"># function to assign position</span>
+    <span class="n">survivorstatus</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"Jiya"</span><span class="p">,</span> <span class="s2">"Shruthi"</span><span class="p">,</span> <span class="s2">"Noor"</span><span class="p">,</span> <span class="s2">"Ananya"</span> <span class="p">,</span> <span class="s2">"Peter Parker"</span><span class="p">,</span> <span class="s2">"Andrew Garfield"</span><span class="p">,</span> <span class="s2">"Tom Holland"</span><span class="p">,</span> <span class="s2">"Tobey Maguire"</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">survivorstatus</span><span class="p">)):</span> 
+        <span class="k">if</span> <span class="n">binary</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">"0"</span><span class="p">:</span> 
+            <span class="nb">print</span><span class="p">(</span><span class="n">survivorstatus</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" is a zombie"</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span> 
+            <span class="nb">print</span><span class="p">(</span><span class="n">survivorstatus</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="s2">" is not a zombie"</span><span class="p">)</span> 
+    <span class="c1"># replace the names above with your choice of people in the house</span>
+
+<span class="n">ranNum</span> <span class="o">=</span> <span class="n">randomnum</span><span class="p">()</span>
+<span class="n">binaryNum</span> <span class="o">=</span> <span class="n">converttobin</span><span class="p">(</span><span class="n">ranNum</span><span class="p">)</span>
+<span class="n">survivors</span><span class="p">(</span><span class="n">binaryNum</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Jiya is a zombie
+Shruthi is a zombie
+Noor is not a zombie
+Ananya is not a zombie
+Peter Parker is not a zombie
+Andrew Garfield is a zombie
+Tom Holland is a zombie
+Tobey Maguire is a zombie
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-#4---Thinking-through-a-problem">
+<a class="anchor" href="#Hack-#4---Thinking-through-a-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack #4 - Thinking through a problem<a class="anchor-link" href="#Hack-#4---Thinking-through-a-problem"> </a>
+</h3>
+<ul>
+<li>create your own simulation involving a dice roll</li>
+<li>should include randomization and a function for rolling + multiple trials</li>
+</ul>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Dice roll to see which player goes first (highest number goes first)"</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">rollDice</span><span class="p">():</span> 
+    <span class="n">dice</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dice</span>
+
+<span class="n">player1</span> <span class="o">=</span> <span class="n">rollDice</span><span class="p">()</span>
+<span class="n">player2</span> <span class="o">=</span> <span class="n">rollDice</span><span class="p">()</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Player 1's roll is: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">player1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"Player 2's roll is: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">player2</span><span class="p">))</span>
+
+
+<span class="k">if</span> <span class="p">(</span><span class="n">player1</span> <span class="o">&gt;</span> <span class="n">player2</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Player 1 goes first"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">player2</span> <span class="o">&gt;</span> <span class="n">player1</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Player 2 goes first"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="n">rollDice</span><span class="p">()</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Dice roll to see which player goes first (highest number goes first)
+Player 1's roll is: 1
+Player 2's roll is: 5
+Player 2 goes first
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-5---Applying-your-knowledge-to-situation-based-problems">
+<a class="anchor" href="#Hack-5---Applying-your-knowledge-to-situation-based-problems" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack 5 - Applying your knowledge to situation based problems<a class="anchor-link" href="#Hack-5---Applying-your-knowledge-to-situation-based-problems"> </a>
+</h3>
+<p>Using the questions bank below, create a quiz that presents the user a random question and calculates the user's score. You can use the template below or make your own. Making your own using a loop can give you extra points.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ol>
+<li>A researcher gathers data about the effect of Advanced Placement®︎ classes on students' success in college and career, and develops a simulation to show how a sequence of AP classes affect a hypothetical student's pathway.Several school administrators are concerned that the simulation contains bias favoring high-income students, however.<ul>
+<li>answer options:<ol>
+<li>The simulation is an abstraction and therefore cannot contain any bias</li>
+<li>The simulation may accidentally contain bias due to the exclusion of details.</li>
+<li>If the simulation is found to contain bias, then it is not possible to remove the bias from the simulation.</li>
+<li>The only way for the simulation to be biased is if the researcher intentionally used data that favored their desired output.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Jack is trying to plan his financial future using an online tool. The tool starts off by asking him to input details about his current finances and career. It then lets him choose different future scenarios, such as having children. For each scenario chosen, the tool does some calculations and outputs his projected savings at the ages of 35, 45, and 55.Would that be considered a simulation and why?<ul>
+<li>answer options<ol>
+<li>No, it's not a simulation because it does not include a visualization of the results.</li>
+<li>No, it's not a simulation because it does not include all the details of his life history and the future financial environment.</li>
+<li>Yes, it's a simulation because it runs on a computer and includes both user input and computed output.</li>
+<li>Yes, it's a simulation because it is an abstraction of a real world scenario that enables the drawing of inferences.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Sylvia is an industrial engineer working for a sporting goods company. She is developing a baseball bat that can hit balls with higher accuracy and asks their software engineering team to develop a simulation to verify the design.Which of the following details is most important to include in this simulation?<ul>
+<li>answer options<ol>
+<li>Realistic sound effects based on the material of the baseball bat and the velocity of the hit</li>
+<li>A depiction of an audience in the stands with lifelike behavior in response to hit accuracy</li>
+<li>Accurate accounting for the effects of wind conditions on the movement of the ball</li>
+<li>A baseball field that is textured to differentiate between the grass and the dirt</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Ashlynn is an industrial engineer who is trying to design a safer parachute. She creates a computer simulation of the parachute opening at different heights and in different environmental conditions.What are advantages of running the simulation versus an actual experiment?<ul>
+<li>answer options<ol>
+<li>The simulation will not contain any bias that favors one body type over another, while an experiment will be biased.</li>
+<li>The simulation can be run more safely than an actual experiment</li>
+<li>The simulation will accurately predict the parachute's safety level, while an experiment may be inaccurate due to faulty experimental design.</li>
+<li>The simulation can test the parachute design in a wide range of environmental conditions that may be difficult to reliably reproduce in an experiment.</li>
+</ol>
+</li>
+<li>this question has 2 correct answers</li>
+</ul>
+</li>
+<li>What library can be used when creating a simulation?<ul>
+<li>answer</li>
+</ul>
+<ol>
+<li>random</li>
+</ol>
+</li>
+<li>What code would you use to simulate a coin flip using the random library? (Use 0 and 1 to represent heads/tails)<ul>
+<li>answer</li>
+</ul>
+<ol>
+<li>random.randint(0, 1)</li>
+</ol>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"A researcher gathers data about the effect of Advanced Placement classes on students'"</span> \
+        <span class="o">+</span> <span class="s2">"success in college and career, and develops a simulation to show how a sequence of AP"</span> \
+        <span class="o">+</span> <span class="s2">"classes affect a hypothetical student's pathway.Several school administrators are"</span> \
+        <span class="o">+</span> <span class="s2">"concerned that the simulation contains bias favoring high-income students, however."</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">1. The simulation is an abstraction and therefore cannot contain any bias"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">2. The simulation may accidentally contain bias due to the exclusion of details"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">3. If the simulation is found to contain bias, then it is not possible to remove the bias from the simulation"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">4. The only way for the simulation to be biased is if the researcher intentionally used data that favored their desired output."</span><span class="p">,</span>
+        
+    <span class="s2">"Jack is trying to plan his financial future using an online tool. The tool starts off by asking him to input details about his current finances and career. It then lets him choose different future scenarios, such as having children. For each scenario chosen, the tool does some calculations and outputs his projected savings at the ages of 35, 45, and 55.Would that be considered a simulation and why? </span><span class="se">\n</span><span class="s2"> "</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">1. No, it's not a simulation because it does not include a visualization of the results."</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">2. No, it's not a simulation because it does not include all the details of his life history and the future financial environment."</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">3. Yes, it's a simulation because it runs on a computer and includes both user input and computed output."</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">4. Yes, it's a simulation because it is an abstraction of a real world scenario that enables the drawing of inferences."</span><span class="p">,</span>
+        
+    <span class="s2">"Sylvia is an industrial engineer working for a sporting goods company. She is developing a baseball bat that can hit balls with higher accuracy and asks"</span> \
+        <span class="o">+</span> <span class="s2">"their software engineering team to develop a simulation to verify the design.Which of the following details is most important to include in this simulation?"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">1. Realistic sound effects based on the material of the baseball bat and the velocity of the hit"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">2. A depiction of an audience in the stands with lifelike behavior in response to hit accuracy"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">3. Accurate accounting for the effects of wind conditions on the movement of the ball"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">4. A baseball field that is textured to differentiate between the grass and the dirt"</span><span class="p">,</span> 
+        
+    <span class="s2">"Ashlynn is an industrial engineer who is trying to design a safer parachute. She creates a computer simulation of the parachute opening at different heights"</span> \
+        <span class="o">+</span> <span class="s2">"and in different environmental conditions.What are advantages of running the simulation versus an actual experiment?"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">1. The simulation will not contain any bias that favors one body type over another, while an experiment will be biased."</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">2. The simulation can be run more safely than an actual experiment"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">3. The simulation will accurately predict the parachute's safety level, while an experiment may be inaccurate due to faulty experimental design."</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">4. The simulation can test the parachute design in a wide range of environmental conditions that may be difficult to reliably reproduce in an experiment."</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">* this question has 2 correct answers, answer with a comma and space in between (ex: a, b)"</span><span class="p">,</span> 
+    
+    <span class="s2">"What library can be used when creating a simulation?"</span><span class="p">,</span> 
+    
+    <span class="s2">"What code would you use to simulate a coin flip using the random library? (Use 0 and 1 to represent heads/tails)"</span>
+
+<span class="p">]</span>
+
+<span class="n">answers</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"2"</span><span class="p">],</span>  
+<span class="p">[</span><span class="s2">"4"</span><span class="p">],</span> 
+<span class="p">[</span><span class="s2">"3"</span><span class="p">],</span> 
+<span class="p">[</span><span class="s2">"2, 4"</span><span class="p">,</span> <span class="s2">"4, 2"</span><span class="p">],</span>
+<span class="p">[</span><span class="s2">"random"</span><span class="p">],</span>
+<span class="p">[</span><span class="s2">"random.randint(0, 1)"</span><span class="p">]</span>
+<span class="p">]</span>
+
+
+<span class="n">order</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)),</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">))</span> 
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)):</span>
+    <span class="n">storage</span> <span class="o">=</span> <span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> 
+    <span class="n">storageAnswer</span> <span class="o">=</span> <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">questions</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="n">answers</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">answers</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="n">questions</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">storage</span>
+    <span class="n">answers</span><span class="p">[</span><span class="n">order</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">storageAnswer</span>
+
+
+
+<span class="n">number</span> <span class="o">=</span> <span class="mi">0</span>  
+<span class="n">score</span> <span class="o">=</span> <span class="mi">0</span>
+
+
+
+<span class="k">def</span> <span class="nf">questionloop</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">question</span> <span class="ow">in</span> <span class="n">questions</span><span class="p">:</span>
+        <span class="k">global</span> <span class="n">number</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="n">usrAnswer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Enter answer: "</span> <span class="o">+</span> <span class="n">usrAnswer</span><span class="p">)</span>
+        <span class="n">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">)</span>
+        <span class="n">number</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your score is: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">score</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)))</span>
+    <span class="k">if</span> <span class="n">score</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mf">0.7</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Congrats! You passed!"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"You did not pass. Try again."</span><span class="p">)</span>
+    
+
+<span class="k">def</span> <span class="nf">answercheck</span><span class="p">(</span><span class="n">usrAnswer</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">answers</span><span class="p">[</span><span class="n">number</span><span class="p">])):</span>
+        <span class="k">if</span> <span class="n">usrAnswer</span> <span class="o">==</span> <span class="n">answers</span><span class="p">[</span><span class="n">number</span><span class="p">][</span><span class="n">i</span><span class="p">]:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"Correct!"</span><span class="p">)</span>
+            <span class="k">global</span> <span class="n">score</span>
+            <span class="n">score</span> <span class="o">+=</span> <span class="mi">1</span>
+            <span class="k">return</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Incorrect!"</span><span class="p">)</span>
+
+<span class="n">questionloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Jack is trying to plan his financial future using an online tool. The tool starts off by asking him to input details about his current finances and career. It then lets him choose different future scenarios, such as having children. For each scenario chosen, the tool does some calculations and outputs his projected savings at the ages of 35, 45, and 55.Would that be considered a simulation and why? 
+ 
+1. No, it's not a simulation because it does not include a visualization of the results.
+2. No, it's not a simulation because it does not include all the details of his life history and the future financial environment.
+3. Yes, it's a simulation because it runs on a computer and includes both user input and computed output.
+4. Yes, it's a simulation because it is an abstraction of a real world scenario that enables the drawing of inferences.
+Enter answer: 3
+Incorrect!
+A researcher gathers data about the effect of Advanced Placement classes on students'success in college and career, and develops a simulation to show how a sequence of APclasses affect a hypothetical student's pathway.Several school administrators areconcerned that the simulation contains bias favoring high-income students, however.
+1. The simulation is an abstraction and therefore cannot contain any bias
+2. The simulation may accidentally contain bias due to the exclusion of details
+3. If the simulation is found to contain bias, then it is not possible to remove the bias from the simulation
+4. The only way for the simulation to be biased is if the researcher intentionally used data that favored their desired output.
+Enter answer: 2
+Correct!
+Ashlynn is an industrial engineer who is trying to design a safer parachute. She creates a computer simulation of the parachute opening at different heightsand in different environmental conditions.What are advantages of running the simulation versus an actual experiment?
+1. The simulation will not contain any bias that favors one body type over another, while an experiment will be biased.
+2. The simulation can be run more safely than an actual experiment
+3. The simulation will accurately predict the parachute's safety level, while an experiment may be inaccurate due to faulty experimental design.
+4. The simulation can test the parachute design in a wide range of environmental conditions that may be difficult to reliably reproduce in an experiment.
+* this question has 2 correct answers, answer with a comma and space in between (ex: a, b)
+Enter answer: 4, 2
+Correct!
+Sylvia is an industrial engineer working for a sporting goods company. She is developing a baseball bat that can hit balls with higher accuracy and askstheir software engineering team to develop a simulation to verify the design.Which of the following details is most important to include in this simulation?
+1. Realistic sound effects based on the material of the baseball bat and the velocity of the hit
+2. A depiction of an audience in the stands with lifelike behavior in response to hit accuracy
+3. Accurate accounting for the effects of wind conditions on the movement of the ball
+4. A baseball field that is textured to differentiate between the grass and the dirt
+Enter answer: 3
+Correct!
+What library can be used when creating a simulation?
+Enter answer: random
+Correct!
+What code would you use to simulate a coin flip using the random library? (Use 0 and 1 to represent heads/tails)
+Enter answer: random.randint(0, 1)
+Correct!
+Your score is: 5/6
+Congrats! You passed!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hack-#6-/-Challenge---Taking-real-life-problems-and-implementing-them-into-code">
+<a class="anchor" href="#Hack-#6-/-Challenge---Taking-real-life-problems-and-implementing-them-into-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hack #6 / Challenge - Taking real life problems and implementing them into code<a class="anchor-link" href="#Hack-#6-/-Challenge---Taking-real-life-problems-and-implementing-them-into-code"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Create your own simulation based on your experiences/knowledge!
+Be creative! Think about instances in your own life, science, puzzles that can be made into simulations</p>
+<p>Some ideas to get your brain running: A simulation that breeds two plants and tells you phenotypes of offspring, an adventure simulation...</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I made a book recommender based on the genre that the person likes. The quiz first asks some questions to identify the person's preferred genre based on the greatest number of answer choices they selected (A corresponds to action, B corresponds to thriller, C corresponds to tragedy, and D corresponds to fantasy).</p>
+<p>This is pretty basic right now; but I wanted to create something to solve a problem in my life. I like reading books and sometimes it's hard for me to find a good one so I thought that making a book recommender would be cool.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">questions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">"What do you look for in movies?"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> A. Something with a lot of action!! Otherwise it's too boring"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> B. Something that keeps me at the edge of my seat"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> C. Something sentimental! I love sad stories :3"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> D. It must have magic!"</span><span class="p">,</span> 
+    <span class="s2">"What do you like most in a book?"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> A. A fast paced story. I don't care if there are plot holes. Just give me the action!"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> B. Plot twists are a MUST"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> C. I LOVE BOOKS WITH A SAD ENDING"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> D. Anything mythical! Take me to a land far, far away."</span><span class="p">,</span> 
+    <span class="s2">"What do you hate most about in a book?"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> A. Slow stories BORE ME TO DEATH"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> B. I can't stand predictable plots"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> C. I will cry if everyone gets a happy ending"</span>\
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> D. If the setting is in the modern world"</span><span class="p">,</span> 
+    <span class="s2">"Do you have a favorite genre?"</span>
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> A. Dystopian"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> B. Thriller"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> C. Tragedy"</span> \
+        <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2"> D. Fantasy"</span>
+<span class="p">]</span>
+
+<span class="n">aCounter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">bCounter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">cCounter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">dCounter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">questions</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">answer</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">questions</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Answer: "</span> <span class="o">+</span> <span class="n">answer</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">"A"</span><span class="p">):</span>
+        <span class="n">aCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">"B"</span><span class="p">):</span>
+        <span class="n">bCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">"C"</span><span class="p">):</span>
+        <span class="n">cCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">answer</span> <span class="o">==</span> <span class="s2">"D"</span><span class="p">):</span>
+        <span class="n">dCounter</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">aCounter</span> <span class="o">&gt;</span> <span class="n">bCounter</span> <span class="ow">and</span> <span class="n">aCounter</span> <span class="o">&gt;</span> <span class="n">cCounter</span> <span class="ow">and</span> <span class="n">aCounter</span> <span class="o">&gt;</span> <span class="n">dCounter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is dystopian"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Recommended books: Legend, The Hunger Games"</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">aCounter</span> <span class="ow">and</span> <span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">cCounter</span> <span class="ow">and</span> <span class="n">bCounter</span> <span class="o">&gt;</span> <span class="n">dCounter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is thriller"</span><span class="p">)</span>   
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Recommended books: One of us is Lying, Sherlock Holmes"</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">aCounter</span> <span class="ow">and</span> <span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">bCounter</span> <span class="ow">and</span> <span class="n">cCounter</span> <span class="o">&gt;</span> <span class="n">dCounter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is tragedy"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Recommended books: Salt to the Sea, The Fault in our Stars"</span><span class="p">)</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">dCounter</span> <span class="o">&gt;</span> <span class="n">aCounter</span> <span class="ow">and</span> <span class="n">dCounter</span> <span class="o">&gt;</span> <span class="n">bCounter</span> <span class="ow">and</span> <span class="n">dCounter</span> <span class="o">&gt;</span> <span class="n">cCounter</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Your genre is fantasy"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Recommended books: Lord of the Rings, The Hobbit"</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What do you look for in movies?
+ A. Something with a lot of action!! Otherwise it's too boring
+ B. Something that keeps me at the edge of my seat
+ C. Something sentimental! I love sad stories :3
+ D. It must have magic!
+Answer: C
+What do you like most in a book?
+ A. A fast paced story. I don't care if there are plot holes. Just give me the action!
+ B. Plot twists are a MUST
+ C. I LOVE BOOKS WITH A SAD ENDING
+ D. Anything mythical! Take me to a land far, far away.
+Answer: C
+What do you hate most about in a book?
+ A. Slow stories BORE ME TO DEATH
+ B. I can't stand predictable plots
+ C. I will cry if everyone gets a happy ending
+ D. If the setting is in the modern world
+Answer: C
+Do you have a favorite genre?
+ A. Dystopian
+ B. Thriller
+ C. Tragedy
+ D. Fantasy
+Answer: C
+Your genre is tragedy
+Recommended books: Salt to the Sea, The Fault in our Stars
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="lwu1822/fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/fastpages/2022/12/13/w16_CSP3.16LessonNotebook.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="https://lwu1822.github.io/fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
