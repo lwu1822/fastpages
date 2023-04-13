@@ -254,28 +254,25 @@ window.onload = wrap_img;
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">A</span><span class="p">{</span>
 
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">b</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setA</span><span class="p">(</span><span class="n">String</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">a</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="p">}</span>
+
 <span class="p">}</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">b</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">B</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">a</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
 
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">c</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;z&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">d</span><span class="p">(</span><span class="n">A</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">obj</span><span class="p">.</span><span class="na">b</span><span class="p">();</span>
-    <span class="p">}</span>
+   
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">B</span> <span class="n">test</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
-        <span class="n">test</span><span class="p">.</span><span class="na">d</span><span class="p">(</span><span class="n">test</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">B</span><span class="p">.</span><span class="na">a</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">B</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
@@ -290,8 +287,10 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>y
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-black-intense-fg ansi-bold">|   </span><span class="ansi-black-intense-fg ansi-bold">        System.out.println(</span><span class="ansi-black-intense-fg ansi-red-bg ansi-bold">B.a</span><span class="ansi-black-intense-fg ansi-bold">);</span>
+<span class="ansi-red-intense-fg ansi-bold">non-static variable a cannot be referenced from a static context</span>
 </pre>
 </div>
 </div>
