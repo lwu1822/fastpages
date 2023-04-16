@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      14 min read
+      15 min read
     
 </span></p>
 
@@ -893,6 +893,12 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Bubble">Bubble<a class="anchor-link" href="#Bubble"> </a></h1>
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -1073,9 +1079,9 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>REPL.$JShell$16EH$Queue@4b866afa
-time: 1382351197 nanoseconds
-swaps: 6266706
+<pre>REPL.$JShell$16EH$Queue@bb88b74
+time: 1432165772 nanoseconds
+swaps: 6162066
 comparison: 24995000
 </pre>
 </div>
@@ -1087,6 +1093,26 @@ comparison: 24995000
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The twelve times were:
+1382351197
+1518772694
+1419194044
+1482452370
+1429396442
+1492955314
+1484289813
+1547380618
+1563023076
+1452845386
+1441392214
+1432165772</p>
+<p>Leaving out the largest and smallest times, the average time was 1470084466.7 nanoseconds, or 1.470 seconds.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Selection-sort">Selection sort<a class="anchor-link" href="#Selection-sort"> </a></h1>
@@ -1141,6 +1167,7 @@ comparison: 24995000
                     <span class="n">min</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span> 
                     <span class="n">index</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
                 <span class="p">}</span>
+                <span class="n">comparison</span><span class="o">++</span><span class="p">;</span>
                 <span class="n">rightList</span> <span class="o">=</span> <span class="n">rightList</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span> 
             <span class="p">}</span>
 
@@ -1152,6 +1179,7 @@ comparison: 24995000
                 <span class="n">replace</span> <span class="o">=</span> <span class="n">replace</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span>
             <span class="p">}</span>
             <span class="n">replace</span><span class="p">.</span><span class="na">setData</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+            <span class="n">swap</span><span class="o">++</span><span class="p">;</span>
 
             <span class="n">leftList</span> <span class="o">=</span> <span class="n">leftList</span><span class="p">.</span><span class="na">getNext</span><span class="p">();</span>
             <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
@@ -1233,6 +1261,85 @@ comparison: 24995000
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">SelectionTimeTester</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span>
+    <span class="p">{</span>
+
+        <span class="kt">int</span> <span class="n">rand</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="n">Integer</span><span class="o">[]</span> <span class="n">words</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="o">[</span><span class="mi">5000</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">5000</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">rand</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)(</span><span class="n">Math</span><span class="p">.</span><span class="na">random</span><span class="p">()</span> <span class="o">*</span> <span class="mi">5001</span><span class="p">);</span>
+            <span class="n">words</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">rand</span><span class="p">;</span> 
+        <span class="p">}</span>
+
+        <span class="n">Queue</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">queue</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Queue</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+        <span class="n">queue</span><span class="p">.</span><span class="na">addList</span><span class="p">(</span><span class="n">words</span><span class="p">);</span>
+
+        <span class="kt">long</span> <span class="n">start</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="n">Selection</span> <span class="n">selector</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Selection</span><span class="p">();</span> 
+        <span class="n">selector</span><span class="p">.</span><span class="na">selection</span><span class="p">(</span><span class="n">queue</span><span class="p">);</span>
+
+        <span class="kt">long</span> <span class="n">end</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="kt">long</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">;</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;time: &quot;</span> <span class="o">+</span> <span class="n">diff</span> <span class="o">+</span> <span class="s">&quot; nanoseconds&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;swaps: &quot;</span> <span class="o">+</span> <span class="n">selector</span><span class="p">.</span><span class="na">getSwap</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;comparison: &quot;</span> <span class="o">+</span> <span class="n">selector</span><span class="p">.</span><span class="na">getComparison</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">SelectionTimeTester</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>time: 733308142 nanoseconds
+swaps: 5000
+comparison: 12497500
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The twelve times were:
+687636054
+636843905
+686517174
+642819604
+686863058
+684597760
+688876699
+653644990
+667359947
+657286135
+624851036
+733308142</p>
+<p>Removing the highest and lowest time, the average time is 669,244,532.6 nanoseconds, or 0.669 seconds.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Insertion-Sort">Insertion Sort<a class="anchor-link" href="#Insertion-Sort"> </a></h1>
