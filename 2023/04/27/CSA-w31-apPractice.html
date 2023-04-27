@@ -340,6 +340,41 @@ Average: 9.5
 </div>
     
 
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">availableMechanics</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">mechanic</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">numberOfMechanics</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Integer</span> <span class="n">num</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Integer</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+        <span class="n">mechanic</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">car</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">//Integer removeNum = new Integer(car.getMechanicNum());</span>
+        <span class="n">removeNum</span> <span class="o">=</span> <span class="n">car</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">mechanic</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">mechanic</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">getValue</span><span class="p">()</span> <span class="o">==</span> <span class="n">removeNum</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">mechanic</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="n">mechanic</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
