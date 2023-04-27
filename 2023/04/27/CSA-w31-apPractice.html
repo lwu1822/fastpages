@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      5 min read
     
 </span></p>
 
@@ -545,6 +545,106 @@ true
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CheckDigit</span> <span class="p">{</span>
+    <span class="cm">/** Returns the check digit for num, as described in part (a).</span>
+<span class="cm">    * Precondition: The number of digits in num is between one and six, inclusive.</span>
+<span class="cm">    * num &gt;= 0</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getCheck</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">digitNum</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">digitNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="p">(</span><span class="n">getDigit</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">8</span> <span class="o">-</span> <span class="n">i</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="cm">/** Returns true if numWithCheckDigit is valid, or false otherwise, as described in part (b).</span>
+<span class="cm">     * Precondition: The number of digits in numWithCheckDigit is between two and seven, inclusive.</span>
+<span class="cm">    * numWithCheckDigit &gt;= 0</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isValid</span><span class="p">(</span><span class="kt">int</span> <span class="n">numWithCheckDigit</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">numWithCheckDigit</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="n">getCheck</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="n">numWithCheckDigit</span> <span class="o">%</span> <span class="mi">10</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+
+    <span class="cm">/** Returns the number of digits in num. */</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNumberOfDigits</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+        <span class="cm">/* implementation not shown */</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">num</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span> 
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+
+    <span class="p">}</span>
+
+    <span class="cm">/** Returns the nth digit of num.</span>
+<span class="cm">    * Precondition: n &gt;= 1 and n &lt;= the number of digits in num</span>
+<span class="cm">    */</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getDigit</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">-</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">num</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span> 
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// There may be instance variables, constructors, and methods not shown.</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">CheckDigit</span><span class="p">.</span><span class="na">getDigit</span><span class="p">(</span><span class="mi">612</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+
+        <span class="c1">// System.out.println(CheckDigit.getNumberOfDigits(5));</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+<span class="n">CheckDigit</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>61
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
     
     
 <div class="cell border-box-sizing code_cell rendered">
