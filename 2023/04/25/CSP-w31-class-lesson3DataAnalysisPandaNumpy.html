@@ -179,24 +179,24 @@ window.onload = wrap_img;
 <h1 id="Predictive-Analysis">
 <a class="anchor" href="#Predictive-Analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Predictive Analysis<a class="anchor-link" href="#Predictive-Analysis"> </a>
 </h1>
-<p>Predictive analysis is the use of <strong><strong>_</strong></strong>, data mining, and machine learning techniques to analyze current and historical data in order to make predictions about future events or behaviors. It involves identifying <strong><em>__</em></strong> and trends in data, and then using that information to forecast what is likely to happen in the future.</p>
+<p>Predictive analysis is the use of <strong>statistical<strong>_</strong></strong>, data mining, and machine learning techniques to analyze current and historical data in order to make predictions about future events or behaviors. It involves identifying <strong><strong>patterns</strong></strong> and trends in data, and then using that information to forecast what is likely to happen in the future.</p>
 <p>Predictive analysis is used in a wide range of applications, from forecasting sales and demand, to predicting customer behavior, to detecting fraudulent transactions. It involves collecting and analyzing data from a variety of sources, including historical data, customer data, financial data, and social media data, among others.</p>
 <p>The process of predictive analysis typically involves the following steps:</p>
 <ol>
 <li>Defining the problem and identifying the relevant data sources</li>
 <li>
-<hr>
+<strong><strong><strong>_</strong></strong></strong>Collecting and cleaning data<strong><strong>_</strong></strong>
 </li>
 <li>Exploring and analyzing the data to identify patterns and trends</li>
 <li>Selecting an appropriate model or algorithm to use for predictions</li>
 <li>Training and validating the model using historical data</li>
 <li>
-<hr>
+<strong>__</strong>Using the model to make predictions on new data<strong><strong><strong><em>__</em></strong></strong></strong>
 </li>
 <li>Monitoring and evaluating the performance of the model over time</li>
 </ol>
 <p>Predictive analysis can help organizations make more informed decisions, improve efficiency, and gain a competitive advantage by leveraging insights from data.</p>
-<p>It is most commonly used in <strong><strong>__</strong></strong>, where workers try to predict which products would be most popular and try to advertise those products as much as possible, and also <strong><strong>___</strong></strong>, where algorithms analyze patterns and reveal prerequisites for diseases and suggest preventive treatment, predict the results of various treatments and choose the best option for each patient individually, and predict disease outbreaks and epidemics.</p>
+<p>It is most commonly used in <strong>__</strong>retail<strong>_<em>, where workers try to predict which products would be most popular and try to advertise those products as much as possible, and also </em></strong>healthcare<strong><em>__</em></strong>, where algorithms analyze patterns and reveal prerequisites for diseases and suggest preventive treatment, predict the results of various treatments and choose the best option for each patient individually, and predict disease outbreaks and epidemics.</p>
 
 </div>
 </div>
@@ -1204,10 +1204,24 @@ Categories (3, object): ['yellow', 'orange', 'blue']
 
 <span class="n">timing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">'2023-02-05 02:00:00'</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="c1">#WHAT WOULD THIS BE)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">timing</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2023-02-05 02:00:00
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1470,6 +1484,51 @@ total_rooms
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1">#read csv and sort 'Duration' largest to smallest</span>
+<span class="c1"># df = pd.read_csv('files/test.csv')</span>
+
+<span class="c1">#important: Column names can't have space between commas, otherwise, need to put a space in print(df[ (name)])</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'files/CSP-w31-class-lesson3DataAnalysisPandaNumpy-classReview.csv'</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">'Difficulty'</span><span class="p">])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0    3
+1    4
+2    3
+3    3
+4    5
+5    4
+Name: Difficulty, dtype: int64
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
