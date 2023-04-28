@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -606,16 +606,24 @@ true
 <span class="cm">    */</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getDigit</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">-</span><span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">numDigit</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">-</span> <span class="n">n</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numDigit</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="n">num</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span> 
         <span class="p">}</span>
-        <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">num</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
     <span class="p">}</span>
 
     <span class="c1">// There may be instance variables, constructors, and methods not shown.</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">CheckDigit</span><span class="p">.</span><span class="na">getDigit</span><span class="p">(</span><span class="mi">612</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">CheckDigit</span><span class="p">.</span><span class="na">getDigit</span><span class="p">(</span><span class="mi">6123555</span><span class="p">,</span> <span class="mi">7</span><span class="p">));</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">CheckDigit</span><span class="p">.</span><span class="na">getCheck</span><span class="p">(</span><span class="mi">54</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">CheckDigit</span><span class="p">.</span><span class="na">isValid</span><span class="p">(</span><span class="mi">549</span><span class="p">));</span>
 
         <span class="c1">// System.out.println(CheckDigit.getNumberOfDigits(5));</span>
     <span class="p">}</span>
@@ -634,7 +642,9 @@ true
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>61
+<pre>5
+9
+true
 </pre>
 </div>
 </div>
