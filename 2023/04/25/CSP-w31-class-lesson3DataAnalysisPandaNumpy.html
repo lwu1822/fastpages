@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      18 min read
+      19 min read
     
 </span></p>
 
@@ -162,7 +162,11 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#CSV-FILES!">CSV FILES! </a></li>
 <li class="toc-entry toc-h1"><a href="#Our-Frontend-Data-Analysis-Project">Our Frontend Data Analysis Project </a></li>
 <li class="toc-entry toc-h1"><a href="#Popcorn-Hacks">Popcorn Hacks </a></li>
-<li class="toc-entry toc-h1"><a href="#Main-Hack">Main Hack </a></li>
+<li class="toc-entry toc-h1"><a href="#Main-Hack">Main Hack </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Merging-dataframe-into-file">Merging dataframe into file </a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h1"><a href="#Grading">Grading </a></li>
 </ul><!--
 #################################################
@@ -1540,6 +1544,33 @@ Ordering by difficulty:
 </div>
 </div>
 
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Merging-dataframe-into-file">
+<a class="anchor" href="#Merging-dataframe-into-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Merging dataframe into file<a class="anchor-link" href="#Merging-dataframe-into-file"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">"Class"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"AP English Language"</span><span class="p">],</span> <span class="s2">"Difficulty"</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="s2">"Hours of homework"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">"Number of days between tests"</span><span class="p">:</span> <span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="s2">"Memorization level"</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">]})</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">"files/CSP-w31-class-lesson3DataAnalysisPandaNumpy-classReview.csv"</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"a"</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
 </div>
 </div>
 
