@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      24 min read
+      27 min read
     
 </span></p>
 
@@ -137,7 +137,6 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#Lists">Lists </a></li>
 <li class="toc-entry toc-h2"><a href="#Mathematical-Expressions">Mathematical Expressions </a></li>
-<li class="toc-entry toc-h2"><a href="#--4096">- 4096 </a></li>
 </ul>
 </li>
 <li class="toc-entry toc-h1"><a href="#Selection">Selection </a>
@@ -317,6 +316,28 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>name Sri Kotturi &lt;class 'str'&gt;
+age 16 &lt;class 'int'&gt;
+score 90.0 &lt;class 'float'&gt;
+
+langs ['Python', 'JavaScript', 'Java', 'Bash', 'html'] &lt;class 'list'&gt;
+- langs[2] Java &lt;class 'str'&gt;
+
+person {'name': 'Sri Kotturi', 'age': 16, 'score': 90.0, 'langs': ['Python', 'JavaScript', 'Java', 'Bash', 'html']} &lt;class 'dict'&gt;
+- person["name"] Sri Kotturi &lt;class 'str'&gt;
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -375,10 +396,11 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>What is the value of num1, num2, and num3? Explain how each number ended up what it was.</p>
-<h2 id="--4096">
-<a class="anchor" href="#--4096" aria-hidden="true"><span class="octicon octicon-link"></span></a>- 4096<a class="anchor-link" href="#--4096"> </a>
-</h2>
-<p>-</p>
+<ul>
+<li>4096: 4^6 = 4096</li>
+<li>num3 = 2 % 5 = 2 -&gt; (4096 + 2) // 9 = 455</li>
+<li>4096 / 5 = 1</li>
+</ul>
 
 </div>
 </div>
@@ -743,11 +765,46 @@ I guessed your number 16!
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">weather</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is today's weather?"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"What is today's weather?"</span><span class="p">)</span>
-<span class="n">temp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What is today's temperature?"</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"What is today's temperature?"</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"What is today's temperature?"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">weather</span> <span class="o">==</span> <span class="s2">"sunny"</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">90</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Maybe don't go outside lol"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">70</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Don't forget to bring a hat!"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"It's nice outside"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Bring a jacket"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">weather</span> <span class="o">==</span> <span class="s2">"cloudy"</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">60</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"It's nice outside"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">40</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Bring a jacket"</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">weather</span> <span class="o">==</span> <span class="s2">"rainy"</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">40</span> <span class="ow">and</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">70</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"Bring a jacket, it's going to be cold"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Also don't forget to bring an umbrella!"</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What is today's weather?
+What is today's temperature?
+It's nice outside
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -916,6 +973,7 @@ I guessed your number 16!
 - O(N*log(N))
 - O(N * Sqrt(N))
 - O(N*N)
+
 </code></pre>
 <p>O(N*N)</p>
 
@@ -1264,8 +1322,10 @@ The difference between the value and the index is 200.
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">build</span><span class="p">(</span><span class="n">deck</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">suit</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">"Spades"</span><span class="p">,</span> <span class="s2">"Clubs"</span><span class="p">,</span> <span class="s2">"Diamonds"</span><span class="p">,</span> <span class="s2">"Hearts"</span><span class="p">]:</span>
-            <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">):</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">):</span>
                 <span class="n">deck</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Card</span><span class="p">(</span><span class="n">suit</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
+                <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="c1">#HINT: you may want to make an incrementing i variable</span>
 </pre></div>
@@ -1375,9 +1435,25 @@ The difference between the value and the index is 200.
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="c1">#find another random function that could pull a random card from a deck of UNSORTED cards</span>
+<span class="n">card</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">deck</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">deck</span><span class="p">[</span><span class="n">card</span><span class="p">]</span><span class="o">.</span><span class="n">show</span><span class="p">())</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Jack of Spades
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -1418,9 +1494,118 @@ The difference between the value and the index is 200.
 <span class="c1"># What kind of iteration happens in the real world?</span>
 <span class="c1"># What occurs repeatedly, even over a long period of time?</span>
 <span class="c1"># You could model the results of a disease spreading through a population without it taking IRL years.</span>
+
+<span class="n">temp</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">wind</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">heat</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">tempRecord</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">365</span><span class="p">):</span>
+    <span class="n">wind</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="mi">40</span>
+        <span class="n">heat</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">90</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="mi">60</span>
+        <span class="n">heat</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">180</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="mi">100</span>
+        <span class="n">heat</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">243</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="mi">80</span>
+        <span class="n">heat</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">270</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="mi">60</span>
+        <span class="n">heat</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">heat</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">wind</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="mi">5</span>
+    <span class="k">elif</span> <span class="n">heat</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">wind</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">heat</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">heat</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">wind</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="k">elif</span> <span class="n">heat</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="n">heat</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">wind</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">heat</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">wind</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">-=</span> <span class="mi">5</span>
+    <span class="k">elif</span> <span class="n">heat</span> <span class="o">&lt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">wind</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">-=</span> <span class="mi">3</span>
+    <span class="k">elif</span> <span class="n">heat</span> <span class="o">&lt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">wind</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">-=</span> <span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">temp</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">+=</span> <span class="mi">10</span>
+    <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+        <span class="n">temp</span> <span class="o">-=</span> <span class="mi">10</span>
+    
+    <span class="n">tempRecord</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+
+<span class="n">dayInput</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What day would you like to check the temperature?"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"What day would you like to check the temperature?"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dayInput</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="n">dayInput</span> <span class="o">!=</span> <span class="s2">"end"</span><span class="p">:</span>
+    <span class="n">month</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dayInput</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">day</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">dayInput</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"/"</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">month</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">28</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">30</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">31</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">31</span>
+        <span class="k">elif</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">index</span> <span class="o">+=</span> <span class="mi">30</span>
+
+    <span class="n">index</span> <span class="o">+=</span> <span class="n">day</span> 
+            
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"The temperature on "</span> <span class="o">+</span> <span class="n">dayInput</span> <span class="o">+</span> <span class="s2">" was: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">tempRecord</span><span class="p">[</span><span class="n">index</span><span class="p">])</span> <span class="o">+</span> <span class="s2">" fahrenheit"</span><span class="p">)</span>
+
+
+    <span class="n">dayInput</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">"What day would you like to check the temperature?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"What day would you like to check the temperature?"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dayInput</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>What day would you like to check the temperature?
+1/1
+The temperature on 1/1 was: 34 fahrenheit
+What day would you like to check the temperature?
+4/1
+The temperature on 4/1 was: 56 fahrenheit
+What day would you like to check the temperature?
+7/1
+The temperature on 7/1 was: 94 fahrenheit
+What day would you like to check the temperature?
+10/1
+The temperature on 10/1 was: 41 fahrenheit
+What day would you like to check the temperature?
+12/1
+The temperature on 12/1 was: 36 fahrenheit
+What day would you like to check the temperature?
+end
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
