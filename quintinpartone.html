@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      11 min read
     
 </span></p>
 
@@ -159,15 +159,23 @@ window.onload = wrap_img;
 <a class="anchor" href="#GitHub" aria-hidden="true"><span class="octicon octicon-link"></span></a>GitHub<a class="anchor-link" href="#GitHub"> </a>
 </h2>
 <ul>
-<li>What is GitHub?
-Github is a place where people can record and share their code.</li>
-<li>Why do we use GitHub? Why not Google Drive or messages?
-It implements Git and provides a good way to refer back to code history.</li>
-<li>What's the difference between Git and GitHub?
-Git is a way to store code while GitHub is the website for users to share their code.</li>
-<li>Name as many Git commands as you can:
-git clone, git pull</li>
+<li>What is GitHub?</li>
 </ul>
+<p>Github is a place where people can record and share their code.</p>
+<ul>
+<li>
+<p>Why do we use GitHub? Why not Google Drive or messages?
+It implements Git and provides a good way to refer back to code history.</p>
+</li>
+<li>
+<p>What's the difference between Git and GitHub?</p>
+</li>
+</ul>
+<p>Git is a way to store code while GitHub is the website for users to share their code.</p>
+<ul>
+<li>Name as many Git commands as you can:</li>
+</ul>
+<p>git clone, git pull</p>
 
 </div>
 </div>
@@ -179,10 +187,17 @@ git clone, git pull</li>
 <a class="anchor" href="#Two-Main-Machines" aria-hidden="true"><span class="octicon octicon-link"></span></a>Two Main Machines<a class="anchor-link" href="#Two-Main-Machines"> </a>
 </h2>
 <ul>
-<li>Which is better, MacOS or Windows?
-Windows has better compatibility. </li>
-<li>Give some differences between MacOS and Windows in terms of the development we use in APCSP:</li>
-<li>If you are on Windows, you want to skip the MacOS Setup instructions.</li>
+<li>Which is better, MacOS or Windows?</li>
+</ul>
+<p>Windows has better compatibility.</p>
+<ul>
+<li>
+<p>Give some differences between MacOS and Windows in terms of the development we use in APCSP:
+They use diffferent commands to set up.</p>
+</li>
+<li>
+<p>If you are on Windows, you want to skip the MacOS Setup instructions.</p>
+</li>
 </ul>
 
 </div>
@@ -206,6 +221,13 @@ Windows has better compatibility. </li>
 <li>
 <p>Without looking back at previous notes, name three tools you remember installing. This can be kernels, extensions, any installation for APCSP, and also write why it is needed.</p>
 </li>
+<li>
+<p>VS Code, this provides the platform to code</p>
+</li>
+<li>Jupyter Notebook provides an easy way to include snippets of code on blog</li>
+<li>Github to record versions of code</li>
+<li>JavaScript kernel to code in JavaScript</li>
+<li>Install Python3 to code in Python</li>
 </ul>
 
 </div>
@@ -401,14 +423,15 @@ Windows has better compatibility. </li>
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="p">{</span><span class="n">repos</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">here</span><span class="o">.</span><span class="n">git</span><span class="p">}</span> <span class="c1"># what does it do?</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="p">[</span><span class="n">branch</span><span class="p">]</span> <span class="c1"># what does it do?</span>
-<span class="n">git</span> <span class="n">fork</span> <span class="p">{</span><span class="n">repos</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">here</span><span class="o">.</span><span class="n">git</span><span class="p">}</span> <span class="c1"># what does it do?</span>
-<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="p">{</span><span class="s2">"commit-msg"</span><span class="p">}</span> <span class="c1"># what does it do?</span>
-<span class="n">git</span> <span class="n">pull</span> <span class="c1"># what does it do?</span>
-<span class="n">git</span> <span class="n">push</span> <span class="c1"># what does it do?</span>
+<div class=" highlight hl-python"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="p">{</span><span class="n">repos</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">here</span><span class="o">.</span><span class="n">git</span><span class="p">}</span> <span class="c1"># what does it do? Clone a repo</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="p">[</span><span class="n">branch</span><span class="p">]</span> <span class="c1"># what does it do? Switch between branches</span>
+<span class="n">git</span> <span class="n">fork</span> <span class="p">{</span><span class="n">repos</span><span class="o">-</span><span class="n">name</span><span class="o">-</span><span class="n">here</span><span class="o">.</span><span class="n">git</span><span class="p">}</span> <span class="c1"># what does it do? Create a fork</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">m</span> <span class="p">{</span><span class="s2">"commit-msg"</span><span class="p">}</span> <span class="c1"># what does it do? Commit with a message</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="c1"># what does it do? Pull the updated changes from the repo</span>
+<span class="n">git</span> <span class="n">push</span> <span class="c1"># what does it do? Push changes to GitHub</span>
 
 <span class="c1"># After this line, name other commands that you can use and what they do. This should be easy, as you've already answered the qeue</span>
+<span class="n">git</span> <span class="n">fetch</span> <span class="c1"># retrieve from repo</span>
 </pre></div>
 
     </div>
@@ -447,14 +470,261 @@ Windows has better compatibility. </li>
 <a class="anchor" href="#Hacks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hacks<a class="anchor-link" href="#Hacks"> </a>
 </h1>
 <ul>
-<li>Show how you incorporate three tools that we have installed into your project. 0.1 points for each feature. (0.3). This can include code, but definitely blog about it.</li>
-<li>frontend hack goes here</li>
+<li>
+<p>Show how you incorporate three tools that we have installed into your project. 0.1 points for each feature. (0.3). This can include code, but definitely blog about it.</p>
+</li>
+<li>
+<p>Python was used to code the backend for the project. I used Python to create the API endpoint on the backend, and also to connect to the SQLite database.</p>
+</li>
+<li>
+<p>JavaScript was used to code the frontend. I used JavaScript to send a fetch request to the backend so that data could be fetched and displayed on the website.</p>
+</li>
+<li>
+<p>To code for frontend and backend, I used VS Code as my code editor. I also used Git to push and pull code onto the GitHub repositories.</p>
+</li>
+<li>
+<p>frontend hack goes here</p>
+</li>
+</ul>
+<p><br>
+Below is a portion of my frontend code that demonstrates fetching with JavaScript. This code sends a fetch request to the backend website's API endpoint. The backend returns data from the database, and using JavaScript, I created a table that outputs the data onto the frontend website.</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="n">fetch</span><span class="p">(</span><span class="s2">"https://seal.nighthawkcodingsociety.com/api/users/classreview"</span><span class="p">)</span>
+          <span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">response</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">then</span><span class="p">(</span><span class="n">data</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="n">console</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+
+                <span class="k">for</span> <span class="p">(</span><span class="n">const</span> <span class="n">row</span> <span class="n">of</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">classInput</span><span class="o">.</span><span class="n">toUpperCase</span><span class="p">()</span> <span class="o">==</span> <span class="n">row</span><span class="o">.</span><span class="n">className</span><span class="o">.</span><span class="n">toUpperCase</span><span class="p">())</span> <span class="p">{</span>
+                      <span class="n">const</span> <span class="n">tr</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"tr"</span><span class="p">);</span>
+                      
+                      <span class="n">const</span> <span class="n">className</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+                      <span class="n">className</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">className</span><span class="p">;</span>  
+          
+                      <span class="n">const</span> <span class="n">daysBtwTest</span><span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+                      <span class="n">daysBtwTest</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">daysBtwTest</span><span class="p">;</span> 
+          
+                      <span class="n">const</span> <span class="n">difficulty</span><span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+                      <span class="n">difficulty</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">difficulty</span><span class="p">;</span> 
+
+                      <span class="n">const</span> <span class="n">hoursOfHw</span><span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+                      <span class="n">hoursOfHw</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">hoursOfHw</span><span class="p">;</span> 
+
+                      <span class="n">const</span> <span class="n">memorizationLevel</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+                      <span class="n">memorizationLevel</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">memorizationLevel</span><span class="p">;</span> 
+
+                      <span class="n">const</span> <span class="n">comments</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">createElement</span><span class="p">(</span><span class="s2">"td"</span><span class="p">);</span>
+                      <span class="n">comments</span><span class="o">.</span><span class="n">innerHTML</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">comments</span><span class="p">;</span> 
+                      
+                      <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">className</span><span class="p">);</span>
+                      <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">daysBtwTest</span><span class="p">);</span>
+                      <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">difficulty</span><span class="p">);</span>
+                      <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">hoursOfHw</span><span class="p">);</span>
+                      <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">memorizationLevel</span><span class="p">);</span>
+                      <span class="n">tr</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">comments</span><span class="p">);</span>
+          
+                      <span class="n">document</span><span class="o">.</span><span class="n">getElementById</span><span class="p">(</span><span class="s2">"reviews"</span><span class="p">)</span><span class="o">.</span><span class="n">appendChild</span><span class="p">(</span><span class="n">tr</span><span class="p">);</span>
+                    <span class="p">}</span>
+
+
+                    <span class="p">}</span>
+                   
+                
+            <span class="p">})</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>backend hack goes here</li>
 </ul>
 
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To create the API endpoint on the backend, I used <code>api.add_resource()</code> to create a link to the endpoint. I also created classes for Create, Read, Update, and Delete options that take in input from a GET/POST request and returns the data in JSON.</p>
+<p>The code below shows a class that I created to Create a class review (the topic of my project is to read, submit, edit, and delete class reviews).</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">_CreateClassReview</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+            <span class="sd">''' Read data for json body '''</span>
+            <span class="n">body</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
+            
+
+            <span class="n">username</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'username'</span><span class="p">)</span>
+            <span class="n">className</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'className'</span><span class="p">)</span>
+            <span class="n">difficulty</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'difficulty'</span><span class="p">)</span>
+            <span class="n">hoursOfHw</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'hoursOfHw'</span><span class="p">)</span>
+            <span class="n">daysBtwTest</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'daysBtwTest'</span><span class="p">)</span>
+            <span class="n">memorizationLevel</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'memorizationLevel'</span><span class="p">)</span>
+            <span class="n">comments</span> <span class="o">=</span> <span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'comments'</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">difficulty</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Invalid number'</span><span class="p">},</span> <span class="mi">210</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">hoursOfHw</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Invalid number'</span><span class="p">},</span> <span class="mi">210</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">daysBtwTest</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Invalid number'</span><span class="p">},</span> <span class="mi">210</span>
+            <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">memorizationLevel</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Invalid number'</span><span class="p">},</span> <span class="mi">210</span>
+            
+            <span class="nb">id</span> <span class="o">=</span> <span class="n">findId</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+            
+            <span class="c1">#create a review object based on user's input</span>
+            <span class="n">review</span> <span class="o">=</span> <span class="n">ClassReview</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="n">className</span><span class="o">=</span><span class="n">className</span><span class="p">,</span> <span class="n">difficulty</span><span class="o">=</span><span class="n">difficulty</span><span class="p">,</span> <span class="n">hoursOfHw</span><span class="o">=</span><span class="n">hoursOfHw</span><span class="p">,</span> <span class="n">daysBtwTest</span><span class="o">=</span><span class="n">daysBtwTest</span><span class="p">,</span> <span class="n">memorizationLevel</span><span class="o">=</span><span class="n">memorizationLevel</span><span class="p">,</span> <span class="n">comments</span><span class="o">=</span><span class="n">comments</span><span class="p">)</span>
+
+           
+            
+            <span class="c1">#I HAVE TO CHANGE THIS VARIABLE NAME LOL</span>
+            <span class="n">reviews</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">reviews</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">jsonify</span><span class="p">(</span><span class="n">reviews</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+            <span class="c1"># failure returns error</span>
+            <span class="k">return</span> <span class="p">{</span><span class="s1">'message'</span><span class="p">:</span> <span class="sa">f</span><span class="s1">'Processed </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">, either a format error or duplicate'</span><span class="p">},</span> <span class="mi">210</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To connect the Python code to the SQLite database, I created a <code>ClassReview</code> class that takes in attributes of a class review, such as the name of the class, its difficulty ranking, number of days between tests, and extra comments. This is what the code for the class looks like:</p>
+
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="k">class</span> <span class="nc">ClassReview</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'classReview'</span>
+    <span class="c1"># Define the Classes schema</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="c1"># Define a relationship in classes Schema to userID who originates the classes, many-to-one (many classes to one user)</span>
+    <span class="n">userID</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">'users.id'</span><span class="p">))</span>
+
+    <span class="c1">#columns (class review inputs)</span>
+    <span class="n">className</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">difficulty</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">hoursOfHw</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">daysBtwTest</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">memorizationLevel</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">comments</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Constructor of a Notes object, initializes of instance variables within object</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">className</span><span class="p">,</span> <span class="n">difficulty</span><span class="p">,</span> <span class="n">hoursOfHw</span><span class="p">,</span> <span class="n">daysBtwTest</span><span class="p">,</span> <span class="n">memorizationLevel</span><span class="p">,</span> <span class="n">comments</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">userID</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">className</span> <span class="o">=</span> <span class="n">className</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="n">difficulty</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hoursOfHw</span> <span class="o">=</span> <span class="n">hoursOfHw</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">daysBtwTest</span> <span class="o">=</span> <span class="n">daysBtwTest</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">memorizationLevel</span> <span class="o">=</span> <span class="n">memorizationLevel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="n">comments</span>
+        
+
+
+    <span class="c1"># Returns a string representation of the Notes object, similar to java toString()</span>
+    <span class="c1"># returns string</span>
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">"ClassReview("</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">userID</span><span class="p">)</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">className</span><span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoursOfHw</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">daysBtwTest</span> <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">memorizationLevel</span>  <span class="o">+</span> <span class="s2">","</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">comments</span> <span class="o">+</span> <span class="s2">")"</span>
+
+    <span class="c1"># CRUD create, adds a new record to the Notes table</span>
+    <span class="c1"># returns the object added or None in case of an error</span>
+    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># creates a Notes object from Notes(db.Model) class, passes initializers</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>  <span class="c1"># add prepares to persist person object to Notes table</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>  <span class="c1"># SqlAlchemy "unit of work pattern" requires a manual commit</span>
+            <span class="k">return</span> <span class="bp">self</span>
+        <span class="k">except</span> <span class="n">IntegrityError</span><span class="p">:</span>
+            <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+    <span class="c1"># CRUD read, returns dictionary representation of Notes object</span>
+    <span class="c1"># returns dictionary</span>
+    <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s2">"userID"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">userID</span><span class="p">,</span>
+            <span class="s2">"className"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">className</span><span class="p">,</span>
+            <span class="s2">"difficulty"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span><span class="p">,</span>
+            <span class="s2">"hoursOfHw"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">hoursOfHw</span><span class="p">,</span>
+            <span class="s2">"daysBtwTest"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">daysBtwTest</span><span class="p">,</span>
+            <span class="s2">"memorizationLevel"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">memorizationLevel</span><span class="p">,</span>
+            <span class="s2">"comments"</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">comments</span><span class="p">,</span>
+        <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">className</span><span class="p">,</span> <span class="n">difficulty</span><span class="p">,</span> <span class="n">hoursOfHw</span><span class="p">,</span> <span class="n">daysBtwTest</span><span class="p">,</span> <span class="n">memorizationLevel</span><span class="p">,</span> <span class="n">comments</span><span class="p">):</span>
+        <span class="c1">#only updates values greater than 0</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">difficulty</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">difficulty</span> <span class="o">=</span> <span class="n">difficulty</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">hoursOfHw</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hoursOfHw</span> <span class="o">=</span> <span class="n">hoursOfHw</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">daysBtwTest</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">daysBtwTest</span> <span class="o">=</span> <span class="n">daysBtwTest</span>
+        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">memorizationLevel</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">memorizationLevel</span> <span class="o">=</span> <span class="n">memorizationLevel</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">className</span> <span class="o">=</span> <span class="n">className</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="n">comments</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span> 
+
+    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#print(ClassReview.query.filter_by(userID=id, className=className).first())</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="kc">None</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
