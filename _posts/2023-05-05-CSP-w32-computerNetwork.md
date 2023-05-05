@@ -20,7 +20,7 @@ Computer Device: c
 Bandwidth: d
 Computer Network: f
 
-![]({{ site.baseurl }}/images/CSP/1.png)
+![]({{ site.baseurl }}/images/CSP/2.png)
 
 True Open standards and protocols enable different manufacturers and developers to build hardware and software than can communicate with hardware and software on the rest of the internet.
 False IETF is a task force used to enforce laws to keep manufacturers out of the internet. –> it sets protocols and layers, open to everyone
