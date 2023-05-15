@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      4 min read
+      7 min read
     
 </span></p>
 
@@ -251,11 +251,46 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 </blockquote>
 </li>
 </ul>
+<ol>
+<li>
+<p>Bubble sort:Compare 75 with 17. Swap 75 and 17. The list looks like: [17, 75, 46, 80, 67, 45, 69, 79, 40, 0]
+Compare 75 with 46. Swap them. The list looks like: [17, 46, 75, 80, 67, 45, 69, 79, 40, 0]</p>
+<p>Compare 75 and 80. Since 75 is less than 80, the two elements are not swapped.</p>
+<p>Compare 80 and 67. Since 80 is greater than 67, swap the two elements.</p>
+<p>Repeat this process until the list looks like this: [17, 75, 46, 67, 45, 69, 79, 40, 0, 80]</p>
+<p>Start at the beginning of the list and repeat the process.</p>
+</li>
+<li>
+<p>Selection sort: 
+Find the smallest element in the list, which is 0. Swap 0 and 75. The list looks like: [0, 17, 46, 80, 67, 45, 69, 79, 40, 75]</p>
+<p>Find the smallest element in the list, excluding the first element. Keep 17 at the first index.</p>
+<p>Find the smallest element in the list, excluding the first and second element. Swap 46 and 40: [0, 17, 40, 80, 67, 45, 69, 79, 46, 75]</p>
+</li>
+</ol>
 <p>[88, 39, 53, 39, 58, 43, 74, 81, 71, 51]</p>
 <p>How would you sort this list with...</p>
 <ul>
-<li>Merge Sort</li>
-<li>Insertion Sort<blockquote>
+<li>
+<p>Merge Sort</p>
+<p><strong>Note</strong>: Middle = (left + right)/2</p>
+<p>Split the list in half (first list starts from 0th index and ends at 4th index, second list starts from 5th index and ends at 9th index). The two lists look like this: [88, 39, 53, 39, 58] and [43, 74, 81, 71, 51].</p>
+<p>Continue splitting the lists in half until the elements end up like this:</p>
+<p>[88] [39], [53], [39] [58], [43] [74], [81], [71] [51]</p>
+<p>Sort the elements and combine them:</p>
+<p>[39, 88], [53], [39, 58], [43, 74], [81], [51, 71]</p>
+<p>[39, 53, 88], [39, 58], [43, 74, 81], [51, 71]</p>
+<p>[39, 39, 53, 59, 99], [43, 51, 71, 74, 81]</p>
+<p>[39, 39, 43, 51, 53, 59, 71, 74, 91, 99]</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Insertion Sort</p>
+<p>[88, 39, 53, 39, 58, 43, 74, 81, 71, 51]</p>
+<p>Compare 39 and 88. Since 88 is greater than 39, swap them: [39, 88, 53, 39, 58, 43, 74, 81, 71, 51]</p>
+<p>Move 53 into the correct position: [39, 53, 88, 39, 58, 43, 74, 81, 71, 51]</p>
+<p>Then move 39 in the correct position and repeat.</p>
+<blockquote>
 <p>Explain.</p>
 </blockquote>
 </li>
@@ -312,17 +347,9 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>[nltk_data] Downloading package words to /home/syeung/nltk_data...
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Random List
-['taqua', 'radknight', 'gonococcal', 'unreproducible', 'blastogranitic', 'polyoecism', 'ulrichite', 'geosyncline', 'entomologist', 'kilnrib']
+['unprefined', 'photochloride', 'oiticica', 'unsurgical', 'unperused', 'stylomaxillary', 'bareheadedness', 'reapable', 'rosin', 'horizon']
 </pre>
 </div>
 </div>
@@ -330,7 +357,8 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>[nltk_data]   Unzipping corpora/words.zip.
+<pre>[nltk_data] Downloading package words to /home/lwu1822/nltk_data...
+[nltk_data]   Package words is already up-to-date!
 </pre>
 </div>
 </div>
@@ -344,17 +372,36 @@ Take about 5 minutes to read about your algorithm (Geek for Geeks linked below) 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>['bareheadedness', 'horizon', 'oiticica', 'photochloride', 'reapable', 'rosin', 'stylomaxillary', 'unperused', 'unprefined' 'unsurgical']</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Discuss">
 <a class="anchor" href="#Discuss" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discuss<a class="anchor-link" href="#Discuss"> </a>
 </h2>
 <p>Answer the following with your group.</p>
 <ul>
 <li>When should you use each algorithm? What makes an algorithm the right choice?</li>
-<li>Given the following lists...<ul>
-<li>[0, 2, 6, 4, 8, 10]</li>
-<li>[Elephant, Banana, Cat, Dog, Apple]</li>
-<li>[29, 13, 83, 47, 32, 78, 100, 60, 65, 15, 24, 9, 40, 68, 53, 8, 90, 58, 39, 32, 34, 91, 74, 94, 49, 87, 34, 87, 23, 17, 27, 2, 38, 58, 84, 15, 9, 46, 74, 40, 44, 8, 55, 28, 81, 92, 81, 88, 53, 38, 19, 21, 9, 54, 21, 67, 3, 41, 3, 74, 13, 71, 70, 45, 5, 36, 80, 64, 97, 86, 73, 74, 94, 79, 49, 32, 20, 68, 64, 69, 1, 77, 31, 56, 100, 80, 48, 75, 85, 93, 67, 57, 26, 56, 43, 53, 59, 28, 67, 50]
-Select the algorithm you believe is best for each, explain.</li>
+<li>
+<p>Given the following lists...</p>
+<ul>
+<li>
+<p>[0, 2, 6, 4, 8, 10]</p>
+<p>Insertion, because the list is mostly sorted, so each element is only compared with the one next to it.</p>
+</li>
+<li>
+<p>[Elephant, Banana, Cat, Dog, Apple]</p>
+<p>Selection, because it finds the smallest element and moves it to the front of the list. Bubble would use too many swaps, while insertion would also need multiple swaps because the smallest element is at the end of the list, which means that the element needs to be swapped multiple times before it can reach the front of the list.</p>
+</li>
+<li>
+<p>[29, 13, 83, 47, 32, 78, 100, 60, 65, 15, 24, 9, 40, 68, 53, 8, 90, 58, 39, 32, 34, 91, 74, 94, 49, 87, 34, 87, 23, 17, 27, 2, 38, 58, 84, 15, 9, 46, 74, 40, 44, 8, 55, 28, 81, 92, 81, 88, 53, 38, 19, 21, 9, 54, 21, 67, 3, 41, 3, 74, 13, 71, 70, 45, 5, 36, 80, 64, 97, 86, 73, 74, 94, 79, 49, 32, 20, 68, 64, 69, 1, 77, 31, 56, 100, 80, 48, 75, 85, 93, 67, 57, 26, 56, 43, 53, 59, 28, 67, 50]</p>
+<p>Merge, because it has the best time complexity between the four sorts (O(n log(n))). All of the other sorts would require a large number of swaps.
+Select the algorithm you believe is best for each, explain.</p>
+</li>
 </ul>
 </li>
 </ul>
