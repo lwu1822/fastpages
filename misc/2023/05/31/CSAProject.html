@@ -114,6 +114,9 @@ window.onload = wrap_img;
     <ul id="toc" class="section-nav">
 <li class="toc-entry toc-h1"><a href="#songs">Songs</a>
 <ul>
+<li class="toc-entry toc-h2"><a href="#short-version">Short version</a></li>
+<li class="toc-entry toc-h2"><a href="#thoughts">Thoughts</a></li>
+<li class="toc-entry toc-h2"><a href="#long-version">Long version</a></li>
 <li class="toc-entry toc-h2"><a href="#constructor">Constructor</a></li>
 <li class="toc-entry toc-h2"><a href="#get_similar_itemssonglist">get_similar_items(songList)</a></li>
 <li class="toc-entry toc-h2"><a href="#construct_cooccurence_matrix">construct_cooccurence_matrix()</a></li>
@@ -122,6 +125,19 @@ window.onload = wrap_img;
 </li>
 </ul><h1 id="songs">
 <a class="anchor" href="#songs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Songs</h1>
+
+<h2 id="short-version">
+<a class="anchor" href="#short-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Short version</h2>
+
+<p>The music recommender utilizes <strong>item-item collaborative filtering</strong> within <strong>collaborative based filtering</strong>. In other words, the program analyzes the music that users like. It then calculates a similarity score (using the Jaccard Index) and populates it into a cooccurence matrix. The similarity in the cooccurence matrix then calculates a score.</p>
+
+<h2 id="thoughts">
+<a class="anchor" href="#thoughts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thoughts</h2>
+
+<p>One of the biggest limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs.</p>
+
+<h2 id="long-version">
+<a class="anchor" href="#long-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Long version</h2>
 
 <p>To make the music recommender, there are two types of recommendation systems. The first is content based filtering, and the second is <strong>collaborative based filtering</strong>. The music recommender uses <strong>collaborative</strong> based filtering.</p>
 
