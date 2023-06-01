@@ -9,6 +9,19 @@ comments: true
 
 # Songs
 
+## Short version
+
+The music recommender utilizes **item-item collaborative filtering** within **collaborative based filtering**. In other words, the program analyzes the music that users like. It then calculates a similarity score (using the Jaccard Index) and populates it into a cooccurence matrix. The similarity in the cooccurence matrix then calculates a score.
+
+## Thoughts
+
+One of the biggest limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs. 
+
+
+
+
+## Long version
+
 To make the music recommender, there are two types of recommendation systems. The first is content based filtering, and the second is **collaborative based filtering**. The music recommender uses **collaborative** based filtering.
 
 Collaborative based filtering consists of two parts:
