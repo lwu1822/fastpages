@@ -59,7 +59,7 @@ df = is_model.get_similar_items(songList)
 
 Next, a cooccurrence matrix is created. What is a cooccurrence matrix? These are matrices found in item-item filtering. An example is this:
 
-![](images/cooMatrix.jpg)
+![]({{ site.baseurl }}/images/cooMatrix.jpg)
 
 
 cooccurence_matrix = self.construct_cooccurence_matrix(user_songs, all_songs)
@@ -79,7 +79,7 @@ In item-item filtering, the similarity includes 2 items, and many users (whereas
 
 Looks something like this:
 
-![](images/itemitemsimilarity.jpg)
+![]({{ site.baseurl }}/images/itemitemsimilarity.jpg)
 
 There is something called **cosine similarity** which is used as a distance metric. "The similarity is calculated based on the angle between these vectors". Honestly I have no idea what that means and the calculations involves a lot of math that I can't understand, so we'll leave it at that :) But yeah, just know that a lot of math stuff occurs here to calculate similarity. 
 
