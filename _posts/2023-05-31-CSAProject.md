@@ -39,19 +39,41 @@ Looks something like this:
 There is something called **cosine similarity** which is used as a distance metric. "The similarity is calculated based on the angle between these vectors". Honestly I have no idea what that means and the calculations involves a lot of math that I can't understand, so we'll leave it at that :) But yeah, just know that a lot of math stuff occurs here to calculate similarity. 
 
 
-## Thoughts
+## Reflection
 
 One of the biggest limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs. 
 
 
 
+## The code
 
-## Long version
+[Code file](https://github.com/Lychee80/fourWsBackend/blob/main/Recommenders.py)
+
+### The data
+
+The data comes from two datasets: `10000.txt` and `song_data.csv`. `10000.txt` contains the user id, song id, and number of times a user listened to a song. `song_data.csv` consists of the song id, song name (title), album name (release), artist's name, and year.
+
+### Data cleaning
+
+Throughout the code, there are lines that help filter the data. This is an important step in order to make sure that the data is clean so that the format is consistent throughout the entire file. 
+
+**Instances of data cleaning**: 
+
+* Line (#): 
+
+  ```
+  song_df = pandas.merge(song_df_1, song_df_2.drop_duplicates(['song_id']), on="song_id", how="left")
+  ```
+
+  `song_df_2.drop_duplicates(['song_id'])` removes all duplicate song ids. This ensures that the file with the song info does not contain rows with duplicate songs.
 
 
-The data comes from two datasets: `10000.txt` and `song_data.csv`. `10000.txt` contains the user id, song id, and number of times the user listened to the song. `song_data.csv` consists of the song id, song name (title), release (album), artist's name, and year.
+### init
 
-`10000.txt` is read by Pandas into a dataframe, and assigned columns consisting of a user id, song id, and listen count. `song_data.csv` is also read by Pandas. 
+
+
+
+`10000.txt` is read by Pandas into a dataframe, and assigned columns consisting of a user id, song id, and listen count. `song_data.csv` is also read by Pandas into a dataframe. 
 
 The next step is to combine the two datasets. However, notice how both `10000.txt` and `song_data.csv` includes the song id? If the two datasets were combined, they would have duplicate entries. Therefore, they merge on the `song_id` column, while keeping the first dataset's `song_id` column.
 
