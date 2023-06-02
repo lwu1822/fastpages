@@ -7,6 +7,7 @@
 <title>Project | Lily</title>
 <meta name="generator" content="Jekyll v4.1.1" />
 <meta property="og:title" content="Project" />
+<meta name="author" content="Lily Wu" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Songs" />
 <meta property="og:description" content="Songs" />
@@ -18,7 +19,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Project" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-05-31T00:00:00-05:00","datePublished":"2023-05-31T00:00:00-05:00","description":"Songs","headline":"Project","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/misc/2023/05/31/CSAProject.html"},"url":"https://lwu1822.github.io/fastpages/misc/2023/05/31/CSAProject.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Lily Wu"},"dateModified":"2023-05-31T00:00:00-05:00","datePublished":"2023-05-31T00:00:00-05:00","description":"Songs","headline":"Project","mainEntityOfPage":{"@type":"WebPage","@id":"https://lwu1822.github.io/fastpages/misc/2023/05/31/CSAProject.html"},"url":"https://lwu1822.github.io/fastpages/misc/2023/05/31/CSAProject.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://lwu1822.github.io/fastpages/feed.xml" title="Lily" /><link rel="shortcut icon" type="image/x-icon" href="/fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -91,7 +92,9 @@ window.onload = wrap_img;
   <header class="post-header">
     <h1 class="post-title p-name" itemprop="name headline">Project</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2023-05-31T00:00:00-05:00" itemprop="datePublished">
         May 31, 2023
-      </time>
+      </time>• 
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span class="p-author h-card" itemprop="name">Lily Wu</span></span>
        • <span class="read-time" title="Estimated read time">
     
     
@@ -169,6 +172,8 @@ window.onload = wrap_img;
 <h2 id="reflection">
 <a class="anchor" href="#reflection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reflection</h2>
 
+<p>The biggest issue encountered was to achieve a balance between amount of data and the time that the program spends running. <mark>Analysis coming soon</mark></p>
+
 <p>One of the biggest limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs.</p>
 
 <h2 id="the-code">
@@ -180,6 +185,10 @@ window.onload = wrap_img;
 <a class="anchor" href="#the-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>The data</h3>
 
 <p>The data comes from two datasets: <code class="language-plaintext highlighter-rouge">10000.txt</code> and <code class="language-plaintext highlighter-rouge">song_data.csv</code>. <code class="language-plaintext highlighter-rouge">10000.txt</code> contains the user id, song id, and number of times a user listened to a song. <code class="language-plaintext highlighter-rouge">song_data.csv</code> consists of the song id, song name (title), album name (release), artist’s name, and year.</p>
+
+<p>The two datasets can be accessed <a href="https://www.kaggle.com/datasets/anuragbanerjee/million-song-data-set-subset">here</a>.</p>
+
+<p>From now on, I’ll refer to <code class="language-plaintext highlighter-rouge">10000.txt</code> as triplet data (since it has 3 columns of data), and <code class="language-plaintext highlighter-rouge">song_data.csv</code> as song data.</p>
 
 <h3 id="data-cleaning">
 <a class="anchor" href="#data-cleaning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data cleaning</h3>
@@ -193,10 +202,10 @@ window.onload = wrap_img;
     <p>Line (#):</p>
 
     <div class="language-plaintext highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code>song_df = pandas.merge(song_df_1, song_df_2.drop_duplicates(['song_id']), on="song_id", how="left")
+<div class="highlight"><pre class="highlight"><code>song_df_2 = song_df_2.drop_duplicates(['song_id'])
 </code></pre></div>    </div>
 
-    <p><code class="language-plaintext highlighter-rouge">song_df_2.drop_duplicates(['song_id'])</code> removes all duplicate song ids. This ensures that the file with the song info does not contain rows with duplicate songs.</p>
+    <p>This removes all duplicate song ids, ensuring that the file with the song info does not contain rows with duplicate songs.</p>
   </li>
 </ul>
 
@@ -207,9 +216,7 @@ window.onload = wrap_img;
 
 <p>The next step is to combine the two datasets. However, notice how both <code class="language-plaintext highlighter-rouge">10000.txt</code> and <code class="language-plaintext highlighter-rouge">song_data.csv</code> includes the song id? If the two datasets were combined, they would have duplicate entries. Therefore, they merge on the <code class="language-plaintext highlighter-rouge">song_id</code> column, while keeping the first dataset’s <code class="language-plaintext highlighter-rouge">song_id</code> column.</p>
 
-<p><code>
-song_df = pandas.merge(song_df_1, song_df_2.drop_duplicates(['song_id']), on="song_id", how="left") 
-</code></p>
+<p>The dataframe is then limited to the first 10000 songs. This number can be adjusted to be larger, which would probably provide more accurate results. However, this comes at the expense of taking more time to run the program. <mark>Analysis coming soon</mark>.</p>
 
 <p>Afterwards, the dataset is created with a <code class="language-plaintext highlighter-rouge">song</code> column. This column consists of the combination of the <code class="language-plaintext highlighter-rouge">title</code> column and the <code class="language-plaintext highlighter-rouge">artist_name</code>. Therefore, when the format of the data when being entered is <code class="language-plaintext highlighter-rouge">Song name - Artist name</code>.</p>
 
