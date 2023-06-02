@@ -95,7 +95,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      5 min read
+      6 min read
     
 </span></p>
 
@@ -116,8 +116,14 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h2"><a href="#overview">Overview</a></li>
 <li class="toc-entry toc-h2"><a href="#introduction">Introduction</a></li>
-<li class="toc-entry toc-h2"><a href="#thoughts">Thoughts</a></li>
-<li class="toc-entry toc-h2"><a href="#long-version">Long version</a></li>
+<li class="toc-entry toc-h2"><a href="#reflection">Reflection</a></li>
+<li class="toc-entry toc-h2"><a href="#the-code">The code</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#the-data">The data</a></li>
+<li class="toc-entry toc-h3"><a href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-entry toc-h3"><a href="#init">init</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#constructor">Constructor</a></li>
 <li class="toc-entry toc-h2"><a href="#get_similar_itemssonglist">get_similar_items(songList)</a></li>
 <li class="toc-entry toc-h2"><a href="#construct_cooccurence_matrix">construct_cooccurence_matrix()</a></li>
@@ -160,17 +166,44 @@ window.onload = wrap_img;
 
 <p>There is something called <strong>cosine similarity</strong> which is used as a distance metric. “The similarity is calculated based on the angle between these vectors”. Honestly I have no idea what that means and the calculations involves a lot of math that I can’t understand, so we’ll leave it at that :) But yeah, just know that a lot of math stuff occurs here to calculate similarity.</p>
 
-<h2 id="thoughts">
-<a class="anchor" href="#thoughts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Thoughts</h2>
+<h2 id="reflection">
+<a class="anchor" href="#reflection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reflection</h2>
 
 <p>One of the biggest limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs.</p>
 
-<h2 id="long-version">
-<a class="anchor" href="#long-version" aria-hidden="true"><span class="octicon octicon-link"></span></a>Long version</h2>
+<h2 id="the-code">
+<a class="anchor" href="#the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>The code</h2>
 
-<p>The data comes from two datasets: <code class="language-plaintext highlighter-rouge">10000.txt</code> and <code class="language-plaintext highlighter-rouge">song_data.csv</code>. <code class="language-plaintext highlighter-rouge">10000.txt</code> contains the user id, song id, and number of times the user listened to the song. <code class="language-plaintext highlighter-rouge">song_data.csv</code> consists of the song id, song name (title), release (album), artist’s name, and year.</p>
+<p><a href="https://github.com/Lychee80/fourWsBackend/blob/main/Recommenders.py">Code file</a></p>
 
-<p><code class="language-plaintext highlighter-rouge">10000.txt</code> is read by Pandas into a dataframe, and assigned columns consisting of a user id, song id, and listen count. <code class="language-plaintext highlighter-rouge">song_data.csv</code> is also read by Pandas.</p>
+<h3 id="the-data">
+<a class="anchor" href="#the-data" aria-hidden="true"><span class="octicon octicon-link"></span></a>The data</h3>
+
+<p>The data comes from two datasets: <code class="language-plaintext highlighter-rouge">10000.txt</code> and <code class="language-plaintext highlighter-rouge">song_data.csv</code>. <code class="language-plaintext highlighter-rouge">10000.txt</code> contains the user id, song id, and number of times a user listened to a song. <code class="language-plaintext highlighter-rouge">song_data.csv</code> consists of the song id, song name (title), album name (release), artist’s name, and year.</p>
+
+<h3 id="data-cleaning">
+<a class="anchor" href="#data-cleaning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data cleaning</h3>
+
+<p>Throughout the code, there are lines that help filter the data. This is an important step in order to make sure that the data is clean so that the format is consistent throughout the entire file.</p>
+
+<p><strong>Instances of data cleaning</strong>:</p>
+
+<ul>
+  <li>
+    <p>Line (#):</p>
+
+    <div class="language-plaintext highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>song_df = pandas.merge(song_df_1, song_df_2.drop_duplicates(['song_id']), on="song_id", how="left")
+</code></pre></div>    </div>
+
+    <p><code class="language-plaintext highlighter-rouge">song_df_2.drop_duplicates(['song_id'])</code> removes all duplicate song ids. This ensures that the file with the song info does not contain rows with duplicate songs.</p>
+  </li>
+</ul>
+
+<h3 id="init">
+<a class="anchor" href="#init" aria-hidden="true"><span class="octicon octicon-link"></span></a>init</h3>
+
+<p><code class="language-plaintext highlighter-rouge">10000.txt</code> is read by Pandas into a dataframe, and assigned columns consisting of a user id, song id, and listen count. <code class="language-plaintext highlighter-rouge">song_data.csv</code> is also read by Pandas into a dataframe.</p>
 
 <p>The next step is to combine the two datasets. However, notice how both <code class="language-plaintext highlighter-rouge">10000.txt</code> and <code class="language-plaintext highlighter-rouge">song_data.csv</code> includes the song id? If the two datasets were combined, they would have duplicate entries. Therefore, they merge on the <code class="language-plaintext highlighter-rouge">song_id</code> column, while keeping the first dataset’s <code class="language-plaintext highlighter-rouge">song_id</code> column.</p>
 
