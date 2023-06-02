@@ -5,6 +5,7 @@ description:
 categories: [misc]
 title: Project 
 comments: true
+author: Lily Wu
 ---
 
 # Songs
@@ -41,6 +42,8 @@ There is something called **cosine similarity** which is used as a distance metr
 
 ## Reflection
 
+The biggest issue encountered was to achieve a balance between amount of data and the time that the program spends running. <mark>Analysis coming soon</mark>
+
 One of the biggest limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs. 
 
 
@@ -53,6 +56,10 @@ One of the biggest limitation in our project is the dataset that we used. Our da
 
 The data comes from two datasets: `10000.txt` and `song_data.csv`. `10000.txt` contains the user id, song id, and number of times a user listened to a song. `song_data.csv` consists of the song id, song name (title), album name (release), artist's name, and year.
 
+The two datasets can be accessed [here](https://www.kaggle.com/datasets/anuragbanerjee/million-song-data-set-subset). 
+
+From now on, I'll refer to `10000.txt` as triplet data (since it has 3 columns of data), and `song_data.csv` as song data.
+
 ### Data cleaning
 
 Throughout the code, there are lines that help filter the data. This is an important step in order to make sure that the data is clean so that the format is consistent throughout the entire file. 
@@ -62,24 +69,19 @@ Throughout the code, there are lines that help filter the data. This is an impor
 * Line (#): 
 
   ```
-  song_df = pandas.merge(song_df_1, song_df_2.drop_duplicates(['song_id']), on="song_id", how="left")
+  song_df_2 = song_df_2.drop_duplicates(['song_id'])
   ```
 
-  `song_df_2.drop_duplicates(['song_id'])` removes all duplicate song ids. This ensures that the file with the song info does not contain rows with duplicate songs.
+  This removes all duplicate song ids, ensuring that the file with the song info does not contain rows with duplicate songs.
 
 
 ### init
-
-
-
 
 `10000.txt` is read by Pandas into a dataframe, and assigned columns consisting of a user id, song id, and listen count. `song_data.csv` is also read by Pandas into a dataframe. 
 
 The next step is to combine the two datasets. However, notice how both `10000.txt` and `song_data.csv` includes the song id? If the two datasets were combined, they would have duplicate entries. Therefore, they merge on the `song_id` column, while keeping the first dataset's `song_id` column.
 
-<code>
-song_df = pandas.merge(song_df_1, song_df_2.drop_duplicates(['song_id']), on="song_id", how="left") 
-</code>
+The dataframe is then limited to the first 10000 songs. This number can be adjusted to be larger, which would probably provide more accurate results. However, this comes at the expense of taking more time to run the program. <mark>Analysis coming soon</mark>. 
 
 Afterwards, the dataset is created with a `song` column. This column consists of the combination of the `title` column and the `artist_name`. Therefore, when the format of the data when being entered is `Song name - Artist name`. 
 
