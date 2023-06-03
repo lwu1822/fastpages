@@ -188,7 +188,7 @@ window.onload = wrap_img;
 
 <p>The two datasets can be accessed <a href="https://www.kaggle.com/datasets/anuragbanerjee/million-song-data-set-subset">here</a>.</p>
 
-<p>From now on, I’ll refer to <code class="language-plaintext highlighter-rouge">10000.txt</code> as triplet data (since it has 3 columns of data), and <code class="language-plaintext highlighter-rouge">song_data.csv</code> as song data.</p>
+<p>From now on, I’ll refer to <code class="language-plaintext highlighter-rouge">10000.txt</code> as triplet data (since it has 3 columns of data), and <code class="language-plaintext highlighter-rouge">song_data.csv</code> as song data. <mark>See</mark></p>
 
 <h3 id="data-cleaning">
 <a class="anchor" href="#data-cleaning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data cleaning</h3>
@@ -222,10 +222,10 @@ window.onload = wrap_img;
 
 <p>Alternatively, you can create a <code class="language-plaintext highlighter-rouge">song</code> column that consists of the combination of the <code class="language-plaintext highlighter-rouge">title</code> column and the <code class="language-plaintext highlighter-rouge">artist_name</code>. Therefore, the format of the data when being entered is <code class="language-plaintext highlighter-rouge">Song name - Artist name</code>.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># alternatively, you can: 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># alternatively, you can: 
 # merge song title and artist_name columns to make a merged column
 # because this recommender only recommends songs; we don't need artists
-#song_df['song'] = song_df['title'].map(str) + " - " + song_df['artist_name']
+</span><span class="n">song_df</span><span class="p">[</span><span class="s">'song'</span><span class="p">]</span> <span class="o">=</span> <span class="n">song_df</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> <span class="o">+</span> <span class="s">" - "</span> <span class="o">+</span> <span class="n">song_df</span><span class="p">[</span><span class="s">'artist_name'</span><span class="p">]</span>
 </code></pre></div></div>
 
 <p>After that, we want to split the dataset into testing and training data.</p>
@@ -234,7 +234,9 @@ window.onload = wrap_img;
 train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state=0)
 </code></p>
 
-<p>This uses the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library. In this case, the testing data’s size is 20% of the dataset, while the remaining 80% is the training data.</p>
+<p>This uses the <code class="language-plaintext highlighter-rouge">scikit-learn</code> library. In this case, the testing data’s size is 20% of the dataset, while the remaining 80% is the training data. <mark>See</mark></p>
+
+<p>Next, the <code class="language-plaintext highlighter-rouge">init()</code> function creates an item similarity recommender using the training data. Finally, the program finds similar songs to the song that the user inputs.</p>
 
 <h2 id="constructor">
 <a class="anchor" href="#constructor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constructor</h2>
