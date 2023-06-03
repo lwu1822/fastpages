@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -125,9 +125,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#the-data">The data</a></li>
 <li class="toc-entry toc-h3"><a href="#data-cleaning">Data cleaning</a></li>
 <li class="toc-entry toc-h3"><a href="#init">init</a></li>
+<li class="toc-entry toc-h3"><a href="#constructor">Constructor</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#constructor">Constructor</a></li>
 <li class="toc-entry toc-h2"><a href="#get_similar_itemssonglist">get_similar_items(songList)</a></li>
 <li class="toc-entry toc-h2"><a href="#construct_cooccurence_matrix">construct_cooccurence_matrix()</a></li>
 <li class="toc-entry toc-h2"><a href="#generate_top_recommendations">generate_top_recommendations()</a></li>
@@ -212,6 +212,50 @@ window.onload = wrap_img;
 <h3 id="init">
 <a class="anchor" href="#init" aria-hidden="true"><span class="octicon octicon-link"></span></a>init</h3>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">songList</span><span class="p">):</span>
+    <span class="c1"># triplets_file consists of a "triplet" of data (user id, song id, listen count)
+</span>    <span class="n">triplets_file</span> <span class="o">=</span> <span class="s">"data/test2/10000.txt"</span>
+    <span class="n">songs_metadata_file</span> <span class="o">=</span> <span class="s">'data/test2/song_data.csv'</span>
+
+    <span class="c1"># read table and define columns
+</span>    <span class="n">song_df_1</span> <span class="o">=</span> <span class="n">pandas</span><span class="p">.</span><span class="n">read_table</span><span class="p">(</span><span class="n">triplets_file</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="n">song_df_1</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">'user_id'</span><span class="p">,</span> <span class="s">'song_id'</span><span class="p">,</span> <span class="s">'listen_count'</span><span class="p">]</span>
+
+    <span class="c1"># read song metadata
+</span>    <span class="n">song_df_2</span> <span class="o">=</span>  <span class="n">pandas</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">songs_metadata_file</span><span class="p">)</span>
+    <span class="c1"># clean data to remove rows with duplicate songs
+</span>    <span class="n">song_df_2</span> <span class="o">=</span> <span class="n">song_df_2</span><span class="p">.</span><span class="n">drop_duplicates</span><span class="p">([</span><span class="s">'song_id'</span><span class="p">])</span>
+
+
+    <span class="c1"># merge the two dataframes above to create input dataframe for recommender systems
+</span>    <span class="c1"># keep the triplet data's song id, drop the duplicate column of "song_id" in the song data's file
+</span>    <span class="n">song_df</span> <span class="o">=</span> <span class="n">pandas</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">song_df_1</span><span class="p">,</span> <span class="n">song_df_2</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s">"song_id"</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">"left"</span><span class="p">)</span> 
+
+    <span class="c1"># subset consists of first 10000 songs
+</span>    <span class="n">song_df</span> <span class="o">=</span> <span class="n">song_df</span><span class="p">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>
+
+    
+    <span class="n">song_df</span><span class="p">[</span><span class="s">'song'</span><span class="p">]</span> <span class="o">=</span> <span class="n">song_df</span><span class="p">[</span><span class="s">'title'</span><span class="p">].</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span> 
+
+    <span class="c1"># alternatively, you can: 
+</span>    <span class="c1"># merge song title and artist_name columns to make a merged column
+</span>    <span class="c1"># because this recommender only recommends songs; we don't need artists
+</span>    <span class="c1">#song_df['song'] = song_df['title'].map(str) + " - " + song_df['artist_name']
+</span>    
+    <span class="c1"># using scikit-learn to split data into training and testing data
+</span>    <span class="c1"># test_size = 0.20: Testing size is 20% =&gt; training size is 80%
+</span>    <span class="n">train_data</span><span class="p">,</span> <span class="n">test_data</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">song_df</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.20</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+    
+    <span class="c1"># make an item similarity recommender
+</span>    <span class="n">is_model</span> <span class="o">=</span> <span class="n">item_similarity_recommender_py</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">,</span> <span class="s">"song"</span><span class="p">)</span>
+
+    <span class="c1"># predict what song you would like based on a song that you input
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">is_model</span><span class="p">.</span><span class="n">get_similar_items</span><span class="p">(</span><span class="n">songList</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">df</span>    
+</code></pre></div></div>
+
 <p><code class="language-plaintext highlighter-rouge">10000.txt</code> is read by Pandas into a dataframe, and assigned columns consisting of a user id, song id, and listen count. <code class="language-plaintext highlighter-rouge">song_data.csv</code> is also read by Pandas into a dataframe.</p>
 
 <p>The next step is to combine the two datasets. However, notice how both <code class="language-plaintext highlighter-rouge">10000.txt</code> and <code class="language-plaintext highlighter-rouge">song_data.csv</code> includes the song id? If the two datasets were combined, they would have duplicate entries. Therefore, they merge on the <code class="language-plaintext highlighter-rouge">song_id</code> column, while keeping the first dataset’s <code class="language-plaintext highlighter-rouge">song_id</code> column.</p>
@@ -238,29 +282,57 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 
 <p>Next, the <code class="language-plaintext highlighter-rouge">init()</code> function creates an item similarity recommender using the training data. Finally, the program finds similar songs to the song that the user inputs.</p>
 
-<h2 id="constructor">
-<a class="anchor" href="#constructor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constructor</h2>
+<h3 id="constructor">
+<a class="anchor" href="#constructor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Constructor</h3>
 
-<p>Since the code uses OOP, the class is called and the following instance variables are initalized: the training data (<code class="language-plaintext highlighter-rouge">train_data</code>).</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">is_model</span> <span class="o">=</span> <span class="n">item_similarity_recommender_py</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">,</span> <span class="s">"song"</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>In addition, <code class="language-plaintext highlighter-rouge">user_id</code> is assigned to the string “user_id”, and <code class="language-plaintext highlighter-rouge">item_id</code> is assigned to the string “song”. Therefore, in this case, it is important to note that the <strong>item is the song</strong> (which makes sense because the recommendation really focuses on the user and their ratings for the songs).</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">train_data</span><span class="p">,</span> <span class="n">user_id</span><span class="p">,</span> <span class="n">item_id</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">train_data</span> <span class="o">=</span> <span class="n">train_data</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">user_id</span> <span class="o">=</span> <span class="n">user_id</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">item_id</span> <span class="o">=</span> <span class="n">item_id</span>
+</code></pre></div></div>
 
-<p>The next piece of code passes in a list of songs that the user inputs:</p>
-
-<p><code>
-df = is_model.get_similar_items(songList)
-</code></p>
+<p>Since the code uses OOP, the class is called and the following variables are initialized:</p>
+<ul>
+  <li>
+    <p>The training data (<code class="language-plaintext highlighter-rouge">train_data</code>).</p>
+  </li>
+  <li>
+    <p>In addition, <code class="language-plaintext highlighter-rouge">user_id</code> is assigned to the string “user_id”, and <code class="language-plaintext highlighter-rouge">item_id</code> is assigned to the string “song”. Therefore, in this case, it is important to note that the <strong>item is the song</strong> (which makes sense because the recommendation really focuses on the user and their ratings for the songs).</p>
+  </li>
+</ul>
 
 <h2 id="get_similar_itemssonglist">
 <a class="anchor" href="#get_similar_itemssonglist" aria-hidden="true"><span class="octicon octicon-link"></span></a>get_similar_items(songList)</h2>
 
-<p><code class="language-plaintext highlighter-rouge">get_all_items_train_data()</code> is called and assigned to <code class="language-plaintext highlighter-rouge">all_songs</code>. This function returns a list of the training data with the <code class="language-plaintext highlighter-rouge">song</code> column with unique values.</p>
+<p>The next piece of code passes in a list of songs that the user inputs:</p>
 
-<p>Next, a cooccurrence matrix is created.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">df</span> <span class="o">=</span> <span class="n">is_model</span><span class="p">.</span><span class="n">get_similar_items</span><span class="p">(</span><span class="n">songList</span><span class="p">)</span>
+</code></pre></div></div>
 
-<p>cooccurence_matrix = self.construct_cooccurence_matrix(user_songs, all_songs)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get similar songs to those that the user inputs
+</span><span class="k">def</span> <span class="nf">get_similar_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputSong</span><span class="p">):</span>
+    
+    <span class="c1"># Obtain unique songs in the training data
+</span>    <span class="n">all_songs</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">get_all_items_train_data</span><span class="p">()</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="s">"no. of unique songs in the training set: %d"</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_songs</span><span class="p">))</span>
+        
+    <span class="c1"># Make a cooccurence matrix
+</span>    <span class="n">cooccurence_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">construct_cooccurence_matrix</span><span class="p">(</span><span class="n">inputSong</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">)</span>
+    
+    <span class="c1"># Use cooccurence matrix to generate recommendations 
+</span>    <span class="n">user</span> <span class="o">=</span> <span class="s">""</span>
+    <span class="n">df_recommendations</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">generate_top_recommendations</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">cooccurence_matrix</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">,</span> <span class="n">inputSong</span><span class="p">)</span>
+        
+    <span class="k">return</span> <span class="n">df_recommendations</span>
+</code></pre></div></div>
 
-<p>To create the coccurrence matrix, the <code class="language-plaintext highlighter-rouge">construct_cooccurence_matrix</code> function is called, passing in the <code class="language-plaintext highlighter-rouge">songList</code> and <code class="language-plaintext highlighter-rouge">all_songs</code> (training data unique songs).</p>
+<p><code class="language-plaintext highlighter-rouge">get_all_items_train_data()</code> is a function that returns a list of unique values in the training data under the <code class="language-plaintext highlighter-rouge">song</code> column. In other words, the function returns a list of unique songs in the training data.</p>
+
+<p>Next, a cooccurrence matrix is created, which is then used to generate the recommendtions.</p>
 
 <h2 id="construct_cooccurence_matrix">
 <a class="anchor" href="#construct_cooccurence_matrix" aria-hidden="true"><span class="octicon octicon-link"></span></a>construct_cooccurence_matrix()</h2>
