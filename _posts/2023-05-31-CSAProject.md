@@ -83,7 +83,19 @@ The next step is to combine the two datasets. However, notice how both `10000.tx
 
 The dataframe is then limited to the first 10000 songs. This number can be adjusted to be larger, which would probably provide more accurate results. However, this comes at the expense of taking more time to run the program. <mark>Analysis coming soon</mark>. 
 
-Afterwards, the dataset is created with a `song` column. This column consists of the combination of the `title` column and the `artist_name`. Therefore, when the format of the data when being entered is `Song name - Artist name`. 
+
+
+Afterwards, the dataset is created with a `song` column. This column takes information from the title column. This is **important because the title of the song is used when the user inputs a song name on the frontend and when the code outputs a song as recommendation.**
+
+
+Alternatively, you can create a `song` column that consists of the combination of the `title` column and the `artist_name`. Therefore, the format of the data when being entered is `Song name - Artist name`.
+
+```
+# alternatively, you can: 
+# merge song title and artist_name columns to make a merged column
+# because this recommender only recommends songs; we don't need artists
+#song_df['song'] = song_df['title'].map(str) + " - " + song_df['artist_name']
+```
 
 
 After that, we want to split the dataset into testing and training data. 
