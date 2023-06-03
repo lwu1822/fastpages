@@ -77,6 +77,52 @@ Throughout the code, there are lines that help filter the data. This is an impor
 
 ### init
 
+```python
+def init(songList):
+    # triplets_file consists of a "triplet" of data (user id, song id, listen count)
+    triplets_file = "data/test2/10000.txt"
+    songs_metadata_file = 'data/test2/song_data.csv'
+
+    # read table and define columns
+    song_df_1 = pandas.read_table(triplets_file,header=None)
+    song_df_1.columns = ['user_id', 'song_id', 'listen_count']
+
+    # read song metadata
+    song_df_2 =  pandas.read_csv(songs_metadata_file)
+    # clean data to remove rows with duplicate songs
+    song_df_2 = song_df_2.drop_duplicates(['song_id'])
+
+
+    # merge the two dataframes above to create input dataframe for recommender systems
+    # keep the triplet data's song id, drop the duplicate column of "song_id" in the song data's file
+    song_df = pandas.merge(song_df_1, song_df_2, on="song_id", how="left") 
+
+    # subset consists of first 10000 songs
+    song_df = song_df.head(10000)
+
+    
+    song_df['song'] = song_df['title'].map(str) 
+
+    # alternatively, you can: 
+    # merge song title and artist_name columns to make a merged column
+    # because this recommender only recommends songs; we don't need artists
+    #song_df['song'] = song_df['title'].map(str) + " - " + song_df['artist_name']
+    
+    # using scikit-learn to split data into training and testing data
+    # test_size = 0.20: Testing size is 20% => training size is 80%
+    train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state=0)
+
+    
+    # make an item similarity recommender
+    is_model = item_similarity_recommender_py(train_data, "user_id", "song")
+
+    # predict what song you would like based on a song that you input
+    df = is_model.get_similar_items(songList)
+    
+    return df    
+```
+
+
 `10000.txt` is read by Pandas into a dataframe, and assigned columns consisting of a user id, song id, and listen count. `song_data.csv` is also read by Pandas into a dataframe. 
 
 The next step is to combine the two datasets. However, notice how both `10000.txt` and `song_data.csv` includes the song id? If the two datasets were combined, they would have duplicate entries. Therefore, they merge on the `song_id` column, while keeping the first dataset's `song_id` column.
@@ -108,30 +154,57 @@ This uses the `scikit-learn` library. In this case, the testing data's size is 2
 
 Next, the `init()` function creates an item similarity recommender using the training data. Finally, the program finds similar songs to the song that the user inputs. 
 
-## Constructor
+### Constructor
 
-Since the code uses OOP, the class is called and the following instance variables are initalized: the training data (`train_data`). 
+```python
+is_model = item_similarity_recommender_py(train_data, "user_id", "song")
+```
 
-In addition, `user_id` is assigned to the string "user_id", and `item_id` is assigned to the string "song". Therefore, in this case, it is important to note that the **item is the song** (which makes sense because the recommendation really focuses on the user and their ratings for the songs).
+```python
+def __init__(self, train_data, user_id, item_id):
+    self.train_data = train_data
+    self.user_id = user_id
+    self.item_id = item_id
+```
+
+Since the code uses OOP, the class is called and the following variables are initialized: 
+* The training data (`train_data`). 
+
+* In addition, `user_id` is assigned to the string "user_id", and `item_id` is assigned to the string "song". Therefore, in this case, it is important to note that the **item is the song** (which makes sense because the recommendation really focuses on the user and their ratings for the songs).
 
 
-The next piece of code passes in a list of songs that the user inputs:
-
-<code>
-df = is_model.get_similar_items(songList)
-</code>
 
 
 ## get_similar_items(songList)
 
-`get_all_items_train_data()` is called and assigned to `all_songs`. This function returns a list of the training data with the `song` column with unique values.
+The next piece of code passes in a list of songs that the user inputs:
 
-Next, a cooccurrence matrix is created. 
+```python
+df = is_model.get_similar_items(songList)
+```
 
+```python
+# Get similar songs to those that the user inputs
+def get_similar_items(self, inputSong):
+    
+    # Obtain unique songs in the training data
+    all_songs = self.get_all_items_train_data()
+    
+    print("no. of unique songs in the training set: %d" % len(all_songs))
+        
+    # Make a cooccurence matrix
+    cooccurence_matrix = self.construct_cooccurence_matrix(inputSong, all_songs)
+    
+    # Use cooccurence matrix to generate recommendations 
+    user = ""
+    df_recommendations = self.generate_top_recommendations(user, cooccurence_matrix, all_songs, inputSong)
+        
+    return df_recommendations
+```
 
-cooccurence_matrix = self.construct_cooccurence_matrix(user_songs, all_songs)
+`get_all_items_train_data()` is a function that returns a list of unique values in the training data under the `song` column. In other words, the function returns a list of unique songs in the training data.  
 
-To create the coccurrence matrix, the `construct_cooccurence_matrix` function is called, passing in the `songList` and `all_songs` (training data unique songs).
+Next, a cooccurrence matrix is created, which is then used to generate the recommendtions.
 
 ## construct_cooccurence_matrix()
 
