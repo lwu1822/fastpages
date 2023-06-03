@@ -58,7 +58,7 @@ The data comes from two datasets: `10000.txt` and `song_data.csv`. `10000.txt` c
 
 The two datasets can be accessed [here](https://www.kaggle.com/datasets/anuragbanerjee/million-song-data-set-subset). 
 
-From now on, I'll refer to `10000.txt` as triplet data (since it has 3 columns of data), and `song_data.csv` as song data.
+From now on, I'll refer to `10000.txt` as triplet data (since it has 3 columns of data), and `song_data.csv` as song data. <mark>See</mark>
 
 ### Data cleaning
 
@@ -90,11 +90,11 @@ Afterwards, the dataset is created with a `song` column. This column takes infor
 
 Alternatively, you can create a `song` column that consists of the combination of the `title` column and the `artist_name`. Therefore, the format of the data when being entered is `Song name - Artist name`.
 
-```
+```python
 # alternatively, you can: 
 # merge song title and artist_name columns to make a merged column
 # because this recommender only recommends songs; we don't need artists
-#song_df['song'] = song_df['title'].map(str) + " - " + song_df['artist_name']
+song_df['song'] = song_df['title'].map(str) + " - " + song_df['artist_name']
 ```
 
 
@@ -104,7 +104,9 @@ After that, we want to split the dataset into testing and training data.
 train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state=0)
 </code>
 
-This uses the `scikit-learn` library. In this case, the testing data's size is 20% of the dataset, while the remaining 80% is the training data. 
+This uses the `scikit-learn` library. In this case, the testing data's size is 20% of the dataset, while the remaining 80% is the training data. <mark>See</mark>
+
+Next, the `init()` function creates an item similarity recommender using the training data. Finally, the program finds similar songs to the song that the user inputs. 
 
 ## Constructor
 
