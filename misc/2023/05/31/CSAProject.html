@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      10 min read
+      11 min read
     
 </span></p>
 
@@ -132,9 +132,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#get_similar_itemsinputsong">get_similar_items(inputSong)</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#construct_cooccurence_matrixinputsong-all_songs">construct_cooccurence_matrix(inputSong, all_songs)</a></li>
+<li class="toc-entry toc-h3"><a href="#generate_top_recommendations">generate_top_recommendations()</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#generate_top_recommendations">generate_top_recommendations()</a></li>
 </ul>
 </li>
 </ul><h1 id="songs">
@@ -418,18 +418,49 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 
 <p>c. The quotient of the length of the intersection and the length of the union are added into the cooccurence matrix.</p>
 
-<h2 id="generate_top_recommendations">
-<a class="anchor" href="#generate_top_recommendations" aria-hidden="true"><span class="octicon octicon-link"></span></a>generate_top_recommendations()</h2>
+<h3 id="generate_top_recommendations">
+<a class="anchor" href="#generate_top_recommendations" aria-hidden="true"><span class="octicon octicon-link"></span></a>generate_top_recommendations()</h3>
 
-<p>Last piece of code in <code class="language-plaintext highlighter-rouge">get_similar_items()</code> is <code class="language-plaintext highlighter-rouge">generate_top_recommendations()</code>, which passes in the coocurrence matrix, <code class="language-plaintext highlighter-rouge">all_songs</code>, and <code class="language-plaintext highlighter-rouge">user_songs</code> (<code class="language-plaintext highlighter-rouge">songList</code>).</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Use cooccurence matrix to generate recommendations 
+</span><span class="k">def</span> <span class="nf">generate_top_recommendations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">cooccurence_matrix</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">,</span> <span class="n">inputSong</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Non zero values in cooccurence_matrix :%d"</span> <span class="o">%</span> <span class="n">np</span><span class="p">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">cooccurence_matrix</span><span class="p">))</span>
+    
+    
+    <span class="c1"># Calculate a recommendation score
+</span>    <span class="n">user_sim_scores</span> <span class="o">=</span> <span class="n">cooccurence_matrix</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">cooccurence_matrix</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    
+    <span class="n">user_sim_scores</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">user_sim_scores</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="n">tolist</span><span class="p">()</span>
 
-<p>Using the cooccurence matrix, a score is calculated by dividng the sum of the values in each column with the num of rows. These scores are then converted into an array and converted to a list.</p>
+    <span class="c1"># Sort the scores from highest to lowest
+</span>    <span class="n">sort_index</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(((</span><span class="n">e</span><span class="p">,</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">e</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">user_sim_scores</span><span class="p">))),</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="c1"># Make a new dataframe
+</span>    <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">'user_id'</span><span class="p">,</span> <span class="s">'song'</span><span class="p">,</span> <span class="s">'score'</span><span class="p">,</span> <span class="s">'rank'</span><span class="p">]</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pandas</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+        
+    <span class="c1"># Add top 10 highest scores to dataframe
+</span>    <span class="n">rank</span> <span class="o">=</span> <span class="mi">1</span> 
+    <span class="k">print</span><span class="p">(</span><span class="n">sort_index</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sort_index</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="o">~</span><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="n">all_songs</span><span class="p">[</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">inputSong</span> <span class="ow">and</span> <span class="n">rank</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]</span><span class="o">=</span><span class="p">[</span><span class="n">user</span><span class="p">,</span><span class="n">all_songs</span><span class="p">[</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]],</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">rank</span><span class="p">]</span>
+            <span class="n">rank</span> <span class="o">+=</span> <span class="mi">1</span>
+    
+    <span class="c1"># Error checking
+</span>    <span class="k">if</span> <span class="n">df</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"The current user has no songs for training the item similarity based recommendation model."</span><span class="p">)</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">df</span>
+</code></pre></div></div>
+
+<p>Using the cooccurence matrix, the recommendation score is calculated by dividing the sum of the values in each column with the number of rows. These scores are then converted to a list.</p>
 
 <p>Using this list of scores, a new list is created that sorts the scores from highest to lowest and includes their corresponding index.</p>
 
 <p>A new dataframe is then created that contains the user id, song, score, and rank.</p>
 
-<p><mark>Possible change</mark>: The code then loops through the sorted list of scores and checks if the top values actually have numbers and checks if these values are different from the song that the user inputs. Lastly, the dataframe adds in the name of the song (based on the index in <code class="language-plaintext highlighter-rouge">sort_index</code>), and its score.</p>
+<p>The code then loops through the sorted list of scores and checks if the top values actually has a score and if these values are different from the song that the user inputs. Lastly, the dataframe adds in the name of the song (using the index in <code class="language-plaintext highlighter-rouge">sort_index</code> and locating it in <code class="language-plaintext highlighter-rouge">all_songs</code>), and its score.</p>
 
 
   </div><!-- from https://github.com/utterance/utterances -->
