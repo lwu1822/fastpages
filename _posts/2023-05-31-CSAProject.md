@@ -75,10 +75,19 @@ Throughout the code, there are lines that help filter the data. This is an impor
   This removes all duplicate song ids, ensuring that the file with the song info does not contain rows with duplicate songs.
 
 
+### Common variables
+
+The code is quite long, so below are definitions of the commonly used variables in this program. These can be used to refer back to if you're not sure what a certain variable stands for.
+
+* `inputSong`: A list of songs that the user inputs. These are the songs that the user likes and wants to get recommendations for.
+
+* `all_songs`: A list of unique values in the training data under the `song` column. 
+
+
 ### init
 
 ```python
-def init(songList):
+def init(inputSong):
     # triplets_file consists of a "triplet" of data (user id, song id, listen count)
     triplets_file = "data/test2/10000.txt"
     songs_metadata_file = 'data/test2/song_data.csv'
@@ -117,7 +126,7 @@ def init(songList):
     is_model = item_similarity_recommender_py(train_data, "user_id", "song")
 
     # predict what song you would like based on a song that you input
-    df = is_model.get_similar_items(songList)
+    df = is_model.get_similar_items(inputSong)
     
     return df    
 ```
@@ -154,6 +163,7 @@ This uses the `scikit-learn` library. In this case, the testing data's size is 2
 
 Next, the `init()` function creates an item similarity recommender using the training data. Finally, the program finds similar songs to the song that the user inputs. 
 
+
 ### Constructor
 
 ```python
@@ -175,7 +185,7 @@ Since the code uses OOP, the class is called and the following variables are ini
 
 
 
-## get_similar_items(songList)
+## get_similar_items(inputSong)
 
 The next piece of code passes in a list of songs that the user inputs:
 
@@ -204,23 +214,74 @@ def get_similar_items(self, inputSong):
 
 `get_all_items_train_data()` is a function that returns a list of unique values in the training data under the `song` column. In other words, the function returns a list of unique songs in the training data.  
 
-Next, a cooccurrence matrix is created, which is then used to generate the recommendtions.
-
-## construct_cooccurence_matrix()
-
-A list called `user_songs_users` is created. For each element in `songList`, the training data with values that are the same as the song are returned **as the user id**. (Additionally, the data is filtered to be unique).
-
-Afterwards, we want to create a cooccurence matrix using numpy. The matrix originally consists of all zeros, with a row number that is equal to the number of songs in `songList`, and a column number equal to the number of songs in `all_songs` (training data that consists of unique values in `songList`). 
+Next, a cooccurrence matrix is created, which is then used to generate the recommendations.
 
 
-Afterwards, we want to calculate **simlarity**.
+### construct_cooccurence_matrix(inputSong, all_songs)
+
+```python
+# Make a coocurrence matrix
+def construct_cooccurence_matrix(self, inputSong, all_songs):
+        
+    # Obtain the user IDs of those who ranked songs that are the same as the songs that the user inputted 
+    user_songs_users = []        
+    for i in range(len(inputSong)):
+        user_songs_users.append(self.get_item_users(inputSong[i]))
+        
+    # Make a cooccurence matrix 
+    cooccurence_matrix = np.matrix(np.zeros(shape=(len(inputSong), len(all_songs))), float)
+        
+    # Calculate similarity 
+    for i in range(len(all_songs)):
+        # Obtain a set of unique user IDs of those who listened to a song (song refers to the list of unique values in the training data under the song column)
+        songs_i_data = self.train_data[self.train_data[self.item_id] == all_songs[i]]
+        users_i = set(songs_i_data[self.user_id].unique())
+        
+        for j in range(len(inputSong)):       
+                
+            # Take a user ID from user_songs_users
+            users_j = user_songs_users[j]
+                
+            # Compare the user ID from user_songs_users with the user IDs in the set
+            users_intersection = users_i.intersection(users_j)
+            
+            if len(users_intersection) != 0:
+                # Find the union of the two user IDs
+                users_union = users_i.union(users_j)
+                
+                cooccurence_matrix[j,i] = float(len(users_intersection))/float(len(users_union))
+            else:
+                cooccurence_matrix[j,i] = 0
+                
+    
+    return cooccurence_matrix
+```
 
 
-The code that calculates similarity does the following: it assigns the all of the training data (specifically the `song` column) that are unique into a variable called `songs_i_data`. It then uses this variable to get unique user ids and adds it in `users_i`. (`users_i`'s type is a set).
+The program looks at the values under the `song` column in the training data. It first finds the values that match the songs that the user inputted (found in `inputSong`). Then, the program adds the IDs of the users who ranked the songs into a list called `user_songs_users`.
 
-The user ids are then compared with each user id that listened to the songs in songList (**intersection**). If there are matches, the union of `users_i` and the id that lsitened to the songs in songList are recorded. The quotient of the length of the intersection and the union are added into the cooccurence matrix. 
 
-<mark>Possible changes</mark>: Change the format from `Song - Artist` to just `Song`. 
+Afterwards, a cooccurence matrix is created using numpy. The matrix originally consists of all zeros, and has a number of rows that is equal to the number of songs in `inputSong`, and a number of columns that is equal to the number of songs in `all_songs` (a list of unique values in the training data under the `song` column). 
+
+
+Afterwards, we want to calculate **simlarity** by obtaining a set of unique user IDs of those who listened to a song and comparing it with the user IDs of those who listened to the songs that the user inputs.
+
+Specifically, the code that calculates similarity does the following through iteration:
+
+1. It finds the rows in the dataset where the values under the `song` column in the training data match the name of a song in `all_songs` (the name depends on the value of `i` in the for loop, which determines the index of `all_songs`). 
+
+2. A set of unique user IDs are obtained from the rows in step 1.
+
+3. The program uses a nested for loop for more iteration:
+
+  a. The code takes a user ID from `user_songs_users` and compares it with the user IDs in the set from step 2 (finding the **intersection**). 
+
+  b. If there is a match, the union of the two user IDs from step 3a are recorded. 
+
+  c. The quotient of the length of the intersection and the length of the union are added into the cooccurence matrix.
+
+
+
 
 
 ## generate_top_recommendations()
