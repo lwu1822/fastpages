@@ -282,19 +282,49 @@ Specifically, the code that calculates similarity does the following through ite
 
 
 
+### generate_top_recommendations()
 
+```python
+# Use cooccurence matrix to generate recommendations 
+def generate_top_recommendations(self, user, cooccurence_matrix, all_songs, inputSong):
+    print("Non zero values in cooccurence_matrix :%d" % np.count_nonzero(cooccurence_matrix))
+    
+    
+    # Calculate a recommendation score
+    user_sim_scores = cooccurence_matrix.sum(axis=0)/float(cooccurence_matrix.shape[0])
+    
+    user_sim_scores = np.array(user_sim_scores)[0].tolist()
 
-## generate_top_recommendations()
+    # Sort the scores from highest to lowest
+    sort_index = sorted(((e,i) for i,e in enumerate(list(user_sim_scores))), reverse=True)
 
-Last piece of code in `get_similar_items()` is `generate_top_recommendations()`, which passes in the coocurrence matrix, `all_songs`, and `user_songs` (`songList`). 
+    # Make a new dataframe
+    columns = ['user_id', 'song', 'score', 'rank']
+    df = pandas.DataFrame(columns=columns)
+        
+    # Add top 10 highest scores to dataframe
+    rank = 1 
+    print(sort_index)
+    for i in range(len(sort_index)):
+        if ~np.isnan(sort_index[i][0]) and all_songs[sort_index[i][1]] not in inputSong and rank <= 10:
+            df.loc[len(df)]=[user,all_songs[sort_index[i][1]],sort_index[i][0],rank]
+            rank += 1
+    
+    # Error checking
+    if df.shape[0] == 0:
+        print("The current user has no songs for training the item similarity based recommendation model.")
+        return -1
+    else:
+        return df
+```
 
-Using the cooccurence matrix, a score is calculated by dividng the sum of the values in each column with the num of rows. These scores are then converted into an array and converted to a list. 
+Using the cooccurence matrix, the recommendation score is calculated by dividing the sum of the values in each column with the number of rows. These scores are then converted to a list. 
 
 Using this list of scores, a new list is created that sorts the scores from highest to lowest and includes their corresponding index. 
 
 A new dataframe is then created that contains the user id, song, score, and rank. 
 
-<mark>Possible change</mark>: The code then loops through the sorted list of scores and checks if the top values actually have numbers and checks if these values are different from the song that the user inputs. Lastly, the dataframe adds in the name of the song (based on the index in `sort_index`), and its score. 
+The code then loops through the sorted list of scores and checks if the top values actually has a score and if these values are different from the song that the user inputs. Lastly, the dataframe adds in the name of the song (using the index in `sort_index` and locating it in `all_songs`), and its score. 
 
 
 
