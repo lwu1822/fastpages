@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      8 min read
+      10 min read
     
 </span></p>
 
@@ -124,12 +124,16 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#the-data">The data</a></li>
 <li class="toc-entry toc-h3"><a href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-entry toc-h3"><a href="#common-variables">Common variables</a></li>
 <li class="toc-entry toc-h3"><a href="#init">init</a></li>
 <li class="toc-entry toc-h3"><a href="#constructor">Constructor</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#get_similar_itemssonglist">get_similar_items(songList)</a></li>
-<li class="toc-entry toc-h2"><a href="#construct_cooccurence_matrix">construct_cooccurence_matrix()</a></li>
+<li class="toc-entry toc-h2"><a href="#get_similar_itemsinputsong">get_similar_items(inputSong)</a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#construct_cooccurence_matrixinputsong-all_songs">construct_cooccurence_matrix(inputSong, all_songs)</a></li>
+</ul>
+</li>
 <li class="toc-entry toc-h2"><a href="#generate_top_recommendations">generate_top_recommendations()</a></li>
 </ul>
 </li>
@@ -209,10 +213,24 @@ window.onload = wrap_img;
   </li>
 </ul>
 
+<h3 id="common-variables">
+<a class="anchor" href="#common-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common variables</h3>
+
+<p>The code is quite long, so below are definitions of the commonly used variables in this program. These can be used to refer back to if you’re not sure what a certain variable stands for.</p>
+
+<ul>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">inputSong</code>: A list of songs that the user inputs. These are the songs that the user likes and wants to get recommendations for.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">all_songs</code>: A list of unique values in the training data under the <code class="language-plaintext highlighter-rouge">song</code> column.</p>
+  </li>
+</ul>
+
 <h3 id="init">
 <a class="anchor" href="#init" aria-hidden="true"><span class="octicon octicon-link"></span></a>init</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">songList</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">inputSong</span><span class="p">):</span>
     <span class="c1"># triplets_file consists of a "triplet" of data (user id, song id, listen count)
 </span>    <span class="n">triplets_file</span> <span class="o">=</span> <span class="s">"data/test2/10000.txt"</span>
     <span class="n">songs_metadata_file</span> <span class="o">=</span> <span class="s">'data/test2/song_data.csv'</span>
@@ -251,7 +269,7 @@ window.onload = wrap_img;
 </span>    <span class="n">is_model</span> <span class="o">=</span> <span class="n">item_similarity_recommender_py</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">,</span> <span class="s">"song"</span><span class="p">)</span>
 
     <span class="c1"># predict what song you would like based on a song that you input
-</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">is_model</span><span class="p">.</span><span class="n">get_similar_items</span><span class="p">(</span><span class="n">songList</span><span class="p">)</span>
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">is_model</span><span class="p">.</span><span class="n">get_similar_items</span><span class="p">(</span><span class="n">inputSong</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">df</span>    
 </code></pre></div></div>
@@ -304,8 +322,8 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
   </li>
 </ul>
 
-<h2 id="get_similar_itemssonglist">
-<a class="anchor" href="#get_similar_itemssonglist" aria-hidden="true"><span class="octicon octicon-link"></span></a>get_similar_items(songList)</h2>
+<h2 id="get_similar_itemsinputsong">
+<a class="anchor" href="#get_similar_itemsinputsong" aria-hidden="true"><span class="octicon octicon-link"></span></a>get_similar_items(inputSong)</h2>
 
 <p>The next piece of code passes in a list of songs that the user inputs:</p>
 
@@ -332,22 +350,73 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 
 <p><code class="language-plaintext highlighter-rouge">get_all_items_train_data()</code> is a function that returns a list of unique values in the training data under the <code class="language-plaintext highlighter-rouge">song</code> column. In other words, the function returns a list of unique songs in the training data.</p>
 
-<p>Next, a cooccurrence matrix is created, which is then used to generate the recommendtions.</p>
+<p>Next, a cooccurrence matrix is created, which is then used to generate the recommendations.</p>
 
-<h2 id="construct_cooccurence_matrix">
-<a class="anchor" href="#construct_cooccurence_matrix" aria-hidden="true"><span class="octicon octicon-link"></span></a>construct_cooccurence_matrix()</h2>
+<h3 id="construct_cooccurence_matrixinputsong-all_songs">
+<a class="anchor" href="#construct_cooccurence_matrixinputsong-all_songs" aria-hidden="true"><span class="octicon octicon-link"></span></a>construct_cooccurence_matrix(inputSong, all_songs)</h3>
 
-<p>A list called <code class="language-plaintext highlighter-rouge">user_songs_users</code> is created. For each element in <code class="language-plaintext highlighter-rouge">songList</code>, the training data with values that are the same as the song are returned <strong>as the user id</strong>. (Additionally, the data is filtered to be unique).</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Make a coocurrence matrix
+</span><span class="k">def</span> <span class="nf">construct_cooccurence_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputSong</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">):</span>
+        
+    <span class="c1"># Obtain the user IDs of those who ranked songs that are the same as the songs that the user inputted 
+</span>    <span class="n">user_songs_users</span> <span class="o">=</span> <span class="p">[]</span>        
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputSong</span><span class="p">)):</span>
+        <span class="n">user_songs_users</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">get_item_users</span><span class="p">(</span><span class="n">inputSong</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        
+    <span class="c1"># Make a cooccurence matrix 
+</span>    <span class="n">cooccurence_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputSong</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_songs</span><span class="p">))),</span> <span class="nb">float</span><span class="p">)</span>
+        
+    <span class="c1"># Calculate similarity 
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_songs</span><span class="p">)):</span>
+        <span class="c1"># Obtain a set of unique user IDs of those who listened to a song (song refers to the list of unique values in the training data under the song column)
+</span>        <span class="n">songs_i_data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">train_data</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">train_data</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">item_id</span><span class="p">]</span> <span class="o">==</span> <span class="n">all_songs</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+        <span class="n">users_i</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">songs_i_data</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">user_id</span><span class="p">].</span><span class="n">unique</span><span class="p">())</span>
+        
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputSong</span><span class="p">)):</span>       
+                
+            <span class="c1"># Take a user ID from user_songs_users
+</span>            <span class="n">users_j</span> <span class="o">=</span> <span class="n">user_songs_users</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+                
+            <span class="c1"># Compare the user ID from user_songs_users with the user IDs in the set
+</span>            <span class="n">users_intersection</span> <span class="o">=</span> <span class="n">users_i</span><span class="p">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">users_j</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">users_intersection</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="c1"># Find the union of the two user IDs
+</span>                <span class="n">users_union</span> <span class="o">=</span> <span class="n">users_i</span><span class="p">.</span><span class="n">union</span><span class="p">(</span><span class="n">users_j</span><span class="p">)</span>
+                
+                <span class="n">cooccurence_matrix</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">users_intersection</span><span class="p">))</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">users_union</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">cooccurence_matrix</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                
+    
+    <span class="k">return</span> <span class="n">cooccurence_matrix</span>
+</code></pre></div></div>
 
-<p>Afterwards, we want to create a cooccurence matrix using numpy. The matrix originally consists of all zeros, with a row number that is equal to the number of songs in <code class="language-plaintext highlighter-rouge">songList</code>, and a column number equal to the number of songs in <code class="language-plaintext highlighter-rouge">all_songs</code> (training data that consists of unique values in <code class="language-plaintext highlighter-rouge">songList</code>).</p>
+<p>The program looks at the values under the <code class="language-plaintext highlighter-rouge">song</code> column in the training data. It first finds the values that match the songs that the user inputted (found in <code class="language-plaintext highlighter-rouge">inputSong</code>). Then, the program adds the IDs of the users who ranked the songs into a list called <code class="language-plaintext highlighter-rouge">user_songs_users</code>.</p>
 
-<p>Afterwards, we want to calculate <strong>simlarity</strong>.</p>
+<p>Afterwards, a cooccurence matrix is created using numpy. The matrix originally consists of all zeros, and has a number of rows that is equal to the number of songs in <code class="language-plaintext highlighter-rouge">inputSong</code>, and a number of columns that is equal to the number of songs in <code class="language-plaintext highlighter-rouge">all_songs</code> (a list of unique values in the training data under the <code class="language-plaintext highlighter-rouge">song</code> column).</p>
 
-<p>The code that calculates similarity does the following: it assigns the all of the training data (specifically the <code class="language-plaintext highlighter-rouge">song</code> column) that are unique into a variable called <code class="language-plaintext highlighter-rouge">songs_i_data</code>. It then uses this variable to get unique user ids and adds it in <code class="language-plaintext highlighter-rouge">users_i</code>. (<code class="language-plaintext highlighter-rouge">users_i</code>’s type is a set).</p>
+<p>Afterwards, we want to calculate <strong>simlarity</strong> by obtaining a set of unique user IDs of those who listened to a song and comparing it with the user IDs of those who listened to the songs that the user inputs.</p>
 
-<p>The user ids are then compared with each user id that listened to the songs in songList (<strong>intersection</strong>). If there are matches, the union of <code class="language-plaintext highlighter-rouge">users_i</code> and the id that lsitened to the songs in songList are recorded. The quotient of the length of the intersection and the union are added into the cooccurence matrix.</p>
+<p>Specifically, the code that calculates similarity does the following through iteration:</p>
 
-<p><mark>Possible changes</mark>: Change the format from <code class="language-plaintext highlighter-rouge">Song - Artist</code> to just <code class="language-plaintext highlighter-rouge">Song</code>.</p>
+<ol>
+  <li>
+    <p>It finds the rows in the dataset where the values under the <code class="language-plaintext highlighter-rouge">song</code> column in the training data match the name of a song in <code class="language-plaintext highlighter-rouge">all_songs</code> (the name depends on the value of <code class="language-plaintext highlighter-rouge">i</code> in the for loop, which determines the index of <code class="language-plaintext highlighter-rouge">all_songs</code>).</p>
+  </li>
+  <li>
+    <p>A set of unique user IDs are obtained from the rows in step 1.</p>
+  </li>
+  <li>
+    <p>The program uses a nested for loop for more iteration:</p>
+  </li>
+</ol>
+
+<p>a. The code takes a user ID from <code class="language-plaintext highlighter-rouge">user_songs_users</code> and compares it with the user IDs in the set from step 2 (finding the <strong>intersection</strong>).</p>
+
+<p>b. If there is a match, the union of the two user IDs from step 3a are recorded.</p>
+
+<p>c. The quotient of the length of the intersection and the length of the union are added into the cooccurence matrix.</p>
 
 <h2 id="generate_top_recommendations">
 <a class="anchor" href="#generate_top_recommendations" aria-hidden="true"><span class="octicon octicon-link"></span></a>generate_top_recommendations()</h2>
