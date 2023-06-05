@@ -42,9 +42,22 @@ There is something called **cosine similarity** which is used as a distance metr
 
 ## Reflection
 
-The biggest issue encountered was to achieve a balance between amount of data and the time that the program spends running. <mark>Analysis coming soon</mark>
+One issue encountered was to achieve a balance between amount of data and the time that the program spends running. A larger dataset means that the recommendation would be more accurate; however, it would also take a lot of time. For example, using the current program, this line of code, `song_df = song_df.head(10000)` only considers the first 10000 songs in the dataset. Using 10000 songs, the program takes about 4.21 seconds to run:
 
-One of the biggest limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs. 
+```python
+# record time
+startTime = time.time()
+init(["Hey_ Soul Sister"])
+print("Total time elapsed: " + str(time.time() - startTime))
+```
+
+Whereas increasing the program to use 50000 songs takes about 29.51 seconds. 100000 songs takes 67.23 seconds. 150000 songs took 72.41 seconds. 200000 songs took 98.10 seconds. Half a minute or a minute is too long for a program, so clearly, the program can't use a lot of songs in the dataset. It's unfortunate though, since there are a million songs in the dataset, and only a small portion can actually be used.
+
+![]({{ site.baseurl }}/images/graph.jpg)
+
+
+
+Another limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs. 
 
 
 
@@ -58,13 +71,11 @@ The data comes from two datasets: `10000.txt` and `song_data.csv`. `10000.txt` c
 
 The two datasets can be accessed [here](https://www.kaggle.com/datasets/anuragbanerjee/million-song-data-set-subset). 
 
-From now on, I'll refer to `10000.txt` as triplet data (since it has 3 columns of data), and `song_data.csv` as song data. <mark>See</mark>
 
 ### Data cleaning
 
 Throughout the code, there are lines that help filter the data. This is an important step in order to make sure that the data is clean so that the format is consistent throughout the entire file. 
 
-**Instances of data cleaning**: 
 
 * Line (#): 
 
@@ -73,6 +84,15 @@ Throughout the code, there are lines that help filter the data. This is an impor
   ```
 
   This removes all duplicate song ids, ensuring that the file with the song info does not contain rows with duplicate songs.
+
+
+### Overview
+
+The main steps in the recommender is listed below. They can be found in the `init()` function.
+
+1. Take the two datasets and combine them into one dataset. 
+2. Take a subset of the dataset (ex: 10000 songs).
+3. Make an item similarity recommender
 
 
 ### Common variables
@@ -136,7 +156,7 @@ def init(inputSong):
 
 The next step is to combine the two datasets. However, notice how both `10000.txt` and `song_data.csv` includes the song id? If the two datasets were combined, they would have duplicate entries. Therefore, they merge on the `song_id` column, while keeping the first dataset's `song_id` column.
 
-The dataframe is then limited to the first 10000 songs. This number can be adjusted to be larger, which would probably provide more accurate results. However, this comes at the expense of taking more time to run the program. <mark>Analysis coming soon</mark>. 
+The dataframe is then limited to the first 10000 songs. This number can be adjusted to be larger, which would probably provide more accurate results. However, this comes at the expense of taking more time to run the program.  
 
 
 
