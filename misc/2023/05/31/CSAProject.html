@@ -124,6 +124,7 @@ window.onload = wrap_img;
 <ul>
 <li class="toc-entry toc-h3"><a href="#the-data">The data</a></li>
 <li class="toc-entry toc-h3"><a href="#data-cleaning">Data cleaning</a></li>
+<li class="toc-entry toc-h3"><a href="#overview-1">Overview</a></li>
 <li class="toc-entry toc-h3"><a href="#common-variables">Common variables</a></li>
 <li class="toc-entry toc-h3"><a href="#init">init</a></li>
 <li class="toc-entry toc-h3"><a href="#constructor">Constructor</a></li>
@@ -176,9 +177,19 @@ window.onload = wrap_img;
 <h2 id="reflection">
 <a class="anchor" href="#reflection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reflection</h2>
 
-<p>The biggest issue encountered was to achieve a balance between amount of data and the time that the program spends running. <mark>Analysis coming soon</mark></p>
+<p>One issue encountered was to achieve a balance between amount of data and the time that the program spends running. A larger dataset means that the recommendation would be more accurate; however, it would also take a lot of time. For example, using the current program, this line of code, <code class="language-plaintext highlighter-rouge">song_df = song_df.head(10000)</code> only considers the first 10000 songs in the dataset. Using 10000 songs, the program takes about 4.21 seconds to run:</p>
 
-<p>One of the biggest limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># record time
+</span><span class="n">startTime</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">init</span><span class="p">([</span><span class="s">"Hey_ Soul Sister"</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Total time elapsed: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">startTime</span><span class="p">))</span>
+</code></pre></div></div>
+
+<p>Whereas increasing the program to use 50000 songs takes about 29.51 seconds. 100000 songs takes 67.23 seconds. 150000 songs took 72.41 seconds. 200000 songs took 98.10 seconds. Half a minute or a minute is too long for a program, so clearly, the program can’t use a lot of songs in the dataset. It’s unfortunate though, since there are a million songs in the dataset, and only a small portion can actually be used.</p>
+
+<p><img src="/fastpages/images/graph.jpg" alt=""></p>
+
+<p>Another limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs.</p>
 
 <h2 id="the-code">
 <a class="anchor" href="#the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>The code</h2>
@@ -192,14 +203,10 @@ window.onload = wrap_img;
 
 <p>The two datasets can be accessed <a href="https://www.kaggle.com/datasets/anuragbanerjee/million-song-data-set-subset">here</a>.</p>
 
-<p>From now on, I’ll refer to <code class="language-plaintext highlighter-rouge">10000.txt</code> as triplet data (since it has 3 columns of data), and <code class="language-plaintext highlighter-rouge">song_data.csv</code> as song data. <mark>See</mark></p>
-
 <h3 id="data-cleaning">
 <a class="anchor" href="#data-cleaning" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data cleaning</h3>
 
 <p>Throughout the code, there are lines that help filter the data. This is an important step in order to make sure that the data is clean so that the format is consistent throughout the entire file.</p>
-
-<p><strong>Instances of data cleaning</strong>:</p>
 
 <ul>
   <li>
@@ -212,6 +219,17 @@ window.onload = wrap_img;
     <p>This removes all duplicate song ids, ensuring that the file with the song info does not contain rows with duplicate songs.</p>
   </li>
 </ul>
+
+<h3 id="overview-1">
+<a class="anchor" href="#overview-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h3>
+
+<p>The main steps in the recommender is listed below. They can be found in the <code class="language-plaintext highlighter-rouge">init()</code> function.</p>
+
+<ol>
+  <li>Take the two datasets and combine them into one dataset.</li>
+  <li>Take a subset of the dataset (ex: 10000 songs).</li>
+  <li>Make an item similarity recommender</li>
+</ol>
 
 <h3 id="common-variables">
 <a class="anchor" href="#common-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common variables</h3>
@@ -278,7 +296,7 @@ window.onload = wrap_img;
 
 <p>The next step is to combine the two datasets. However, notice how both <code class="language-plaintext highlighter-rouge">10000.txt</code> and <code class="language-plaintext highlighter-rouge">song_data.csv</code> includes the song id? If the two datasets were combined, they would have duplicate entries. Therefore, they merge on the <code class="language-plaintext highlighter-rouge">song_id</code> column, while keeping the first dataset’s <code class="language-plaintext highlighter-rouge">song_id</code> column.</p>
 
-<p>The dataframe is then limited to the first 10000 songs. This number can be adjusted to be larger, which would probably provide more accurate results. However, this comes at the expense of taking more time to run the program. <mark>Analysis coming soon</mark>.</p>
+<p>The dataframe is then limited to the first 10000 songs. This number can be adjusted to be larger, which would probably provide more accurate results. However, this comes at the expense of taking more time to run the program.</p>
 
 <p>Afterwards, the dataset is created with a <code class="language-plaintext highlighter-rouge">song</code> column. This column takes information from the title column. This is <strong>important because the title of the song is used when the user inputs a song name on the frontend and when the code outputs a song as recommendation.</strong></p>
 
