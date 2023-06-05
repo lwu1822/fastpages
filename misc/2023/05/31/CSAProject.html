@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      11 min read
+      12 min read
     
 </span></p>
 
@@ -228,7 +228,10 @@ window.onload = wrap_img;
 <ol>
   <li>Take the two datasets and combine them into one dataset.</li>
   <li>Take a subset of the dataset (ex: 10000 songs).</li>
-  <li>Make an item similarity recommender</li>
+  <li>Make an item similarity recommender
+  a. Obtain unique songs from the training data
+  b. Make a cooccurence matrix from the training data and populate it with similarity scores
+  c. Take the highest scores from the cooccurence matrix, locate the songs they correspond to, and output those songs</li>
 </ol>
 
 <h3 id="common-variables">
