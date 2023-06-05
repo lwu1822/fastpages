@@ -93,6 +93,9 @@ The main steps in the recommender is listed below. They can be found in the `ini
 1. Take the two datasets and combine them into one dataset. 
 2. Take a subset of the dataset (ex: 10000 songs).
 3. Make an item similarity recommender
+  a. Obtain unique songs from the training data
+  b. Make a cooccurence matrix from the training data and populate it with similarity scores
+  c. Take the highest scores from the cooccurence matrix, locate the songs they correspond to, and output those songs
 
 
 ### Common variables
