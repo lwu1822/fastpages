@@ -74,6 +74,20 @@ A higher precision is better. The low score of our precision could be because th
 Another limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs. 
 
 
+## Moving Forward
+
+There are a few solutions that I found through research to the limitations mentioned above. For better accuracy, collaborative filtering can be combined with content based filtering. Content based filtering utilizes information about the user to make recommendations (while collaborative uses other user's preferences to make recommendations).
+
+An interesting [article](https://towardsdatascience.com/prototyping-a-recommender-system-step-by-step-part-2-alternating-least-square-als-matrix-4a76c58714a1) that I saw suggests alternating least squares as a better recommender system than collaborative filtering. 
+
+The article mentions three issues with collaborative filtering, which are the same issues that I found while making the music recommender. They are:
+
+* Item cold-start problem: Items with very little interactions that are used for recommendations are inaccurate
+* Scalability issue: Hard to scale with large amounts of data
+
+The reason why I chose to use collaborative filtering was that it was easier to understand given that we had very little knowledge of machine learning before starting the project. Based on research, collaborative filtering is a basic recommendation system, so there are other, better systems (such as alternating least squares). However, collaborative filtering is one of the systems that websites such as Amazon and Netflix use for their recommendations, so it is still a system that is widely used.
+
+
 
 ## The code
 
