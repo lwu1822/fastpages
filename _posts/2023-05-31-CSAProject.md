@@ -37,7 +37,6 @@ Looks something like this:
 
 ![]({{ site.baseurl }}/images/itemitemsimilarity.jpg)
 
-There is something called **cosine similarity** which is used as a distance metric. "The similarity is calculated based on the angle between these vectors". Honestly I have no idea what that means and the calculations involves a lot of math that I can't understand, so we'll leave it at that :) But yeah, just know that a lot of math stuff occurs here to calculate similarity. 
 
 
 ## Reflection
@@ -102,7 +101,9 @@ The main steps in the recommender is listed below. They can be found in the `ini
 2. Take a subset of the dataset (ex: 10000 songs).
 3. Make an item similarity recommender
   a. Obtain unique songs from the training data
+
   b. Make a cooccurence matrix from the training data and populate it with similarity scores
+
   c. Take the highest scores from the cooccurence matrix, locate the songs they correspond to, and output those songs
 
 
