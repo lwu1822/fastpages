@@ -130,9 +130,9 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#constructor">Constructor</a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h2"><a href="#get_similar_itemsinputsong">get_similar_items(inputSong)</a>
+<li class="toc-entry toc-h2"><a href="#get_similar_itemsinput_song">get_similar_items(input_song)</a>
 <ul>
-<li class="toc-entry toc-h3"><a href="#construct_cooccurence_matrixinputsong-all_songs">construct_cooccurence_matrix(inputSong, all_songs)</a></li>
+<li class="toc-entry toc-h3"><a href="#construct_cooccurence_matrixinput_song-all_songs">construct_cooccurence_matrix(input_song, all_songs)</a></li>
 <li class="toc-entry toc-h3"><a href="#generate_top_recommendations">generate_top_recommendations()</a></li>
 </ul>
 </li>
@@ -249,7 +249,7 @@ window.onload = wrap_img;
 
 <ul>
   <li>
-    <p><code class="language-plaintext highlighter-rouge">inputSong</code>: A list of songs that the user inputs. These are the songs that the user likes and wants to get recommendations for.</p>
+    <p><code class="language-plaintext highlighter-rouge">input_song</code>: A list of songs that the user inputs. These are the songs that the user likes and wants to get recommendations for.</p>
   </li>
   <li>
     <p><code class="language-plaintext highlighter-rouge">all_songs</code>: A list of unique values in the training data under the <code class="language-plaintext highlighter-rouge">song</code> column.</p>
@@ -259,7 +259,7 @@ window.onload = wrap_img;
 <h3 id="init">
 <a class="anchor" href="#init" aria-hidden="true"><span class="octicon octicon-link"></span></a>init</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">inputSong</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">init</span><span class="p">(</span><span class="n">input_song</span><span class="p">):</span>
     <span class="c1"># triplets_file consists of a "triplet" of data (user id, song id, listen count)
 </span>    <span class="n">triplets_file</span> <span class="o">=</span> <span class="s">"data/test2/10000.txt"</span>
     <span class="n">songs_metadata_file</span> <span class="o">=</span> <span class="s">'data/test2/song_data.csv'</span>
@@ -298,7 +298,7 @@ window.onload = wrap_img;
 </span>    <span class="n">is_model</span> <span class="o">=</span> <span class="n">item_similarity_recommender_py</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="s">"user_id"</span><span class="p">,</span> <span class="s">"song"</span><span class="p">)</span>
 
     <span class="c1"># predict what song you would like based on a song that you input
-</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">is_model</span><span class="p">.</span><span class="n">get_similar_items</span><span class="p">(</span><span class="n">inputSong</span><span class="p">)</span>
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">is_model</span><span class="p">.</span><span class="n">get_similar_items</span><span class="p">(</span><span class="n">input_song</span><span class="p">)</span>
     
     <span class="k">return</span> <span class="n">df</span>    
 </code></pre></div></div>
@@ -351,8 +351,8 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
   </li>
 </ul>
 
-<h2 id="get_similar_itemsinputsong">
-<a class="anchor" href="#get_similar_itemsinputsong" aria-hidden="true"><span class="octicon octicon-link"></span></a>get_similar_items(inputSong)</h2>
+<h2 id="get_similar_itemsinput_song">
+<a class="anchor" href="#get_similar_itemsinput_song" aria-hidden="true"><span class="octicon octicon-link"></span></a>get_similar_items(input_song)</h2>
 
 <p>The next piece of code passes in a list of songs that the user inputs:</p>
 
@@ -360,7 +360,7 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 </code></pre></div></div>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Get similar songs to those that the user inputs
-</span><span class="k">def</span> <span class="nf">get_similar_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputSong</span><span class="p">):</span>
+</span><span class="k">def</span> <span class="nf">get_similar_items</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_song</span><span class="p">):</span>
     
     <span class="c1"># Obtain unique songs in the training data
 </span>    <span class="n">all_songs</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">get_all_items_train_data</span><span class="p">()</span>
@@ -368,11 +368,11 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
     <span class="k">print</span><span class="p">(</span><span class="s">"no. of unique songs in the training set: %d"</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_songs</span><span class="p">))</span>
         
     <span class="c1"># Make a cooccurence matrix
-</span>    <span class="n">cooccurence_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">construct_cooccurence_matrix</span><span class="p">(</span><span class="n">inputSong</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">)</span>
+</span>    <span class="n">cooccurence_matrix</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">construct_cooccurence_matrix</span><span class="p">(</span><span class="n">input_song</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">)</span>
     
     <span class="c1"># Use cooccurence matrix to generate recommendations 
 </span>    <span class="n">user</span> <span class="o">=</span> <span class="s">""</span>
-    <span class="n">df_recommendations</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">generate_top_recommendations</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">cooccurence_matrix</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">,</span> <span class="n">inputSong</span><span class="p">)</span>
+    <span class="n">df_recommendations</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">generate_top_recommendations</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">cooccurence_matrix</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">,</span> <span class="n">input_song</span><span class="p">)</span>
         
     <span class="k">return</span> <span class="n">df_recommendations</span>
 </code></pre></div></div>
@@ -381,19 +381,19 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 
 <p>Next, a cooccurrence matrix is created, which is then used to generate the recommendations.</p>
 
-<h3 id="construct_cooccurence_matrixinputsong-all_songs">
-<a class="anchor" href="#construct_cooccurence_matrixinputsong-all_songs" aria-hidden="true"><span class="octicon octicon-link"></span></a>construct_cooccurence_matrix(inputSong, all_songs)</h3>
+<h3 id="construct_cooccurence_matrixinput_song-all_songs">
+<a class="anchor" href="#construct_cooccurence_matrixinput_song-all_songs" aria-hidden="true"><span class="octicon octicon-link"></span></a>construct_cooccurence_matrix(input_song, all_songs)</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Make a coocurrence matrix
-</span><span class="k">def</span> <span class="nf">construct_cooccurence_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputSong</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">):</span>
+</span><span class="k">def</span> <span class="nf">construct_cooccurence_matrix</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_song</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">):</span>
         
     <span class="c1"># Obtain the user IDs of those who ranked songs that are the same as the songs that the user inputted 
 </span>    <span class="n">user_songs_users</span> <span class="o">=</span> <span class="p">[]</span>        
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputSong</span><span class="p">)):</span>
-        <span class="n">user_songs_users</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">get_item_users</span><span class="p">(</span><span class="n">inputSong</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_song</span><span class="p">)):</span>
+        <span class="n">user_songs_users</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">.</span><span class="n">get_item_users</span><span class="p">(</span><span class="n">input_song</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
         
     <span class="c1"># Make a cooccurence matrix 
-</span>    <span class="n">cooccurence_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputSong</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_songs</span><span class="p">))),</span> <span class="nb">float</span><span class="p">)</span>
+</span>    <span class="n">cooccurence_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">matrix</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_song</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_songs</span><span class="p">))),</span> <span class="nb">float</span><span class="p">)</span>
         
     <span class="c1"># Calculate similarity 
 </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">all_songs</span><span class="p">)):</span>
@@ -401,7 +401,7 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 </span>        <span class="n">songs_i_data</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">train_data</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">train_data</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">item_id</span><span class="p">]</span> <span class="o">==</span> <span class="n">all_songs</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
         <span class="n">users_i</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">songs_i_data</span><span class="p">[</span><span class="bp">self</span><span class="p">.</span><span class="n">user_id</span><span class="p">].</span><span class="n">unique</span><span class="p">())</span>
         
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputSong</span><span class="p">)):</span>       
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">input_song</span><span class="p">)):</span>       
                 
             <span class="c1"># Take a user ID from user_songs_users
 </span>            <span class="n">users_j</span> <span class="o">=</span> <span class="n">user_songs_users</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
@@ -421,9 +421,9 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
     <span class="k">return</span> <span class="n">cooccurence_matrix</span>
 </code></pre></div></div>
 
-<p>The program looks at the values under the <code class="language-plaintext highlighter-rouge">song</code> column in the training data. It first finds the values that match the songs that the user inputted (found in <code class="language-plaintext highlighter-rouge">inputSong</code>). Then, the program adds the IDs of the users who ranked the songs into a list called <code class="language-plaintext highlighter-rouge">user_songs_users</code>.</p>
+<p>The program looks at the values under the <code class="language-plaintext highlighter-rouge">song</code> column in the training data. It first finds the values that match the songs that the user inputted (found in <code class="language-plaintext highlighter-rouge">input_song</code>). Then, the program adds the IDs of the users who ranked the songs into a list called <code class="language-plaintext highlighter-rouge">user_songs_users</code>.</p>
 
-<p>Afterwards, a cooccurence matrix is created using numpy. The matrix originally consists of all zeros, and has a number of rows that is equal to the number of songs in <code class="language-plaintext highlighter-rouge">inputSong</code>, and a number of columns that is equal to the number of songs in <code class="language-plaintext highlighter-rouge">all_songs</code> (a list of unique values in the training data under the <code class="language-plaintext highlighter-rouge">song</code> column).</p>
+<p>Afterwards, a cooccurence matrix is created using numpy. The matrix originally consists of all zeros, and has a number of rows that is equal to the number of songs in <code class="language-plaintext highlighter-rouge">input_song</code>, and a number of columns that is equal to the number of songs in <code class="language-plaintext highlighter-rouge">all_songs</code> (a list of unique values in the training data under the <code class="language-plaintext highlighter-rouge">song</code> column).</p>
 
 <p>Afterwards, we want to calculate <strong>simlarity</strong> by obtaining a set of unique user IDs of those who listened to a song and comparing it with the user IDs of those who listened to the songs that the user inputs.</p>
 
@@ -451,7 +451,7 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 <a class="anchor" href="#generate_top_recommendations" aria-hidden="true"><span class="octicon octicon-link"></span></a>generate_top_recommendations()</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Use cooccurence matrix to generate recommendations 
-</span><span class="k">def</span> <span class="nf">generate_top_recommendations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">cooccurence_matrix</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">,</span> <span class="n">inputSong</span><span class="p">):</span>
+</span><span class="k">def</span> <span class="nf">generate_top_recommendations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">cooccurence_matrix</span><span class="p">,</span> <span class="n">all_songs</span><span class="p">,</span> <span class="n">input_song</span><span class="p">):</span>
     <span class="k">print</span><span class="p">(</span><span class="s">"Non zero values in cooccurence_matrix :%d"</span> <span class="o">%</span> <span class="n">np</span><span class="p">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">cooccurence_matrix</span><span class="p">))</span>
     
     
@@ -471,7 +471,7 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 </span>    <span class="n">rank</span> <span class="o">=</span> <span class="mi">1</span> 
     <span class="k">print</span><span class="p">(</span><span class="n">sort_index</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">sort_index</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="o">~</span><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="n">all_songs</span><span class="p">[</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">inputSong</span> <span class="ow">and</span> <span class="n">rank</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">if</span> <span class="o">~</span><span class="n">np</span><span class="p">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="ow">and</span> <span class="n">all_songs</span><span class="p">[</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">input_song</span> <span class="ow">and</span> <span class="n">rank</span> <span class="o">&lt;=</span> <span class="mi">10</span><span class="p">:</span>
             <span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)]</span><span class="o">=</span><span class="p">[</span><span class="n">user</span><span class="p">,</span><span class="n">all_songs</span><span class="p">[</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]],</span><span class="n">sort_index</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">rank</span><span class="p">]</span>
             <span class="n">rank</span> <span class="o">+=</span> <span class="mi">1</span>
     
