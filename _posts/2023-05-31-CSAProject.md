@@ -214,7 +214,7 @@ train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state
 
 The testing and training data is useful for creating a precision-recall curve to determine the accuracy of the machine learning model.
 
-This uses the `scikit-learn` library. In this case, the testing data's size is 20% of the dataset, while the remaining 80% is the training data. <mark>See</mark>
+This uses the `scikit-learn` library. In this case, the testing data's size is 20% of the dataset, while the remaining 80% is the training data. 
 
 Next, the `init()` function creates an item similarity recommender using the training data. Finally, the program finds similar songs to the song that the user inputs. 
 
