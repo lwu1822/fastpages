@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      12 min read
+      11 min read
     
 </span></p>
 
@@ -172,8 +172,6 @@ window.onload = wrap_img;
 
 <p><img src="/fastpages/images/itemitemsimilarity.jpg" alt=""></p>
 
-<p>There is something called <strong>cosine similarity</strong> which is used as a distance metric. “The similarity is calculated based on the angle between these vectors”. Honestly I have no idea what that means and the calculations involves a lot of math that I can’t understand, so we’ll leave it at that :) But yeah, just know that a lot of math stuff occurs here to calculate similarity.</p>
-
 <h2 id="reflection">
 <a class="anchor" href="#reflection" aria-hidden="true"><span class="octicon octicon-link"></span></a>Reflection</h2>
 
@@ -235,10 +233,12 @@ window.onload = wrap_img;
   <li>Take the two datasets and combine them into one dataset.</li>
   <li>Take a subset of the dataset (ex: 10000 songs).</li>
   <li>Make an item similarity recommender
-  a. Obtain unique songs from the training data
-  b. Make a cooccurence matrix from the training data and populate it with similarity scores
-  c. Take the highest scores from the cooccurence matrix, locate the songs they correspond to, and output those songs</li>
+  a. Obtain unique songs from the training data</li>
 </ol>
+
+<p>b. Make a cooccurence matrix from the training data and populate it with similarity scores</p>
+
+<p>c. Take the highest scores from the cooccurence matrix, locate the songs they correspond to, and output those songs</p>
 
 <h3 id="common-variables">
 <a class="anchor" href="#common-variables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Common variables</h3>
