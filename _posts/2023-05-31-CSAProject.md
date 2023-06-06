@@ -56,6 +56,14 @@ Whereas increasing the program to use 50000 songs takes about 29.51 seconds. 100
 ![]({{ site.baseurl }}/images/graph.jpg)
 
 
+The pictures below demonstrate the precision-recall graph of the program:
+
+
+![]({{ site.baseurl }}/images/itemitem.jpg)
+![]({{ site.baseurl }}/images/itemitem2.jpg)
+![]({{ site.baseurl }}/images/itemitem5.jpg)
+
+
 
 Another limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs. 
 
