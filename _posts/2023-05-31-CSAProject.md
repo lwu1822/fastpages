@@ -113,7 +113,7 @@ The main steps in the recommender is listed below. They can be found in the `ini
 
 The code is quite long, so below are definitions of the commonly used variables in this program. These can be used to refer back to if you're not sure what a certain variable stands for.
 
-* `inputSong`: A list of songs that the user inputs. These are the songs that the user likes and wants to get recommendations for.
+* `input_song`: A list of songs that the user inputs. These are the songs that the user likes and wants to get recommendations for.
 
 * `all_songs`: A list of unique values in the training data under the `song` column. 
 
@@ -121,7 +121,7 @@ The code is quite long, so below are definitions of the commonly used variables 
 ### init
 
 ```python
-def init(inputSong):
+def init(input_song):
     # triplets_file consists of a "triplet" of data (user id, song id, listen count)
     triplets_file = "data/test2/10000.txt"
     songs_metadata_file = 'data/test2/song_data.csv'
@@ -160,7 +160,7 @@ def init(inputSong):
     is_model = item_similarity_recommender_py(train_data, "user_id", "song")
 
     # predict what song you would like based on a song that you input
-    df = is_model.get_similar_items(inputSong)
+    df = is_model.get_similar_items(input_song)
     
     return df    
 ```
@@ -219,7 +219,7 @@ Since the code uses OOP, the class is called and the following variables are ini
 
 
 
-## get_similar_items(inputSong)
+## get_similar_items(input_song)
 
 The next piece of code passes in a list of songs that the user inputs:
 
@@ -229,7 +229,7 @@ df = is_model.get_similar_items(songList)
 
 ```python
 # Get similar songs to those that the user inputs
-def get_similar_items(self, inputSong):
+def get_similar_items(self, input_song):
     
     # Obtain unique songs in the training data
     all_songs = self.get_all_items_train_data()
@@ -237,11 +237,11 @@ def get_similar_items(self, inputSong):
     print("no. of unique songs in the training set: %d" % len(all_songs))
         
     # Make a cooccurence matrix
-    cooccurence_matrix = self.construct_cooccurence_matrix(inputSong, all_songs)
+    cooccurence_matrix = self.construct_cooccurence_matrix(input_song, all_songs)
     
     # Use cooccurence matrix to generate recommendations 
     user = ""
-    df_recommendations = self.generate_top_recommendations(user, cooccurence_matrix, all_songs, inputSong)
+    df_recommendations = self.generate_top_recommendations(user, cooccurence_matrix, all_songs, input_song)
         
     return df_recommendations
 ```
@@ -251,19 +251,19 @@ def get_similar_items(self, inputSong):
 Next, a cooccurrence matrix is created, which is then used to generate the recommendations.
 
 
-### construct_cooccurence_matrix(inputSong, all_songs)
+### construct_cooccurence_matrix(input_song, all_songs)
 
 ```python
 # Make a coocurrence matrix
-def construct_cooccurence_matrix(self, inputSong, all_songs):
+def construct_cooccurence_matrix(self, input_song, all_songs):
         
     # Obtain the user IDs of those who ranked songs that are the same as the songs that the user inputted 
     user_songs_users = []        
-    for i in range(len(inputSong)):
-        user_songs_users.append(self.get_item_users(inputSong[i]))
+    for i in range(len(input_song)):
+        user_songs_users.append(self.get_item_users(input_song[i]))
         
     # Make a cooccurence matrix 
-    cooccurence_matrix = np.matrix(np.zeros(shape=(len(inputSong), len(all_songs))), float)
+    cooccurence_matrix = np.matrix(np.zeros(shape=(len(input_song), len(all_songs))), float)
         
     # Calculate similarity 
     for i in range(len(all_songs)):
@@ -271,7 +271,7 @@ def construct_cooccurence_matrix(self, inputSong, all_songs):
         songs_i_data = self.train_data[self.train_data[self.item_id] == all_songs[i]]
         users_i = set(songs_i_data[self.user_id].unique())
         
-        for j in range(len(inputSong)):       
+        for j in range(len(input_song)):       
                 
             # Take a user ID from user_songs_users
             users_j = user_songs_users[j]
@@ -292,10 +292,10 @@ def construct_cooccurence_matrix(self, inputSong, all_songs):
 ```
 
 
-The program looks at the values under the `song` column in the training data. It first finds the values that match the songs that the user inputted (found in `inputSong`). Then, the program adds the IDs of the users who ranked the songs into a list called `user_songs_users`.
+The program looks at the values under the `song` column in the training data. It first finds the values that match the songs that the user inputted (found in `input_song`). Then, the program adds the IDs of the users who ranked the songs into a list called `user_songs_users`.
 
 
-Afterwards, a cooccurence matrix is created using numpy. The matrix originally consists of all zeros, and has a number of rows that is equal to the number of songs in `inputSong`, and a number of columns that is equal to the number of songs in `all_songs` (a list of unique values in the training data under the `song` column). 
+Afterwards, a cooccurence matrix is created using numpy. The matrix originally consists of all zeros, and has a number of rows that is equal to the number of songs in `input_song`, and a number of columns that is equal to the number of songs in `all_songs` (a list of unique values in the training data under the `song` column). 
 
 
 Afterwards, we want to calculate **simlarity** by obtaining a set of unique user IDs of those who listened to a song and comparing it with the user IDs of those who listened to the songs that the user inputs.
@@ -320,7 +320,7 @@ Specifically, the code that calculates similarity does the following through ite
 
 ```python
 # Use cooccurence matrix to generate recommendations 
-def generate_top_recommendations(self, user, cooccurence_matrix, all_songs, inputSong):
+def generate_top_recommendations(self, user, cooccurence_matrix, all_songs, input_song):
     print("Non zero values in cooccurence_matrix :%d" % np.count_nonzero(cooccurence_matrix))
     
     
@@ -340,7 +340,7 @@ def generate_top_recommendations(self, user, cooccurence_matrix, all_songs, inpu
     rank = 1 
     print(sort_index)
     for i in range(len(sort_index)):
-        if ~np.isnan(sort_index[i][0]) and all_songs[sort_index[i][1]] not in inputSong and rank <= 10:
+        if ~np.isnan(sort_index[i][0]) and all_songs[sort_index[i][1]] not in input_song and rank <= 10:
             df.loc[len(df)]=[user,all_songs[sort_index[i][1]],sort_index[i][0],rank]
             rank += 1
     
