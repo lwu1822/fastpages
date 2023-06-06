@@ -12,7 +12,7 @@ author: Lily Wu
 
 ## Overview
 
-The music recommender utilizes **item-item collaborative filtering** within **collaborative based filtering**. In other words, the program analyzes the music that users like. It then calculates a similarity score (using the Jaccard Index) and populates it into a cooccurence matrix. The similarity in the cooccurence matrix then calculates a score.
+The music recommender utilizes **item-item collaborative filtering** within **collaborative based filtering**. In other words, the program analyzes the music that users like. It then calculates a similarity score and populates it into a cooccurence matrix. The highest scores are obtained from the matrix, and the songs that they are associated with are the recommended songs.
 
 ## Introduction
 
@@ -50,12 +50,14 @@ init(["Hey_ Soul Sister"])
 print("Total time elapsed: " + str(time.time() - startTime))
 ```
 
-Whereas increasing the program to use 50000 songs takes about 29.51 seconds. 100000 songs takes 67.23 seconds. 150000 songs took 72.41 seconds. 200000 songs took 98.10 seconds. Half a minute or a minute is too long for a program, so clearly, the program can't use a lot of songs in the dataset. It's unfortunate though, since there are a million songs in the dataset, and only a small portion can actually be used.
+Whereas increasing the program to use 50000 songs takes about 29.51 seconds. 100000 songs takes 67.23 seconds. 150000 songs took 72.41 seconds. 200000 songs took 98.10 seconds. As a result, we could only use a small portion of the dataset even when it had a lot more data (using 10000 songs out of a million songs). 
 
 ![]({{ site.baseurl }}/images/graph.jpg)
 
 
 The pictures below demonstrate the precision-recall graph of the program:
+
+A higher precision is better. The low score of our precision could be because our the actual amount of data that we used in the program is pretty limited.
 
 
 ![]({{ site.baseurl }}/images/itemitem.jpg)
