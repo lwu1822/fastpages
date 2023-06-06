@@ -57,13 +57,18 @@ Whereas increasing the program to use 50000 songs takes about 29.51 seconds. 100
 
 The pictures below demonstrate the precision-recall graph of the program:
 
-A higher precision is better. The low score of our precision could be because our the actual amount of data that we used in the program is pretty limited.
 
 
 ![]({{ site.baseurl }}/images/itemitem.jpg)
 ![]({{ site.baseurl }}/images/itemitem2.jpg)
 ![]({{ site.baseurl }}/images/itemitem5.jpg)
 
+Specifically, precision and recall are utilized in binary classification algorithms. In the case of the music recommender, "binary" refers to whether the recommended song is correct or not. 
+
+What the precision-recall program does is that it splits the dataset into training data and testing data. It then finds the same songs found in both data, and selects a random sample from the data. Afterwards, for the training data, the program generates recommendations for each song found in the random sample. For the testing data, the program first locates the user that listened to the song in the sample. The program then finds other songs that the user listened to. This list of songs is used as the "actual" songs that the user likes. The program then compares the number of songs that match between the recommendations and the "actual" songs that the user likes. This number, along with other statistics, such as the length of the testing data, is used to calculate the precision and recall score.
+
+
+A higher precision is better. The low score of our precision could be because the actual amount of songs that was used in the program was limited due to only selecting 10000 songs. Furthermore, the limitation could be due to the fact that we don't actually have data about songs the user likes. The best we have is the number of songs that they listened to, and in this project, we assumed that that is the "actual" songs that the user likes. 
 
 
 Another limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs. 
@@ -192,6 +197,8 @@ After that, we want to split the dataset into testing and training data.
 <code>
 train_data, test_data = train_test_split(song_df, test_size = 0.20, random_state=0)
 </code>
+
+The testing and training data is useful for creating a precision-recall curve to determine the accuracy of the machine learning model.
 
 This uses the `scikit-learn` library. In this case, the testing data's size is 20% of the dataset, while the remaining 80% is the training data. <mark>See</mark>
 
