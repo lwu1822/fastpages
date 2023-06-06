@@ -98,7 +98,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      13 min read
+      14 min read
     
 </span></p>
 
@@ -120,6 +120,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#overview">Overview</a></li>
 <li class="toc-entry toc-h2"><a href="#introduction">Introduction</a></li>
 <li class="toc-entry toc-h2"><a href="#reflection">Reflection</a></li>
+<li class="toc-entry toc-h2"><a href="#moving-forward">Moving Forward</a></li>
 <li class="toc-entry toc-h2"><a href="#the-code">The code</a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#the-data">The data</a></li>
@@ -200,6 +201,22 @@ window.onload = wrap_img;
 <p>A higher precision is better. The low score of our precision could be because the actual amount of songs that was used in the program was limited due to only selecting 10000 songs. Furthermore, the limitation could be due to the fact that we don’t actually have data about songs the user likes. The best we have is the number of songs that they listened to, and in this project, we assumed that that is the “actual” songs that the user likes.</p>
 
 <p>Another limitation in our project is the dataset that we used. Our dataset came from Million Songs Dataset, which had enough data. However, the songs were pretty old (before 2010), so our program was limited to recommending pretty old songs.</p>
+
+<h2 id="moving-forward">
+<a class="anchor" href="#moving-forward" aria-hidden="true"><span class="octicon octicon-link"></span></a>Moving Forward</h2>
+
+<p>There are a few solutions that I found through research to the limitations mentioned above. For better accuracy, collaborative filtering can be combined with content based filtering. Content based filtering utilizes information about the user to make recommendations (while collaborative uses other user’s preferences to make recommendations).</p>
+
+<p>An interesting <a href="https://towardsdatascience.com/prototyping-a-recommender-system-step-by-step-part-2-alternating-least-square-als-matrix-4a76c58714a1">article</a> that I saw suggests alternating least squares as a better recommender system than collaborative filtering.</p>
+
+<p>The article mentions three issues with collaborative filtering, which are the same issues that I found while making the music recommender. They are:</p>
+
+<ul>
+  <li>Item cold-start problem: Items with very little interactions that are used for recommendations are inaccurate</li>
+  <li>Scalability issue: Hard to scale with large amounts of data</li>
+</ul>
+
+<p>The reason why I chose to use collaborative filtering was that it was easier to understand given that we had very little knowledge of machine learning before starting the project. Based on research, collaborative filtering is a basic recommendation system, so there are other, better systems (such as alternating least squares). However, collaborative filtering is one of the systems that websites such as Amazon and Netflix use for their recommendations, so it is still a system that is widely used.</p>
 
 <h2 id="the-code">
 <a class="anchor" href="#the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>The code</h2>
