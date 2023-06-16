@@ -32,5 +32,3 @@ Please use the [nbdev & blogging channel](https://forums.fast.ai/c/fastai-users/
 
 A little addition to the README page :)
 oh look a emoji :smile:
-
-test
